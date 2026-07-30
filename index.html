@@ -194,13 +194,14 @@
       <table>
         <thead><tr><th scope="col">Câmp</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
         <tbody>
-          <tr><td><strong>Activitatea</strong></td><td>Ce face concret organizația în postare.</td><td>unul sau mai multe dintre cele 26 de coduri de mai jos</td></tr>
+          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod: lipsa e o valoare, nu o scăpare.</td><td>zero, unul sau mai multe dintre cele 25 de coduri de mai jos</td></tr>
           <tr><td><strong>Grupul țintă</strong></td><td>Cui i se adresează activitatea. Una sau mai multe valori — un eveniment pentru refugiați și localnici le primește pe ambele; nu există „mixt".</td><td>refugiați ucraineni · refugiați din alte țări · refugiați, fără naționalitate numită · comunitatea locală</td></tr>
           <tr><td><strong>Implicarea refugiaților</strong></td><td>Refugiații apar cu rol activ — organizator, voluntar, formator — sau doar ca participanți.</td><td>da · nu</td></tr>
-          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Finanțatorii numiți intră și aici: a da bani e un rol.</td><td>primărie sau consiliu · instituție publică națională · ONG · școală sau universitate · firmă · stat străin</td></tr>
+          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Finanțatorii numiți intră și aici: a da bani e un rol. Tag-urile fără o frază de colaborare nu se numără.</td><td>primărie sau consiliu · instituție publică națională · ONG · școală sau universitate · firmă · stat străin</td></tr>
           <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune — etichetă în plus față de cea de partener, pentru categoria banilor.</td><td>buget public local · buget public național · UE · alte state · fundații și asociații românești · companii · organizații internaționale · donator anonim</td></tr>
           <tr><td><strong>Instituțiile internaționale</strong></td><td>Dacă postarea pomenește o agenție ONU sau altă organizație internațională ca partener ori coordonator.</td><td>UNHCR · UNICEF · IOM · altele</td></tr>
-          <tr><td><strong>Ecoul</strong></td><td>Reacțiile publicului la postare.</td><td>reacții, distribuiri, comentarii — numere</td></tr>
+          <tr><td><strong>Simbolismul ucrainean</strong></td><td>Dacă postarea conține un act expresiv de identificare cu cauza națională: sloganuri (Slava Ukraini!), steagul folosit expresiv, povești de pe front sau de reziliență legate de rezistența la agresiunea rusă — exemple, nu listă închisă. Steagul din logo sau ca marcaj de limbă nu se numără.</td><td>da · nu</td></tr>
+          <tr><td><strong>Engagement</strong></td><td>Reacțiile publicului la postare.</td><td>reacții, distribuiri, comentarii — numere</td></tr>
         </tbody>
       </table>
     </div>
@@ -210,11 +211,11 @@
     <h3>Codurile de activitate</h3>
     <div class="tw">
       <table>
-        <caption>26 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Ultimele trei nu au sector acolo — despre ele, în tabul Activități.</caption>
+        <caption>25 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Ultimele două nu au sector acolo — despre ele, în tabul Activități.</caption>
         <thead><tr><th scope="col">Sector</th><th scope="col">Cod</th><th scope="col">Ce înseamnă</th></tr></thead>
         <tbody>
           <tr><td>Educație</td><td><code>edu_formal</code></td><td>Sprijin ca un copil să fie înscris la școală sau grădiniță și să rămână acolo.</td></tr>
-          <tr><td>Educație</td><td><code>edu_nonformal</code></td><td>Ateliere, cluburi și alte activități de învățare în afara școlii, mai ales pentru copii.</td></tr>
+          <tr><td>Educație</td><td><code>edu_nonformal</code></td><td>Ateliere, cluburi și alte activități de învățare în afara școlii, mai ales pentru copii. Orice aduce a educație este educație; la dubiu, câștigă educația.</td></tr>
           <tr><td>Educație</td><td><code>edu_personal</code></td><td>Cursuri și formare pentru profesori, asistenți sociali și alți profesioniști.</td></tr>
           <tr><td>Trai și incluziune economică</td><td><code>liv_tvet</code></td><td>Calificare într-o meserie: cursuri profesionale, ucenicie.</td></tr>
           <tr><td>Trai și incluziune economică</td><td><code>liv_antreprenoriat</code></td><td>Sprijin pentru a porni o afacere; microcredite.</td></tr>
@@ -236,9 +237,8 @@
           <tr><td>Nevoi de bază</td><td><code>baz_cash</code></td><td>Bani sau tichete pentru nevoi generale, fără destinație fixă.</td></tr>
           <tr><td>Nevoi de bază</td><td><code>baz_wash</code></td><td>Apă, sanitație, igienă.</td></tr>
           <tr><td>Logistică</td><td><code>log_transport</code></td><td>Transport de persoane sau bunuri, depozitare, distribuție.</td></tr>
-          <tr><td>fără sector</td><td><code>com_recreativ</code></td><td>Petreceri, ieșiri, sport, socializare — atunci când localnicii nu sunt pomeniți ca participanți.</td></tr>
-          <tr><td>fără sector</td><td><code>com_mobilizare</code></td><td>Strângere de fonduri, apeluri la donații, căutare de voluntari.</td></tr>
-          <tr><td>fără sector</td><td><code>com_general</code></td><td>Comunicare despre organizație: mulțumiri, aniversări, poziții publice, viața internă.</td></tr>
+          <tr><td>fără sector</td><td><code>com_recreativ</code></td><td>Petreceri, ieșiri, sport, socializare — joaca pură, fără nicio formulare educativă și fără localnici pomeniți ca participanți.</td></tr>
+          <tr><td>fără sector</td><td><code>com_mobilizare</code></td><td>Strângere de fonduri, apeluri la donații, căutare de voluntari. Doar apelul; mulțumirea fără apel nu primește cod.</td></tr>
         </tbody>
       </table>
     </div>
@@ -292,7 +292,7 @@
 
   <div class="sec">
     <h3>Cum se clasifică</h3>
-    <p>Fiecare activitate primește unul sau mai multe dintre cele 26 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
+    <p>Fiecare activitate primește unul sau mai multe dintre cele 25 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. O postare fără activitate concretă rămâne fără cod, iar proporția acestor postări se raportează ca atare. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
   </div>
 
   <div class="sec">
