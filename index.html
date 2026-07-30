@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rețeaua de parteneri UNHCR în România</title>
+<meta name="description" content="Structura de raportare a unui studiu de analiză de conținut pe comunicarea publică a organizațiilor partenere UNHCR în România, 2022–2026.">
+<style>
+  :root {
+    --paper:#f1f4f2; --surface:#fff; --surface-2:#e8ede9;
+    --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
+    --rule:#d3dbd6; --accent:#2f6b5e; --accent-soft:#e0eae5;
+    --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
+    --measure:68ch;
+    --s--1:.815rem; --s0:1rem; --s1:1.2rem; --s2:1.5rem; --s3:2rem; --s4:2.6rem;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
+    --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
+    --rule:#2a3532; --accent:#74bda9; --accent-soft:#1c2a27;
+    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}}
+  :root[data-theme="dark"]{
+    --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
+    --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
+    --rule:#2a3532; --accent:#74bda9; --accent-soft:#1c2a27;
+    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}
+  :root[data-theme="light"]{
+    --paper:#f1f4f2; --surface:#fff; --surface-2:#e8ede9;
+    --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
+    --rule:#d3dbd6; --accent:#2f6b5e; --accent-soft:#e0eae5;
+    --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;}
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:var(--s0); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:64rem; margin:0 auto; padding:clamp(1.4rem,4vw,3rem) clamp(1.1rem,5vw,2rem) 5rem}
+
+  /* masthead */
+  .mast{border-bottom:2px solid var(--ink); padding-bottom:1.5rem; margin-bottom:0}
+  .eyebrow{
+    font-family:var(--mono); font-size:var(--s--1); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent);
+    display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; margin-bottom:.7rem;
+  }
+  h1{font-family:var(--serif); font-size:var(--s4); line-height:1.08;
+     font-weight:600; margin:0 0 .3rem; letter-spacing:-.015em; text-wrap:balance}
+  .kicker{font-family:var(--serif); font-style:italic; font-size:var(--s1);
+          color:var(--accent); margin:0 0 .8rem}
+  .lede{color:var(--ink-soft); max-width:var(--measure); margin:0}
+
+  /* tabs */
+  .tabs{
+    display:flex; flex-wrap:wrap; gap:1px; margin:0 0 2rem;
+    border-bottom:1px solid var(--rule); position:sticky; top:0;
+    background:var(--paper); padding-top:.9rem; z-index:5;
+  }
+  .tab{
+    appearance:none; border:1px solid var(--rule); border-bottom:none;
+    background:var(--surface-2); color:var(--ink-soft);
+    font-family:var(--sans); font-size:.9rem; padding:.5rem .85rem;
+    cursor:pointer; border-radius:2px 2px 0 0; line-height:1.3;
+  }
+  .tab:hover{color:var(--ink)}
+  .tab[aria-selected="true"]{
+    background:var(--surface); color:var(--ink); font-weight:600;
+    box-shadow:inset 0 2px 0 var(--accent);
+  }
+  .tab:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+  .panel{display:none; flex-direction:column; gap:1.6rem}
+  .panel.on{display:flex}
+
+  /* blocks */
+  h2{font-family:var(--serif); font-size:var(--s3); font-weight:600; margin:0;
+     text-wrap:balance; letter-spacing:-.01em}
+  h3{font-family:var(--serif); font-size:var(--s2); font-weight:600; margin:0;
+     padding-bottom:.35rem; border-bottom:1px solid var(--rule)}
+  h4{font-family:var(--sans); font-size:var(--s0); font-weight:600; margin:0}
+  p{margin:0; max-width:var(--measure); color:var(--ink-soft)}
+  p strong,li strong{color:var(--ink); font-weight:600}
+  .sec{display:flex; flex-direction:column; gap:.8rem}
+  .pull{
+    background:var(--surface); border-left:3px solid var(--accent);
+    padding:1.2rem 1.4rem; display:flex; flex-direction:column; gap:.6rem;
+  }
+  .pull-q{font-family:var(--serif); font-size:var(--s2); line-height:1.35;
+          margin:0; color:var(--ink); text-wrap:balance}
+  .note{
+    background:var(--accent-soft); border:1px solid var(--rule);
+    padding:.8rem 1rem; font-size:.94rem; color:var(--ink-soft);
+    display:flex; flex-direction:column; gap:.35rem;
+  }
+  .note strong{color:var(--ink)}
+  .warn{border-left:3px solid var(--sienna); background:var(--surface)}
+
+  /* figures grid */
+  .figs{display:grid; grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));
+        gap:1px; background:var(--rule); border:1px solid var(--rule)}
+  .fig{background:var(--surface); padding:.9rem 1rem; display:flex;
+       flex-direction:column; gap:.1rem}
+  .fig-n{font-family:var(--mono); font-size:var(--s2); line-height:1.1;
+         font-variant-numeric:tabular-nums; color:var(--ink)}
+  .fig-l{font-size:var(--s--1); color:var(--ink-faint); line-height:1.35}
+
+  /* tables */
+  .tw{overflow-x:auto; border:1px solid var(--rule); background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:.93rem}
+  caption{text-align:left; padding:.65rem .9rem; color:var(--ink-faint);
+          font-size:var(--s--1); border-bottom:1px solid var(--rule)}
+  th,td{padding:.45rem .9rem; text-align:left; border-bottom:1px solid var(--rule);
+        vertical-align:top}
+  thead th{font-family:var(--mono); font-size:var(--s--1); text-transform:uppercase;
+           letter-spacing:.06em; color:var(--ink-faint); font-weight:500;
+           background:var(--surface-2); position:sticky; top:0}
+  tbody tr:last-child td{border-bottom:0}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums;
+       text-align:right; white-space:nowrap}
+  code{font-family:var(--mono); font-size:.87em; color:var(--accent)}
+
+  /* lists */
+  ul.plain{margin:0; padding:0; list-style:none; display:flex;
+           flex-direction:column; gap:.55rem}
+  ul.plain>li{padding-left:1.1rem; position:relative; color:var(--ink-soft);
+              max-width:var(--measure)}
+  ul.plain>li::before{content:"—"; position:absolute; left:0; color:var(--accent)}
+  ol.steps{margin:0; padding:0; list-style:none; display:flex;
+           flex-direction:column; gap:1px; background:var(--rule);
+           border:1px solid var(--rule)}
+  ol.steps>li{background:var(--surface); padding:.8rem 1rem; display:grid;
+              grid-template-columns:2.2rem 1fr; gap:.9rem; align-items:baseline}
+  .step-n{font-family:var(--mono); font-size:var(--s--1); color:var(--accent)}
+  .step-b{display:flex; flex-direction:column; gap:.2rem}
+
+  /* pills */
+  .pill{font-family:var(--mono); font-size:.7rem; letter-spacing:.07em;
+        text-transform:uppercase; padding:.12rem .42rem; border-radius:2px;
+        border:1px solid currentColor; white-space:nowrap}
+  .p-ok{color:var(--ok)} .p-wait{color:var(--warn)} .p-no{color:var(--miss)}
+
+  /* svg schematic */
+  .schem{background:var(--surface); border:1px solid var(--rule); padding:1rem;
+         overflow-x:auto}
+  .schem svg{display:block; margin:0 auto; max-width:100%; height:auto}
+  .s-lbl{font-family:var(--sans); font-size:11px; fill:var(--ink-soft)}
+  .s-ttl{font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+         text-transform:uppercase; fill:var(--ink-faint)}
+
+  footer{margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+         color:var(--ink-faint); font-size:var(--s--1);
+         display:flex; flex-direction:column; gap:.3rem}
+  a{color:var(--accent); text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Studiu de analiză de conținut</span>
+    <span>Structură de raportare</span>
+    <span>Iulie 2026</span>
+  </div>
+  <h1>Rețeaua de parteneri UNHCR în România</h1>
+  <p class="kicker">activități, colaborări, finanțare, 2022–2026</p>
+  <p class="lede">Ce comunică public organizațiile partenere UNHCR despre propria activitate cu refugiați ucraineni, cine apare alături de ele, cine finanțează și cum se schimbă toate acestea în patru ani. Pagina descrie designul și structura de raportare; rezultatele urmează.</p>
+</header>
+
+<div class="tabs" role="tablist" aria-label="Secțiuni">
+  <button class="tab" role="tab" id="t-met" aria-controls="p-met" aria-selected="true">Metodologie</button>
+  <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Volum și evoluție</button>
+  <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
+  <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
+  <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea</button>
+  <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
+  <button class="tab" role="tab" id="t-org" aria-controls="p-org" aria-selected="false">Organizații</button>
+  <button class="tab" role="tab" id="t-src" aria-controls="p-src" aria-selected="false">Surse</button>
+</div>
+
+<!-- ============ METODOLOGIE ============ -->
+<section class="panel on" role="tabpanel" id="p-met" aria-labelledby="t-met">
+  <h2>Metodologie</h2>
+
+  <div class="pull">
+    <p class="pull-q">Ce dinamici identificăm în răspunsul comunicat public al partenerilor UNHCR la criza refugiaților ucraineni, martie 2022 – prezent?</p>
+    <p>Patru dimensiuni: tipurile de activități, actorii implicați, sursele de finanțare, formele de colaborare. Peste ele, întrebarea comparativă: diferă aceste dinamici între tipurile de organizații?</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce măsurăm și ce nu</h3>
+    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția nu e o precauție de subsol; e limita centrală a studiului.</p>
+    <p>Termenul de <em>localizare</em> desemnează deplasarea deciziei, a resurselor și a execuției răspunsului umanitar către actori locali, inclusiv către organizații conduse de persoanele afectate. Literatura care ne interesează arată distanța dintre retorica localizării și practica ei.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Universul și unitatea de analiză</h3>
+    <p><strong>45 de organizații</strong> din registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie.</p>
+    <p><strong>Unitatea de analiză e postarea publică de Facebook.</strong> O postare poate purta mai multe coduri de activitate: se codează serviciul numit, iar o postare care numește mai multe servicii primește câte un cod pentru fiecare.</p>
+    <div class="note">
+      <strong>Instituțiile publice nu sunt unități de observație.</strong>
+      Primăriile și prefecturile din registru apar în date doar ca actori menționați de organizații — vezi tabul Rețea.
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Procedura</h3>
+    <p>Regula care ține tot: <strong>agenții propun, autorul dispune.</strong> Agenții de limbaj codează; ce înseamnă o dovadă și ce cod primește un caz rămân decizii ale autorului.</p>
+    <ol class="steps">
+      <li><span class="step-n">E1</span><span class="step-b"><h4>Extragere</h4><p>Toate postările publice ale celor 45 de pagini, o singură rulare pentru tot intervalul, ca engagement-ul să fie măsurat la același moment.</p></span></li>
+      <li><span class="step-n">E2</span><span class="step-b"><h4>Codare dublă</h4><p>Doi agenți independenți, aceleași intrări, fără să vadă ieșirea celuilalt. Acordul lor e măsura de calitate raportabilă în absența unui etalon.</p></span></li>
+      <li><span class="step-n">E3</span><span class="step-b"><h4>Poartă deterministă</h4><p>Cod, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la arbitraj.</p></span></li>
+      <li><span class="step-n">E4</span><span class="step-b"><h4>Arbitraj de autor</h4><p>Integral pe codurile care decid selecția și pe toate dezacordurile; eșantion aleator pe restul, cu rata raportată.</p></span></li>
+      <li><span class="step-n">E5</span><span class="step-b"><h4>Analiză și raportare</h4><p>Serii temporale, hărți de căldură, analiză de rețea. Raport de proces separat de raport de rezultat.</p></span></li>
+    </ol>
+  </div>
+
+  <div class="sec">
+    <h3>Calibrarea pe codare manuală</h3>
+    <p>Designul a fost testat pe un corpus codat manual în prealabil, de un codor uman, în MAXQDA: <strong>315 postări ale unei singure organizații</strong>. Agenții au codat aceleași postări, orbi la codarea manuală, iar acordul s-a măsurat cod cu cod.</p>
+    <div class="tw">
+      <table>
+        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate.</caption>
+        <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col">Măsură</th></tr></thead>
+        <tbody>
+          <tr><td>Categoria de beneficiari</td><td class="num">98,9%</td><td>κ = 0,98</td></tr>
+          <tr><td>Sursa de finanțare</td><td class="num">96,3%</td><td>Jaccard 0,97</td></tr>
+          <tr><td>Destinatarul activității</td><td class="num">96,0%</td><td>κ = 0,94</td></tr>
+          <tr><td>Implicarea refugiaților</td><td class="num">90,8%</td><td>κ = 0,69</td></tr>
+          <tr><td>Sectorul de activitate</td><td class="num">89,7%</td><td>Jaccard 0,93</td></tr>
+          <tr><td>Parteneriatul menționat</td><td class="num">74,6%</td><td>Jaccard 0,75</td></tr>
+          <tr><td>Referirea la instituții internaționale</td><td class="num">69,9%</td><td>Jaccard 0,70</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn">
+      <strong>Codarea manuală nu e etalon.</strong>
+      Acolo unde agentul diferă de ea, verdictul se dă la arbitraj și are patru valori: agentul a greșit, omul a greșit, ambele variante sunt acceptabile, sau codebook-ul e neclar. Un design cu doar primele două valori ar măsura conformitatea agentului cu erorile referinței și ar raporta-o ca acuratețe.
+    </div>
+    <p>Cele două câmpuri cu acord scăzut — parteneriat și referire la instituții internaționale — indică unde codebook-ul are nevoie de reguli mai stricte, nu unde agenții sunt mai slabi. Ambele cer distincții pe care textul postării adesea nu le susține: dacă „cu susținerea X" înseamnă parteneriat sau finanțare, și dacă o organizație e numită ca actor sau ca finanțator.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Limitele declarate</h3>
+    <ul class="plain">
+      <li><strong>Comunicarea despre localizare nu e localizare.</strong> Vezi mai sus.</li>
+      <li><strong>Doar Facebook.</strong> Comunitatea ucraineană folosește intens Telegram și Viber, unde nu avem acces comparabil.</li>
+      <li><strong>Prezența vizuală nu se codează.</strong> Inspecția fiecărei imagini nu e fezabilă la volumul proiectat, iar un indicator de prezență simbolică a fost retras după ce măsurarea a arătat că prinde limba de lucru a organizației, nu un act simbolic al postării.</li>
+      <li><strong>Engagement măsurat la momentul extragerii</strong>, nu la un interval fix după publicare. Se controlează prin numărul de zile de la publicare.</li>
+      <li><strong>Acoperire inegală.</strong> Două dintre cele patru organizații conduse de refugiați au serii incomplete: una are cont creat în 2024, alta nu are pagină identificată.</li>
+      <li><strong>Un indicator are alt temei decât restul.</strong> Referirea la instituții internaționale e indicator nou, fără referință în codarea manuală, validat doar pe eșantion.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ VOLUM ============ -->
+<section class="panel" role="tabpanel" id="p-vol" aria-labelledby="t-vol">
+  <h2>Volum și evoluție</h2>
+  <p>Primul strat, care nu cere codare: cât comunică fiecare organizație și cum se schimbă ritmul în timp. Situează tot ce urmează.</p>
+
+  <div class="sec">
+    <h3>Ce se raportează</h3>
+    <ul class="plain">
+      <li><strong>Hartă de căldură organizație × lună</strong>, 45 × 53 de luni, plus seria agregată.</li>
+      <li><strong>Forma seriei per organizație</strong>: când începe, dacă are vârfuri, unde cad. Fără grile de citire împrumutate — dacă din date iese o tipologie de traiectorii, se construiește din date.</li>
+      <li><strong>Raportul postări relevante / total</strong>, calculat din codul de categorie a beneficiarilor. O măsură a cât din comunicarea unei organizații e despre refugiați ucraineni. Pentru cele cu mandat general va fi mic, iar asta e rezultat, nu zgomot.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Baza de date, măsurată</h3>
+    <p>Rata de publicare a fost măsurată pe șase organizații înainte de rularea completă, ca să nu rămână o estimare:</p>
+    <div class="figs">
+      <div class="fig"><span class="fig-n">8,4</span><span class="fig-l">postări/lună, mediana</span></div>
+      <div class="fig"><span class="fig-n">10,3</span><span class="fig-l">postări/lună, media</span></div>
+      <div class="fig"><span class="fig-n">3 – 25</span><span class="fig-l">interval între organizații</span></div>
+      <div class="fig"><span class="fig-n">~20 100</span><span class="fig-l">corpus proiectat, la mediană</span></div>
+    </div>
+    <div class="note">
+      <strong>Dispersia contează procedural.</strong>
+      Între 3 și 25 de postări pe lună înseamnă că limita de extragere se dimensionează pe organizația cea mai activă, nu uniform. La o primă probă, o limită uniformă a trunchiat istoricul unei organizații la un sfert din ce avea.
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITATI ============ -->
+<section class="panel" role="tabpanel" id="p-act" aria-labelledby="t-act">
+  <h2>Activități</h2>
+  <p>Ce activități comunică organizațiile și cum se deplasează distribuția lor în timp.</p>
+
+  <div class="sec">
+    <h3>Schema de codare</h3>
+    <p>Douăzeci și șase de coduri, organizate pe sectoarele din Regional Refugee Response Plan al UNHCR. Folosim taxonomia lor pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Sector</th><th scope="col" class="num">Coduri</th><th scope="col">Exemple</th></tr></thead>
+        <tbody>
+          <tr><td>Education</td><td class="num">3</td><td><code>edu_formal · edu_nonformal · edu_personal</code></td></tr>
+          <tr><td>Livelihoods &amp; Socio-Economic Inclusion</td><td class="num">5</td><td><code>liv_tvet · liv_limba · liv_ocupare</code></td></tr>
+          <tr><td>Public Health and Nutrition</td><td class="num">2</td><td><code>san_acces · san_mhpss</code></td></tr>
+          <tr><td>Protection, cu sub-sectoarele ei</td><td class="num">7</td><td><code>prot_juridic · prot_coeziune · prot_gbv</code></td></tr>
+          <tr><td>Basic Needs</td><td class="num">5</td><td><code>baz_hrana · baz_locuire · baz_cash</code></td></tr>
+          <tr><td>Logistics</td><td class="num">1</td><td><code>log_transport</code></td></tr>
+          <tr><td>Fără sector UNHCR</td><td class="num">3</td><td><code>com_recreativ · com_mobilizare · com_general</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Reziduul</h3>
+    <p>Ultimul rând al tabelului e partea utilă. Activitățile de construcție comunitară — sport, ieșiri, socializare fără participarea comunității-gazdă — nu au sector în taxonomia UNHCR. În sistemul care contează pentru finanțare, ele nu se raportează.</p>
+    <p><strong>Categoria de reziduu e a noastră, nu a literaturii.</strong> O introducem pentru că măsurarea a arătat că există și că altfel dispare. Corespondența cu literatura vine după: dintre categoriile de activitate enumerate în studiile despre organizații conduse de refugiați, <em>sport</em> și <em>implicarea tinerilor</em> nu au sector în taxonomia UNHCR și cad exact aici.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce se raportează</h3>
+    <ul class="plain">
+      <li><strong>Sector × an</strong>, ca hartă de căldură, pentru agregat și per organizație.</li>
+      <li><strong>Sector × tip de organizație</strong> — comparația pe care un singur caz nu permitea.</li>
+      <li><strong>Mărimea reziduului</strong>, absolut și ca proporție, per tip de organizație.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ AGENTIA ============ -->
+<section class="panel" role="tabpanel" id="p-ag" aria-labelledby="t-ag">
+  <h2>Agenția refugiaților</h2>
+  <p>Miza teoretică a studiului, de aceea în tab propriu și nu între ceilalți indicatori.</p>
+
+  <div class="sec">
+    <h3>Cele două coduri</h3>
+    <p><strong>Categoria de beneficiari</strong> — dacă postarea vizează refugiați ucraineni, un grup mixt, sau alte categorii. La organizațiile cu mandat larg, valoarea „alte categorii" va fi frecventă.</p>
+    <p><strong>Implicarea refugiaților</strong> — dacă refugiații au rol activ în organizarea sau producerea activității, nu doar calitatea de beneficiari. Codul cere un indiciu textual de rol activ: refugiați numiți ca organizatori, voluntari, formatori, moderatori. Simpla participare nu se codează ca implicare.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce devine posibil</h3>
+    <p>Comparația între <strong>organizații conduse de refugiați, ONG-uri naționale, ONG-uri internaționale și agenții ONU</strong>. Întrebarea vine din literatura localizării, care susține că organizațiile conduse de refugiați oferă forme de sprijin pe care sistemul formal nu recunoaște și nu finanțează.</p>
+    <div class="note warn">
+      <strong>Ce nu poate arăta comparația.</strong>
+      Dacă o organizație condusă de refugiați îi înfățișează mai des pe refugiați ca agenți, asta poate reflecta atât o practică diferită, cât și o convenție de comunicare diferită. Măsurăm reprezentarea, nu structura de decizie. Un rezultat aici nu susține o afirmație despre cine deține puterea.
+    </div>
+    <div class="note">
+      <strong>Acoperire.</strong>
+      Dintre cele patru organizații conduse de refugiați din registru, una nu are pagină identificată și una are cont creat în 2024. Comparația se sprijină pe două serii complete, iar limita se afișează alături de rezultat.
+    </div>
+  </div>
+</section>
+
+<!-- ============ RETEA ============ -->
+<section class="panel" role="tabpanel" id="p-ret" aria-labelledby="t-ret">
+  <h2>Rețea</h2>
+  <p>Partea care nu exista în designul testat pe un singur caz. Cu o organizație se pot număra partenerii; cu 45 se poate descrie structura care îi leagă.</p>
+
+  <div class="sec">
+    <h3>Din ce se construiește</h3>
+    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu tipul lor și cu denumirea concretă. Din aceste mențiuni se construiesc trei rețele distincte.</p>
+    <div class="schem">
+      <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
+        <text x="10" y="16" class="s-ttl">rețea bipartită</text>
+        <text x="400" y="16" class="s-ttl">proiecție pe organizații</text>
+        <!-- bipartite: orgs left, partners right -->
+        <g stroke="currentColor" stroke-opacity=".28" stroke-width="1.3" fill="none">
+          <line x1="60" y1="60" x2="200" y2="55"/>
+          <line x1="60" y1="60" x2="200" y2="120"/>
+          <line x1="60" y1="130" x2="200" y2="120"/>
+          <line x1="60" y1="130" x2="200" y2="185"/>
+          <line x1="60" y1="200" x2="200" y2="185"/>
+          <line x1="60" y1="200" x2="200" y2="120"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="60" cy="60" r="9"/><circle cx="60" cy="130" r="9"/><circle cx="60" cy="200" r="9"/>
+        </g>
+        <g fill="var(--sienna)">
+          <rect x="192" y="47" width="16" height="16" rx="2"/>
+          <rect x="192" y="112" width="16" height="16" rx="2"/>
+          <rect x="192" y="177" width="16" height="16" rx="2"/>
+        </g>
+        <text x="40" y="228" class="s-lbl">organizații</text>
+        <text x="176" y="228" class="s-lbl">actori numiți</text>
+        <!-- arrow -->
+        <g stroke="var(--ink-faint)" stroke-width="1.2" fill="none">
+          <line x1="270" y1="130" x2="350" y2="130"/>
+          <polyline points="342,124 350,130 342,136"/>
+        </g>
+        <!-- projection: triangle of orgs -->
+        <g stroke="var(--accent)" stroke-width="2.6" stroke-opacity=".5" fill="none">
+          <line x1="470" y1="70" x2="560" y2="140"/>
+          <line x1="470" y1="70" x2="470" y2="190"/>
+          <line x1="470" y1="190" x2="560" y2="140"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="470" cy="70" r="9"/><circle cx="470" cy="190" r="9"/><circle cx="560" cy="140" r="9"/>
+        </g>
+        <text x="430" y="228" class="s-lbl">muchie = actor comun</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Cele trei rețele</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Rețea</th><th scope="col">Noduri</th><th scope="col">Ce arată</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Colaborare</strong></td>
+            <td>organizații × parteneri numiți</td>
+            <td>Bipartită, proiectată pe organizații: două organizații sunt legate dacă numesc același partener. Măsuri de centralitate pe actori — care apar în comunicarea multor organizații și funcționează ca noduri ale rețelei.</td>
+          </tr>
+          <tr>
+            <td><strong>Finanțare</strong></td>
+            <td>organizații × finanțatori numiți</td>
+            <td>Aceeași construcție, pe sursele de bani. Se raportează și cât de des finanțarea <em>nu</em> e menționată — absența atribuirii e informație în sine, iar dacă nu e raportată separat dispare în categoria reziduală.</td>
+          </tr>
+          <tr>
+            <td><strong>Co-menționare</strong></td>
+            <td>organizații × organizații</td>
+            <td>Două organizații din registru apar în aceeași postare, ori una o tagează pe cealaltă. Singura rețea în care nodurile sunt toate unități observate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Instituțiile publice — primării și prefecturi — intră aici, ca actori menționați. Nu sunt unități de observație: nu le extragem paginile. Ceea ce înseamnă că datele despre ele vin din ce spun organizațiile, nu din ce comunică ele însele.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce nu se poate construi</h3>
+    <div class="note warn">
+      <strong>Rețea pe reacții și distribuiri: nu.</strong>
+      Platforma expune numărul celor care reacționează, nu identitatea lor. Nu există cale de a construi o rețea de interacțiune între organizații din reacții sau distribuiri, la scara acestui corpus.
+      <br><br>
+      Ce rămâne în loc: dacă o organizație e <em>tagată</em> în textul altei postări, mențiunea se codează și intră în rețeaua de co-menționare. Nu e același lucru cu o rețea de reacții, iar diferența se declară acolo unde apare rezultatul.
+    </div>
+    <p>Al doilea lucru care nu se poate: direcția relației. O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a colaborat efectiv, nici cine a iniţiat. Rețelele descriu <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
+  </div>
+</section>
+
+<!-- ============ ENGAGEMENT ============ -->
+<section class="panel" role="tabpanel" id="p-eng" aria-labelledby="t-eng">
+  <h2>Engagement</h2>
+  <p>Reacții, distribuiri și comentarii, preluate direct din extragere. Altă clasă de indicator decât restul: nu cer codare, dar cer precauții de comparabilitate.</p>
+
+  <div class="sec">
+    <h3>Două corecții necesare</h3>
+    <div class="note warn">
+      <strong>Un singur numitor.</strong>
+      Engagement-ul se raportează pe același corpus ca restul analizei. Dacă se raportează și pe totalul postărilor, se spune explicit care cifră e care. Amestecul de numitoare — indicatori calitativi pe postările relevante, engagement pe toate — produce comparații care par valide și nu sunt.
+    </div>
+    <div class="note warn">
+      <strong>Normalizare la audiență.</strong>
+      Paginile din registru diferă cu trei ordine de mărime ca număr de urmăritori. Reacțiile brute nu se compară între organizații. Se raportează media pe postare și valoarea normalizată la urmăritori, iar numărul de zile de la publicare intră ca variabilă de control: postările din 2022 au avut ani de acumulare.
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Ce se raportează</h3>
+    <ul class="plain">
+      <li>Total și medie pe postare, per an și per organizație.</li>
+      <li>Valori normalizate la audiență, pentru comparații între organizații.</li>
+      <li>Acoperirea câmpurilor: la o primă probă, numărul de comentarii lipsea pentru o parte din postări, iar circa 12% dintre postări nu aveau text deloc. Ratele de completitudine se raportează, nu se ascund în medii.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ORGANIZATII ============ -->
+<section class="panel" role="tabpanel" id="p-org" aria-labelledby="t-org">
+  <h2>Organizații</h2>
+  <p>Cele 45 de organizații din registrul de parteneri, cu tipul atribuit de UNHCR și județul de activitate. Profilurile individuale — activități, parteneri, finanțatori, serie de volum — se completează după rulare.</p>
+
+  <div class="figs">
+    <div class="fig"><span class="fig-n">30</span><span class="fig-l">ONG național</span></div>
+    <div class="fig"><span class="fig-n">6</span><span class="fig-l">ONG internațional</span></div>
+    <div class="fig"><span class="fig-n">5</span><span class="fig-l">agenție ONU</span></div>
+    <div class="fig"><span class="fig-n">4</span><span class="fig-l">condusă de refugiați</span></div>
+  </div>
+
+  <div class="tw" id="org-table"><table>
+    <caption>Sursa: registrul de parteneri UNHCR pentru România. Datele de contact din registru nu sunt reproduse.</caption>
+    <thead><tr><th scope="col">Organizație</th><th scope="col">Tip</th><th scope="col">Județ</th></tr></thead>
+    <tbody id="org-body"></tbody>
+  </table></div>
+</section>
+
+<!-- ============ SURSE ============ -->
+<section class="panel" role="tabpanel" id="p-src" aria-labelledby="t-src">
+  <h2>Surse</h2>
+
+  <div class="sec">
+    <h3>Ce se depune public</h3>
+    <ul class="plain">
+      <li><strong>Setul de date validat</strong>, la nivel de postare, cu codurile atribuite și verdictele de arbitraj.</li>
+      <li><strong>Codebook-ul complet</strong>: schema de codare, definițiile operaționale, regulile de decizie și exemplele.</li>
+      <li><strong>Registrul metodologic</strong>: o intrare per rulare, cu modelele folosite și data accesului, versiunea codebook-ului, consumul, rezultatul și abaterile.</li>
+      <li><strong>Tabelele de rezultate</strong> care susțin fiecare figură.</li>
+    </ul>
+    <p>Depunerea se face cu identificator persistent versionat, la momentul submisiei.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce nu se depune</h3>
+    <ul class="plain">
+      <li><strong>Postările brute.</strong> Sunt conținut al terților și includ date personale — nume, imagini, comentarii ale unor persoane identificabile, unele în situație de vulnerabilitate.</li>
+      <li><strong>Datele de contact</strong> din registrul de parteneri.</li>
+      <li><strong>Materialul de lucru nevalidat.</strong> Dosarele intermediare devin material suplimentar doar după arbitraj.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Reguli permanente ale codării</h3>
+    <p>Date agenților verbatim la fiecare rulare, fiecare venind dintr-un eșec observat:</p>
+    <ol class="steps">
+      <li><span class="step-n">1</span><span class="step-b"><p>Citate numai din postarea efectiv primită. Niciodată din memoria modelului.</p></span></li>
+      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere costumată în dată.</p></span></li>
+      <li><span class="step-n">3</span><span class="step-b"><p>Absența unui rezultat nu e absența fenomenului. „Nu apare în text" se codează ca informație insuficientă, nu ca negație.</p></span></li>
+      <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <span>Studiu în desfășurare. Pagina descrie designul și structura de raportare; rezultatele se adaugă pe măsură ce sunt validate.</span>
+  <span>Materialele de lucru — date, codebook, registru metodologic — sunt ținute într-un depozit privat, întrucât includ date personale ale terților.</span>
+</footer>
+
+</div>
+
+<script src="orgs.js"></script>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+
+  function show(id) {
+    tabs.forEach(function (t) {
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('on', p.getAttribute('aria-labelledby') === id);
+    });
+    if (history.replaceState) history.replaceState(null, '', '#' + id.slice(2));
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(t.id); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); show(n.id);
+    });
+  });
+
+  var h = location.hash.replace('#', '');
+  if (h && document.getElementById('t-' + h)) show('t-' + h);
+
+  // tabelul de organizații
+  var ORGS = window.__ORGS__ || [];
+  var TIP = {
+    'National NGO': 'ONG național',
+    'International NGO': 'ONG internațional',
+    'UN agency': 'agenție ONU',
+    'Refugee-led Organization': 'condusă de refugiați'
+  };
+  var body = document.getElementById('org-body');
+  if (body) {
+    ORGS.sort(function (a, b) { return a.nume.localeCompare(b.nume, 'ro'); });
+    ORGS.forEach(function (o) {
+      var tr = document.createElement('tr');
+      [o.nume, TIP[o.tip] || o.tip || '—', o.judet || '—'].forEach(function (v) {
+        var td = document.createElement('td');
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    });
+  }
+})();
+</script>
+</body>
+</html>
