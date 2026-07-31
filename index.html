@@ -351,43 +351,63 @@
 
     <div class="tw">
       <table>
-        <caption>Coduri de activitate, grupate pe sectoarele UNHCR. Toate cele 231 de postări. O postare poate primi mai multe coduri.</caption>
-        <thead><tr><th scope="col">Sector</th><th scope="col" class="num">Coduri</th></tr></thead>
+        <caption>Coduri de activitate, în ordinea frecvenței. Unitatea e <strong>codul</strong>, nu postarea: 207 coduri pe 231 de postări, fiindcă o postare poate primi mai multe. 18 din cele 25 de coduri apar cel puțin o dată.</caption>
+        <thead><tr><th scope="col">Cod</th><th scope="col">Ce e</th><th scope="col" class="num">Coduri</th></tr></thead>
         <tbody>
-          <tr><td>Educație</td><td class="num">75</td></tr>
-          <tr><td><strong>Fără sector UNHCR</strong> (recreativ, mobilizare)</td><td class="num">65</td></tr>
-          <tr><td>Protecție</td><td class="num">40</td></tr>
-          <tr><td>Trai și incluziune economică</td><td class="num">13</td></tr>
-          <tr><td>Sănătate</td><td class="num">9</td></tr>
-          <tr><td>Nevoi de bază</td><td class="num">5</td></tr>
+          <tr><td><code>edu_nonformal</code></td><td>ateliere, cluburi, învățare în afara școlii</td><td class="num">58</td></tr>
+          <tr><td><code>com_recreativ</code></td><td>petreceri, ieșiri, sport, socializare — <em>fără sector UNHCR</em></td><td class="num">47</td></tr>
+          <tr><td><code>prot_informare</code></td><td>informare despre drepturi, proceduri, servicii</td><td class="num">30</td></tr>
+          <tr><td><code>com_mobilizare</code></td><td>apeluri de donații, recrutare de voluntari — <em>fără sector UNHCR</em></td><td class="num">18</td></tr>
+          <tr><td><code>edu_personal</code></td><td>formarea profesioniștilor</td><td class="num">17</td></tr>
+          <tr><td><code>san_mhpss</code></td><td>consiliere psihologică</td><td class="num">7</td></tr>
+          <tr><td><code>liv_limba</code></td><td>cursuri de limbă pentru adulți</td><td class="num">7</td></tr>
+          <tr><td><code>prot_coeziune</code></td><td>evenimente cu comunitatea-gazdă</td><td class="num">6</td></tr>
+          <tr><td><code>baz_hrana</code></td><td>alimente, tichete de masă</td><td class="num">3</td></tr>
+          <tr><td><code>liv_antreprenoriat</code></td><td>microfinanțare, antreprenoriat</td><td class="num">3</td></tr>
+          <tr><td colspan="2">încă 8 coduri, cu 1–2 apariții fiecare</td><td class="num">11</td></tr>
+          <tr><td colspan="2">7 coduri nefolosite în pilot (locuire, WASH, educație formală, protecție socială, transport, GBV, PSEA)</td><td class="num">0</td></tr>
         </tbody>
       </table>
     </div>
 
+    <div class="note">
+      <strong>Două lucruri diferite, ținute separat.</strong>
+      <strong>59 de postări din 231</strong> (26%) nu primesc niciun cod de activitate — nu
+      comunică o activitate concretă. Asta se numără în <em>postări</em>.
+      Separat, <strong>65 de coduri din 207</strong> sunt <code>com_recreativ</code> sau
+      <code>com_mobilizare</code>, singurele două care nu au sector în taxonomia UNHCR. Asta se
+      numără în <em>coduri</em>. Cele două cifre nu se adună și nu descriu același fenomen.
+    </div>
+
     <div class="pull">
-      <p class="pull-q">Reziduul e a doua categorie ca mărime.</p>
-      <p>Activitățile fără sector în taxonomia UNHCR — recreativ și mobilizare de resurse — adună
-      65 de coduri, imediat după educație și înaintea protecției. Designul prevedea că această
-      categorie există și că altfel dispare; pilotul arată cât de mare e. În sistemul care
-      contează pentru finanțare, aceste activități nu se raportează.</p>
+      <p class="pull-q">Activitățile recreative sunt al doilea cod ca frecvență.</p>
+      <p><code>com_recreativ</code> apare de 47 de ori, imediat după educația non-formală (58) și
+      înaintea informării (30). Nu are sector în taxonomia UNHCR, deci în sistemul care contează
+      pentru finanțare nu se raportează. <code>com_mobilizare</code> e tot fără sector, dar
+      măsoară altceva — efortul organizației de a strânge resurse, nu un serviciu către
+      beneficiar; de aceea cele două rămân coduri distincte și nu se însumează într-o categorie
+      comună.</p>
     </div>
 
     <div class="figs">
-      <div class="fig"><span class="fig-n">26%</span><span class="fig-l">postări fără activitate concretă</span></div>
-      <div class="fig"><span class="fig-n">58</span><span class="fig-l">educație non-formală, codul cel mai frecvent</span></div>
-      <div class="fig"><span class="fig-n">47</span><span class="fig-l">activități recreative</span></div>
-      <div class="fig"><span class="fig-n">30</span><span class="fig-l">informare despre drepturi</span></div>
+      <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codate</span></div>
+      <div class="fig"><span class="fig-n">207</span><span class="fig-l">coduri de activitate atribuite</span></div>
+      <div class="fig"><span class="fig-n">59</span><span class="fig-l">postări fără niciun cod</span></div>
+      <div class="fig"><span class="fig-n">18 / 25</span><span class="fig-l">coduri folosite măcar o dată</span></div>
     </div>
     <p>Un sfert dintre postări nu comunică nicio activitate concretă — mulțumiri, aniversări,
     poziționări. Sub codebook, acelea rămân fără cod, iar proporția lor e un rezultat, nu o
-    scăpare a codării.</p>
+    scăpare a codării. Șapte coduri nu apar deloc în pilot: pe un corpus de 231 de postări din
+    șase organizații, absența unui cod spune mai mult despre ce a intrat în eșantion decât
+    despre ce fac organizațiile.</p>
   </div>
 
 
   <div class="sec">
     <h3>Pe oraș și pe an</h3>
     <p>Pilotul acoperă cinci orașe și cinci ani, așa că aceleași codări se pot citi pe fiecare
-    dintre cele două dimensiuni. Alegeți un oraș și un an.</p>
+    dintre cele două dimensiuni. Alegeți un oraș și un an. Barele numără <strong>coduri</strong>,
+    nu postări; cele două marcate cu asterisc nu au sector în taxonomia UNHCR.</p>
 
     <div class="flt">
       <div class="flt-row">
@@ -406,7 +426,8 @@
     </div>
     <p class="flt-note">Procentele apar de la 10 postări în sus; sub prag se arată numărul brut.
     Zece dintre cele douăzeci de celule oraș × an sunt sub prag, iar două sunt goale — la Galați
-    și Suceava paginile nu existau în primii ani.</p>
+    și Suceava paginile nu existau în primii ani. Rândul „alte coduri" adună cele opt coduri cu
+    una-două apariții în tot pilotul.</p>
   </div>
 
   <div class="sec">
@@ -853,7 +874,7 @@
 
 
   // filtru oras x an
-  var CUB = {"sectoare":["Educație","Fără sector","Protecție","Trai","Sănătate","Nevoi de bază","Logistică"],"celule":{"Brașov|2022":{"n":6,"sectoare":{"Educație":0,"Fără sector":1,"Protecție":3,"Trai":0,"Sănătate":0,"Nevoi de bază":1,"Logistică":0},"fara_activitate":3,"simbolism_da":1,"simbolism_n":6,"cu_actor":3,"actori_n":6,"ref_ukr":3,"grup_n":6},"Brașov|2023":{"n":5,"sectoare":{"Educație":0,"Fără sector":4,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":0,"actori_n":5,"ref_ukr":0,"grup_n":5},"Brașov|2024":{"n":1,"sectoare":{"Educație":0,"Fără sector":0,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":1,"grup_n":1},"Brașov|2025":{"n":1,"sectoare":{"Educație":0,"Fără sector":1,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":0,"grup_n":1},"Brașov|2026":{"n":1,"sectoare":{"Educație":1,"Fără sector":1,"Protecție":1,"Trai":1,"Sănătate":1,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":1,"actori_n":1,"ref_ukr":1,"grup_n":1},"București|2022":{"n":26,"sectoare":{"Educație":2,"Fără sector":4,"Protecție":20,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":5,"simbolism_da":7,"simbolism_n":26,"cu_actor":13,"actori_n":26,"ref_ukr":11,"grup_n":26},"București|2023":{"n":25,"sectoare":{"Educație":8,"Fără sector":2,"Protecție":4,"Trai":1,"Sănătate":2,"Nevoi de bază":2,"Logistică":0},"fara_activitate":7,"simbolism_da":6,"simbolism_n":25,"cu_actor":13,"actori_n":25,"ref_ukr":8,"grup_n":25},"București|2024":{"n":12,"sectoare":{"Educație":4,"Fără sector":4,"Protecție":2,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":4,"simbolism_da":2,"simbolism_n":12,"cu_actor":5,"actori_n":12,"ref_ukr":3,"grup_n":12},"București|2025":{"n":5,"sectoare":{"Educație":3,"Fără sector":2,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":2,"grup_n":5},"București|2026":{"n":3,"sectoare":{"Educație":0,"Fără sector":3,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":1,"simbolism_n":3,"cu_actor":0,"actori_n":3,"ref_ukr":1,"grup_n":3},"Constanța|2022":{"n":14,"sectoare":{"Educație":0,"Fără sector":2,"Protecție":4,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":10,"simbolism_da":5,"simbolism_n":14,"cu_actor":2,"actori_n":14,"ref_ukr":6,"grup_n":14},"Constanța|2023":{"n":5,"sectoare":{"Educație":2,"Fără sector":0,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":3,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":0,"grup_n":5},"Constanța|2025":{"n":4,"sectoare":{"Educație":2,"Fără sector":0,"Protecție":0,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":4,"cu_actor":3,"actori_n":4,"ref_ukr":1,"grup_n":4},"Constanța|2026":{"n":16,"sectoare":{"Educație":7,"Fără sector":1,"Protecție":1,"Trai":2,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":6,"simbolism_da":0,"simbolism_n":16,"cu_actor":13,"actori_n":16,"ref_ukr":2,"grup_n":16},"Galați|2023":{"n":27,"sectoare":{"Educație":12,"Fără sector":12,"Protecție":2,"Trai":4,"Sănătate":4,"Nevoi de bază":0,"Logistică":0},"fara_activitate":5,"simbolism_da":6,"simbolism_n":27,"cu_actor":3,"actori_n":27,"ref_ukr":3,"grup_n":27},"Galați|2024":{"n":27,"sectoare":{"Educație":15,"Fără sector":7,"Protecție":0,"Trai":0,"Sănătate":1,"Nevoi de bază":1,"Logistică":0},"fara_activitate":4,"simbolism_da":1,"simbolism_n":27,"cu_actor":1,"actori_n":27,"ref_ukr":1,"grup_n":27},"Galați|2025":{"n":20,"sectoare":{"Educație":10,"Fără sector":6,"Protecție":0,"Trai":1,"Sănătate":1,"Nevoi de bază":0,"Logistică":0},"fara_activitate":2,"simbolism_da":1,"simbolism_n":20,"cu_actor":1,"actori_n":20,"ref_ukr":3,"grup_n":20},"Galați|2026":{"n":13,"sectoare":{"Educație":6,"Fără sector":3,"Protecție":0,"Trai":1,"Sănătate":0,"Nevoi de bază":1,"Logistică":0},"fara_activitate":2,"simbolism_da":0,"simbolism_n":13,"cu_actor":2,"actori_n":13,"ref_ukr":1,"grup_n":13},"Suceava|2025":{"n":12,"sectoare":{"Educație":3,"Fără sector":6,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":3,"simbolism_da":1,"simbolism_n":12,"cu_actor":6,"actori_n":12,"ref_ukr":3,"grup_n":12},"Suceava|2026":{"n":8,"sectoare":{"Educație":0,"Fără sector":6,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":2,"simbolism_da":0,"simbolism_n":8,"cu_actor":2,"actori_n":8,"ref_ukr":0,"grup_n":8}},"orase":["Brașov","București","Constanța","Galați","Suceava"],"ani":["2022","2023","2024","2025","2026"],"organizatii_per_oras":{"Brașov":["MIC Brasov"],"București":["Association Malva","CNRR"],"Constanța":["Novapolis"],"Galați":["Help Ukrainians"],"Suceava":["EDNAE"]}};
+  var CUB = {"coduri":["edu_nonformal","com_recreativ","prot_informare","com_mobilizare","edu_personal","san_mhpss","liv_limba","prot_coeziune","baz_hrana","liv_antreprenoriat"],"etichete":{"edu_nonformal":"educație non-formală","com_recreativ":"recreativ*","prot_informare":"informare","com_mobilizare":"mobilizare*","edu_personal":"formare profesioniști","san_mhpss":"consiliere psihologică","liv_limba":"cursuri de limbă","prot_coeziune":"evenimente cu gazda","baz_hrana":"hrană","liv_antreprenoriat":"antreprenoriat"},"celule":{"Brașov|2022":{"n":6,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":3,"com_mobilizare":1,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":3,"simbolism_da":1,"simbolism_n":6,"cu_actor":3,"actori_n":6,"ref_ukr":3,"grup_n":6},"Brașov|2023":{"n":5,"coduri":{"edu_nonformal":0,"com_recreativ":4,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":0,"actori_n":5,"ref_ukr":0,"grup_n":5},"Brașov|2024":{"n":1,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":1,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":1,"grup_n":1},"Brașov|2025":{"n":1,"coduri":{"edu_nonformal":0,"com_recreativ":1,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":0,"grup_n":1},"Brașov|2026":{"n":1,"coduri":{"edu_nonformal":1,"com_recreativ":1,"prot_informare":1,"com_mobilizare":0,"edu_personal":0,"san_mhpss":1,"liv_limba":1,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":1,"actori_n":1,"ref_ukr":1,"grup_n":1},"București|2022":{"n":26,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":18,"com_mobilizare":4,"edu_personal":2,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":3,"fara_activitate":5,"simbolism_da":7,"simbolism_n":26,"cu_actor":13,"actori_n":26,"ref_ukr":11,"grup_n":26},"București|2023":{"n":25,"coduri":{"edu_nonformal":7,"com_recreativ":2,"prot_informare":2,"com_mobilizare":0,"edu_personal":1,"san_mhpss":2,"liv_limba":0,"prot_coeziune":2,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":2,"fara_activitate":7,"simbolism_da":6,"simbolism_n":25,"cu_actor":13,"actori_n":25,"ref_ukr":8,"grup_n":25},"București|2024":{"n":12,"coduri":{"edu_nonformal":3,"com_recreativ":3,"prot_informare":1,"com_mobilizare":1,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":2,"fara_activitate":4,"simbolism_da":2,"simbolism_n":12,"cu_actor":5,"actori_n":12,"ref_ukr":3,"grup_n":12},"București|2025":{"n":5,"coduri":{"edu_nonformal":2,"com_recreativ":2,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":2,"grup_n":5},"București|2026":{"n":3,"coduri":{"edu_nonformal":0,"com_recreativ":1,"prot_informare":0,"com_mobilizare":2,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":1,"simbolism_n":3,"cu_actor":0,"actori_n":3,"ref_ukr":1,"grup_n":3},"Constanța|2022":{"n":14,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":4,"com_mobilizare":2,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":10,"simbolism_da":5,"simbolism_n":14,"cu_actor":2,"actori_n":14,"ref_ukr":6,"grup_n":14},"Constanța|2023":{"n":5,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":2,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":3,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":0,"grup_n":5},"Constanța|2025":{"n":4,"coduri":{"edu_nonformal":1,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":1},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":4,"cu_actor":3,"actori_n":4,"ref_ukr":1,"grup_n":4},"Constanța|2026":{"n":16,"coduri":{"edu_nonformal":2,"com_recreativ":1,"prot_informare":0,"com_mobilizare":0,"edu_personal":5,"san_mhpss":0,"liv_limba":0,"prot_coeziune":1,"baz_hrana":0,"liv_antreprenoriat":2},"alte_coduri":0,"fara_activitate":6,"simbolism_da":0,"simbolism_n":16,"cu_actor":13,"actori_n":16,"ref_ukr":2,"grup_n":16},"Galați|2023":{"n":27,"coduri":{"edu_nonformal":12,"com_recreativ":11,"prot_informare":0,"com_mobilizare":1,"edu_personal":0,"san_mhpss":3,"liv_limba":4,"prot_coeziune":2,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":5,"simbolism_da":6,"simbolism_n":27,"cu_actor":3,"actori_n":27,"ref_ukr":3,"grup_n":27},"Galați|2024":{"n":27,"coduri":{"edu_nonformal":14,"com_recreativ":7,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":1,"liv_limba":0,"prot_coeziune":0,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":4,"simbolism_da":1,"simbolism_n":27,"cu_actor":1,"actori_n":27,"ref_ukr":1,"grup_n":27},"Galați|2025":{"n":20,"coduri":{"edu_nonformal":10,"com_recreativ":6,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":1,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":2,"simbolism_da":1,"simbolism_n":20,"cu_actor":1,"actori_n":20,"ref_ukr":3,"grup_n":20},"Galați|2026":{"n":13,"coduri":{"edu_nonformal":6,"com_recreativ":2,"prot_informare":0,"com_mobilizare":1,"edu_personal":0,"san_mhpss":0,"liv_limba":1,"prot_coeziune":0,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":2,"simbolism_da":0,"simbolism_n":13,"cu_actor":2,"actori_n":13,"ref_ukr":1,"grup_n":13},"Suceava|2025":{"n":12,"coduri":{"edu_nonformal":0,"com_recreativ":6,"prot_informare":1,"com_mobilizare":0,"edu_personal":3,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":3,"simbolism_da":1,"simbolism_n":12,"cu_actor":6,"actori_n":12,"ref_ukr":3,"grup_n":12},"Suceava|2026":{"n":8,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":6,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":2,"simbolism_da":0,"simbolism_n":8,"cu_actor":2,"actori_n":8,"ref_ukr":0,"grup_n":8}},"orase":["Brașov","București","Constanța","Galați","Suceava"],"ani":["2022","2023","2024","2025","2026"],"organizatii_per_oras":{"Brașov":["MIC Brasov"],"București":["Association Malva","CNRR"],"Constanța":["Novapolis"],"Galați":["Help Ukrainians"],"Suceava":["EDNAE"]}};
   (function () {
     var wrapOrase = document.getElementById('flt-orase');
     if (!wrapOrase) return;
@@ -881,8 +902,8 @@
 
     function agg() {
       var an = ani[Number(slider.value)];
-      var acc = {n: 0, sect: {}, fara: 0, sd: 0, sn: 0, ca: 0, an_: 0, ru: 0, gn: 0};
-      CUB.sectoare.forEach(function (s) { acc.sect[s] = 0; });
+      var acc = {n: 0, sect: {}, alte: 0, fara: 0, sd: 0, sn: 0, ca: 0, an_: 0, ru: 0, gn: 0};
+      CUB.coduri.forEach(function (s) { acc.sect[s] = 0; }); acc.alte = 0;
       Object.keys(CUB.celule).forEach(function (k) {
         var p = k.split('|');
         if (selOras !== 'toate' && p[0] !== selOras) return;
@@ -892,7 +913,8 @@
         acc.sd += c.simbolism_da; acc.sn += c.simbolism_n;
         acc.ca += c.cu_actor; acc.an_ += c.actori_n;
         acc.ru += c.ref_ukr; acc.gn += c.grup_n;
-        CUB.sectoare.forEach(function (s) { acc.sect[s] += c.sectoare[s] || 0; });
+        CUB.coduri.forEach(function (s) { acc.sect[s] += c.coduri[s] || 0; });
+        acc.alte += c.alte_coduri || 0;
       });
       return {an: an, a: acc};
     }
@@ -917,18 +939,20 @@
         + (orgs ? ' (' + orgs + ')' : '')
         + (a.n < 10 ? ' — sub 10, se arată numere brute' : '');
 
-      var max = 0;
-      CUB.sectoare.forEach(function (s) { if (a.sect[s] > max) max = a.sect[s]; });
-      CUB.sectoare.forEach(function (s) {
-        if (!a.sect[s]) return;
+      var max = a.alte;
+      CUB.coduri.forEach(function (s) { if (a.sect[s] > max) max = a.sect[s]; });
+      var linii = CUB.coduri.map(function (s) { return [CUB.etichete[s], a.sect[s]]; });
+      if (a.alte) linii.push(['alte coduri', a.alte]);
+      linii.forEach(function (p) {
+        if (!p[1]) return;
         var row = document.createElement('div'); row.className = 'bar-r';
-        var lab = document.createElement('span'); lab.textContent = s;
+        var lab = document.createElement('span'); lab.textContent = p[0];
         var tr = document.createElement('div'); tr.className = 'bar-t';
         var fl = document.createElement('div'); fl.className = 'bar-f';
-        fl.style.width = max ? (a.sect[s] / max * 100) + '%' : '0';
+        fl.style.width = max ? (p[1] / max * 100) + '%' : '0';
         tr.appendChild(fl);
         var num = document.createElement('span'); num.className = 'bar-n';
-        num.textContent = String(a.sect[s]);
+        num.textContent = String(p[1]);
         row.appendChild(lab); row.appendChild(tr); row.appendChild(num);
         bars.appendChild(row);
       });
