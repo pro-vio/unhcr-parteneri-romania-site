@@ -175,6 +175,27 @@
   .hm td.hm-hi{color:var(--paper)}
   .hm td.hm-0{color:var(--ink-faint)}
   .hm .hm-v2{display:block; font-size:.68rem; opacity:.72}
+  /* serii lunare */
+  .ser{background:var(--surface); border:1px solid var(--rule); padding:.9rem 1rem;
+       display:flex; flex-direction:column; gap:.15rem}
+  .ser svg{display:block; width:100%; height:auto; overflow:visible}
+  .ser-cap{font-size:var(--s--1); color:var(--ink-faint); padding-bottom:.5rem;
+           border-bottom:1px solid var(--rule); margin-bottom:.6rem; line-height:1.45}
+  .ser-cap strong{color:var(--ink-soft)}
+  .sm{display:grid; grid-template-columns:9.5rem 1fr; gap:.5rem; align-items:center;
+      border-top:1px solid var(--rule); padding:.28rem 0}
+  .sm:first-of-type{border-top:0}
+  .sm-l{font-size:.84rem; color:var(--ink); line-height:1.25}
+  .sm-l small{display:block; font-family:var(--mono); font-size:.66rem;
+              color:var(--ink-faint)}
+  .s-ax{font-family:var(--mono); font-size:9px; fill:var(--ink-faint)}
+  .s-grid{stroke:var(--rule); stroke-width:1}
+  .s-line{fill:none; stroke:var(--accent); stroke-width:1.6;
+          stroke-linejoin:round; stroke-linecap:round}
+  .s-area{fill:var(--accent); opacity:.13}
+  .s-mark{stroke:var(--sienna); stroke-width:1; stroke-dasharray:2 2}
+  .s-dot{fill:var(--sienna)}
+  @media (max-width:32rem){.sm{grid-template-columns:1fr; gap:.1rem}}
   .hm-key{display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;
           font-size:var(--s--1); color:var(--ink-faint); padding:.1rem 0}
   .hm-key .hm-ramp{display:flex; gap:1px}
@@ -320,29 +341,39 @@
     </div>
 
     <div class="figs">
-      <div class="fig"><span class="fig-n">274</span><span class="fig-l">postări extrase</span></div>
-      <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codabile</span></div>
-      <div class="fig"><span class="fig-n">43</span><span class="fig-l">postări fără text (15,7%)</span></div>
-      <div class="fig"><span class="fig-n">11 / 30</span><span class="fig-l">celule organizație × an goale</span></div>
+      <div class="fig"><span class="fig-n">2 853</span><span class="fig-l">postări extrase, seria completă</span></div>
+      <div class="fig"><span class="fig-n">57</span><span class="fig-l">luni acoperite (nov. 2021 – iul. 2026)</span></div>
+      <div class="fig"><span class="fig-n">274</span><span class="fig-l">postări în lunile codate</span></div>
+      <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codabile (43 fără text)</span></div>
     </div>
 
-    <div class="tw" data-heat="volum"></div>
+    <div class="ser" data-serie="volum-total"></div>
 
-    <p><strong>Totalul pe an nu scade</strong> — 52, 71, 49, 51, 51 de postări extrase — dar asta
-    nu descrie nicio organizație. Compoziția se schimbă sub el: CNRR merge de la 27 de postări în
-    martie 2022 la 2 în 2026, Help Ukrainians apare abia în 2023 și își face vârful în 2024, iar
-    EDNAE intră în corpus în 2025. <strong>Agregatul ascunde exact ce trebuie citit pe rânduri.</strong></p>
+    <p>Vârful nu cade în martie 2022, ci în <strong>octombrie 2022</strong>, cu 96 de postări.
+    Seria agregată nu are forma de criză a unui studiu de caz — urcă în a doua jumătate a lui 2022,
+    se menține în jur de 50 de postări pe lună și scade abia spre final. Dar agregatul e suma a
+    șase pagini care nu trăiesc în același timp.</p>
 
-    <div class="note">
-      <strong>De ce contează comparația cu studiul de caz.</strong>
-      Pe o singură organizație, coloana „an" măsoară timpul: se vede vârful de urgență și
-      așezarea ulterioară. Pe șase organizații cu acoperire inegală, aceeași coloană amestecă
-      timpul cu întrebarea „cine era în corpus atunci". De aceea fiecare rezultat de mai departe
-      se taie de două ori — pe an <em>și</em> pe organizație — iar cel pe an nu se citește fără
-      harta de aici.
+    <div class="ser" data-serie="volum-org"></div>
+
+    <p>Pe rânduri se vede altceva. <strong>CNRR</strong> are vârful exact în martie 2022 și scade
+    apoi continuu — singura traiectorie de tip criză din lot. <strong>Help Ukrainians</strong>,
+    cea mai mare pagină din corpus, începe abia în august 2022 și își face vârful în aprilie 2024.
+    <strong>EDNAE</strong> apare în aprilie 2024. <strong>Association Malva</strong> urcă în
+    toamna lui 2022 și tace după martie 2026. O singură serie agregată le-ar face pe toate să
+    arate ca una singură, care nu e a nimănui.</p>
+
+    <div class="note warn">
+      <strong>Prima lună observată nu e prima lună a paginii.</strong>
+      Extragerea are o limită, deci începutul unei serii poate fi capătul extragerii, nu al
+      activității. Seriile nu se completează cu zerouri înainte de prima postare observată, iar
+      fiecare organizație își poartă intervalul. Pentru rularea completă, limita se dimensionează
+      pe organizația cea mai activă — la o primă probă, o limită uniformă a trunchiat istoricul
+      unei organizații la un sfert din ce avea.
     </div>
 
-    <p>Diferența dintre extras și codabil e materială: <strong>43 de postări nu au niciun text</strong>
+    <p>Liniile punctate marchează <strong>cele cinci luni de martie</strong> care formează
+    corpusul codat: 274 de postări extrase, 231 codabile. Cele 43 de diferență nu au niciun text
     — fotografii și clipuri fără descriere. Se extrag și au reacții, deci intră în engagement, dar
     nu se pot coda. Numitorul e altul în fiecare tab și e scris de fiecare dată.</p>
   </div>
@@ -671,6 +702,45 @@
   <p>Reacții, distribuiri și comentarii, preluate direct din extragere. Altă clasă de indicator decât restul: nu cer codare, dar cer precauții de comparabilitate.</p>
 
   <div class="sec">
+    <h3>Primele rezultate, pe corpusul-pilot</h3>
+    <p>Engagement-ul se citește pe seria completă, nu doar pe lunile codate: nu cere codare, deci
+    numitorul lui sunt toate cele 2 853 de postări extrase.</p>
+
+    <div class="figs">
+      <div class="fig"><span class="fig-n">97,4%</span><span class="fig-l">postări cu număr de reacții</span></div>
+      <div class="fig"><span class="fig-n">43,9%</span><span class="fig-l">cu număr de distribuiri</span></div>
+      <div class="fig"><span class="fig-n">18,7%</span><span class="fig-l">cu număr de comentarii</span></div>
+      <div class="fig"><span class="fig-n">13,5 → 7,5</span><span class="fig-l">mediana reacțiilor, 2022 → 2026</span></div>
+    </div>
+
+    <div class="note warn">
+      <strong>Comentariile nu se pot raporta.</strong>
+      Cifra lipsește pentru patru din cinci postări extrase. Distribuirile lipsesc pentru mai mult
+      de jumătate. Se raportează ratele de completitudine, iar indicatorii construiți pe câmpuri
+      incomplete nu se raportează deloc — o medie calculată pe 18,7% din postări arată la fel de
+      convingător ca una calculată pe toate.
+    </div>
+
+    <div class="ser" data-serie="reactii-total"></div>
+
+    <p>Mediana reacțiilor scade de la 13,5 (2022) la 7,5 (2026) — dar aceeași rezervă ca la volum:
+    scăderea agregată amestecă șase pagini cu audiențe diferite, iar cele care intră mai târziu în
+    corpus sunt și cele mai mici.</p>
+
+    <div class="ser" data-serie="reactii-org"></div>
+
+    <p><strong>Volumul comunicării și atenția primită nu merg împreună.</strong> Mediana
+    reacțiilor pe toată seria: MIC Brașov 21 și CNRR 20 în capul listei, apoi Association Malva 15,
+    EDNAE 11, Help Ukrainians 10, Novapolis 5. Pagina cu cele mai multe postări din corpus
+    (Help Ukrainians, 1 211) e printre ultimele la reacții pe postare, iar cea mai mică
+    (MIC Brașov, 171) e prima. Cele două se raportează separat.</p>
+
+    <p>Cifrele de mai sus sunt brute, nu normalizate la audiență — nu avem încă numărul de
+    urmăritori pentru fiecare pagină. Până atunci nu susțin comparații între organizații, doar
+    forma seriei în interiorul fiecăreia.</p>
+  </div>
+
+  <div class="sec">
     <h3>Două corecții necesare</h3>
     <div class="note warn">
       <strong>Un singur numitor.</strong>
@@ -881,6 +951,7 @@
 
 <script src="orgs.js"></script>
 <script src="matrici.js"></script>
+<script src="serii.js"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -916,6 +987,161 @@
     if (x && document.getElementById('t-' + x)) show('t-' + x);
   });
 
+
+  // serii lunare continue: volumul si engagement-ul nu sunt matrici, sunt serii.
+  // Lunile fara date raman goale (linia se intrerupe), nu zero.
+  (function () {
+    if (typeof SERII === 'undefined') return;
+    var gazde = document.querySelectorAll('[data-serie]');
+    if (!gazde.length) return;
+    var L = SERII.luni, N = L.length, NS = 'http://www.w3.org/2000/svg';
+
+    function el(n, a) {
+      var x = document.createElementNS(NS, n);
+      for (var k in a) if (a[k] != null) x.setAttribute(k, a[k]);
+      return x;
+    }
+    function px(i, w, pad) { return pad.l + i * (w - pad.l - pad.r) / (N - 1); }
+    function py(v, max, h, pad) {
+      return h - pad.b - (v / max) * (h - pad.t - pad.b);
+    }
+    // segmente continue: o pauza in date rupe linia, nu o coboara la zero
+    function segmente(s) {
+      var out = [], cur = [];
+      s.forEach(function (v, i) {
+        if (v == null) { if (cur.length) out.push(cur); cur = []; }
+        else cur.push([i, v]);
+      });
+      if (cur.length) out.push(cur);
+      return out;
+    }
+    function cale(seg, max, w, h, pad) {
+      return seg.map(function (p, i) {
+        return (i ? 'L' : 'M') + px(p[0], w, pad).toFixed(1) + ' ' +
+               py(p[1], max, h, pad).toFixed(1);
+      }).join(' ');
+    }
+
+    function grafic(s, opt) {
+      var w = 900, h = opt.h, pad = opt.pad, max = opt.max;
+      var svg = el('svg', {viewBox: '0 0 ' + w + ' ' + h, role: 'img',
+                           'aria-label': opt.alt});
+      // caroiaj orizontal si axa y
+      (opt.tics || []).forEach(function (t) {
+        var y = py(t, max, h, pad);
+        svg.appendChild(el('line', {x1: pad.l, y1: y, x2: w - pad.r, y2: y, class: 's-grid'}));
+        var lb = el('text', {x: pad.l - 6, y: y + 3, class: 's-ax', 'text-anchor': 'end'});
+        lb.textContent = t; svg.appendChild(lb);
+      });
+      // lunile codate: martie din fiecare an
+      SERII.luni_codate.forEach(function (m) {
+        var i = L.indexOf(m); if (i < 0) return;
+        svg.appendChild(el('line', {x1: px(i, w, pad), y1: pad.t - 2, x2: px(i, w, pad),
+                                    y2: h - pad.b, class: 's-mark'}));
+      });
+      // ianuarie: reper de an
+      if (opt.ani) {
+        L.forEach(function (m, i) {
+          if (m.slice(5) !== '01' && i !== 0) return;
+          var t = el('text', {x: px(i, w, pad), y: h - 2, class: 's-ax', 'text-anchor': 'middle'});
+          t.textContent = m.slice(0, 4); svg.appendChild(t);
+        });
+      }
+      segmente(opt.serie).forEach(function (seg) {
+        if (opt.arie && seg.length > 1) {
+          var d = cale(seg, max, w, h, pad) +
+                  ' L' + px(seg[seg.length - 1][0], w, pad).toFixed(1) + ' ' + (h - pad.b) +
+                  ' L' + px(seg[0][0], w, pad).toFixed(1) + ' ' + (h - pad.b) + ' Z';
+          svg.appendChild(el('path', {d: d, class: 's-area'}));
+        }
+        if (seg.length > 1) svg.appendChild(el('path', {d: cale(seg, max, w, h, pad), class: 's-line'}));
+        else svg.appendChild(el('circle', {cx: px(seg[0][0], w, pad),
+                                           cy: py(seg[0][1], max, h, pad), r: 2, class: 's-dot'}));
+      });
+      // punct pe lunile codate, acolo unde exista valoare
+      SERII.luni_codate.forEach(function (m) {
+        var i = L.indexOf(m), v = opt.serie[i];
+        if (i < 0 || v == null) return;
+        var c = el('circle', {cx: px(i, w, pad), cy: py(v, max, h, pad), r: 2.6, class: 's-dot'});
+        var t = el('title'); t.textContent = m + ': ' + v; c.appendChild(t);
+        svg.appendChild(c);
+      });
+      return svg;
+    }
+
+    function capt(txt) {
+      var p = document.createElement('p');
+      p.className = 'ser-cap'; p.innerHTML = txt;
+      return p;
+    }
+    function maxim(arrs) {
+      var m = 0;
+      arrs.forEach(function (a) { a.forEach(function (v) { if (v != null && v > m) m = v; }); });
+      return m;
+    }
+    function tics(max) {
+      var pas = max > 60 ? 25 : max > 30 ? 20 : max > 12 ? 10 : 5, t = [];
+      for (var v = 0; v <= max; v += pas) t.push(v);
+      return t;
+    }
+
+    function mici(g, camp, max, unit) {
+      SERII.organizatii.forEach(function (o) {
+        var row = document.createElement('div');
+        row.className = 'sm';
+        var lb = document.createElement('div');
+        lb.className = 'sm-l';
+        lb.innerHTML = o.nume + '<small>' + o.oras + ' · ' + o.n + ' postări · ' +
+                       o.prima + '→' + o.ultima + '</small>';
+        var box = document.createElement('div');
+        box.appendChild(grafic(o, {serie: o[camp], max: max, h: 52,
+                                   pad: {l: 22, r: 4, t: 6, b: 6}, arie: true, tics: [max],
+                                   alt: o.nume + ': ' + unit}));
+        row.appendChild(lb); row.appendChild(box);
+        g.appendChild(row);
+      });
+    }
+
+    var reteta = {
+      'volum-total': function (g) {
+        var s = SERII.total.volum, max = Math.ceil(maxim([s]) / 25) * 25;
+        g.appendChild(capt('<strong>Postări pe lună, toate cele șase organizații</strong> — ' +
+          SERII.n_total + ' de postări extrase, ' + N + ' de luni. Liniile punctate sunt lunile ' +
+          'care formează corpusul codat: martie din fiecare an.'));
+        g.appendChild(grafic({}, {serie: s, max: max, h: 230,
+          pad: {l: 26, r: 6, t: 10, b: 16}, arie: true, ani: true, tics: tics(max),
+          alt: 'Serie lunară a numărului de postări, noiembrie 2021 – iulie 2026'}));
+      },
+      'volum-org': function (g) {
+        var max = maxim(SERII.organizatii.map(function (o) { return o.volum; }));
+        g.appendChild(capt('<strong>Aceleași luni, pe fiecare organizație</strong> — aceeași ' +
+          'scară pe verticală (maximul e ' + max + ' de postări într-o lună) și aceeași axă a ' +
+          'timpului. Unde nu s-a extras nimic, linia se întrerupe: nu știm dacă pagina tăcea ' +
+          'sau dacă extragerea nu a ajuns până acolo.'));
+        mici(g, 'volum', max, 'postări pe lună');
+      },
+      'reactii-total': function (g) {
+        var s = SERII.total.reactii, max = Math.ceil(maxim([s]) / 10) * 10;
+        g.appendChild(capt('<strong>Mediana reacțiilor pe postare, lună de lună</strong> — ' +
+          'mediana, nu media: distribuția are cozi lungi, o postară virală ar muta media. ' +
+          'Cifre brute, nenormalizate la audiență.'));
+        g.appendChild(grafic({}, {serie: s, max: max, h: 200,
+          pad: {l: 26, r: 6, t: 10, b: 16}, arie: true, ani: true, tics: tics(max),
+          alt: 'Serie lunară a medianei reacțiilor'}));
+      },
+      'reactii-org': function (g) {
+        var max = maxim(SERII.organizatii.map(function (o) { return o.reactii; }));
+        g.appendChild(capt('<strong>Mediana reacțiilor, pe fiecare organizație</strong> — ' +
+          'aceeași scară pe verticală (maximul e ' + max + ' de reacții, mediana unei luni).'));
+        mici(g, 'reactii', max, 'mediana reacțiilor pe lună');
+      }
+    };
+
+    Array.prototype.forEach.call(gazde, function (g) {
+      var f = reteta[g.getAttribute('data-serie')];
+      if (f) f(g);
+    });
+  })();
 
   // harti de caldura: rand = categoria, coloana = anul sau organizatia.
   // Celula poarta cifra bruta; intensitatea e cifra raportata la numitorul coloanei,
