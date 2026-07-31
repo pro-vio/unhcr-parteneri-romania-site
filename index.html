@@ -11,6 +11,7 @@
     --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
     --rule:#d3dbd6; --accent:#2f6b5e; --accent-rgb:47,107,94; --accent-soft:#e0eae5;
     --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;
+    --ser-1:#2a78d6; --ser-2:#eb6834; --ser-3:#1baf7a; --ser-4:#eda100; --ser-5:#e87ba4; --ser-6:#008300;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
@@ -21,17 +22,20 @@
     --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
     --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
     --rule:#2a3532; --accent:#74bda9; --accent-rgb:116,189,169; --accent-soft:#1c2a27;
-    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}}
+    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;
+    --ser-1:#3987e5; --ser-2:#d95926; --ser-3:#199e70; --ser-4:#c98500; --ser-5:#d55181; --ser-6:#008300;}}
   :root[data-theme="dark"]{
     --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
     --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
     --rule:#2a3532; --accent:#74bda9; --accent-rgb:116,189,169; --accent-soft:#1c2a27;
-    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}
+    --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;
+    --ser-1:#3987e5; --ser-2:#d95926; --ser-3:#199e70; --ser-4:#c98500; --ser-5:#d55181; --ser-6:#008300;}
   :root[data-theme="light"]{
     --paper:#f1f4f2; --surface:#fff; --surface-2:#e8ede9;
     --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
     --rule:#d3dbd6; --accent:#2f6b5e; --accent-rgb:47,107,94; --accent-soft:#e0eae5;
-    --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;}
+    --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;
+    --ser-1:#2a78d6; --ser-2:#eb6834; --ser-3:#1baf7a; --ser-4:#eda100; --ser-5:#e87ba4; --ser-6:#008300;}
 
   *{box-sizing:border-box}
   body{
@@ -175,27 +179,50 @@
   .hm td.hm-hi{color:var(--paper)}
   .hm td.hm-0{color:var(--ink-faint)}
   .hm .hm-v2{display:block; font-size:.68rem; opacity:.72}
-  /* serii lunare */
+  /* serii lunare — o linie per organizatie, culoare fixa pe entitate */
   .ser{background:var(--surface); border:1px solid var(--rule); padding:.9rem 1rem;
-       display:flex; flex-direction:column; gap:.15rem}
+       display:flex; flex-direction:column; gap:.15rem; position:relative}
   .ser svg{display:block; width:100%; height:auto; overflow:visible}
   .ser-cap{font-size:var(--s--1); color:var(--ink-faint); padding-bottom:.5rem;
            border-bottom:1px solid var(--rule); margin-bottom:.6rem; line-height:1.45}
   .ser-cap strong{color:var(--ink-soft)}
-  .sm{display:grid; grid-template-columns:9.5rem 1fr; gap:.5rem; align-items:center;
-      border-top:1px solid var(--rule); padding:.28rem 0}
-  .sm:first-of-type{border-top:0}
-  .sm-l{font-size:.84rem; color:var(--ink); line-height:1.25}
-  .sm-l small{display:block; font-family:var(--mono); font-size:.66rem;
-              color:var(--ink-faint)}
   .s-ax{font-family:var(--mono); font-size:9px; fill:var(--ink-faint)}
+  .s-lab{font-family:var(--sans); font-size:10px; fill:var(--ink-soft)}
   .s-grid{stroke:var(--rule); stroke-width:1}
-  .s-line{fill:none; stroke:var(--accent); stroke-width:1.6;
-          stroke-linejoin:round; stroke-linecap:round}
-  .s-area{fill:var(--accent); opacity:.13}
-  .s-mark{stroke:var(--sienna); stroke-width:1; stroke-dasharray:2 2}
-  .s-dot{fill:var(--sienna)}
-  @media (max-width:32rem){.sm{grid-template-columns:1fr; gap:.1rem}}
+  .s-line{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+  .s-mark{stroke:var(--ink-faint); stroke-width:1; stroke-dasharray:2 3; opacity:.55}
+  .s-cross{stroke:var(--ink-faint); stroke-width:1}
+  .s-pal{opacity:1; transition:opacity .15s}
+  .s-pal.off{opacity:.15}
+  /* controale: o linie deasupra graficelor */
+  .ser-ctl{background:var(--surface); border:1px solid var(--rule); padding:.7rem .9rem;
+           display:flex; flex-direction:column; gap:.6rem}
+  .ser-ctl-row{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+  .flt-lbl{font-family:var(--mono); font-size:var(--s--1); letter-spacing:.06em;
+           text-transform:uppercase; color:var(--ink-faint); min-width:3.4rem}
+  .flt-note{font-size:var(--s--1); color:var(--ink-faint); line-height:1.45}
+  @media (max-width:32rem){.flt-lbl{min-width:auto; width:100%}}
+  .chip{appearance:none; border:1px solid var(--rule); background:var(--surface-2);
+        color:var(--ink-soft); font-family:var(--sans); font-size:.85rem;
+        padding:.25rem .65rem; border-radius:2px; cursor:pointer; line-height:1.3}
+  .chip:hover{color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent);
+                             color:var(--paper); font-weight:600}
+  .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ser-leg{display:flex; flex-wrap:wrap; gap:.15rem .9rem; font-size:var(--s--1);
+           color:var(--ink-soft)}
+  .ser-leg span{display:inline-flex; align-items:center; gap:.35rem}
+  .ser-leg i{width:.75rem; height:.2rem; border-radius:1px; display:block}
+  .s-tip{position:absolute; pointer-events:none; z-index:3; background:var(--surface);
+         border:1px solid var(--rule); box-shadow:0 1px 6px rgba(0,0,0,.12);
+         padding:.4rem .55rem; font-size:var(--s--1); color:var(--ink-soft);
+         min-width:8rem; display:none}
+  .s-tip b{color:var(--ink); font-family:var(--mono); font-size:var(--s--1);
+           display:block; margin-bottom:.2rem}
+  .s-tip div{display:flex; align-items:center; gap:.35rem; white-space:nowrap}
+  .s-tip i{width:.6rem; height:.2rem; border-radius:1px; display:block; flex:none}
+  .s-tip u{margin-left:auto; text-decoration:none; font-family:var(--mono);
+           color:var(--ink); font-variant-numeric:tabular-nums}
   .hm-key{display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;
           font-size:var(--s--1); color:var(--ink-faint); padding:.1rem 0}
   .hm-key .hm-ramp{display:flex; gap:1px}
@@ -228,7 +255,7 @@
 
 <div class="tabs" role="tablist" aria-label="Secțiuni">
   <button class="tab" role="tab" id="t-cod" aria-controls="p-cod" aria-selected="true">Codebook</button>
-  <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Volum și evoluție</button>
+  <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Postări</button>
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea</button>
@@ -329,7 +356,7 @@
 
 <!-- ============ VOLUM ============ -->
 <section class="panel" role="tabpanel" id="p-vol" aria-labelledby="t-vol">
-  <h2>Volum și evoluție</h2>
+  <h2>Postări</h2>
   <p>Primul strat, care nu cere codare: cât comunică fiecare organizație și cum se schimbă ritmul în timp. Situează tot ce urmează.</p>
 
   <div class="sec">
@@ -347,21 +374,14 @@
       <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codabile (43 fără text)</span></div>
     </div>
 
-    <div class="ser" data-serie="volum-total"></div>
+    <div class="ser-ctl" data-serie-ctl></div>
+    <div class="ser" data-serie="volum"></div>
 
-    <p>Vârful nu cade în martie 2022, ci în <strong>octombrie 2022</strong>, cu 96 de postări.
-    Seria agregată nu are forma de criză a unui studiu de caz — urcă în a doua jumătate a lui 2022,
-    se menține în jur de 50 de postări pe lună și scade abia spre final. Dar agregatul e suma a
-    șase pagini care nu trăiesc în același timp.</p>
-
-    <div class="ser" data-serie="volum-org"></div>
-
-    <p>Pe rânduri se vede altceva. <strong>CNRR</strong> are vârful exact în martie 2022 și scade
-    apoi continuu — singura traiectorie de tip criză din lot. <strong>Help Ukrainians</strong>,
-    cea mai mare pagină din corpus, începe abia în august 2022 și își face vârful în aprilie 2024.
-    <strong>EDNAE</strong> apare în aprilie 2024. <strong>Association Malva</strong> urcă în
-    toamna lui 2022 și tace după martie 2026. O singură serie agregată le-ar face pe toate să
-    arate ca una singură, care nu e a nimănui.</p>
+    <p><strong>Nicio pagină nu urmează traiectoria alteia.</strong> CNRR are vârful exact în
+    martie 2022 și scade apoi continuu — singura traiectorie de tip criză din lot.
+    Help Ukrainians, cea mai mare pagină din corpus, începe abia în august 2022 și își face vârful
+    în aprilie 2024. EDNAE apare în aprilie 2024. Association Malva urcă în toamna lui 2022 și
+    tace după martie 2026. Suma lor ar arăta ca o singură serie care nu e a nimănui.</p>
 
     <div class="note warn">
       <strong>Prima lună observată nu e prima lună a paginii.</strong>
@@ -707,37 +727,48 @@
     numitorul lui sunt toate cele 2 853 de postări extrase.</p>
 
     <div class="figs">
-      <div class="fig"><span class="fig-n">97,4%</span><span class="fig-l">postări cu număr de reacții</span></div>
-      <div class="fig"><span class="fig-n">43,9%</span><span class="fig-l">cu număr de distribuiri</span></div>
-      <div class="fig"><span class="fig-n">18,7%</span><span class="fig-l">cu număr de comentarii</span></div>
-      <div class="fig"><span class="fig-n">13,5 → 7,5</span><span class="fig-l">mediana reacțiilor, 2022 → 2026</span></div>
+      <div class="fig"><span class="fig-n">97,4%</span><span class="fig-l">postări cu cel puțin o reacție</span></div>
+      <div class="fig"><span class="fig-n">43,9%</span><span class="fig-l">cu cel puțin o distribuire</span></div>
+      <div class="fig"><span class="fig-n">18,7%</span><span class="fig-l">cu cel puțin un comentariu</span></div>
+      <div class="fig"><span class="fig-n">40 997</span><span class="fig-l">reacții, pe toată seria</span></div>
     </div>
+
+    <div class="note">
+      <strong>Celula goală înseamnă zero, nu „neextras".</strong>
+      În exporturi, valoarea 0 nu apare niciodată, iar minimul e 1 la toate trei câmpurile — un
+      câmp care s-ar extrage doar uneori ar avea și zerouri. Aceleași coloane, în exporturile
+      studiului de caz din care pornim, sunt pline și conțin 0 explicit, în aceeași proporție.
+      Deci cele trei câmpuri sunt extrase pentru toate postările, iar procentele de mai sus sunt
+      rezultate despre <em>tăcerea publicului</em>, nu despre lacune de date.
+    </div>
+
+    <div class="ser-ctl" data-serie-ctl></div>
+    <div class="ser" data-serie="reactii"></div>
+
+    <p>Reacțiile urmează în mare volumul, cu o excepție: <strong>CNRR strânge aproape tot atâtea
+    reacții cât Help Ukrainians, din de două ori și jumătate mai puține postări</strong> — 11 319
+    față de 12 519, din 468 față de 1 211.</p>
+
+    <div class="ser" data-serie="share"></div>
+
+    <p><strong>Distribuirea are altă formă decât reacția.</strong> Vârful întregii serii cade în
+    februarie 2022, luna invaziei: 1 462 de distribuiri, din care 1 439 la CNRR și 684 dintr-o
+    singură postare. Nimic din restul intervalului nu se apropie. Distribuirea e forma de
+    engagement care răspunde la urgență; reacția, nu.</p>
+
+    <div class="ser" data-serie="comentarii"></div>
+
+    <p><strong>Comentariul e indicatorul cel mai apropiat de dialog</strong> — o reacție cere o
+    apăsare, un comentariu cere un text — și e cel mai rar: 1 340 de comentarii la 2 853 de
+    postări, cu 81,3% dintre postări la zero. Distribuția lui între organizații nu seamănă cu cea
+    a reacțiilor.</p>
 
     <div class="note warn">
-      <strong>Comentariile nu se pot raporta.</strong>
-      Cifra lipsește pentru patru din cinci postări extrase. Distribuirile lipsesc pentru mai mult
-      de jumătate. Se raportează ratele de completitudine, iar indicatorii construiți pe câmpuri
-      incomplete nu se raportează deloc — o medie calculată pe 18,7% din postări arată la fel de
-      convingător ca una calculată pe toate.
+      <strong>Cifrele sunt brute, nenormalizate la audiență.</strong>
+      Nu avem încă numărul de urmăritori pentru fiecare pagină, iar postările din 2022 au avut ani
+      de acumulare, cele din 2026 câteva luni. Până când intră amândouă corecțiile, seriile susțin
+      forma din interiorul unei organizații, nu clasamentul dintre ele.
     </div>
-
-    <div class="ser" data-serie="reactii-total"></div>
-
-    <p>Mediana reacțiilor scade de la 13,5 (2022) la 7,5 (2026) — dar aceeași rezervă ca la volum:
-    scăderea agregată amestecă șase pagini cu audiențe diferite, iar cele care intră mai târziu în
-    corpus sunt și cele mai mici.</p>
-
-    <div class="ser" data-serie="reactii-org"></div>
-
-    <p><strong>Volumul comunicării și atenția primită nu merg împreună.</strong> Mediana
-    reacțiilor pe toată seria: MIC Brașov 21 și CNRR 20 în capul listei, apoi Association Malva 15,
-    EDNAE 11, Help Ukrainians 10, Novapolis 5. Pagina cu cele mai multe postări din corpus
-    (Help Ukrainians, 1 211) e printre ultimele la reacții pe postare, iar cea mai mică
-    (MIC Brașov, 171) e prima. Cele două se raportează separat.</p>
-
-    <p>Cifrele de mai sus sunt brute, nu normalizate la audiență — nu avem încă numărul de
-    urmăritori pentru fiecare pagină. Până atunci nu susțin comparații între organizații, doar
-    forma seriei în interiorul fiecăreia.</p>
   </div>
 
   <div class="sec">
@@ -757,7 +788,8 @@
     <ul class="plain">
       <li>Total și medie pe postare, per an și per organizație.</li>
       <li>Valori normalizate la audiență, pentru comparații între organizații.</li>
-      <li>Acoperirea câmpurilor: la o primă probă, numărul de comentarii lipsea pentru o parte din postări, iar circa 12% dintre postări nu aveau text deloc. Ratele de completitudine se raportează, nu se ascund în medii.</li>
+      <li>Proporția postărilor atinse de fiecare formă de reacție, nu doar mediile: distribuirea și comentariul sunt evenimente rare, iar media le îneacă în zerouri.</li>
+      <li>Postările fără text — 15,7% din cele extrase în lunile codate — intră în engagement, dar nu în codare. Numitorul se declară de fiecare dată.</li>
     </ul>
   </div>
 </section>
@@ -988,159 +1020,213 @@
   });
 
 
-  // serii lunare continue: volumul si engagement-ul nu sunt matrici, sunt serii.
-  // Lunile fara date raman goale (linia se intrerupe), nu zero.
+  // Serii lunare: o linie per organizatie, pe acelasi grafic. Culoarea urmeaza
+  // organizatia, nu rangul - filtrul de oras evidentiaza, nu ascunde, deci nimic nu
+  // se repicteaza. Nu se calculeaza tendinta centrala pe serie: se reprezinta
+  // marimile masurate, luna de luna.
   (function () {
     if (typeof SERII === 'undefined') return;
-    var gazde = document.querySelectorAll('[data-serie]');
-    if (!gazde.length) return;
+    var tinte = document.querySelectorAll('[data-serie]');
+    if (!tinte.length) return;
     var L = SERII.luni, N = L.length, NS = 'http://www.w3.org/2000/svg';
+    var ORG = SERII.organizatii;
+    var ORASE = [];
+    ORG.forEach(function (o) { if (ORASE.indexOf(o.oras) < 0) ORASE.push(o.oras); });
+    ORASE.sort();
+    var culoare = function (i) { return 'var(--ser-' + (i + 1) + ')'; };
+    var selOras = 'toate';
+    var desenate = [];
+
+    var CAMP = {
+      volum: {t: 'Postări pe lună', u: 'postări'},
+      reactii: {t: 'Reacții pe lună', u: 'reacții'},
+      share: {t: 'Distribuiri pe lună', u: 'distribuiri'},
+      comentarii: {t: 'Comentarii pe lună', u: 'comentarii'}
+    };
 
     function el(n, a) {
       var x = document.createElementNS(NS, n);
       for (var k in a) if (a[k] != null) x.setAttribute(k, a[k]);
       return x;
     }
-    function px(i, w, pad) { return pad.l + i * (w - pad.l - pad.r) / (N - 1); }
-    function py(v, max, h, pad) {
-      return h - pad.b - (v / max) * (h - pad.t - pad.b);
-    }
-    // segmente continue: o pauza in date rupe linia, nu o coboara la zero
     function segmente(s) {
       var out = [], cur = [];
       s.forEach(function (v, i) {
-        if (v == null) { if (cur.length) out.push(cur); cur = []; }
+        if (v == null) { if (cur.length > 1) out.push(cur); cur = []; }
         else cur.push([i, v]);
       });
-      if (cur.length) out.push(cur);
+      if (cur.length > 1) out.push(cur);
       return out;
     }
-    function cale(seg, max, w, h, pad) {
-      return seg.map(function (p, i) {
-        return (i ? 'L' : 'M') + px(p[0], w, pad).toFixed(1) + ' ' +
-               py(p[1], max, h, pad).toFixed(1);
-      }).join(' ');
-    }
-
-    function grafic(s, opt) {
-      var w = 900, h = opt.h, pad = opt.pad, max = opt.max;
-      var svg = el('svg', {viewBox: '0 0 ' + w + ' ' + h, role: 'img',
-                           'aria-label': opt.alt});
-      // caroiaj orizontal si axa y
-      (opt.tics || []).forEach(function (t) {
-        var y = py(t, max, h, pad);
-        svg.appendChild(el('line', {x1: pad.l, y1: y, x2: w - pad.r, y2: y, class: 's-grid'}));
-        var lb = el('text', {x: pad.l - 6, y: y + 3, class: 's-ax', 'text-anchor': 'end'});
-        lb.textContent = t; svg.appendChild(lb);
-      });
-      // lunile codate: martie din fiecare an
-      SERII.luni_codate.forEach(function (m) {
-        var i = L.indexOf(m); if (i < 0) return;
-        svg.appendChild(el('line', {x1: px(i, w, pad), y1: pad.t - 2, x2: px(i, w, pad),
-                                    y2: h - pad.b, class: 's-mark'}));
-      });
-      // ianuarie: reper de an
-      if (opt.ani) {
-        L.forEach(function (m, i) {
-          if (m.slice(5) !== '01' && i !== 0) return;
-          var t = el('text', {x: px(i, w, pad), y: h - 2, class: 's-ax', 'text-anchor': 'middle'});
-          t.textContent = m.slice(0, 4); svg.appendChild(t);
-        });
-      }
-      segmente(opt.serie).forEach(function (seg) {
-        if (opt.arie && seg.length > 1) {
-          var d = cale(seg, max, w, h, pad) +
-                  ' L' + px(seg[seg.length - 1][0], w, pad).toFixed(1) + ' ' + (h - pad.b) +
-                  ' L' + px(seg[0][0], w, pad).toFixed(1) + ' ' + (h - pad.b) + ' Z';
-          svg.appendChild(el('path', {d: d, class: 's-area'}));
-        }
-        if (seg.length > 1) svg.appendChild(el('path', {d: cale(seg, max, w, h, pad), class: 's-line'}));
-        else svg.appendChild(el('circle', {cx: px(seg[0][0], w, pad),
-                                           cy: py(seg[0][1], max, h, pad), r: 2, class: 's-dot'}));
-      });
-      // punct pe lunile codate, acolo unde exista valoare
-      SERII.luni_codate.forEach(function (m) {
-        var i = L.indexOf(m), v = opt.serie[i];
-        if (i < 0 || v == null) return;
-        var c = el('circle', {cx: px(i, w, pad), cy: py(v, max, h, pad), r: 2.6, class: 's-dot'});
-        var t = el('title'); t.textContent = m + ': ' + v; c.appendChild(t);
-        svg.appendChild(c);
-      });
-      return svg;
-    }
-
-    function capt(txt) {
-      var p = document.createElement('p');
-      p.className = 'ser-cap'; p.innerHTML = txt;
-      return p;
-    }
-    function maxim(arrs) {
-      var m = 0;
-      arrs.forEach(function (a) { a.forEach(function (v) { if (v != null && v > m) m = v; }); });
-      return m;
-    }
     function tics(max) {
-      var pas = max > 60 ? 25 : max > 30 ? 20 : max > 12 ? 10 : 5, t = [];
-      for (var v = 0; v <= max; v += pas) t.push(v);
+      if (!max) return [0];
+      var brut = max / 4, mag = Math.pow(10, Math.floor(Math.log(brut) / Math.LN10));
+      var pas = mag * (brut / mag >= 5 ? 5 : brut / mag >= 2 ? 2 : 1);
+      var t = [];
+      for (var v = 0; v <= max + pas / 2; v += pas) t.push(Math.round(v));
       return t;
     }
 
-    function mici(g, camp, max, unit) {
-      SERII.organizatii.forEach(function (o) {
-        var row = document.createElement('div');
-        row.className = 'sm';
-        var lb = document.createElement('div');
-        lb.className = 'sm-l';
-        lb.innerHTML = o.nume + '<small>' + o.oras + ' · ' + o.n + ' postări · ' +
-                       o.prima + '→' + o.ultima + '</small>';
-        var box = document.createElement('div');
-        box.appendChild(grafic(o, {serie: o[camp], max: max, h: 52,
-                                   pad: {l: 22, r: 4, t: 6, b: 6}, arie: true, tics: [max],
-                                   alt: o.nume + ': ' + unit}));
-        row.appendChild(lb); row.appendChild(box);
-        g.appendChild(row);
+    function grafic(camp) {
+      var w = 940, h = 250, pad = {l: 38, r: 92, t: 12, b: 18};
+      var max = 0;
+      ORG.forEach(function (o) {
+        o[camp].forEach(function (v) { if (v != null && v > max) max = v; });
+      });
+      var tt = tics(max), top = tt[tt.length - 1];
+      var px = function (i) { return pad.l + i * (w - pad.l - pad.r) / (N - 1); };
+      var py = function (v) { return h - pad.b - (v / top) * (h - pad.t - pad.b); };
+
+      var svg = el('svg', {viewBox: '0 0 ' + w + ' ' + h, role: 'img',
+        'aria-label': CAMP[camp].t + ', ' + ORG.length + ' organizații, ' +
+                      L[0] + ' – ' + L[N - 1]});
+      tt.forEach(function (t) {
+        svg.appendChild(el('line', {x1: pad.l, y1: py(t), x2: w - pad.r, y2: py(t),
+                                    class: 's-grid'}));
+        var lb = el('text', {x: pad.l - 6, y: py(t) + 3, class: 's-ax', 'text-anchor': 'end'});
+        lb.textContent = t; svg.appendChild(lb);
+      });
+      SERII.luni_codate.forEach(function (m) {
+        var i = L.indexOf(m); if (i < 0) return;
+        svg.appendChild(el('line', {x1: px(i), y1: pad.t - 2, x2: px(i), y2: h - pad.b,
+                                    class: 's-mark'}));
+      });
+      L.forEach(function (m, i) {
+        if (m.slice(5) !== '01') return;
+        var t = el('text', {x: px(i), y: h - 3, class: 's-ax', 'text-anchor': 'middle'});
+        t.textContent = m.slice(0, 4); svg.appendChild(t);
+      });
+
+      var grupuri = ORG.map(function (o, k) {
+        var g = el('g', {class: 's-pal'});
+        segmente(o[camp]).forEach(function (seg) {
+          var d = seg.map(function (p, n) {
+            return (n ? 'L' : 'M') + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1);
+          }).join(' ');
+          g.appendChild(el('path', {d: d, class: 's-line', stroke: culoare(k)}));
+        });
+        svg.appendChild(g);
+        return g;
+      });
+
+      // eticheta la capatul liniei: identitatea nu sta doar in culoare
+      var capete = ORG.map(function (o, k) {
+        var idx = -1;
+        o[camp].forEach(function (v, i) { if (v != null) idx = i; });
+        return {k: k, i: idx, y: idx < 0 ? 0 : py(o[camp][idx]), nume: o.scurt};
+      }).filter(function (c) { return c.i >= 0; }).sort(function (a, b) { return a.y - b.y; });
+      capete.forEach(function (c, n) {
+        if (n && c.y - capete[n - 1].y < 12) c.y = capete[n - 1].y + 12;
+      });
+      capete.forEach(function (c) {
+        var g = grupuri[c.k];
+        g.appendChild(el('rect', {x: px(c.i) + 5, y: c.y - 2.5, width: 8, height: 3,
+                                  rx: 1.5, fill: culoare(c.k)}));
+        var t = el('text', {x: px(c.i) + 17, y: c.y + 3, class: 's-lab'});
+        t.textContent = c.nume;
+        g.appendChild(t);
+      });
+
+      return {svg: svg, px: px, py: py, w: w, h: h, pad: pad, grupuri: grupuri, camp: camp};
+    }
+
+    function crosshair(gazda, G) {
+      var linie = el('line', {class: 's-cross', y1: G.pad.t, y2: G.h - G.pad.b,
+                              x1: 0, x2: 0, opacity: 0});
+      G.svg.appendChild(linie);
+      var tip = document.createElement('div');
+      tip.className = 's-tip';
+      gazda.appendChild(tip);
+
+      function la(e) {
+        var box = G.svg.getBoundingClientRect();
+        var rel = (e.clientX - box.left) / box.width * G.w;
+        var i = Math.round((rel - G.pad.l) / ((G.w - G.pad.l - G.pad.r) / (N - 1)));
+        i = Math.max(0, Math.min(N - 1, i));
+        linie.setAttribute('x1', G.px(i)); linie.setAttribute('x2', G.px(i));
+        linie.setAttribute('opacity', 1);
+        var randuri = ORG.map(function (o, k) {
+          var v = o[G.camp][i];
+          if (v == null) return null;
+          if (selOras !== 'toate' && o.oras !== selOras) return null;
+          return '<div><i style="background:' + culoare(k) + '"></i>' + o.scurt +
+                 '<u>' + v + '</u></div>';
+        }).filter(Boolean);
+        tip.innerHTML = '<b>' + L[i] + '</b>' + (randuri.join('') || '—');
+        tip.style.display = 'block';
+        var stanga = G.px(i) / G.w * box.width;
+        tip.style.left = Math.min(box.width - tip.offsetWidth - 8,
+                                  Math.max(4, stanga + 12)) + 'px';
+        tip.style.top = '3rem';
+      }
+      G.svg.addEventListener('mousemove', la);
+      G.svg.addEventListener('mouseleave', function () {
+        linie.setAttribute('opacity', 0);
+        tip.style.display = 'none';
       });
     }
 
-    var reteta = {
-      'volum-total': function (g) {
-        var s = SERII.total.volum, max = Math.ceil(maxim([s]) / 25) * 25;
-        g.appendChild(capt('<strong>Postări pe lună, toate cele șase organizații</strong> — ' +
-          SERII.n_total + ' de postări extrase, ' + N + ' de luni. Liniile punctate sunt lunile ' +
-          'care formează corpusul codat: martie din fiecare an.'));
-        g.appendChild(grafic({}, {serie: s, max: max, h: 230,
-          pad: {l: 26, r: 6, t: 10, b: 16}, arie: true, ani: true, tics: tics(max),
-          alt: 'Serie lunară a numărului de postări, noiembrie 2021 – iulie 2026'}));
-      },
-      'volum-org': function (g) {
-        var max = maxim(SERII.organizatii.map(function (o) { return o.volum; }));
-        g.appendChild(capt('<strong>Aceleași luni, pe fiecare organizație</strong> — aceeași ' +
-          'scară pe verticală (maximul e ' + max + ' de postări într-o lună) și aceeași axă a ' +
-          'timpului. Unde nu s-a extras nimic, linia se întrerupe: nu știm dacă pagina tăcea ' +
-          'sau dacă extragerea nu a ajuns până acolo.'));
-        mici(g, 'volum', max, 'postări pe lună');
-      },
-      'reactii-total': function (g) {
-        var s = SERII.total.reactii, max = Math.ceil(maxim([s]) / 10) * 10;
-        g.appendChild(capt('<strong>Mediana reacțiilor pe postare, lună de lună</strong> — ' +
-          'mediana, nu media: distribuția are cozi lungi, o postară virală ar muta media. ' +
-          'Cifre brute, nenormalizate la audiență.'));
-        g.appendChild(grafic({}, {serie: s, max: max, h: 200,
-          pad: {l: 26, r: 6, t: 10, b: 16}, arie: true, ani: true, tics: tics(max),
-          alt: 'Serie lunară a medianei reacțiilor'}));
-      },
-      'reactii-org': function (g) {
-        var max = maxim(SERII.organizatii.map(function (o) { return o.reactii; }));
-        g.appendChild(capt('<strong>Mediana reacțiilor, pe fiecare organizație</strong> — ' +
-          'aceeași scară pe verticală (maximul e ' + max + ' de reacții, mediana unei luni).'));
-        mici(g, 'reactii', max, 'mediana reacțiilor pe lună');
-      }
-    };
+    function aplicaOras() {
+      desenate.forEach(function (G) {
+        G.grupuri.forEach(function (g, k) {
+          g.classList.toggle('off', selOras !== 'toate' && ORG[k].oras !== selOras);
+        });
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl] .chip'),
+        function (b) {
+          b.setAttribute('aria-pressed', b.getAttribute('data-oras') === selOras ? 'true' : 'false');
+        });
+    }
 
-    Array.prototype.forEach.call(gazde, function (g) {
-      var f = reteta[g.getAttribute('data-serie')];
-      if (f) f(g);
+    // o singura linie de control deasupra graficelor: butoane de oras + legenda
+    Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl]'), function (c) {
+      var rand = document.createElement('div');
+      rand.className = 'ser-ctl-row';
+      var et = document.createElement('span');
+      et.className = 'flt-lbl'; et.textContent = 'Oraș';
+      rand.appendChild(et);
+      ['toate'].concat(ORASE).forEach(function (o) {
+        var b = document.createElement('button');
+        b.className = 'chip'; b.type = 'button'; b.textContent = o;
+        b.setAttribute('data-oras', o);
+        b.setAttribute('aria-pressed', o === selOras ? 'true' : 'false');
+        b.addEventListener('click', function () { selOras = o; aplicaOras(); });
+        rand.appendChild(b);
+      });
+      var leg = document.createElement('div');
+      leg.className = 'ser-leg';
+      ORG.forEach(function (o, k) {
+        var s = document.createElement('span');
+        s.innerHTML = '<i style="background:' + culoare(k) + '"></i>' + o.nume +
+                      ' <span style="color:var(--ink-faint)">· ' + o.oras + '</span>';
+        leg.appendChild(s);
+      });
+      c.appendChild(rand);
+      c.appendChild(leg);
+      var n = document.createElement('p');
+      n.className = 'flt-note';
+      n.textContent = 'Butonul de oraș evidențiază, nu ascunde: liniile celorlalte ' +
+        'organizații rămân pe grafic, palide. Liniile punctate sunt lunile codate — ' +
+        'martie din fiecare an. Unde nu s-a extras nimic, linia se întrerupe.';
+      c.appendChild(n);
     });
+
+    Array.prototype.forEach.call(tinte, function (t) {
+      var camp = t.getAttribute('data-serie');
+      if (!CAMP[camp]) return;
+      var cap = document.createElement('p');
+      cap.className = 'ser-cap';
+      cap.innerHTML = '<strong>' + CAMP[camp].t + '</strong> — ' + CAMP[camp].u +
+        ', însumate pe lună, pentru fiecare organizație. Total pe toată seria: ' +
+        (camp === 'volum' ? SERII.n_total + ' de postări'
+                          : SERII.sume[camp] + ' ' + CAMP[camp].u) + '.';
+      t.appendChild(cap);
+      var G = grafic(camp);
+      t.appendChild(G.svg);
+      crosshair(t, G);
+      desenate.push(G);
+    });
+    aplicaOras();
   })();
 
   // harti de caldura: rand = categoria, coloana = anul sau organizatia.
