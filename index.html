@@ -9,7 +9,7 @@
   :root {
     --paper:#f1f4f2; --surface:#fff; --surface-2:#e8ede9;
     --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
-    --rule:#d3dbd6; --accent:#2f6b5e; --accent-soft:#e0eae5;
+    --rule:#d3dbd6; --accent:#2f6b5e; --accent-rgb:47,107,94; --accent-soft:#e0eae5;
     --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -20,17 +20,17 @@
   @media (prefers-color-scheme:dark){:root{
     --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
     --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
-    --rule:#2a3532; --accent:#74bda9; --accent-soft:#1c2a27;
+    --rule:#2a3532; --accent:#74bda9; --accent-rgb:116,189,169; --accent-soft:#1c2a27;
     --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}}
   :root[data-theme="dark"]{
     --paper:#101716; --surface:#17201e; --surface-2:#1e2825;
     --ink:#dfe7e3; --ink-soft:#a4b1ac; --ink-faint:#7d8a85;
-    --rule:#2a3532; --accent:#74bda9; --accent-soft:#1c2a27;
+    --rule:#2a3532; --accent:#74bda9; --accent-rgb:116,189,169; --accent-soft:#1c2a27;
     --sienna:#d08b5c; --ok:#6bb98c; --warn:#c9a34a; --miss:#d47a70;}
   :root[data-theme="light"]{
     --paper:#f1f4f2; --surface:#fff; --surface-2:#e8ede9;
     --ink:#16211f; --ink-soft:#4d5a56; --ink-faint:#78857f;
-    --rule:#d3dbd6; --accent:#2f6b5e; --accent-soft:#e0eae5;
+    --rule:#d3dbd6; --accent:#2f6b5e; --accent-rgb:47,107,94; --accent-soft:#e0eae5;
     --sienna:#a6592c; --ok:#3d7a58; --warn:#916b18; --miss:#9e4038;}
 
   *{box-sizing:border-box}
@@ -151,32 +151,37 @@
          text-transform:uppercase; fill:var(--ink-faint)}
 
 
-  /* filtru oras x an */
-  .flt{background:var(--surface); border:1px solid var(--rule); padding:1rem 1.1rem;
-       display:flex; flex-direction:column; gap:.9rem}
-  .flt-row{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
-  .flt-lbl{font-family:var(--mono); font-size:var(--s--1); letter-spacing:.06em;
-           text-transform:uppercase; color:var(--ink-faint); min-width:4.5rem}
-  .chip{appearance:none; border:1px solid var(--rule); background:var(--surface-2);
-        color:var(--ink-soft); font-family:var(--sans); font-size:.88rem;
-        padding:.3rem .7rem; border-radius:2px; cursor:pointer; line-height:1.3}
-  .chip:hover{color:var(--ink)}
-  .chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent);
-                             color:var(--paper); font-weight:600}
-  .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-  .flt input[type=range]{flex:1; min-width:9rem; accent-color:var(--accent)}
-  .flt-an{font-family:var(--mono); font-variant-numeric:tabular-nums; color:var(--ink);
-          min-width:3.4rem; text-align:right}
-  .bars{display:flex; flex-direction:column; gap:.3rem}
-  .bar-r{display:grid; grid-template-columns:8rem 1fr 2.2rem; gap:.6rem; align-items:center;
-         font-size:.9rem}
-  .bar-t{background:var(--surface-2); height:1.05rem; overflow:hidden}
-  .bar-f{background:var(--accent); height:100%; width:0; transition:width .18s}
-  .bar-n{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right;
-         color:var(--ink-soft); font-size:var(--s--1)}
-  .flt-note{font-size:var(--s--1); color:var(--ink-faint)}
-  @media (max-width:32rem){.bar-r{grid-template-columns:6rem 1fr 2rem}
-                           .flt-lbl{min-width:auto; width:100%}}
+  /* harti de caldura */
+  .hm{border-collapse:collapse; width:100%; font-size:.9rem}
+  .hm caption{text-align:left; padding:.65rem .9rem; color:var(--ink-faint);
+              font-size:var(--s--1); border-bottom:1px solid var(--rule); line-height:1.45}
+  .hm caption strong{color:var(--ink-soft)}
+  .hm th,.hm td{border-bottom:1px solid var(--rule); border-right:1px solid var(--rule)}
+  .hm tr>*:last-child{border-right:0}
+  .hm tbody tr:last-child>*{border-bottom:0}
+  .hm thead th{padding:.4rem .55rem; text-align:center; vertical-align:bottom;
+               font-family:var(--mono); font-size:var(--s--1); letter-spacing:.04em;
+               text-transform:none; color:var(--ink-soft); font-weight:500;
+               background:var(--surface-2); position:static}
+  .hm thead th:first-child{text-align:left}
+  .hm .hm-n{display:block; font-size:.68rem; color:var(--ink-faint); letter-spacing:.02em}
+  .hm tbody th{padding:.35rem .7rem; text-align:left; font-weight:400; color:var(--ink);
+               background:var(--surface); white-space:nowrap; font-size:.88rem}
+  .hm tbody th .hm-sub{display:block; font-family:var(--mono); font-size:.68rem;
+                       color:var(--ink-faint)}
+  .hm td{padding:.35rem .5rem; text-align:center; font-family:var(--mono);
+         font-variant-numeric:tabular-nums; color:var(--ink);
+         background:rgba(var(--accent-rgb),var(--i,0)); min-width:3.2rem}
+  .hm td.hm-hi{color:var(--paper)}
+  .hm td.hm-0{color:var(--ink-faint)}
+  .hm .hm-v2{display:block; font-size:.68rem; opacity:.72}
+  .hm-key{display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;
+          font-size:var(--s--1); color:var(--ink-faint); padding:.1rem 0}
+  .hm-key .hm-ramp{display:flex; gap:1px}
+  .hm-key .hm-ramp i{width:1.5rem; height:.7rem; display:block;
+                     background:rgba(var(--accent-rgb),var(--i))}
+  @media (max-width:40rem){.hm{font-size:.82rem}
+                           .hm tbody th{white-space:normal; min-width:7rem}}
 
   footer{margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--rule);
          color:var(--ink-faint); font-size:var(--s--1);
@@ -307,6 +312,42 @@
   <p>Primul strat, care nu cere codare: cât comunică fiecare organizație și cum se schimbă ritmul în timp. Situează tot ce urmează.</p>
 
   <div class="sec">
+    <h3>Primele rezultate, pe corpusul-pilot</h3>
+    <div class="note warn">
+      <strong>Limitele acestor cifre.</strong> Sunt un pilot: 6 organizații — 3 conduse de
+      refugiați (RLO) și 3 organizații comunitare (CLO) — în 5 orașe, doar luna martie din
+      fiecare an. Rezultatele nu sunt nici complete, nici reprezentative.
+    </div>
+
+    <div class="figs">
+      <div class="fig"><span class="fig-n">274</span><span class="fig-l">postări extrase</span></div>
+      <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codabile</span></div>
+      <div class="fig"><span class="fig-n">43</span><span class="fig-l">postări fără text (15,7%)</span></div>
+      <div class="fig"><span class="fig-n">11 / 30</span><span class="fig-l">celule organizație × an goale</span></div>
+    </div>
+
+    <div class="tw" data-heat="volum"></div>
+
+    <p><strong>Totalul pe an nu scade</strong> — 52, 71, 49, 51, 51 de postări extrase — dar asta
+    nu descrie nicio organizație. Compoziția se schimbă sub el: CNRR merge de la 27 de postări în
+    martie 2022 la 2 în 2026, Help Ukrainians apare abia în 2023 și își face vârful în 2024, iar
+    EDNAE intră în corpus în 2025. <strong>Agregatul ascunde exact ce trebuie citit pe rânduri.</strong></p>
+
+    <div class="note">
+      <strong>De ce contează comparația cu studiul de caz.</strong>
+      Pe o singură organizație, coloana „an" măsoară timpul: se vede vârful de urgență și
+      așezarea ulterioară. Pe șase organizații cu acoperire inegală, aceeași coloană amestecă
+      timpul cu întrebarea „cine era în corpus atunci". De aceea fiecare rezultat de mai departe
+      se taie de două ori — pe an <em>și</em> pe organizație — iar cel pe an nu se citește fără
+      harta de aici.
+    </div>
+
+    <p>Diferența dintre extras și codabil e materială: <strong>43 de postări nu au niciun text</strong>
+    — fotografii și clipuri fără descriere. Se extrag și au reacții, deci intră în engagement, dar
+    nu se pot coda. Numitorul e altul în fiecare tab și e scris de fiecare dată.</p>
+  </div>
+
+  <div class="sec">
     <h3>Ce se raportează</h3>
     <ul class="plain">
       <li><strong>Hartă de căldură organizație × lună</strong>, 45 × 53 de luni, plus seria agregată.</li>
@@ -404,30 +445,32 @@
 
 
   <div class="sec">
-    <h3>Pe oraș și pe an</h3>
-    <p>Pilotul acoperă cinci orașe și cinci ani, așa că aceleași codări se pot citi pe fiecare
-    dintre cele două dimensiuni. Alegeți un oraș și un an. Barele numără <strong>coduri</strong>,
-    nu postări; cele două marcate cu asterisc nu au sector în taxonomia UNHCR.</p>
+    <h3>Pe an și pe organizație</h3>
+    <p>Aceleași codări, tăiate pe fiecare dintre cele două dimensiuni. Codurile marcate cu
+    asterisc nu au sector în taxonomia UNHCR.</p>
 
-    <div class="flt">
-      <div class="flt-row">
-        <span class="flt-lbl" id="lbl-oras">Oraș</span>
-        <div id="flt-orase" role="group" aria-labelledby="lbl-oras"
-             style="display:flex;flex-wrap:wrap;gap:.4rem"></div>
-      </div>
-      <div class="flt-row">
-        <span class="flt-lbl"><label for="flt-an">An</label></span>
-        <input type="range" id="flt-an" min="0" max="5" step="1" value="0">
-        <span class="flt-an" id="flt-an-val">toți</span>
-      </div>
-      <p class="flt-note" id="flt-n" aria-live="polite"></p>
-      <div class="bars" id="flt-bars"></div>
-      <div class="figs" id="flt-figs"></div>
+    <div class="tw" data-heat="cod_an"></div>
+
+    <p><strong>Deplasarea e vizibilă pe primele trei rânduri.</strong> Informarea despre drepturi
+    și proceduri are 25 din cele 30 de apariții ale ei în martie 2022 și practic dispare după;
+    educația non-formală și activitățile recreative sunt zero în 2022 și domină restul intervalului.
+    Trecerea de la urgență la rutină comunitară e aceeași pe care o descrie studiul de caz din care
+    pornește această replicare — obținută aici independent, pe alt corpus și alt codebook.</p>
+
+    <div class="note warn">
+      <strong>Rezerva de compoziție.</strong>
+      Coloana 2022 înseamnă aproape numai CNRR și Novapolis; coloanele 2023–2026 sunt dominate de
+      Help Ukrainians. Deplasarea de mai sus poate fi schimbare în timp, diferență între
+      organizații, sau amândouă. Pilotul nu le poate separa — harta de dedesubt arată de ce.
     </div>
-    <p class="flt-note">Procentele apar de la 10 postări în sus; sub prag se arată numărul brut.
-    Zece dintre cele douăzeci de celule oraș × an sunt sub prag, iar două sunt goale — la Galați
-    și Suceava paginile nu existau în primii ani. Rândul „alte coduri" adună cele opt coduri cu
-    una-două apariții în tot pilotul.</p>
+
+    <div class="tw" data-heat="cod_org"></div>
+
+    <p>Profilurile sunt distincte: informarea e aproape numai la CNRR, educația non-formală și
+    recreativul aproape numai la Help Ukrainians și EDNAE. Cu șase organizații și o lună pe an,
+    „organizația" și „anul" nu se pot despărți; cu 45 de organizații și seria completă, se pot.</p>
+
+    <div class="tw" data-heat="fara_cod"></div>
   </div>
 
   <div class="sec">
@@ -837,6 +880,7 @@
 </div>
 
 <script src="orgs.js"></script>
+<script src="matrici.js"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -873,124 +917,87 @@
   });
 
 
-  // filtru oras x an
-  var CUB = {"coduri":["edu_nonformal","com_recreativ","prot_informare","com_mobilizare","edu_personal","san_mhpss","liv_limba","prot_coeziune","baz_hrana","liv_antreprenoriat"],"etichete":{"edu_nonformal":"educație non-formală","com_recreativ":"recreativ*","prot_informare":"informare","com_mobilizare":"mobilizare*","edu_personal":"formare profesioniști","san_mhpss":"consiliere psihologică","liv_limba":"cursuri de limbă","prot_coeziune":"evenimente cu gazda","baz_hrana":"hrană","liv_antreprenoriat":"antreprenoriat"},"celule":{"Brașov|2022":{"n":6,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":3,"com_mobilizare":1,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":3,"simbolism_da":1,"simbolism_n":6,"cu_actor":3,"actori_n":6,"ref_ukr":3,"grup_n":6},"Brașov|2023":{"n":5,"coduri":{"edu_nonformal":0,"com_recreativ":4,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":0,"actori_n":5,"ref_ukr":0,"grup_n":5},"Brașov|2024":{"n":1,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":1,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":1,"grup_n":1},"Brașov|2025":{"n":1,"coduri":{"edu_nonformal":0,"com_recreativ":1,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":0,"grup_n":1},"Brașov|2026":{"n":1,"coduri":{"edu_nonformal":1,"com_recreativ":1,"prot_informare":1,"com_mobilizare":0,"edu_personal":0,"san_mhpss":1,"liv_limba":1,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":1,"actori_n":1,"ref_ukr":1,"grup_n":1},"București|2022":{"n":26,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":18,"com_mobilizare":4,"edu_personal":2,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":3,"fara_activitate":5,"simbolism_da":7,"simbolism_n":26,"cu_actor":13,"actori_n":26,"ref_ukr":11,"grup_n":26},"București|2023":{"n":25,"coduri":{"edu_nonformal":7,"com_recreativ":2,"prot_informare":2,"com_mobilizare":0,"edu_personal":1,"san_mhpss":2,"liv_limba":0,"prot_coeziune":2,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":2,"fara_activitate":7,"simbolism_da":6,"simbolism_n":25,"cu_actor":13,"actori_n":25,"ref_ukr":8,"grup_n":25},"București|2024":{"n":12,"coduri":{"edu_nonformal":3,"com_recreativ":3,"prot_informare":1,"com_mobilizare":1,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":2,"fara_activitate":4,"simbolism_da":2,"simbolism_n":12,"cu_actor":5,"actori_n":12,"ref_ukr":3,"grup_n":12},"București|2025":{"n":5,"coduri":{"edu_nonformal":2,"com_recreativ":2,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":2,"grup_n":5},"București|2026":{"n":3,"coduri":{"edu_nonformal":0,"com_recreativ":1,"prot_informare":0,"com_mobilizare":2,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":0,"simbolism_da":1,"simbolism_n":3,"cu_actor":0,"actori_n":3,"ref_ukr":1,"grup_n":3},"Constanța|2022":{"n":14,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":4,"com_mobilizare":2,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":10,"simbolism_da":5,"simbolism_n":14,"cu_actor":2,"actori_n":14,"ref_ukr":6,"grup_n":14},"Constanța|2023":{"n":5,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":2,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":3,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":0,"grup_n":5},"Constanța|2025":{"n":4,"coduri":{"edu_nonformal":1,"com_recreativ":0,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":1},"alte_coduri":0,"fara_activitate":1,"simbolism_da":0,"simbolism_n":4,"cu_actor":3,"actori_n":4,"ref_ukr":1,"grup_n":4},"Constanța|2026":{"n":16,"coduri":{"edu_nonformal":2,"com_recreativ":1,"prot_informare":0,"com_mobilizare":0,"edu_personal":5,"san_mhpss":0,"liv_limba":0,"prot_coeziune":1,"baz_hrana":0,"liv_antreprenoriat":2},"alte_coduri":0,"fara_activitate":6,"simbolism_da":0,"simbolism_n":16,"cu_actor":13,"actori_n":16,"ref_ukr":2,"grup_n":16},"Galați|2023":{"n":27,"coduri":{"edu_nonformal":12,"com_recreativ":11,"prot_informare":0,"com_mobilizare":1,"edu_personal":0,"san_mhpss":3,"liv_limba":4,"prot_coeziune":2,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":5,"simbolism_da":6,"simbolism_n":27,"cu_actor":3,"actori_n":27,"ref_ukr":3,"grup_n":27},"Galați|2024":{"n":27,"coduri":{"edu_nonformal":14,"com_recreativ":7,"prot_informare":0,"com_mobilizare":0,"edu_personal":1,"san_mhpss":1,"liv_limba":0,"prot_coeziune":0,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":4,"simbolism_da":1,"simbolism_n":27,"cu_actor":1,"actori_n":27,"ref_ukr":1,"grup_n":27},"Galați|2025":{"n":20,"coduri":{"edu_nonformal":10,"com_recreativ":6,"prot_informare":0,"com_mobilizare":0,"edu_personal":0,"san_mhpss":0,"liv_limba":1,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":1,"fara_activitate":2,"simbolism_da":1,"simbolism_n":20,"cu_actor":1,"actori_n":20,"ref_ukr":3,"grup_n":20},"Galați|2026":{"n":13,"coduri":{"edu_nonformal":6,"com_recreativ":2,"prot_informare":0,"com_mobilizare":1,"edu_personal":0,"san_mhpss":0,"liv_limba":1,"prot_coeziune":0,"baz_hrana":1,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":2,"simbolism_da":0,"simbolism_n":13,"cu_actor":2,"actori_n":13,"ref_ukr":1,"grup_n":13},"Suceava|2025":{"n":12,"coduri":{"edu_nonformal":0,"com_recreativ":6,"prot_informare":1,"com_mobilizare":0,"edu_personal":3,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":3,"simbolism_da":1,"simbolism_n":12,"cu_actor":6,"actori_n":12,"ref_ukr":3,"grup_n":12},"Suceava|2026":{"n":8,"coduri":{"edu_nonformal":0,"com_recreativ":0,"prot_informare":0,"com_mobilizare":6,"edu_personal":0,"san_mhpss":0,"liv_limba":0,"prot_coeziune":0,"baz_hrana":0,"liv_antreprenoriat":0},"alte_coduri":0,"fara_activitate":2,"simbolism_da":0,"simbolism_n":8,"cu_actor":2,"actori_n":8,"ref_ukr":0,"grup_n":8}},"orase":["Brașov","București","Constanța","Galați","Suceava"],"ani":["2022","2023","2024","2025","2026"],"organizatii_per_oras":{"Brașov":["MIC Brasov"],"București":["Association Malva","CNRR"],"Constanța":["Novapolis"],"Galați":["Help Ukrainians"],"Suceava":["EDNAE"]}};
+  // harti de caldura: rand = categoria, coloana = anul sau organizatia.
+  // Celula poarta cifra bruta; intensitatea e cifra raportata la numitorul coloanei,
+  // scalata la cea mai mare rata din harta. Numitorul sta pe capul de coloana.
   (function () {
-    var wrapOrase = document.getElementById('flt-orase');
-    if (!wrapOrase) return;
-    var slider = document.getElementById('flt-an'), anVal = document.getElementById('flt-an-val');
-    var nOut = document.getElementById('flt-n'), bars = document.getElementById('flt-bars');
-    var figs = document.getElementById('flt-figs');
-    var orase = ['toate'].concat(CUB.orase), ani = ['toti'].concat(CUB.ani);
-    var selOras = 'toate';
-    slider.max = String(ani.length - 1);
+    if (typeof MATRICI === 'undefined') return;
+    var gazde = document.querySelectorAll('[data-heat]');
+    if (!gazde.length) return;
 
-    orase.forEach(function (o) {
-      var b = document.createElement('button');
-      b.className = 'chip'; b.type = 'button'; b.textContent = o;
-      b.setAttribute('aria-pressed', o === selOras ? 'true' : 'false');
-      b.addEventListener('click', function () {
-        selOras = o;
-        Array.prototype.forEach.call(wrapOrase.querySelectorAll('.chip'), function (x) {
-          x.setAttribute('aria-pressed', x.textContent === o ? 'true' : 'false');
+    function rata(c, col) { return col.n ? c / col.n : c; }
+
+    function deseneaza(h) {
+      var maxRata = 0;
+      h.randuri.forEach(function (r) {
+        h.coloane.forEach(function (c) {
+          var cel = h.celule[r.k + '|' + c.k];
+          if (cel) maxRata = Math.max(maxRata, rata(cel.v, c));
         });
-        render();
       });
-      wrapOrase.appendChild(b);
+
+      var t = document.createElement('table');
+      t.className = 'hm';
+      var cap = document.createElement('caption');
+      cap.innerHTML = '<strong>' + h.titlu + '</strong> — unitatea celulei: ' + h.unitate +
+                      (h.nota ? '. ' + h.nota : '.');
+      t.appendChild(cap);
+
+      var thead = document.createElement('thead'), tr = document.createElement('tr');
+      tr.appendChild(document.createElement('th'));
+      h.coloane.forEach(function (c) {
+        var th = document.createElement('th');
+        th.scope = 'col';
+        th.innerHTML = c.lbl + (c.n != null ? '<span class="hm-n">n=' + c.n + '</span>' : '');
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr); t.appendChild(thead);
+
+      var tb = document.createElement('tbody');
+      h.randuri.forEach(function (r) {
+        var row = document.createElement('tr');
+        var th = document.createElement('th');
+        th.scope = 'row';
+        th.innerHTML = r.lbl + (r.sub ? '<span class="hm-sub">' + r.sub + '</span>' : '');
+        row.appendChild(th);
+        h.coloane.forEach(function (c) {
+          var cel = h.celule[r.k + '|' + c.k] || { v: 0 };
+          var i = maxRata ? rata(cel.v, c) / maxRata : 0;
+          var td = document.createElement('td');
+          td.style.setProperty('--i', (i * 0.92).toFixed(3));
+          if (i > 0.62) td.className = 'hm-hi';
+          else if (!cel.v) td.className = 'hm-0';
+          td.innerHTML = cel.v
+            ? cel.v + (cel.v2 != null ? '<span class="hm-v2">' + cel.v2 + '</span>' : '')
+            : '·';
+          row.appendChild(td);
+        });
+        tb.appendChild(row);
+      });
+      t.appendChild(tb);
+      return t;
+    }
+
+    var scara = ['0.06', '0.28', '0.5', '0.72', '0.92'];
+    Array.prototype.forEach.call(gazde, function (g) {
+      var h = MATRICI[g.getAttribute('data-heat')];
+      if (!h) return;
+      g.appendChild(deseneaza(h));
     });
-    slider.addEventListener('input', render);
 
-    function agg() {
-      var an = ani[Number(slider.value)];
-      var acc = {n: 0, sect: {}, alte: 0, fara: 0, sd: 0, sn: 0, ca: 0, an_: 0, ru: 0, gn: 0};
-      CUB.coduri.forEach(function (s) { acc.sect[s] = 0; }); acc.alte = 0;
-      Object.keys(CUB.celule).forEach(function (k) {
-        var p = k.split('|');
-        if (selOras !== 'toate' && p[0] !== selOras) return;
-        if (an !== 'toti' && p[1] !== an) return;
-        var c = CUB.celule[k];
-        acc.n += c.n; acc.fara += c.fara_activitate;
-        acc.sd += c.simbolism_da; acc.sn += c.simbolism_n;
-        acc.ca += c.cu_actor; acc.an_ += c.actori_n;
-        acc.ru += c.ref_ukr; acc.gn += c.grup_n;
-        CUB.coduri.forEach(function (s) { acc.sect[s] += c.coduri[s] || 0; });
-        acc.alte += c.alte_coduri || 0;
-      });
-      return {an: an, a: acc};
-    }
-
-    function pct(num, den) {
-      return den >= 10 ? Math.round(num / den * 100) + '%' : num + '/' + den;
-    }
-
-    function render() {
-      var r = agg(), a = r.a;
-      anVal.textContent = r.an === 'toti' ? 'toți' : r.an;
-      var unde = selOras === 'toate' ? 'toate orașele' : selOras;
-      var cand = r.an === 'toti' ? 'toți anii' : r.an;
-      bars.innerHTML = ''; figs.innerHTML = '';
-      if (a.n === 0) {
-        nOut.textContent = unde + ', ' + cand + ': nicio postare în corpus.';
-        return;
-      }
-      var orgs = selOras === 'toate' ? null
-        : (CUB.organizatii_per_oras[selOras] || []).join(', ');
-      nOut.textContent = unde + ', ' + cand + ': ' + a.n + ' postări'
-        + (orgs ? ' (' + orgs + ')' : '')
-        + (a.n < 10 ? ' — sub 10, se arată numere brute' : '');
-
-      var max = a.alte;
-      CUB.coduri.forEach(function (s) { if (a.sect[s] > max) max = a.sect[s]; });
-      var linii = CUB.coduri.map(function (s) { return [CUB.etichete[s], a.sect[s]]; });
-      if (a.alte) linii.push(['alte coduri', a.alte]);
-      linii.forEach(function (p) {
-        if (!p[1]) return;
-        var row = document.createElement('div'); row.className = 'bar-r';
-        var lab = document.createElement('span'); lab.textContent = p[0];
-        var tr = document.createElement('div'); tr.className = 'bar-t';
-        var fl = document.createElement('div'); fl.className = 'bar-f';
-        fl.style.width = max ? (p[1] / max * 100) + '%' : '0';
-        tr.appendChild(fl);
-        var num = document.createElement('span'); num.className = 'bar-n';
-        num.textContent = String(p[1]);
-        row.appendChild(lab); row.appendChild(tr); row.appendChild(num);
-        bars.appendChild(row);
-      });
-
-      [['fără activitate concretă', pct(a.fara, a.n)],
-       ['cu actor numit', pct(a.ca, a.an_)],
-       ['refugiați ucraineni ca grup țintă', pct(a.ru, a.gn)],
-       ['simbolism ucrainean', pct(a.sd, a.sn)]].forEach(function (p) {
-        var d = document.createElement('div'); d.className = 'fig';
-        var n = document.createElement('span'); n.className = 'fig-n'; n.textContent = p[1];
-        var l = document.createElement('span'); l.className = 'fig-l'; l.textContent = p[0];
-        d.appendChild(n); d.appendChild(l); figs.appendChild(d);
-      });
-    }
-    render();
+    // legenda, o singura data pe tab: scara e aceeasi peste tot
+    Array.prototype.forEach.call(gazde, function (g) {
+      var panel = g.closest('.panel');
+      if (panel && panel.querySelector('.hm-key')) return;
+      var k = document.createElement('p');
+      k.className = 'hm-key';
+      k.innerHTML = 'rar <span class="hm-ramp">' + scara.map(function (v) {
+        return '<i style="--i:' + v + '"></i>';
+      }).join('') + '</span> frecvent — intensitatea e raportată la numitorul coloanei';
+      g.parentNode.insertBefore(k, g.nextSibling);
+    });
   })();
 
-  // tabelul de organizații
-  var ORGS = window.__ORGS__ || [];
-  var TIP = {
-    'National NGO': 'ONG național',
-    'International NGO': 'ONG internațional',
-    'UN agency': 'agenție ONU',
-    'Refugee-led Organization': 'condusă de refugiați'
-  };
-  var body = document.getElementById('org-body');
-  if (body) {
-    ORGS.sort(function (a, b) { return a.nume.localeCompare(b.nume, 'ro'); });
-    ORGS.forEach(function (o) {
-      var tr = document.createElement('tr');
-      [o.nume, TIP[o.tip] || o.tip || '—', o.judet || '—'].forEach(function (v) {
-        var td = document.createElement('td');
-        td.textContent = v;
-        tr.appendChild(td);
-      });
-      body.appendChild(tr);
-    });
-  }
 })();
 </script>
 </body>
