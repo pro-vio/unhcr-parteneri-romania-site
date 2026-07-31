@@ -194,7 +194,7 @@
       <table>
         <thead><tr><th scope="col">Câmp</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
         <tbody>
-          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod: lipsa e o valoare, nu o scăpare.</td><td>zero, unul sau mai multe dintre cele 25 de coduri de mai jos</td></tr>
+          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod, iar proporția acestor postări se raportează.</td><td>zero, unul sau mai multe dintre cele 25 de coduri de mai jos</td></tr>
           <tr><td><strong>Grupul țintă</strong></td><td>Cui i se adresează activitatea. Una sau mai multe valori — un eveniment pentru refugiați și localnici le primește pe ambele; nu există „mixt".</td><td>refugiați ucraineni · refugiați din alte țări · refugiați, fără naționalitate numită · comunitatea locală</td></tr>
           <tr><td><strong>Implicarea refugiaților</strong></td><td>Refugiații apar cu rol activ — organizator, voluntar, formator — sau doar ca participanți.</td><td>da · nu</td></tr>
           <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em> fiecărui actor, cu două fațete: ce fel de actor e și cât de departe ajunge autoritatea lui. Finanțatorii numiți intră și aici: a da bani e un rol. Tag-urile fără o frază de colaborare nu se numără.</td><td>numele actorului, plus tipul și nivelul lui — vezi mai jos</td></tr>
@@ -208,7 +208,7 @@
 
   <div class="sec">
     <h3>Cele două fațete ale actorilor</h3>
-    <p>Un actor nu primește o etichetă unică, ci un nume și două fațete independente. Aceeași pereche se aplică și partenerilor, și finanțatorilor. Combinația reface categoriile obișnuite fără să le fixeze dinainte: „fonduri europene" e <em>interguvernamental</em> + <em>supranațional</em>, „granturi norvegiene" e <em>public</em> + <em>alt stat</em>, o subvenție de la primărie e <em>public</em> + <em>local</em>.</p>
+    <p>Fiecare actor se înregistrează cu numele lui și cu două fațete independente. Aceeași pereche se aplică și partenerilor, și finanțatorilor. Combinația reface categoriile obișnuite fără să le fixeze dinainte: „fonduri europene" e <em>interguvernamental</em> + <em>supranațional</em>, „granturi norvegiene" e <em>public</em> + <em>alt stat</em>, o subvenție de la primărie e <em>public</em> + <em>local</em>.</p>
     <div class="tw">
       <table>
         <thead><tr><th scope="col">Fațetă</th><th scope="col">Valori</th><th scope="col">Ce distinge</th></tr></thead>
@@ -220,7 +220,7 @@
     </div>
     <div class="note">
       <strong>Agențiile internaționale nu mai au câmp propriu.</strong>
-      O agenție ONU e un actor ca oricare altul, cu nivel supranațional; prezența cadrului internațional se obține filtrând după nivel, nu dintr-un indicator separat. Nivelul <em>alt stat</em> există tocmai ca ambasadele și organizațiile străine să nu se agrege cu sistemul ONU și UE: pentru cine citește raportul, un stat donator și o agenție multilaterală nu sunt același lucru.
+      O agenție ONU e un actor ca oricare altul, cu nivel supranațional; prezența cadrului internațional se obține filtrând după nivel, nu dintr-un indicator separat. Nivelul <em>alt stat</em> ține ambasadele și organizațiile străine separate de sistemul ONU și UE: pentru cine citește raportul, un stat donator și o agenție multilaterală nu sunt același lucru.
     </div>
   </div>
 
@@ -266,7 +266,7 @@
     <ul class="plain">
       <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare.</li>
       <li><strong>Ce nu e spus rămâne necunoscut.</strong> Necunoscut nu înseamnă inexistent: o postare care nu-și numește finanțatorul nu e o postare fără finanțator.</li>
-      <li><strong>„Nimeni menționat" și „nu se poate stabili" sunt lucruri diferite.</strong> O postare care nu numește niciun partener primește o listă goală. <em>Nedeterminabil</em> se folosește doar pentru fațeta unui actor care <em>este</em> numit — o organizație pomenită pe nume, dar despre care textul nu spune dacă e ONG sau firmă. Confuzia celor două a fost, măsurat, principala sursă de dezacord dintre codori.</li>
+      <li><strong>„Nimeni menționat" și „nu se poate stabili" sunt lucruri diferite.</strong> O postare care nu numește niciun partener primește o listă goală. <em>Nedeterminabil</em> se folosește doar pentru fațeta unui actor care <em>este</em> numit — o organizație pomenită pe nume, dar despre care textul nu spune dacă e ONG sau firmă. În măsurători, confuzia celor două a fost principala sursă de dezacord între codori.</li>
       <li><strong>Anonim nu înseamnă absent.</strong> „Cineva ne-a adus 5.000 de lei" se înregistrează ca donator anonim. Mulțumirile generale, fără un act concret, nu.</li>
       <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete; eticheta de finanțator adaugă doar categoria banilor. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
@@ -283,7 +283,7 @@
     <ul class="plain">
       <li><strong>Hartă de căldură organizație × lună</strong>, 45 × 53 de luni, plus seria agregată.</li>
       <li><strong>Forma seriei per organizație</strong>: când începe, dacă are vârfuri, unde cad. Fără grile de citire împrumutate — dacă din date iese o tipologie de traiectorii, se construiește din date.</li>
-      <li><strong>Raportul postări relevante / total</strong>, calculat din grupul țintă — cu numitorul declarat: doar refugiați ucraineni numiți, respectiv cu refugiații fără naționalitate incluși. O măsură a cât din comunicarea unei organizații e despre refugiați ucraineni. Pentru cele cu mandat general va fi mic, iar asta e rezultat, nu zgomot.</li>
+      <li><strong>Raportul postări relevante / total</strong>, calculat din grupul țintă — cu numitorul declarat: doar refugiați ucraineni numiți, respectiv cu refugiații fără naționalitate incluși. O măsură a cât din comunicarea unei organizații e despre refugiați ucraineni. Pentru cele cu mandat general va fi mic — o proprietate a organizației, nu un defect al măsurii.</li>
     </ul>
   </div>
 
@@ -315,8 +315,8 @@
 
   <div class="sec">
     <h3>Reziduul</h3>
-    <p>Ultimul rând al tabelului e partea utilă. Activitățile de construcție comunitară — sport, ieșiri, socializare fără participarea comunității-gazdă — nu au sector în taxonomia UNHCR. În sistemul care contează pentru finanțare, ele nu se raportează.</p>
-    <p><strong>Categoria de reziduu e a noastră, nu a literaturii.</strong> O introducem pentru că măsurarea a arătat că există și că altfel dispare. Corespondența cu literatura vine după: dintre categoriile de activitate enumerate în studiile despre organizații conduse de refugiați, <em>sport</em> și <em>implicarea tinerilor</em> nu au sector în taxonomia UNHCR și cad exact aici.</p>
+    <p>Activitățile de construcție comunitară — sport, ieșiri, socializare fără participarea comunității-gazdă — nu au sector în taxonomia UNHCR. În sistemul care contează pentru finanțare, ele nu se raportează.</p>
+    <p><strong>Categoria de reziduu e a noastră, nu a literaturii.</strong> O introducem pentru că măsurarea a arătat că există și că altfel dispare. Corespondența cu literatura vine după: dintre categoriile de activitate enumerate în studiile despre organizații conduse de refugiați, <em>sport</em> și <em>implicarea tinerilor</em> nu au sector în taxonomia UNHCR și cad aici.</p>
   </div>
 
   <div class="sec">
@@ -434,12 +434,12 @@
   <div class="sec">
     <h3>Ce nu se poate construi</h3>
     <div class="note warn">
-      <strong>Rețea pe reacții și distribuiri: nu.</strong>
+      <strong>Nu se poate construi o rețea din reacții și distribuiri.</strong>
       Platforma expune numărul celor care reacționează, nu identitatea lor. Nu există cale de a construi o rețea de interacțiune între organizații din reacții sau distribuiri, la scara acestui corpus.
       <br><br>
       Ce rămâne în loc: dacă o organizație e <em>tagată</em> în textul altei postări, mențiunea se codează și intră în rețeaua de co-menționare. Nu e același lucru cu o rețea de reacții, iar diferența se declară acolo unde apare rezultatul.
     </div>
-    <p>Al doilea lucru care nu se poate: direcția relației. O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a colaborat efectiv, nici cine a iniţiat. Rețelele descriu <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
+    <p>Al doilea lucru care nu se poate: direcția relației. O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a colaborat efectiv, nici cine a inițiat. Rețelele descriu <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
   </div>
 </section>
 
@@ -500,7 +500,7 @@
 
   <div class="sec">
     <h3>Ce măsurăm și ce nu</h3>
-    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția nu e o precauție de subsol; e limita centrală a studiului.</p>
+    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția e limita centrală a studiului.</p>
     <p>Termenul de <em>localizare</em> desemnează deplasarea deciziei, a resurselor și a execuției răspunsului umanitar către actori locali, inclusiv către organizații conduse de persoanele afectate. Literatura care ne interesează arată distanța dintre retorica localizării și practica ei.</p>
   </div>
 
@@ -520,8 +520,8 @@
     <ol class="steps">
       <li><span class="step-n">E1</span><span class="step-b"><h4>Extragere</h4><p>Toate postările publice ale celor 45 de pagini, o singură rulare pentru tot intervalul, ca engagement-ul să fie măsurat la același moment.</p></span></li>
       <li><span class="step-n">E2</span><span class="step-b"><h4>Codare dublă</h4><p>Doi agenți independenți, aceleași intrări, fără să vadă ieșirea celuilalt. Acordul lor e măsura de calitate raportabilă în absența unui etalon.</p></span></li>
-      <li><span class="step-n">E3</span><span class="step-b"><h4>Poartă deterministă</h4><p>Cod, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la arbitraj.</p></span></li>
-      <li><span class="step-n">E4</span><span class="step-b"><h4>Arbitraj de autor</h4><p>Integral pe codurile care decid selecția și pe toate dezacordurile; eșantion aleator pe restul, cu rata raportată.</p></span></li>
+      <li><span class="step-n">E3</span><span class="step-b"><h4>Poartă deterministă</h4><p>Cod, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la rezoluție cu al treilea codor.</p></span></li>
+      <li><span class="step-n">E4</span><span class="step-b"><h4>Calibrare umană și rezoluție</h4><p>Autorul codează orb un eșantion stratificat — dezacordurile agenților, clasele rare, un strat aleator din concordante — iar praguri de acord per câmp decid intrarea în rulare. În rulare, dezacordurile le rezolvă un al treilea codor independent, cu majoritate; ce rămâne împărțit se raportează ca nerezolvat. Deriva se urmărește prin postări-santinelă cu referință umană, reintroduse în fiecare lot.</p></span></li>
       <li><span class="step-n">E5</span><span class="step-b"><h4>Analiză și raportare</h4><p>Serii temporale, hărți de căldură, analiză de rețea. Raport de proces separat de raport de rezultat.</p></span></li>
     </ol>
   </div>
@@ -531,7 +531,7 @@
     <p>Designul a fost testat pe un corpus codat manual în prealabil, de un codor uman, în MAXQDA: <strong>315 postări ale unei singure organizații</strong>. Agenții au codat aceleași postări, orbi la codarea manuală, iar acordul s-a măsurat cod cu cod.</p>
     <div class="tw">
       <table>
-        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate. Câmpurile poartă numele de la momentul calibrării; schema a fost revizuită de atunci — categoria de beneficiari și destinatarul sunt azi un singur câmp, grupul țintă, iar ultimele două rânduri au fost restructurate din temelii.</caption>
+        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate. Câmpurile poartă numele de la momentul calibrării; schema a fost revizuită de atunci — categoria de beneficiari și destinatarul sunt azi un singur câmp, grupul țintă, iar ultimele două rânduri au fost înlocuite de schema de fațete a actorilor.</caption>
         <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col">Măsură</th></tr></thead>
         <tbody>
           <tr><td>Categoria de beneficiari</td><td class="num">98,9%</td><td>κ = 0,98</td></tr>
@@ -546,10 +546,10 @@
     </div>
     <div class="note warn">
       <strong>Codarea manuală nu e etalon.</strong>
-      Acolo unde agentul diferă de ea, verdictul se dă la arbitraj și are patru valori: agentul a greșit, omul a greșit, ambele variante sunt acceptabile, sau codebook-ul e neclar. Un design cu doar primele două valori ar măsura conformitatea agentului cu erorile referinței și ar raporta-o ca acuratețe.
+      Acolo unde agentul diferă de ea, verdictul se dă la calibrare și are patru valori: agentul a greșit, omul a greșit, ambele variante sunt acceptabile, sau codebook-ul e neclar. Un design cu doar primele două valori ar măsura conformitatea agentului cu erorile referinței și ar raporta-o ca acuratețe.
     </div>
     <p>Cele două câmpuri cu acord scăzut — parteneriat și referire la instituții internaționale — au indicat unde codebook-ul avea nevoie de reguli mai stricte, nu unde agenții erau mai slabi. Ambele cereau distincții pe care textul postării adesea nu le susține: dacă „cu susținerea X" înseamnă parteneriat sau finanțare, și dacă o organizație e numită ca actor sau ca finanțator. Regulile au fost strânse în două trepte, iar la un pilot pe șase organizații acordul pe cele două câmpuri a urcat cu 9, respectiv 14 puncte. Apoi întrebarea „parteneriat sau finanțare?" a fost dizolvată de tot: partener e oricine primește un rol în text, iar finanțator e eticheta suplimentară pentru cine dă bani — nu mai e o alegere între câmpuri, deci nici o sursă de dezacord.</p>
-    <p>Al doilea câmp slab s-a închis altfel. Diagnosticul a arătat că aproape toate dezacordurile despre instituțiile internaționale nu erau despre instituții, ci despre <em>cum se numește absența</em>: pe un câmp gol în peste patru cincimi din postări, un codor scria „necunoscut" și celălalt „nu". Câmpul a fost retras și înlocuit cu fațetele de mai sus, unde nimic-menționat e o listă goală și nu mai are cu ce concura. Problema nu a fost reparată; a rămas fără obiect.</p>
+    <p>Al doilea câmp slab s-a închis altfel. Diagnosticul a arătat că aproape toate dezacordurile despre instituțiile internaționale nu erau despre instituții, ci despre <em>cum se numește absența</em>: pe un câmp gol în peste patru cincimi din postări, un codor scria „necunoscut" și celălalt „nu". Câmpul a fost retras și înlocuit cu fațetele de mai sus, unde „nimic menționat" e o listă goală, iar cele două formulări ale absenței nu mai pot apărea pe același câmp.</p>
   </div>
 
   <div class="sec">
@@ -594,7 +594,7 @@
       </table>
     </div>
     <p>Distincția dintre ultimele două nu se prezumă: se stabilește din parametrii extragerii, apoi se confirmă prin data de creare a paginii și prin arhiva web.</p>
-    <p><strong>Consecința care schimbă citirea.</strong> Data la care apare pagina unei organizații nu e o limitare a datelor, ci o observație despre organizație. Iar luna în care o organizație activă nu postează nimic e un rezultat, nu o gaură.</p>
+    <p>Data la care apare pagina unei organizații e o observație despre organizație, nu o limitare a datelor. La fel, luna în care o organizație activă nu postează nimic: valoare măsurată, nu dată lipsă.</p>
     <ul class="plain">
       <li><strong>Numitorul se declară de fiecare dată.</strong> Din toate postările, din cele relevante, din cele cu text — aceeași cifră cu numitoare diferite spune lucruri diferite.</li>
       <li><strong>Comparațiile între organizații cer normalizare.</strong> Paginile diferă cu trei ordine de mărime ca audiență.</li>
@@ -619,7 +619,7 @@
   <div class="sec">
     <h3>Ce se depune public</h3>
     <ul class="plain">
-      <li><strong>Setul de date validat</strong>, la nivel de postare, cu codurile atribuite și verdictele de arbitraj.</li>
+      <li><strong>Setul de date</strong>, la nivel de postare, cu codurile atribuite și modul de decizie al fiecărei codări: acord al codorilor, majoritate cu al treilea codor, nerezolvat.</li>
       <li><strong>Codebook-ul complet</strong>: schema de codare, definițiile operaționale, regulile de decizie și exemplele.</li>
       <li><strong>Registrul metodologic</strong>: o intrare per rulare, cu modelele folosite și data accesului, versiunea codebook-ului, consumul, rezultatul și abaterile.</li>
       <li><strong>Tabelele de rezultate</strong> care susțin fiecare figură.</li>
@@ -632,7 +632,7 @@
     <ul class="plain">
       <li><strong>Postările brute.</strong> Sunt conținut al terților și includ date personale — nume, imagini, comentarii ale unor persoane identificabile, unele în situație de vulnerabilitate.</li>
       <li><strong>Datele de contact</strong> din registrul de parteneri.</li>
-      <li><strong>Materialul de lucru nevalidat.</strong> Dosarele intermediare devin material suplimentar doar după arbitraj.</li>
+      <li><strong>Materialul de lucru intermediar.</strong> Dosarele de lucru devin material suplimentar doar după închiderea setului.</li>
     </ul>
   </div>
 
@@ -641,7 +641,7 @@
     <p>Date agenților verbatim la fiecare rulare, fiecare venind dintr-un eșec observat:</p>
     <ol class="steps">
       <li><span class="step-n">1</span><span class="step-b"><p>Citate numai din postarea efectiv primită. Niciodată din memoria modelului.</p></span></li>
-      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere costumată în dată.</p></span></li>
+      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere, nu o dată.</p></span></li>
       <li><span class="step-n">3</span><span class="step-b"><p>Absența unui rezultat nu e absența fenomenului. „Nu apare în text" se codează ca informație insuficientă, nu ca negație.</p></span></li>
       <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
     </ol>
