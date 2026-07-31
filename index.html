@@ -1885,6 +1885,14 @@
 (function () {
   if (typeof REZULTATE === 'undefined' || typeof MATRICI === 'undefined') return;
   Object.keys(REZULTATE.harti).forEach(function (k) { MATRICI[k] = REZULTATE.harti[k]; });
+
+  // hartile injectate acum nu existau cand a rulat randorul site-ului: le desenam noi
+  Array.prototype.forEach.call(document.querySelectorAll('[data-heat]'), function (g) {
+    if (g.children.length) return;
+    var h = MATRICI[g.getAttribute('data-heat')];
+    if (h && window.deseneazaHarta) g.appendChild(window.deseneazaHarta(h));
+  });
+
   var gazda = document.querySelector('[data-heat-dinamic]');
   if (!gazda) return;
   var baza = gazda.getAttribute('data-heat-dinamic');
