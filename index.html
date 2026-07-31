@@ -150,6 +150,34 @@
   .s-ttl{font-family:var(--mono); font-size:10px; letter-spacing:.08em;
          text-transform:uppercase; fill:var(--ink-faint)}
 
+
+  /* filtru oras x an */
+  .flt{background:var(--surface); border:1px solid var(--rule); padding:1rem 1.1rem;
+       display:flex; flex-direction:column; gap:.9rem}
+  .flt-row{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+  .flt-lbl{font-family:var(--mono); font-size:var(--s--1); letter-spacing:.06em;
+           text-transform:uppercase; color:var(--ink-faint); min-width:4.5rem}
+  .chip{appearance:none; border:1px solid var(--rule); background:var(--surface-2);
+        color:var(--ink-soft); font-family:var(--sans); font-size:.88rem;
+        padding:.3rem .7rem; border-radius:2px; cursor:pointer; line-height:1.3}
+  .chip:hover{color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent);
+                             color:var(--paper); font-weight:600}
+  .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .flt input[type=range]{flex:1; min-width:9rem; accent-color:var(--accent)}
+  .flt-an{font-family:var(--mono); font-variant-numeric:tabular-nums; color:var(--ink);
+          min-width:3.4rem; text-align:right}
+  .bars{display:flex; flex-direction:column; gap:.3rem}
+  .bar-r{display:grid; grid-template-columns:8rem 1fr 2.2rem; gap:.6rem; align-items:center;
+         font-size:.9rem}
+  .bar-t{background:var(--surface-2); height:1.05rem; overflow:hidden}
+  .bar-f{background:var(--accent); height:100%; width:0; transition:width .18s}
+  .bar-n{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right;
+         color:var(--ink-soft); font-size:var(--s--1)}
+  .flt-note{font-size:var(--s--1); color:var(--ink-faint)}
+  @media (max-width:32rem){.bar-r{grid-template-columns:6rem 1fr 2rem}
+                           .flt-lbl{min-width:auto; width:100%}}
+
   footer{margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--rule);
          color:var(--ink-faint); font-size:var(--s--1);
          display:flex; flex-direction:column; gap:.3rem}
@@ -169,7 +197,7 @@
   </div>
   <h1>Rețeaua de parteneri UNHCR în România</h1>
   <p class="kicker">activități, colaborări, finanțare, 2022–2026</p>
-  <p class="lede">Ce comunică public organizațiile partenere UNHCR despre propria activitate cu refugiați ucraineni, cine apare alături de ele, cine finanțează și cum se schimbă toate acestea în patru ani. Pagina descrie designul și structura de raportare; rezultatele urmează.</p>
+  <p class="lede">Ce e publicat aici e un <strong>pilot</strong>: 231 de postări, 6 organizații — 3 conduse de refugiați (RLO) și 3 conduse de comunitate (CLO, adică ONG-urile naționale care nu sunt RLO) — în 5 orașe, doar luna martie din fiecare an. Pilotul validează trei lucruri: codebook-ul, procesul de codare AI–om, și o versiune de prezentare a rezultatelor. <strong>Rezultatele nu sunt nici complete, nici reprezentative.</strong></p>
 </header>
 
 <div class="tabs" role="tablist" aria-label="Secțiuni">
@@ -309,6 +337,79 @@
   <p>Ce activități comunică organizațiile și cum se deplasează distribuția lor în timp.</p>
 
   <div class="sec">
+    <h3>Primele rezultate, pe corpusul-pilot</h3>
+    <div class="note warn">
+      <strong>Limitele acestor cifre.</strong> Sunt un pilot: 231 de postări, 6 organizații —
+      3 conduse de refugiați (RLO) și 3 conduse de comunitate (CLO) — în 5 orașe, doar luna
+      martie din fiecare an.
+      Rezultatele nu sunt nici complete, nici reprezentative. Ce validează pilotul sunt
+      codebook-ul, procesul de codare AI–om și această formă de prezentare.
+      <br><br>
+      Fiecare câmp are o valoare: 96,9% din ele prin acordul celor doi codori, restul prin
+      majoritate cu un al treilea. Nicio postare nu e exclusă.
+    </div>
+
+    <div class="tw">
+      <table>
+        <caption>Coduri de activitate, grupate pe sectoarele UNHCR. Toate cele 231 de postări. O postare poate primi mai multe coduri.</caption>
+        <thead><tr><th scope="col">Sector</th><th scope="col" class="num">Coduri</th></tr></thead>
+        <tbody>
+          <tr><td>Educație</td><td class="num">75</td></tr>
+          <tr><td><strong>Fără sector UNHCR</strong> (recreativ, mobilizare)</td><td class="num">65</td></tr>
+          <tr><td>Protecție</td><td class="num">40</td></tr>
+          <tr><td>Trai și incluziune economică</td><td class="num">13</td></tr>
+          <tr><td>Sănătate</td><td class="num">9</td></tr>
+          <tr><td>Nevoi de bază</td><td class="num">5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pull">
+      <p class="pull-q">Reziduul e a doua categorie ca mărime.</p>
+      <p>Activitățile fără sector în taxonomia UNHCR — recreativ și mobilizare de resurse — adună
+      65 de coduri, imediat după educație și înaintea protecției. Designul prevedea că această
+      categorie există și că altfel dispare; pilotul arată cât de mare e. În sistemul care
+      contează pentru finanțare, aceste activități nu se raportează.</p>
+    </div>
+
+    <div class="figs">
+      <div class="fig"><span class="fig-n">26%</span><span class="fig-l">postări fără activitate concretă</span></div>
+      <div class="fig"><span class="fig-n">58</span><span class="fig-l">educație non-formală, codul cel mai frecvent</span></div>
+      <div class="fig"><span class="fig-n">47</span><span class="fig-l">activități recreative</span></div>
+      <div class="fig"><span class="fig-n">30</span><span class="fig-l">informare despre drepturi</span></div>
+    </div>
+    <p>Un sfert dintre postări nu comunică nicio activitate concretă — mulțumiri, aniversări,
+    poziționări. Sub codebook, acelea rămân fără cod, iar proporția lor e un rezultat, nu o
+    scăpare a codării.</p>
+  </div>
+
+
+  <div class="sec">
+    <h3>Pe oraș și pe an</h3>
+    <p>Pilotul acoperă cinci orașe și cinci ani, așa că aceleași codări se pot citi pe fiecare
+    dintre cele două dimensiuni. Alegeți un oraș și un an.</p>
+
+    <div class="flt">
+      <div class="flt-row">
+        <span class="flt-lbl" id="lbl-oras">Oraș</span>
+        <div id="flt-orase" role="group" aria-labelledby="lbl-oras"
+             style="display:flex;flex-wrap:wrap;gap:.4rem"></div>
+      </div>
+      <div class="flt-row">
+        <span class="flt-lbl"><label for="flt-an">An</label></span>
+        <input type="range" id="flt-an" min="0" max="5" step="1" value="0">
+        <span class="flt-an" id="flt-an-val">toți</span>
+      </div>
+      <p class="flt-note" id="flt-n" aria-live="polite"></p>
+      <div class="bars" id="flt-bars"></div>
+      <div class="figs" id="flt-figs"></div>
+    </div>
+    <p class="flt-note">Procentele apar de la 10 postări în sus; sub prag se arată numărul brut.
+    Zece dintre cele douăzeci de celule oraș × an sunt sub prag, iar două sunt goale — la Galați
+    și Suceava paginile nu existau în primii ani.</p>
+  </div>
+
+  <div class="sec">
     <h3>Cum se clasifică</h3>
     <p>Fiecare activitate primește unul sau mai multe dintre cele 25 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. O postare fără activitate concretă rămâne fără cod, iar proporția acestor postări se raportează ca atare. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
   </div>
@@ -333,6 +434,53 @@
 <section class="panel" role="tabpanel" id="p-ag" aria-labelledby="t-ag">
   <h2>Agenția refugiaților</h2>
   <p>Miza teoretică a studiului, de aceea în tab propriu și nu între ceilalți indicatori.</p>
+
+  <div class="sec">
+    <h3>Primele rezultate, pe corpusul-pilot</h3>
+    <div class="note warn">
+      <strong>Limitele acestor cifre.</strong> Pilot: 231 de postări, 6 organizații — 3 RLO și
+      3 CLO — în 5 orașe, doar luna martie. Nici complete, nici
+      reprezentative.
+    </div>
+
+    <div class="figs">
+      <div class="fig"><span class="fig-n">3</span><span class="fig-l">postări din 231 arată refugiați cu rol activ</span></div>
+      <div class="fig"><span class="fig-n">66%</span><span class="fig-l">postări fără grup țintă numit</span></div>
+      <div class="fig"><span class="fig-n">50</span><span class="fig-l">mențiuni de refugiați ucraineni</span></div>
+      <div class="fig"><span class="fig-n">17</span><span class="fig-l">mențiuni ale comunității-gazdă</span></div>
+    </div>
+
+    <div class="pull">
+      <p class="pull-q">Refugiații apar aproape exclusiv ca beneficiari, nu ca organizatori.</p>
+      <p>În trei postări din 231, textul numește un refugiat într-un rol activ —
+      organizator, voluntar, formator. Reamintim ce măsoară indicatorul: <em>comunicarea</em>
+      despre rolul activ, nu rolul însuși. O organizație poate fi condusă de refugiați și să nu
+      spună asta în postări; codebook-ul înregistrează tăcerea ca tăcere, nu ca absență.</p>
+    </div>
+
+    <p>Două treimi dintre postări nu numesc niciun grup țintă. Asta e o proprietate a
+    comunicării, nu o limită a codării: organizațiile descriu adesea activitatea fără să spună
+    cui i se adresează. Regula „ce nu e spus rămâne necunoscut" face vizibilă exact această
+    tăcere, în loc s-o completeze din misiunea organizației.</p>
+
+    <div class="tw">
+      <table>
+        <caption>Simbolism ucrainean, ca proporție din postările fiecărei organizații. Toate cele 231 de postări.</caption>
+        <thead><tr><th scope="col">Organizație</th><th scope="col" class="num">Postări cu act expresiv</th></tr></thead>
+        <tbody>
+          <tr><td>Association Malva</td><td class="num">45,0%</td></tr>
+          <tr><td>CNRR</td><td class="num">13,7%</td></tr>
+          <tr><td>Novapolis</td><td class="num">12,8%</td></tr>
+          <tr><td>Help Ukrainians</td><td class="num">9,2%</td></tr>
+          <tr><td>MIC Brașov</td><td class="num">7,1%</td></tr>
+          <tr><td>EDNAE</td><td class="num">5,0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Diferența dintre 45% și 5% e cea mai mare variație între organizații din tot pilotul, și e
+    motivul pentru care indicatorul a fost reintrodus după ce fusese retras: sub definiția
+    restrânsă la acte expresive, măsoară ceva care chiar variază, nu limba de redactare.</p>
+  </div>
 
   <div class="sec">
     <h3>Cele două coduri</h3>
@@ -521,7 +669,7 @@
       <li><span class="step-n">E1</span><span class="step-b"><h4>Extragere</h4><p>Toate postările publice ale celor 45 de pagini, o singură rulare pentru tot intervalul, ca engagement-ul să fie măsurat la același moment.</p></span></li>
       <li><span class="step-n">E2</span><span class="step-b"><h4>Codare dublă</h4><p>Doi agenți independenți, aceleași intrări, fără să vadă ieșirea celuilalt. Acordul lor e măsura de calitate raportabilă în absența unui etalon.</p></span></li>
       <li><span class="step-n">E3</span><span class="step-b"><h4>Tezaurul de actori</h4><p>Entitățile numite în postări își primesc caracteristicile din surse, nu din memoria codorului: două căutări independente per entitate, trierea lor de către cod, validarea de autor. Entitatea care nu se regăsește în tezaur rămâne necunoscută — absența nu se completează.</p></span></li>
-      <li><span class="step-n">E4</span><span class="step-b"><h4>Trierea codărilor</h4><p>Etapă deterministă: decizia o ia codul, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la rezoluție cu al treilea codor.</p></span></li>
+      <li><span class="step-n">E4</span><span class="step-b"><h4>Acordul între codori</h4><p>Regula de decizie o aplică codul, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la rezoluție cu al treilea codor.</p></span></li>
       <li><span class="step-n">E5</span><span class="step-b"><h4>Calibrare umană și rezoluție</h4><p>Autorul codează orb un eșantion stratificat — dezacordurile agenților, clasele rare, un strat aleator din concordante — iar praguri de acord per câmp decid intrarea în rulare. În rulare, dezacordurile le rezolvă un al treilea codor independent, cu majoritate; ce rămâne împărțit se raportează ca nerezolvat. Deriva se urmărește prin postări-santinelă cu referință umană, reintroduse în fiecare lot.</p></span></li>
       <li><span class="step-n">E6</span><span class="step-b"><h4>Analiză și raportare</h4><p>Serii temporale, hărți de căldură, analiză de rețea. Raport de proces separat de raport de rezultat.</p></span></li>
     </ol>
@@ -651,7 +799,7 @@
 </section>
 
 <footer>
-  <span>Studiu în desfășurare. Pagina descrie designul și structura de raportare; rezultatele se adaugă pe măsură ce sunt validate.</span>
+  <span>Studiu în desfășurare. Cifrele publicate acum vin dintr-un pilot pe 6 organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
   <span>Materialele de lucru — date, codebook, registru metodologic — sunt ținute într-un depozit privat, întrucât includ date personale ale terților.</span>
 </footer>
 
@@ -692,6 +840,101 @@
     var x = location.hash.replace('#', '');
     if (x && document.getElementById('t-' + x)) show('t-' + x);
   });
+
+
+  // filtru oras x an
+  var CUB = {"sectoare":["Educație","Fără sector","Protecție","Trai","Sănătate","Nevoi de bază","Logistică"],"celule":{"Brașov|2022":{"n":6,"sectoare":{"Educație":0,"Fără sector":1,"Protecție":3,"Trai":0,"Sănătate":0,"Nevoi de bază":1,"Logistică":0},"fara_activitate":3,"simbolism_da":1,"simbolism_n":6,"cu_actor":3,"actori_n":6,"ref_ukr":3,"grup_n":6},"Brașov|2023":{"n":5,"sectoare":{"Educație":0,"Fără sector":4,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":0,"actori_n":5,"ref_ukr":0,"grup_n":5},"Brașov|2024":{"n":1,"sectoare":{"Educație":0,"Fără sector":0,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":1,"grup_n":1},"Brașov|2025":{"n":1,"sectoare":{"Educație":0,"Fără sector":1,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":0,"actori_n":1,"ref_ukr":0,"grup_n":1},"Brașov|2026":{"n":1,"sectoare":{"Educație":1,"Fără sector":1,"Protecție":1,"Trai":1,"Sănătate":1,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":0,"simbolism_n":1,"cu_actor":1,"actori_n":1,"ref_ukr":1,"grup_n":1},"București|2022":{"n":26,"sectoare":{"Educație":2,"Fără sector":4,"Protecție":20,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":5,"simbolism_da":7,"simbolism_n":26,"cu_actor":13,"actori_n":26,"ref_ukr":11,"grup_n":26},"București|2023":{"n":25,"sectoare":{"Educație":8,"Fără sector":2,"Protecție":4,"Trai":1,"Sănătate":2,"Nevoi de bază":2,"Logistică":0},"fara_activitate":7,"simbolism_da":6,"simbolism_n":25,"cu_actor":13,"actori_n":25,"ref_ukr":8,"grup_n":25},"București|2024":{"n":12,"sectoare":{"Educație":4,"Fără sector":4,"Protecție":2,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":4,"simbolism_da":2,"simbolism_n":12,"cu_actor":5,"actori_n":12,"ref_ukr":3,"grup_n":12},"București|2025":{"n":5,"sectoare":{"Educație":3,"Fără sector":2,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":2,"grup_n":5},"București|2026":{"n":3,"sectoare":{"Educație":0,"Fără sector":3,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":0,"simbolism_da":1,"simbolism_n":3,"cu_actor":0,"actori_n":3,"ref_ukr":1,"grup_n":3},"Constanța|2022":{"n":14,"sectoare":{"Educație":0,"Fără sector":2,"Protecție":4,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":10,"simbolism_da":5,"simbolism_n":14,"cu_actor":2,"actori_n":14,"ref_ukr":6,"grup_n":14},"Constanța|2023":{"n":5,"sectoare":{"Educație":2,"Fără sector":0,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":3,"simbolism_da":0,"simbolism_n":5,"cu_actor":4,"actori_n":5,"ref_ukr":0,"grup_n":5},"Constanța|2025":{"n":4,"sectoare":{"Educație":2,"Fără sector":0,"Protecție":0,"Trai":1,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":1,"simbolism_da":0,"simbolism_n":4,"cu_actor":3,"actori_n":4,"ref_ukr":1,"grup_n":4},"Constanța|2026":{"n":16,"sectoare":{"Educație":7,"Fără sector":1,"Protecție":1,"Trai":2,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":6,"simbolism_da":0,"simbolism_n":16,"cu_actor":13,"actori_n":16,"ref_ukr":2,"grup_n":16},"Galați|2023":{"n":27,"sectoare":{"Educație":12,"Fără sector":12,"Protecție":2,"Trai":4,"Sănătate":4,"Nevoi de bază":0,"Logistică":0},"fara_activitate":5,"simbolism_da":6,"simbolism_n":27,"cu_actor":3,"actori_n":27,"ref_ukr":3,"grup_n":27},"Galați|2024":{"n":27,"sectoare":{"Educație":15,"Fără sector":7,"Protecție":0,"Trai":0,"Sănătate":1,"Nevoi de bază":1,"Logistică":0},"fara_activitate":4,"simbolism_da":1,"simbolism_n":27,"cu_actor":1,"actori_n":27,"ref_ukr":1,"grup_n":27},"Galați|2025":{"n":20,"sectoare":{"Educație":10,"Fără sector":6,"Protecție":0,"Trai":1,"Sănătate":1,"Nevoi de bază":0,"Logistică":0},"fara_activitate":2,"simbolism_da":1,"simbolism_n":20,"cu_actor":1,"actori_n":20,"ref_ukr":3,"grup_n":20},"Galați|2026":{"n":13,"sectoare":{"Educație":6,"Fără sector":3,"Protecție":0,"Trai":1,"Sănătate":0,"Nevoi de bază":1,"Logistică":0},"fara_activitate":2,"simbolism_da":0,"simbolism_n":13,"cu_actor":2,"actori_n":13,"ref_ukr":1,"grup_n":13},"Suceava|2025":{"n":12,"sectoare":{"Educație":3,"Fără sector":6,"Protecție":1,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":3,"simbolism_da":1,"simbolism_n":12,"cu_actor":6,"actori_n":12,"ref_ukr":3,"grup_n":12},"Suceava|2026":{"n":8,"sectoare":{"Educație":0,"Fără sector":6,"Protecție":0,"Trai":0,"Sănătate":0,"Nevoi de bază":0,"Logistică":0},"fara_activitate":2,"simbolism_da":0,"simbolism_n":8,"cu_actor":2,"actori_n":8,"ref_ukr":0,"grup_n":8}},"orase":["Brașov","București","Constanța","Galați","Suceava"],"ani":["2022","2023","2024","2025","2026"],"organizatii_per_oras":{"Brașov":["MIC Brasov"],"București":["Association Malva","CNRR"],"Constanța":["Novapolis"],"Galați":["Help Ukrainians"],"Suceava":["EDNAE"]}};
+  (function () {
+    var wrapOrase = document.getElementById('flt-orase');
+    if (!wrapOrase) return;
+    var slider = document.getElementById('flt-an'), anVal = document.getElementById('flt-an-val');
+    var nOut = document.getElementById('flt-n'), bars = document.getElementById('flt-bars');
+    var figs = document.getElementById('flt-figs');
+    var orase = ['toate'].concat(CUB.orase), ani = ['toti'].concat(CUB.ani);
+    var selOras = 'toate';
+    slider.max = String(ani.length - 1);
+
+    orase.forEach(function (o) {
+      var b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.textContent = o;
+      b.setAttribute('aria-pressed', o === selOras ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        selOras = o;
+        Array.prototype.forEach.call(wrapOrase.querySelectorAll('.chip'), function (x) {
+          x.setAttribute('aria-pressed', x.textContent === o ? 'true' : 'false');
+        });
+        render();
+      });
+      wrapOrase.appendChild(b);
+    });
+    slider.addEventListener('input', render);
+
+    function agg() {
+      var an = ani[Number(slider.value)];
+      var acc = {n: 0, sect: {}, fara: 0, sd: 0, sn: 0, ca: 0, an_: 0, ru: 0, gn: 0};
+      CUB.sectoare.forEach(function (s) { acc.sect[s] = 0; });
+      Object.keys(CUB.celule).forEach(function (k) {
+        var p = k.split('|');
+        if (selOras !== 'toate' && p[0] !== selOras) return;
+        if (an !== 'toti' && p[1] !== an) return;
+        var c = CUB.celule[k];
+        acc.n += c.n; acc.fara += c.fara_activitate;
+        acc.sd += c.simbolism_da; acc.sn += c.simbolism_n;
+        acc.ca += c.cu_actor; acc.an_ += c.actori_n;
+        acc.ru += c.ref_ukr; acc.gn += c.grup_n;
+        CUB.sectoare.forEach(function (s) { acc.sect[s] += c.sectoare[s] || 0; });
+      });
+      return {an: an, a: acc};
+    }
+
+    function pct(num, den) {
+      return den >= 10 ? Math.round(num / den * 100) + '%' : num + '/' + den;
+    }
+
+    function render() {
+      var r = agg(), a = r.a;
+      anVal.textContent = r.an === 'toti' ? 'toți' : r.an;
+      var unde = selOras === 'toate' ? 'toate orașele' : selOras;
+      var cand = r.an === 'toti' ? 'toți anii' : r.an;
+      bars.innerHTML = ''; figs.innerHTML = '';
+      if (a.n === 0) {
+        nOut.textContent = unde + ', ' + cand + ': nicio postare în corpus.';
+        return;
+      }
+      var orgs = selOras === 'toate' ? null
+        : (CUB.organizatii_per_oras[selOras] || []).join(', ');
+      nOut.textContent = unde + ', ' + cand + ': ' + a.n + ' postări'
+        + (orgs ? ' (' + orgs + ')' : '')
+        + (a.n < 10 ? ' — sub 10, se arată numere brute' : '');
+
+      var max = 0;
+      CUB.sectoare.forEach(function (s) { if (a.sect[s] > max) max = a.sect[s]; });
+      CUB.sectoare.forEach(function (s) {
+        if (!a.sect[s]) return;
+        var row = document.createElement('div'); row.className = 'bar-r';
+        var lab = document.createElement('span'); lab.textContent = s;
+        var tr = document.createElement('div'); tr.className = 'bar-t';
+        var fl = document.createElement('div'); fl.className = 'bar-f';
+        fl.style.width = max ? (a.sect[s] / max * 100) + '%' : '0';
+        tr.appendChild(fl);
+        var num = document.createElement('span'); num.className = 'bar-n';
+        num.textContent = String(a.sect[s]);
+        row.appendChild(lab); row.appendChild(tr); row.appendChild(num);
+        bars.appendChild(row);
+      });
+
+      [['fără activitate concretă', pct(a.fara, a.n)],
+       ['cu actor numit', pct(a.ca, a.an_)],
+       ['refugiați ucraineni ca grup țintă', pct(a.ru, a.gn)],
+       ['simbolism ucrainean', pct(a.sd, a.sn)]].forEach(function (p) {
+        var d = document.createElement('div'); d.className = 'fig';
+        var n = document.createElement('span'); n.className = 'fig-n'; n.textContent = p[1];
+        var l = document.createElement('span'); l.className = 'fig-l'; l.textContent = p[0];
+        d.appendChild(n); d.appendChild(l); figs.appendChild(d);
+      });
+    }
+    render();
+  })();
 
   // tabelul de organizații
   var ORGS = window.__ORGS__ || [];
