@@ -263,6 +263,31 @@
            color:var(--ink-soft); margin:.4rem 0 0}
   .legenda span{display:inline-flex; align-items:center; gap:.4rem}
   .legenda i{width:.75rem; height:.75rem; border-radius:2px; display:block}
+/* RETEA-CSS-START */
+  .rp-ctl{display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; margin:.9rem 0 .6rem}
+  .rp-ctl button{font:inherit; font-size:var(--s--1); color:var(--ink); background:var(--surface);
+    border:1px solid var(--rule); border-radius:5px; padding:.3rem .75rem; cursor:pointer}
+  .rp-ctl button:hover{border-color:var(--ink-faint)}
+  .rp-ctl button:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+  .rp-ctl button[aria-pressed="true"]{border-color:var(--ink); font-weight:600}
+  .rp-luni{display:flex; gap:.25rem; flex-wrap:wrap}
+  .rp-luni button{border:none; border-bottom:3px solid var(--rule); border-radius:0;
+    background:none; color:var(--ink-soft); padding:.15rem .5rem}
+  .rp-luni button[aria-pressed="true"]{color:var(--ink); font-weight:600; border-bottom-color:var(--ink)}
+  .rp-stage{position:relative; background:var(--surface); border:1px solid var(--rule); border-radius:6px}
+  .rp-stage canvas{display:block; width:100%; height:540px; border-radius:6px}
+  .rp-hud{position:absolute; top:.7rem; left:.9rem; pointer-events:none}
+  .rp-hud b{display:block; font-family:var(--mono); font-size:var(--s3); line-height:1.1}
+  .rp-hud span{color:var(--ink-faint); font-size:var(--s--1)}
+  .rp-tip{position:absolute; display:none; pointer-events:none; z-index:3; max-width:270px;
+    background:var(--surface); border:1px solid var(--rule); border-radius:5px;
+    padding:.4rem .6rem; font-size:var(--s--1); box-shadow:0 2px 10px rgba(0,0,0,.14)}
+  .rp-tip b{display:block}
+  .rp-tip span{color:var(--ink-faint)}
+  .rp-leg{display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; margin-top:.7rem; font-size:var(--s--1);
+    color:var(--ink-soft)}
+  .rp-leg i{width:.8em; height:.8em; border-radius:50%; display:inline-block; margin-right:.4rem}
+/* RETEA-CSS-END */
 </style>
 </head>
 <body>
@@ -285,7 +310,7 @@
   <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Postări</button>
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
-  <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea</button>
+  <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
   <button class="tab" role="tab" id="t-org" aria-controls="p-org" aria-selected="false">Organizații</button>
   <button class="tab" role="tab" id="t-ms" aria-controls="p-ms" aria-selected="false">Metodă și surse</button>
@@ -873,17 +898,40 @@
 
 <!-- ============ RETEA ============ -->
 <section class="panel" role="tabpanel" id="p-ret" aria-labelledby="t-ret">
-  <h2>Rețea</h2>
+  <h2>Rețea parteneri</h2>
   <p>Partea care nu exista în designul testat pe un singur caz. Cu o organizație se pot număra partenerii; cu 45 se poate descrie structura care îi leagă.</p>
 
   <div class="sec">
+    <h3>Rețeaua pilotului, lună de lună</h3>
+    <p>Fiecare lună martie adaugă legături: organizația numește un partener într-o postare, iar
+    acordul între codori reține numele. Mărimea cercului e numărul de legături acumulate;
+    culoarea, clasa organizației din registrul UNHCR. Partenerii rămân gri — tipologia lor
+    se rezolvă în tezaur și așteaptă validarea autorului.</p>
+
+    <div class="rp-ctl">
+      <button id="rp-play" aria-pressed="false">▶ Redă</button>
+      <span class="rp-luni" id="rp-luni" role="group" aria-label="Lunile"></span>
+      <span class="rp-luni" id="rp-orase" role="group" aria-label="Orașele" style="gap:.35rem"></span>
+    </div>
+    <div class="rp-stage">
+      <canvas id="rp-cv" aria-label="Rețeaua de parteneri, animată pe lunile martie"></canvas>
+      <div class="rp-hud"><b id="rp-luna"></b><span id="rp-cifre"></span></div>
+      <div class="rp-tip" id="rp-tip"></div>
+    </div>
+    <div class="rp-leg" id="rp-leg"></div>
+
+    <p class="hm-key">Pilot: 6 organizații, ferestrele de martie 2022–2026 — nici complet, nici
+    reprezentativ. Numele apar in vivo, cum le scrie postarea. Partenerii numiți de mai multe
+    organizații sunt etichetați permanent; restul, la hover.</p>
+  </div>
+
+  <div class="sec">
     <h3>Din ce se construiește</h3>
-    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, fiecare cu denumirea concretă și cu cele două caracteristici — tip și nivel. Numele face nodurile; caracteristicile le colorează, deci aceeași rețea se poate citi pe tipuri de actor sau pe scări de autoritate, fără o a doua codare.</p>
+    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu denumirea concretă, in vivo. Numele fac nodurile. Caracteristicile actorilor <strong>nu se codează pe postare</strong>: se strâng în tezaur, ca fapte cu sursă, iar tipologia analitică o propun agenții și o validează autorul. Aceeași rețea se va putea citi pe tipuri de actor fără o a doua codare — dar abia după acea validare.</p>
     <div class="schem">
       <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
         <text x="10" y="16" class="s-ttl">rețea bipartită</text>
         <text x="400" y="16" class="s-ttl">proiecție pe organizații</text>
-        <!-- bipartite: orgs left, partners right -->
         <g stroke="currentColor" stroke-opacity=".28" stroke-width="1.3" fill="none">
           <line x1="60" y1="60" x2="200" y2="55"/>
           <line x1="60" y1="60" x2="200" y2="120"/>
@@ -902,12 +950,10 @@
         </g>
         <text x="40" y="228" class="s-lbl">organizații</text>
         <text x="176" y="228" class="s-lbl">actori numiți</text>
-        <!-- arrow -->
         <g stroke="var(--ink-faint)" stroke-width="1.2" fill="none">
           <line x1="270" y1="130" x2="350" y2="130"/>
           <polyline points="342,124 350,130 342,136"/>
         </g>
-        <!-- projection: triangle of orgs -->
         <g stroke="var(--accent)" stroke-width="2.6" stroke-opacity=".5" fill="none">
           <line x1="470" y1="70" x2="560" y2="140"/>
           <line x1="470" y1="70" x2="470" y2="190"/>
@@ -930,7 +976,7 @@
           <tr>
             <td><strong>Colaborare</strong></td>
             <td>organizații × parteneri numiți</td>
-            <td>Bipartită, proiectată pe organizații: două organizații sunt legate dacă numesc același partener. Măsuri de centralitate pe actori — care apar în comunicarea multor organizații și funcționează ca noduri ale rețelei.</td>
+            <td>Bipartită, proiectată pe organizații: două organizații sunt legate dacă numesc același partener. Măsuri de centralitate pe actori — care apar în comunicarea multor organizații și funcționează ca noduri ale rețelei. Pe pilot, doar doi actori sunt numiți de mai multe organizații.</td>
           </tr>
           <tr>
             <td><strong>Finanțare</strong></td>
@@ -1228,6 +1274,7 @@
 <script src="orgs.js"></script>
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
+<script src="retea.js"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -1556,5 +1603,196 @@
 
 })();
 </script>
+<!-- RETEA-JS-START -->
+<script>
+(function () {
+  if (typeof RETEA === 'undefined') return;
+  var CLASA = RETEA.clasa, ORGS = Object.keys(CLASA).sort();
+  var VAR = { RLO: '--ser-1', CLO: '--ser-2' };
+  var LUNI = RETEA.luni, redus = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.getElementById('rp-cv');
+  if (!cv) return;
+  var ctx = cv.getContext('2d'), tip = document.getElementById('rp-tip');
+
+  function rnd(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  var R = rnd(42);
+
+  var noduri = {}, muchii = [];
+  ORGS.forEach(function (o) { noduri[o] = { id: o, tip: 'org', luna: 99, x: 0, y: 0, vx: 0, vy: 0, ra: 0, al: 0 }; });
+  LUNI.forEach(function (l, li) {
+    (RETEA.muchii[l] || []).forEach(function (m) {
+      var org = m[0], p = m[1];
+      if (!noduri[p]) noduri[p] = { id: p, tip: 'p', luna: li, x: 0, y: 0, vx: 0, vy: 0, ra: 0, al: 0 };
+      noduri[p].luna = Math.min(noduri[p].luna, li);
+      var e = null;
+      for (var i = 0; i < muchii.length; i++) if (muchii[i].org === org && muchii[i].p === p) { e = muchii[i]; break; }
+      if (!e) { e = { org: org, p: p, luni: [] }; muchii.push(e); }
+      e.luni.push(li);
+    });
+  });
+  ORGS.forEach(function (o) {
+    var prime = muchii.filter(function (m) { return m.org === o; }).map(function (m) { return m.luni[0]; });
+    noduri[o].luna = prime.length ? Math.min.apply(null, prime) : 99;
+  });
+  function grad(id, s) { var g = 0; muchii.forEach(function (m) {
+    if (m.luni[0] <= s && (m.org === id || m.p === id)) g++; }); return g; }
+  function orgsLui(p, s) { var o = {}; muchii.forEach(function (m) {
+    if (m.p === p && m.luni[0] <= s) o[m.org] = 1; }); return Object.keys(o).sort(); }
+
+  var pas = 0, filtru = null, playing = false, timer = null, pornit = false;
+  var luniDiv = document.getElementById('rp-luni'), oraseDiv = document.getElementById('rp-orase');
+  LUNI.forEach(function (l, i) { var b = document.createElement('button');
+    b.textContent = l; b.onclick = function () { stop(); pas = i; sync(); }; luniDiv.appendChild(b); });
+  var ORASE = ['Toate']; ORGS.forEach(function (o) {
+    if (ORASE.indexOf(RETEA.orase[o]) < 0) ORASE.push(RETEA.orase[o]); });
+  ORASE.forEach(function (o) { var b = document.createElement('button');
+    b.textContent = o; b.onclick = function () { filtru = (o === 'Toate') ? null : o; sync(); };
+    oraseDiv.appendChild(b); });
+  var play = document.getElementById('rp-play');
+  play.onclick = function () { playing ? stop() : porneste(); };
+  function porneste() { if (pas >= LUNI.length - 1) { pas = 0; sync(); }
+    playing = true; play.textContent = '⏸ Pauză'; play.setAttribute('aria-pressed', 'true');
+    timer = setInterval(function () { if (pas < LUNI.length - 1) { pas++; sync(); } else stop(); },
+      redus ? 1300 : 2100); }
+  function stop() { playing = false; clearInterval(timer);
+    play.textContent = '▶ Redă'; play.setAttribute('aria-pressed', 'false'); }
+
+  function vizibil(n) { if (!filtru) return true;
+    if (n.tip === 'org') return RETEA.orase[n.id] === filtru;
+    return orgsLui(n.id, pas).some(function (o) { return RETEA.orase[o] === filtru; }); }
+
+  function sync() {
+    Array.prototype.forEach.call(luniDiv.children, function (b, i) {
+      b.setAttribute('aria-pressed', String(i === pas)); });
+    Array.prototype.forEach.call(oraseDiv.children, function (b) {
+      b.setAttribute('aria-pressed', String(b.textContent === (filtru || 'Toate'))); });
+    var act = muchii.filter(function (m) {
+      return m.luni[0] <= pas && (!filtru || RETEA.orase[m.org] === filtru); });
+    var p = {}; act.forEach(function (m) { p[m.p] = 1; });
+    var noi = muchii.filter(function (m) {
+      return m.luni[0] === pas && (!filtru || RETEA.orase[m.org] === filtru); }).length;
+    document.getElementById('rp-luna').textContent = LUNI[pas];
+    document.getElementById('rp-cifre').textContent =
+      act.length + ' legături · ' + Object.keys(p).length + ' parteneri · +' + noi + ' în luna asta';
+  }
+
+  var leg = document.getElementById('rp-leg');
+  [['RLO', 'organizație condusă de refugiați'], ['CLO', 'organizație comunitară']].forEach(function (c) {
+    var membri = ORGS.filter(function (o) { return CLASA[o] === c[0]; })
+      .map(function (o) { return o + ' (' + RETEA.orase[o] + ')'; }).join(' · ');
+    var s = document.createElement('span');
+    s.innerHTML = '<i style="background:var(' + VAR[c[0]] + ')"></i><strong>' + c[0] +
+      '</strong> — ' + c[1] + ': ' + membri;
+    leg.appendChild(s);
+  });
+  var sp = document.createElement('span');
+  sp.innerHTML = '<i style="background:var(--ink-faint)"></i>partener (nume, in vivo)';
+  leg.appendChild(sp);
+
+  var W = 0, H = 0, DPR = 1, asezat = false;
+  function masoara() { var w = cv.clientWidth, h = cv.clientHeight;
+    if (!w || (w === W && h === H)) return false;
+    DPR = window.devicePixelRatio || 1; W = w; H = h;
+    cv.width = W * DPR; cv.height = H * DPR; ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    return true; }
+  function ancora(i) { var a = -Math.PI / 2 + i * 2 * Math.PI / ORGS.length;
+    return { x: W / 2 + Math.cos(a) * W * 0.30, y: H / 2 + Math.sin(a) * H * 0.30 }; }
+  function aseaza() { ORGS.forEach(function (o, i) { var a = ancora(i);
+      noduri[o].x = a.x; noduri[o].y = a.y; });
+    Object.keys(noduri).forEach(function (k) { var n = noduri[k];
+      if (n.tip !== 'p') return; var o = orgsLui(n.id, 99)[0], a = noduri[o];
+      n.x = a.x + (R() - 0.5) * 120; n.y = a.y + (R() - 0.5) * 120; }); }
+
+  function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+  function tick() {
+    if (masoara()) { aseaza(); asezat = true; }
+    if (asezat) {
+      if (!pornit && !redus) { pornit = true; setTimeout(porneste, 400); }
+      var act = [], mAct = muchii.filter(function (m) { return m.luni[0] <= pas; });
+      Object.keys(noduri).forEach(function (k) { if (noduri[k].luna <= pas) act.push(noduri[k]); });
+      act.forEach(function (n) {
+        var g = grad(n.id, pas);
+        var tr = n.tip === 'org' ? 10 + 4.2 * Math.sqrt(g) : 5 + 3.2 * Math.sqrt(g);
+        n.ra += (redus ? 1 : 0.12) * (tr - n.ra);
+        n.al += (redus ? 1 : 0.10) * ((vizibil(n) ? 1 : 0.08) - n.al);
+        if (n.al < 0.01) n.al = 0.01;
+        n.vx *= 0.86; n.vy *= 0.86;
+      });
+      for (var i = 0; i < act.length; i++) for (var j = i + 1; j < act.length; j++) {
+        var a = act[i], b = act[j], dx = b.x - a.x, dy = b.y - a.y;
+        var d2 = dx * dx + dy * dy || 1, d = Math.sqrt(d2), f = Math.min(1400 / d2, 4);
+        dx /= d; dy /= d; a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f;
+      }
+      mAct.forEach(function (m) { var a = noduri[m.org], b = noduri[m.p];
+        var dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+        var f = 0.012 * (d - (a.ra + b.ra + 46)); dx /= d; dy /= d;
+        a.vx += dx * f; a.vy += dy * f; b.vx -= dx * f; b.vy -= dy * f; });
+      ORGS.forEach(function (o, i) { var n = noduri[o], a = ancora(i);
+        n.vx += (a.x - n.x) * 0.02; n.vy += (a.y - n.y) * 0.02; });
+      act.forEach(function (n) { n.x += n.vx; n.y += n.vy;
+        n.x = Math.max(24, Math.min(W - 24, n.x)); n.y = Math.max(24, Math.min(H - 24, n.y)); });
+      deseneaza(act, mAct);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function deseneaza(act, mAct) {
+    ctx.clearRect(0, 0, W, H);
+    mAct.forEach(function (m) {
+      var a = noduri[m.org], b = noduri[m.p], viz = vizibil(a) && vizibil(b);
+      ctx.globalAlpha = (viz ? 0.4 : 0.05) * Math.min(a.al, b.al);
+      ctx.strokeStyle = css(VAR[CLASA[m.org]]);
+      ctx.lineWidth = m.luni[0] === pas ? 2.6 : 1.4 + 0.5 * (m.luni.length - 1);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+    var surf = css('--surface');
+    act.forEach(function (n) {
+      ctx.globalAlpha = n.al;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.ra, 0, 7);
+      ctx.fillStyle = n.tip === 'org' ? css(VAR[CLASA[n.id]]) : css('--ink-faint');
+      ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = surf; ctx.stroke();
+      if (n.tip === 'p' && orgsLui(n.id, pas).length > 1) {
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.ra + 3, 0, 7);
+        ctx.lineWidth = 1.2; ctx.strokeStyle = css('--ink-faint'); ctx.stroke();
+      }
+    });
+    ctx.textAlign = 'center';
+    act.forEach(function (n) {
+      var multi = n.tip === 'p' && orgsLui(n.id, pas).length > 1;
+      if (n.tip !== 'org' && !multi) return;
+      ctx.globalAlpha = Math.min(1, n.al);
+      ctx.font = (n.tip === 'org' ? '600 13px ' : '11.5px ') + 'system-ui,-apple-system,"Segoe UI",sans-serif';
+      ctx.fillStyle = n.tip === 'org' ? css('--ink') : css('--ink-soft');
+      ctx.fillText(n.tip === 'org' ? n.id : (RETEA.afisare[n.id] || n.id), n.x, n.y - n.ra - 6);
+    });
+    ctx.globalAlpha = 1;
+  }
+
+  cv.addEventListener('mousemove', function (e) {
+    var r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, hit = null;
+    Object.keys(noduri).forEach(function (k) { var n = noduri[k];
+      if (n.luna > pas || hit) return;
+      if (Math.sqrt((n.x - mx) * (n.x - mx) + (n.y - my) * (n.y - my)) < n.ra + 6) hit = n; });
+    if (!hit) { tip.style.display = 'none'; return; }
+    var g = grad(hit.id, pas);
+    var cine = hit.tip === 'org' ? CLASA[hit.id] + ' · ' + RETEA.orase[hit.id]
+      : 'numit de: ' + orgsLui(hit.id, pas).map(function (o) { return o + ' (' + CLASA[o] + ')'; }).join(', ');
+    tip.innerHTML = '<b>' + (hit.tip === 'org' ? hit.id : (RETEA.afisare[hit.id] || hit.id)) +
+      '</b><span>' + cine + ' · ' + g + (g === 1 ? ' legătură' : ' legături') +
+      ' · din ' + LUNI[hit.luna] + '</span>';
+    tip.style.display = 'block';
+    tip.style.left = Math.min(mx + 14, W - 280) + 'px';
+    tip.style.top = (my + 12) + 'px';
+  });
+  cv.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+
+  sync(); tick();
+})();
+</script>
+<!-- RETEA-JS-END -->
 </body>
 </html>
