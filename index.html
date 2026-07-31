@@ -197,8 +197,8 @@
           <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod, iar proporția acestor postări se raportează.</td><td>zero, unul sau mai multe dintre cele 25 de coduri de mai jos</td></tr>
           <tr><td><strong>Grupul țintă</strong></td><td>Cui i se adresează activitatea. Una sau mai multe valori — un eveniment pentru refugiați și localnici le primește pe ambele; nu există „mixt".</td><td>refugiați ucraineni · refugiați din alte țări · refugiați, fără naționalitate numită · comunitatea locală</td></tr>
           <tr><td><strong>Implicarea refugiaților</strong></td><td>Refugiații apar cu rol activ — organizator, voluntar, formator — sau doar ca participanți.</td><td>da · nu</td></tr>
-          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em> fiecărui actor, cu două fațete: ce fel de actor e și cât de departe ajunge autoritatea lui. Finanțatorii numiți intră și aici: a da bani e un rol. Tag-urile fără o frază de colaborare nu se numără.</td><td>numele actorului, plus tipul și nivelul lui — vezi mai jos</td></tr>
-          <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune — înregistrare în plus față de cea de partener, pentru sursa banilor.</td><td>aceleași fațete, plus marcajul de donator anonim</td></tr>
+          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em> fiecărui actor, cu două caracteristici: ce fel de actor e și cât de departe ajunge autoritatea lui. Finanțatorii numiți intră și aici: a da bani e un rol. Tag-urile fără o frază de colaborare nu se numără.</td><td>numele actorului, plus tipul și nivelul lui — vezi mai jos</td></tr>
+          <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune — înregistrare în plus față de cea de partener, pentru sursa banilor.</td><td>aceleași caracteristici, plus marcajul de donator anonim</td></tr>
           <tr><td><strong>Simbolismul ucrainean</strong></td><td>Dacă postarea conține un act expresiv de identificare cu cauza națională: sloganuri (Slava Ukraini!), steagul folosit expresiv, povești de pe front sau de reziliență legate de rezistența la agresiunea rusă — exemple, nu listă închisă. Steagul din logo sau ca marcaj de limbă nu se numără.</td><td>da · nu</td></tr>
           <tr><td><strong>Engagement</strong></td><td>Reacțiile publicului la postare.</td><td>reacții, distribuiri, comentarii — numere</td></tr>
         </tbody>
@@ -207,14 +207,14 @@
   </div>
 
   <div class="sec">
-    <h3>Cele două fațete ale actorilor</h3>
-    <p>Fiecare actor se înregistrează cu numele lui și cu două fațete independente. Aceeași pereche se aplică și partenerilor, și finanțatorilor. Combinația reface categoriile obișnuite fără să le fixeze dinainte: „fonduri europene" e <em>interguvernamental</em> + <em>supranațional</em>, „granturi norvegiene" e <em>public</em> + <em>alt stat</em>, o subvenție de la primărie e <em>public</em> + <em>local</em>.</p>
+    <h3>Cele două caracteristici ale actorilor</h3>
+    <p>Fiecare actor se înregistrează cu numele lui și cu două caracteristici independente. Aceeași pereche se aplică și partenerilor, și finanțatorilor. Combinația reface categoriile obișnuite fără să le fixeze dinainte: „fonduri europene" e <em>interguvernamental</em> + <em>supranațional</em>, „granturi norvegiene" e <em>public</em> + <em>alt stat</em>, o subvenție de la primărie e <em>public</em> + <em>local</em>.</p>
     <div class="tw">
       <table>
-        <thead><tr><th scope="col">Fațetă</th><th scope="col">Valori</th><th scope="col">Ce distinge</th></tr></thead>
+        <thead><tr><th scope="col">Caracteristică</th><th scope="col">Valori</th><th scope="col">Ce distinge</th></tr></thead>
         <tbody>
           <tr><td><strong>Tipul</strong></td><td>public · interguvernamental · ONG · academic · privat · nedeterminabil</td><td>Ce fel de actor e. O ambasadă sau un institut cultural străin e tot autoritate publică — a altui stat. O școală a unei instituții publice e publică, nu academică.</td></tr>
-          <tr><td><strong>Nivelul</strong></td><td>local · național · alt stat · supranațional · nedeterminabil</td><td>Cât de departe ajunge autoritatea lui. Local și național se despart după legea administrației publice: primării și consilii pe de o parte, guvern, ministere și servicii deconcentrate pe de alta.</td></tr>
+          <tr><td><strong>Nivelul</strong></td><td>local · județean · național (doar administrația publică) · din România · filială românească a unei organizații internaționale · alt stat · supranațional · nedeterminabil</td><td>Raza administrativă se codează doar la administrația publică românească, după legea ei: primării și consilii locale, consilii județene, guvern cu ministere și servicii deconcentrate. Ceilalți actori românești nu primesc judecată de rază — sunt din România, cu o singură distincție: entitatea românească a unei organizații internaționale (Salvați Copiii România) se marchează separat de actorul născut aici. O entitate creată de și compusă exclusiv din autorități publice e autoritate publică, indiferent de forma juridică.</td></tr>
         </tbody>
       </table>
     </div>
@@ -266,7 +266,7 @@
     <ul class="plain">
       <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare.</li>
       <li><strong>Ce nu e spus rămâne necunoscut.</strong> Necunoscut nu înseamnă inexistent: o postare care nu-și numește finanțatorul nu e o postare fără finanțator.</li>
-      <li><strong>„Nimeni menționat" și „nu se poate stabili" sunt lucruri diferite.</strong> O postare care nu numește niciun partener primește o listă goală. <em>Nedeterminabil</em> se folosește doar pentru fațeta unui actor care <em>este</em> numit — o organizație pomenită pe nume, dar despre care textul nu spune dacă e ONG sau firmă. În măsurători, confuzia celor două a fost principala sursă de dezacord între codori.</li>
+      <li><strong>„Nimeni menționat" și „nu se poate stabili" sunt lucruri diferite.</strong> O postare care nu numește niciun partener primește o listă goală. <em>Nedeterminabil</em> se folosește doar pentru caracteristica unui actor care <em>este</em> numit — o organizație pomenită pe nume, dar despre care textul nu spune dacă e ONG sau firmă. În măsurători, confuzia celor două a fost principala sursă de dezacord între codori.</li>
       <li><strong>Anonim nu înseamnă absent.</strong> „Cineva ne-a adus 5.000 de lei" se înregistrează ca donator anonim. Mulțumirile generale, fără un act concret, nu.</li>
       <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete; eticheta de finanțator adaugă doar categoria banilor. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
@@ -361,7 +361,7 @@
 
   <div class="sec">
     <h3>Din ce se construiește</h3>
-    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, fiecare cu denumirea concretă și cu cele două fațete — tip și nivel. Numele face nodurile; fațetele le colorează, deci aceeași rețea se poate citi pe tipuri de actor sau pe scări de autoritate, fără o a doua codare.</p>
+    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, fiecare cu denumirea concretă și cu cele două caracteristici — tip și nivel. Numele face nodurile; caracteristicile le colorează, deci aceeași rețea se poate citi pe tipuri de actor sau pe scări de autoritate, fără o a doua codare.</p>
     <div class="schem">
       <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
         <text x="10" y="16" class="s-ttl">rețea bipartită</text>
@@ -531,7 +531,7 @@
     <p>Designul a fost testat pe un corpus codat manual în prealabil, de un codor uman, în MAXQDA: <strong>315 postări ale unei singure organizații</strong>. Agenții au codat aceleași postări, orbi la codarea manuală, iar acordul s-a măsurat cod cu cod.</p>
     <div class="tw">
       <table>
-        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate. Câmpurile poartă numele de la momentul calibrării; schema a fost revizuită de atunci — categoria de beneficiari și destinatarul sunt azi un singur câmp, grupul țintă, iar ultimele două rânduri au fost înlocuite de schema de fațete a actorilor.</caption>
+        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate. Câmpurile poartă numele de la momentul calibrării; schema a fost revizuită de atunci — categoria de beneficiari și destinatarul sunt azi un singur câmp, grupul țintă, iar ultimele două rânduri au fost înlocuite de schema de caracteristici a actorilor.</caption>
         <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col">Măsură</th></tr></thead>
         <tbody>
           <tr><td>Categoria de beneficiari</td><td class="num">98,9%</td><td>κ = 0,98</td></tr>
@@ -549,7 +549,7 @@
       Acolo unde agentul diferă de ea, verdictul se dă la calibrare și are patru valori: agentul a greșit, omul a greșit, ambele variante sunt acceptabile, sau codebook-ul e neclar. Un design cu doar primele două valori ar măsura conformitatea agentului cu erorile referinței și ar raporta-o ca acuratețe.
     </div>
     <p>Cele două câmpuri cu acord scăzut — parteneriat și referire la instituții internaționale — au indicat unde codebook-ul avea nevoie de reguli mai stricte, nu unde agenții erau mai slabi. Ambele cereau distincții pe care textul postării adesea nu le susține: dacă „cu susținerea X" înseamnă parteneriat sau finanțare, și dacă o organizație e numită ca actor sau ca finanțator. Regulile au fost strânse în două trepte, iar la un pilot pe șase organizații acordul pe cele două câmpuri a urcat cu 9, respectiv 14 puncte. Apoi întrebarea „parteneriat sau finanțare?" a fost dizolvată de tot: partener e oricine primește un rol în text, iar finanțator e eticheta suplimentară pentru cine dă bani — nu mai e o alegere între câmpuri, deci nici o sursă de dezacord.</p>
-    <p>Al doilea câmp slab s-a închis altfel. Diagnosticul a arătat că aproape toate dezacordurile despre instituțiile internaționale nu erau despre instituții, ci despre <em>cum se numește absența</em>: pe un câmp gol în peste patru cincimi din postări, un codor scria „necunoscut" și celălalt „nu". Câmpul a fost retras și înlocuit cu fațetele de mai sus, unde „nimic menționat" e o listă goală, iar cele două formulări ale absenței nu mai pot apărea pe același câmp.</p>
+    <p>Al doilea câmp slab s-a închis altfel. Diagnosticul a arătat că aproape toate dezacordurile despre instituțiile internaționale nu erau despre instituții, ci despre <em>cum se numește absența</em>: pe un câmp gol în peste patru cincimi din postări, un codor scria „necunoscut" și celălalt „nu". Câmpul a fost retras și înlocuit cu caracteristicile de mai sus, unde „nimic menționat" e o listă goală, iar cele două formulări ale absenței nu mai pot apărea pe același câmp.</p>
   </div>
 
   <div class="sec">
@@ -557,7 +557,7 @@
     <p>Toate câmpurile au fost recodate o dată, sub aceeași versiune de codebook, pe corpusul-pilot: <strong>231 de postări, doi agenți independenți</strong>, 50 de dezacorduri. Cifrele de mai jos sunt măsurate pe pilot, nu pe corpusul complet.</p>
     <div class="tw">
       <table>
-        <caption>Acord între cei doi agenți, schema finală. Actorii se măsoară separat pe nume și pe fațete, pentru că sunt două întrebări diferite: cine e numit, și ce fel de actor e.</caption>
+        <caption>Acord între cei doi agenți, schema finală. Actorii se măsoară separat pe nume și pe caracteristici, pentru că sunt două întrebări diferite: cine e numit, și ce fel de actor e.</caption>
         <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col">Măsură</th></tr></thead>
         <tbody>
           <tr><td>Simbolismul ucrainean</td><td class="num">99,6%</td><td>κ = 0,98</td></tr>
@@ -567,7 +567,7 @@
           <tr><td>Finanțatori — cine e numit</td><td class="num">99,6%</td><td>Jaccard 1,00</td></tr>
           <tr><td>Parteneri — există sau nu actori</td><td class="num">97,0%</td><td>κ = 0,93</td></tr>
           <tr><td>Parteneri — cine e numit</td><td class="num">94,4%</td><td>Jaccard 0,95</td></tr>
-          <tr><td>Parteneri — fațetele, pe actorii numiți de amândoi</td><td class="num">96,2% / 93,3%</td><td>tip / nivel</td></tr>
+          <tr><td>Parteneri — caracteristicile, pe actorii numiți de amândoi</td><td class="num">96,2% / 93,3%</td><td>tip / nivel</td></tr>
         </tbody>
       </table>
     </div>
@@ -576,6 +576,7 @@
       La implicarea refugiaților, acordul brut e 99,1%, dar κ scade la 0,66: în tot corpusul-pilot doar trei postări arată refugiați cu rol activ. κ pedepsește distribuțiile foarte inegale, iar pe un fenomen rar cifra spune mai mult despre raritate decât despre codori. De aceea câmpul se raportează cu acordul brut și cu distribuția alături, niciodată cu coeficientul singur.
     </div>
     <p>Acordul pe nume e o limită de jos: „CJI" și „CJI — Centrul pentru Jurnalism Independent" se numără ca dezacord, fiindcă potrivirea numelor nu unește prescurtări. Cu o potrivire mai permisivă, cifrele urcă la 95,7% și 100%. Diferența e ortografie, nu dezacord de fond — dar rămâne raportată strict, ca să nu se ascundă în ea și diferențe reale.</p>
+    <p>Cifrele pentru nivel sunt măsurate sub vocabularul de dinaintea restructurării lui (vezi Codebook): măsurarea a arătat că judecata de rază pentru actorii care nu sunt administrație publică era principala sursă de dezacord rămasă, iar vocabularul a fost restructurat în consecință — raza se mai codează doar la administrația publică. Sub noul vocabular, nivelul unui actor se stabilește din identitatea entității, cu sursă, nu din judecata codorului la fiecare postare.</p>
   </div>
 
   <div class="sec">
@@ -610,7 +611,7 @@
       <li><strong>Prezența vizuală nu se codează.</strong> Inspecția fiecărei imagini nu e fezabilă la volumul proiectat. Indicatorul de simbolism ucrainean a fost întâi retras — măsurarea a arătat că prindea limba de lucru a organizației și obiceiul de hashtag, nu un act al postării — apoi reintrodus, restrâns la acte expresive din text: sloganuri, steagul folosit expresiv, povești legate de rezistența la agresiunea armată. Steagul din logo și steagul ca marcaj de limbă rămân excluse explicit.</li>
       <li><strong>Engagement măsurat la momentul extragerii</strong>, nu la un interval fix după publicare. Se controlează prin numărul de zile de la publicare.</li>
       <li><strong>Absența are patru forme.</strong> O lună fără postări poate însemna că organizația nu a postat (valoare măsurată), că extragerea nu a ajuns acolo (dată lipsă), sau că pagina nu exista încă (în afara universului). Se clasifică explicit, nu se raportează la comun ca „acoperire incompletă". Dintre cele patru organizații conduse de refugiați, una nu are pagină identificată și nu intră în corpus.</li>
-      <li><strong>Două câmpuri nu au corespondent în codarea manuală.</strong> Fațetele actorilor și simbolismul ucrainean sunt construcții ale acestui studiu, fără referință în corpusul codat manual; pentru ele există doar acord între agenți, nu și comparație cu un codor uman.</li>
+      <li><strong>Două câmpuri nu au corespondent în codarea manuală.</strong> Caracteristicile actorilor și simbolismul ucrainean sunt construcții ale acestui studiu, fără referință în corpusul codat manual; pentru ele există doar acord între agenți, nu și comparație cu un codor uman.</li>
     </ul>
   </div>
   <h3 style="margin-top:1rem">Surse și depunere</h3>
