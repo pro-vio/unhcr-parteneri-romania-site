@@ -289,26 +289,18 @@
   .rp-leg i{width:.8em; height:.8em; border-radius:50%; display:inline-block; margin-right:.4rem}
 /* RETEA-CSS-END */
 /* REZ-CSS-START */
-  .rez{margin:.2rem 0 1.6rem}
-  .rez h4{font-family:var(--sans); font-size:var(--s--1); text-transform:uppercase;
-    letter-spacing:.06em; color:var(--ink-faint); font-weight:600; margin:0 0 .1rem}
-  .rez .rez-sub{color:var(--ink-faint); font-size:var(--s--1); margin:0 0 .7rem}
-  .bars{display:grid; grid-template-columns:minmax(7.5rem,auto) 1fr auto; gap:.28rem .6rem;
-    align-items:center}
-  .bars .lab{font-size:var(--s--1); color:var(--ink-soft); text-align:right;
-    overflow-wrap:anywhere}
-  .bars .track{background:var(--surface-2); border-radius:2px; height:1.05rem; position:relative}
-  .bars .bar{height:100%; border-radius:2px 4px 4px 2px; min-width:2px}
-  .bars .val{font-size:var(--s--1); font-variant-numeric:tabular-nums; color:var(--ink);
+  .rez-tit{font-family:var(--sans); font-size:var(--s--1); text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); font-weight:600; margin:1.3rem 0 .1rem}
+  .rez-sub{color:var(--ink-faint); font-size:var(--s--1); margin:0 0 .7rem; max-width:var(--measure)}
+  .sim-bars{display:grid; grid-template-columns:minmax(7rem,auto) 1fr auto; gap:.3rem .6rem;
+    align-items:center; margin:.4rem 0 .2rem}
+  .sim-bars .lab{font-size:var(--s--1); color:var(--ink-soft); text-align:right}
+  .sim-bars .track{background:var(--surface-2); border-radius:2px; height:1.05rem}
+  .sim-bars .bar{height:100%; border-radius:2px 4px 4px 2px; min-width:2px;
+    background:var(--ser-4); display:block}
+  .sim-bars .val{font-size:var(--s--1); font-variant-numeric:tabular-nums; color:var(--ink);
     white-space:nowrap}
-  .bars .val i{color:var(--ink-faint); font-style:normal}
-  .rez-key{font-size:var(--s--1); color:var(--ink-faint); margin:.5rem 0 0}
-  .rez-key i{display:inline-block; width:.75em; height:.75em; border-radius:2px;
-    margin:0 .3rem 0 .8rem; vertical-align:baseline}
-  .rez-key i:first-child{margin-left:0}
-  .stack{display:flex; height:1.25rem; border-radius:3px; overflow:hidden; gap:2px;
-    background:var(--surface-2)}
-  .stack span{display:block}
+  .sim-bars .val i{color:var(--ink-faint); font-style:normal}
 /* REZ-CSS-END */
 </style>
 </head>
@@ -331,6 +323,7 @@
   <button class="tab" role="tab" id="t-codare" aria-controls="p-codare" aria-selected="false">Codare</button>
   <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Postări</button>
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
+  <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simbolism</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
@@ -714,20 +707,30 @@
 <!-- REZ-START -->
   <div class="sec">
     <h3>Rezultatele pilotului</h3>
-    <div class="rez"><h4>Rata de relevanță, per organizație</h4><p class="rez-sub">Din cele 231 de postări codabile, 173 au trecut filtrul — 74.9%. Cele trei organizații conduse de refugiați trec integral, prin prezumția organizațională; la celelalte trei, filtrul oprește jumătate.</p><div class="bars"><span class="lab">Association Malva</span><span class="track"><span class="bar" style="width:100.0%;background:var(--ser-1)"></span></span><span class="val">100.0%</span><span class="lab">EDNAE</span><span class="track"><span class="bar" style="width:100.0%;background:var(--ser-1)"></span></span><span class="val">100.0%</span><span class="lab">Help Ukrainians</span><span class="track"><span class="bar" style="width:100.0%;background:var(--ser-1)"></span></span><span class="val">100.0%</span><span class="lab">CNRR</span><span class="track"><span class="bar" style="width:52.9%;background:var(--ser-2)"></span></span><span class="val">52.9%</span><span class="lab">MIC Brașov</span><span class="track"><span class="bar" style="width:50.0%;background:var(--ser-2)"></span></span><span class="val">50.0%</span><span class="lab">Novapolis</span><span class="track"><span class="bar" style="width:30.8%;background:var(--ser-2)"></span></span><span class="val">30.8%</span></div><p class="rez-key"><i style="background:var(--ser-1)"></i>organizație condusă de refugiați (RLO)<i style="background:var(--ser-2)"></i>organizație comunitară (CLO)</p></div>
-    <div class="rez"><h4>Ce activități se comunică</h4><p class="rez-sub">Numărul de postări care poartă fiecare cod, din cele 173 trecute de filtru. O postare poate purta mai multe coduri; lista goală e ieșire legitimă.</p><div class="bars"><span class="lab">educație non-formală</span><span class="track"><span class="bar" style="width:100.0%;background:var(--ser-3)"></span></span><span class="val">53</span><span class="lab">recreativ și comunitar</span><span class="track"><span class="bar" style="width:88.7%;background:var(--ser-3)"></span></span><span class="val">47</span><span class="lab">informare despre drepturi</span><span class="track"><span class="bar" style="width:37.7%;background:var(--ser-3)"></span></span><span class="val">20</span><span class="lab">formarea personalului</span><span class="track"><span class="bar" style="width:18.9%;background:var(--ser-3)"></span></span><span class="val">10</span><span class="lab">sprijin psihologic</span><span class="track"><span class="bar" style="width:15.1%;background:var(--ser-3)"></span></span><span class="val">8</span><span class="lab">cursuri de limbă</span><span class="track"><span class="bar" style="width:13.2%;background:var(--ser-3)"></span></span><span class="val">7</span><span class="lab">hrană</span><span class="track"><span class="bar" style="width:5.7%;background:var(--ser-3)"></span></span><span class="val">3</span><span class="lab">acces la sănătate</span><span class="track"><span class="bar" style="width:5.7%;background:var(--ser-3)"></span></span><span class="val">3</span><span class="lab">acces la muncă</span><span class="track"><span class="bar" style="width:3.8%;background:var(--ser-3)"></span></span><span class="val">2</span><span class="lab">asistență juridică</span><span class="track"><span class="bar" style="width:3.8%;background:var(--ser-3)"></span></span><span class="val">2</span><span class="lab">bunuri nealimentare</span><span class="track"><span class="bar" style="width:1.9%;background:var(--ser-3)"></span></span><span class="val">1</span><span class="lab">asistență financiară</span><span class="track"><span class="bar" style="width:1.9%;background:var(--ser-3)"></span></span><span class="val">1</span><span class="lab">trafic de persoane</span><span class="track"><span class="bar" style="width:1.9%;background:var(--ser-3)"></span></span><span class="val">1</span><span class="lab">formare profesională</span><span class="track"><span class="bar" style="width:1.9%;background:var(--ser-3)"></span></span><span class="val">1</span><span class="lab">antreprenoriat</span><span class="track"><span class="bar" style="width:1.9%;background:var(--ser-3)"></span></span><span class="val">1</span><span class="lab"><i>fără cod de activitate</i></span><span class="track"><span class="bar" style="width:75.5%;background:var(--ser-5)"></span></span><span class="val">40</span></div></div>
-    <div class="rez"><h4>Aceleași activități, an de an</h4><p class="rez-sub">Primele patru coduri, 2022 → 2026, de la stânga la dreapta; intensitatea e numărul de postări din anul acela. Anul singur amestecă timpul cu compoziția corpusului — se citește împreună cu organizația.</p><div class="bars"><span class="lab">educație non-formală</span><span class="track" style="background:none"><span class="stack"><span style="flex:1;background:var(--ser-3);opacity:0.00" title="2022: 0"></span><span style="flex:1;background:var(--ser-3);opacity:1.00" title="2023: 18"></span><span style="flex:1;background:var(--ser-3);opacity:0.83" title="2024: 15"></span><span style="flex:1;background:var(--ser-3);opacity:0.67" title="2025: 12"></span><span style="flex:1;background:var(--ser-3);opacity:0.44" title="2026: 8"></span></span></span><span class="val">53</span><span class="lab">recreativ și comunitar</span><span class="track" style="background:none"><span class="stack"><span style="flex:1;background:var(--ser-3);opacity:0.00" title="2022: 0"></span><span style="flex:1;background:var(--ser-3);opacity:0.94" title="2023: 17"></span><span style="flex:1;background:var(--ser-3);opacity:0.56" title="2024: 10"></span><span style="flex:1;background:var(--ser-3);opacity:0.83" title="2025: 15"></span><span style="flex:1;background:var(--ser-3);opacity:0.28" title="2026: 5"></span></span></span><span class="val">47</span><span class="lab">informare despre drepturi</span><span class="track" style="background:none"><span class="stack"><span style="flex:1;background:var(--ser-3);opacity:0.83" title="2022: 15"></span><span style="flex:1;background:var(--ser-3);opacity:0.11" title="2023: 2"></span><span style="flex:1;background:var(--ser-3);opacity:0.06" title="2024: 1"></span><span style="flex:1;background:var(--ser-3);opacity:0.06" title="2025: 1"></span><span style="flex:1;background:var(--ser-3);opacity:0.06" title="2026: 1"></span></span></span><span class="val">20</span><span class="lab">formarea personalului</span><span class="track" style="background:none"><span class="stack"><span style="flex:1;background:var(--ser-3);opacity:0.11" title="2022: 2"></span><span style="flex:1;background:var(--ser-3);opacity:0.11" title="2023: 2"></span><span style="flex:1;background:var(--ser-3);opacity:0.06" title="2024: 1"></span><span style="flex:1;background:var(--ser-3);opacity:0.22" title="2025: 4"></span><span style="flex:1;background:var(--ser-3);opacity:0.06" title="2026: 1"></span></span></span><span class="val">10</span></div><p class="rez-key">coloanele: 2022 · 2023 · 2024 · 2025 · 2026</p></div>
-    <div class="rez"><h4>Simbolism ucrainean, per organizație</h4><p class="rez-sub">25 din 173 de postări conțin un act expresiv de identificare cu cauza națională ucraineană. Steagul din logo sau ca marcaj de limbă nu se numără.</p><div class="bars"><span class="lab">Association Malva</span><span class="track"><span class="bar" style="width:45.0%;background:var(--ser-4)"></span></span><span class="val">45.0%  <i>(9/20)</i></span><span class="lab">Novapolis</span><span class="track"><span class="bar" style="width:33.3%;background:var(--ser-4)"></span></span><span class="val">33.3%  <i>(4/12)</i></span><span class="lab">MIC Brașov</span><span class="track"><span class="bar" style="width:14.3%;background:var(--ser-4)"></span></span><span class="val">14.3%  <i>(1/7)</i></span><span class="lab">CNRR</span><span class="track"><span class="bar" style="width:11.1%;background:var(--ser-4)"></span></span><span class="val">11.1%  <i>(3/27)</i></span><span class="lab">Help Ukrainians</span><span class="track"><span class="bar" style="width:8.0%;background:var(--ser-4)"></span></span><span class="val">8.0%  <i>(7/87)</i></span><span class="lab">EDNAE</span><span class="track"><span class="bar" style="width:5.0%;background:var(--ser-4)"></span></span><span class="val">5.0%  <i>(1/20)</i></span></div></div>
+
+    <p class="rez-tit">Activitățile, lună de lună</p>
+    <p class="rez-sub">Cele cinci ferestre de martie, 2022–2026. Butoanele taie harta pe
+    organizație; numitorul de pe capul fiecărei coloane se schimbă odată cu ele.</p>
+    <div class="ser-ctl">
+      <div class="ser-ctl-row"><span class="flt-lbl">org</span><button class="chip" data-act-filtru="Toate" aria-pressed="true">Toate</button><button class="chip" data-act-filtru="Association Malva" aria-pressed="false">Association Malva</button><button class="chip" data-act-filtru="CNRR" aria-pressed="false">CNRR</button><button class="chip" data-act-filtru="EDNAE" aria-pressed="false">EDNAE</button><button class="chip" data-act-filtru="Help Ukrainians" aria-pressed="false">Help Ukrainians</button><button class="chip" data-act-filtru="MIC Brasov" aria-pressed="false">MIC Brașov</button><button class="chip" data-act-filtru="Novapolis" aria-pressed="false">Novapolis</button></div>
+    </div>
+    <div class="tw" data-heat-dinamic="act_luna"></div>
+
+    <p class="rez-tit">Asociație × tip de activitate</p>
+    <p class="rez-sub">Aceleași coduri, tăiate pe organizație în loc de lună — profilul
+    fiecărei asociații, cu numitorul ei pe capul coloanei.</p>
+    <div class="tw" data-heat="act_org"></div>
+
     <div class="note">
-      <strong>Ce se poate citi aici și ce nu.</strong> Cifrele vin din setul rezolvat al
-      pilotului — șase organizații, ferestrele de martie 2022–2026 — și sunt rezultate despre
-      <em>ce comunică</em> organizațiile, nu despre ce fac. Nu sunt generalizabile la cele 45:
-      pilotul a fost ales pentru calibrare, iar organizațiile conduse de refugiați sunt
-      supra-reprezentate (3 din 6, dar 4 din 45).
+      <strong>Ce se citește aici.</strong> Unitatea celulei e <em>codul</em>, nu postarea: o
+      postare poate purta mai multe coduri, iar lista goală e ieșire legitimă — 40 din cele 173
+      de postări trecute de filtru nu poartă niciun cod de activitate (poziționări, mulțumiri,
+      aniversări). Intensitatea e raportată la numitorul coloanei, deci coloanele se compară
+      între ele; cifrele brute rămân în celulă.
       <br><br>
-      Lipsesc două rezultate care cer o decizie umană înainte de publicare: tipologia
-      partenerilor și implicarea refugiaților ca protagoniști. Amândouă se sprijină pe tezaure
-      validate de autor, iar validarea nu a avut loc.
+      Cifrele sunt despre <em>ce comunică</em> organizațiile, nu despre ce fac, și nu sunt
+      generalizabile la cele 45: pilotul a fost ales pentru calibrare, iar organizațiile
+      conduse de refugiați sunt supra-reprezentate (3 din 6, dar 4 din 45).
     </div>
   </div>
 <!-- REZ-END -->
@@ -855,6 +858,44 @@
     </ul>
   </div>
 </section>
+
+<!-- SIM-START -->
+<section class="panel" role="tabpanel" id="p-sim" aria-labelledby="t-sim">
+  <h2>Simbolism</h2>
+  <p>Actul expresiv de identificare cu cauza națională ucraineană — altceva decât sprijinul
+  material, și măsurat separat de el.</p>
+
+  <div class="sec">
+    <h3>Cât de des apare, per organizație</h3>
+    <div class="sim-bars"><span class="lab">Association Malva</span><span class="track"><span class="bar" style="width:45.0%"></span></span><span class="val">45.0%  <i>(9/20)</i></span><span class="lab">Novapolis</span><span class="track"><span class="bar" style="width:33.3%"></span></span><span class="val">33.3%  <i>(4/12)</i></span><span class="lab">MIC Brașov</span><span class="track"><span class="bar" style="width:14.3%"></span></span><span class="val">14.3%  <i>(1/7)</i></span><span class="lab">CNRR</span><span class="track"><span class="bar" style="width:11.1%"></span></span><span class="val">11.1%  <i>(3/27)</i></span><span class="lab">Help Ukrainians</span><span class="track"><span class="bar" style="width:8.0%"></span></span><span class="val">8.0%  <i>(7/87)</i></span><span class="lab">EDNAE</span><span class="track"><span class="bar" style="width:5.0%"></span></span><span class="val">5.0%  <i>(1/20)</i></span></div>
+    <p class="rez-sub"><strong>25 din 173</strong> de postări trecute de
+    filtru conțin un act simbolic. Numitorul e corpusul codat sub v5, nu exportul complet.</p>
+
+    <div class="note">
+      <strong>Ce se numără și ce nu.</strong> Se codează <code>da</code> pentru sloganuri
+      („Слава Україні!"), steagul sau culorile folosite expresiv, versuri din imn, povești de pe
+      front sau de reziliență legate de rezistența la agresiunea armată. NU se codează steagul
+      din logo sau din numele paginii, steagul ca marcaj de limbă (🇷🇴/🇬🇧/🇺🇦) și nici simpla
+      redactare în ucraineană. Fiecare <code>da</code> cere citat-ancoră; fără ancoră rămâne
+      <code>nu</code>.
+    </div>
+
+    <p><strong>Distribuția nu e uniformă și nu urmează mărimea.</strong> Cele două extreme sunt
+    organizații de dimensiuni foarte diferite, iar organizațiile conduse de refugiați nu sunt
+    toate în capul listei — deci simbolismul nu e o simplă funcție a identității organizației.
+    Pe un pilot de șase cazuri, asta e o observație de urmărit la corpusul complet, nu un
+    rezultat.</p>
+  </div>
+
+  <div class="note warn">
+    <strong>Simbolismul nu e sprijin.</strong> <code>simbolism_ukr</code> și
+    <code>suport_ucraina</code> sunt câmpuri diferite, măsurate separat: primul e identificare
+    expresivă, al doilea e activitate sau apel îndreptat material spre Ucraina. Pe ferestrele
+    de martie ale pilotului, al doilea e zero la toate postările — clasa „Suport Ucraina" din
+    filtrare e goală, iar asta se raportează ca atare.
+  </div>
+</section>
+<!-- SIM-END -->
 
 <!-- ============ AGENTIA ============ -->
 <section class="panel" role="tabpanel" id="p-ag" aria-labelledby="t-ag">
@@ -1317,6 +1358,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
+<script src="rezultate.js"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -1623,6 +1665,8 @@
       return t;
     }
 
+    window.deseneazaHarta = deseneaza;
+
     var scara = ['0.06', '0.28', '0.5', '0.72', '0.92'];
     Array.prototype.forEach.call(gazde, function (g) {
       var h = MATRICI[g.getAttribute('data-heat')];
@@ -1836,5 +1880,33 @@
 })();
 </script>
 <!-- RETEA-JS-END -->
+<!-- REZ-JS-START -->
+<script>
+(function () {
+  if (typeof REZULTATE === 'undefined' || typeof MATRICI === 'undefined') return;
+  Object.keys(REZULTATE.harti).forEach(function (k) { MATRICI[k] = REZULTATE.harti[k]; });
+  var gazda = document.querySelector('[data-heat-dinamic]');
+  if (!gazda) return;
+  var baza = gazda.getAttribute('data-heat-dinamic');
+  var chips = document.querySelectorAll('[data-act-filtru]');
+
+  function arata(filtru) {
+    gazda.setAttribute('data-heat', baza + '|' + filtru);
+    gazda.innerHTML = '';
+    if (window.deseneazaHarta) {
+      var h = MATRICI[baza + '|' + filtru];
+      if (h) gazda.appendChild(window.deseneazaHarta(h));
+    }
+    Array.prototype.forEach.call(chips, function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-act-filtru') === filtru));
+    });
+  }
+  Array.prototype.forEach.call(chips, function (b) {
+    b.addEventListener('click', function () { arata(b.getAttribute('data-act-filtru')); });
+  });
+  arata('Toate');
+})();
+</script>
+<!-- REZ-JS-END -->
 </body>
 </html>
