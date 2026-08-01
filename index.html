@@ -315,6 +315,9 @@
   .stack{background:var(--surface); border:1px solid var(--rule); padding:.9rem 1rem;
     border-radius:3px; margin:.2rem 0 1rem}
   .stack svg{display:block; width:100%; height:auto; overflow:visible}
+  .nor{display:block; width:100%; height:auto; background:var(--surface);
+    border:1px solid var(--rule); border-radius:3px; padding:.4rem}
+  .nor text{font-family:var(--sans); font-weight:600; dominant-baseline:alphabetic}
 /* REZ-CSS-END */
 </style>
 </head>
@@ -324,7 +327,7 @@
 <header class="mast">
   <div class="eyebrow">
     <span>Studiu de analiză de conținut</span>
-    <span>Structură de raportare</span>
+    <span>Propunere de cercetare</span>
     <span>August 2026</span>
   </div>
   <h1>Rețeaua de parteneri UNHCR în România</h1>
@@ -384,19 +387,20 @@
     </div>
 <!-- POST-END -->
 
-    <p><strong>Nicio pagină nu urmează traiectoria alteia.</strong> CNRR are vârful exact în
-    martie 2022 și scade apoi continuu — singura traiectorie de tip criză din lot.
-    Help Ukrainians, cea mai mare pagină din corpus, începe abia în august 2022 și își face vârful
-    în aprilie 2024. EDNAE apare în aprilie 2024. Association Malva urcă în toamna lui 2022 și
-    tace după martie 2026. Suma lor ar arăta ca o singură serie care nu e a nimănui.</p>
+    <p><strong>Nicio serie nu o urmează pe alta.</strong> Postările CNRR ating maximul în
+    martie 2022 și scad apoi continuu — singura formă de tip criză din lot. Cele ale Help
+    Ukrainians, cea mai numeroasă serie din corpus, apar din august 2022 și ating maximul în
+    aprilie 2024. Primele postări extrase de la EDNAE sunt din aprilie 2024. Postările
+    Association Malva cresc în toamna lui 2022, iar după martie 2026 nu mai apare niciuna.
+    Însumate, cele șase serii ar da o formă care nu e a niciunei organizații.</p>
 
     <div class="note warn">
-      <strong>Prima lună observată nu e prima lună a paginii.</strong>
-      Extragerea are o limită, deci începutul unei serii poate fi capătul extragerii, nu al
-      activității. Seriile nu se completează cu zerouri înainte de prima postare observată, iar
-      fiecare organizație își poartă intervalul. Pentru rularea completă, limita se dimensionează
-      pe organizația cea mai activă — la o primă probă, o limită uniformă a trunchiat istoricul
-      unei organizații la un sfert din ce avea.
+      <strong>Unde începe linia, acolo începe observația — nu activitatea organizației.</strong>
+      Organizația are o activitate; o parte din ea ajunge în postări; noi am extras postările
+      până la o limită pe care am ales-o. Înainte de acea limită studiul nu spune nimic:
+      nici că organizația a fost inactivă, nici că a fost activă. De aceea seriile nu se
+      completează cu zerouri înaintea primei postări extrase — fiecare organizație își poartă
+      intervalul ei de observație.
     </div>
 
     <p>Liniile punctate marchează <strong>cele cinci luni de martie</strong> care formează
@@ -560,6 +564,60 @@
     ai ei. Rândul apare doar dacă perechea există în corpus. Butoanele taie harta pe oraș.</p>
     <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="coe_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
     <div class="tw" data-heat-dinamic="coe_luna"></div>
+
+    <p class="rez-tit">Cuvintele acestor postări</p>
+    <p class="rez-sub">Vocabularul celor 6 postări numărate în harta de mai
+    sus, în cele trei limbi în care sunt scrise. Corpul literei urmează numărul de apariții;
+    cuvintele de legătură — prepoziții, conjuncții, articole, pronume — sunt scoase, în
+    română, ucraineană, rusă și engleză. 459 apariții, 389
+    cuvinte distincte.</p>
+    <svg class="nor" viewBox="0 0 760 340" role="img" aria-label="Cuvintele din postările cu conjuncție de categorii">
+<text x="248.8" y="188.9" font-size="54.0" fill="var(--accent)"><title>ukrainian — 8 apariții</title>ukrainian</text>
+<text x="350.2" y="242.9" font-size="36.8" fill="var(--ink)"><title>project — 5 apariții</title>project</text>
+<text x="298.1" y="121.4" font-size="30.0" fill="var(--sienna)"><title>help — 4 apariții</title>help</text>
+<text x="379.0" y="119.9" font-size="30.0" fill="var(--ink-soft)"><title>csm — 4 apariții</title>csm</text>
+<text x="215.2" y="243.0" font-size="30.0" fill="var(--accent)"><title>dunărea — 4 apariții</title>dunărea</text>
+<text x="456.9" y="110.1" font-size="30.0" fill="var(--ink)"><title>проект — 4 apariții</title>проект</text>
+<text x="517.9" y="184.0" font-size="22.2" fill="var(--sienna)"><title>друзів — 3 apariții</title>друзів</text>
+<text x="206.1" y="168.6" font-size="22.2" fill="var(--ink-soft)"><title>day — 3 apariții</title>day</text>
+<text x="193.3" y="122.9" font-size="22.2" fill="var(--accent)"><title>children — 3 apariții</title>children</text>
+<text x="287.2" y="78.0" font-size="22.2" fill="var(--ink)"><title>community — 3 apariții</title>community</text>
+<text x="520.5" y="151.8" font-size="22.2" fill="var(--sienna)"><title>sports — 3 apariții</title>sports</text>
+<text x="360.6" y="276.7" font-size="22.2" fill="var(--ink-soft)"><title>people — 3 apariții</title>people</text>
+<text x="497.8" y="225.7" font-size="13.0" fill="var(--accent)"><title>ярмарку — 2 apariții</title>ярмарку</text>
+<text x="522.0" y="204.1" font-size="13.0" fill="var(--ink)"><title>має — 2 apariții</title>має</text>
+<text x="206.3" y="190.8" font-size="13.0" fill="var(--sienna)"><title>саме — 2 apariții</title>саме</text>
+<text x="263.0" y="269.0" font-size="13.0" fill="var(--ink-soft)"><title>українців — 2 apariții</title>українців</text>
+<text x="417.9" y="82.9" font-size="13.0" fill="var(--accent)"><title>чим — 2 apariții</title>чим</text>
+<text x="510.8" y="244.8" font-size="13.0" fill="var(--ink)"><title>українських — 2 apariții</title>українських</text>
+<text x="245.7" y="89.9" font-size="13.0" fill="var(--sienna)"><title>якщо — 2 apariții</title>якщо</text>
+<text x="465.2" y="268.8" font-size="13.0" fill="var(--ink-soft)"><title>know — 2 apariții</title>know</text>
+<text x="317.7" y="289.0" font-size="13.0" fill="var(--accent)"><title>whole — 2 apariții</title>whole</text>
+<text x="186.9" y="229.3" font-size="13.0" fill="var(--ink)"><title>get — 2 apariții</title>get</text>
+<text x="161.5" y="183.3" font-size="13.0" fill="var(--sienna)"><title>child — 2 apariții</title>child</text>
+<text x="168.5" y="207.9" font-size="13.0" fill="var(--ink-soft)"><title>everyone — 2 apariții</title>everyone</text>
+<text x="115.2" y="165.2" font-size="13.0" fill="var(--accent)"><title>sponsorship — 2 apariții</title>sponsorship</text>
+<text x="406.2" y="54.6" font-size="13.0" fill="var(--ink)"><title>families — 2 apariții</title>families</text>
+<text x="361.4" y="298.7" font-size="13.0" fill="var(--sienna)"><title>bucharest — 2 apariții</title>bucharest</text>
+<text x="320.2" y="50.3" font-size="13.0" fill="var(--ink-soft)"><title>projects — 2 apariții</title>projects</text>
+<text x="578.7" y="205.4" font-size="13.0" fill="var(--accent)"><title>galati — 2 apariții</title>galati</text>
+<text x="553.4" y="227.1" font-size="13.0" fill="var(--ink)"><title>завдяки — 2 apariții</title>завдяки</text>
+<text x="451.1" y="72.5" font-size="13.0" fill="var(--sienna)"><title>спорту — 2 apariții</title>спорту</text>
+<text x="243.2" y="286.8" font-size="13.0" fill="var(--ink-soft)"><title>підтримки — 2 apariții</title>підтримки</text>
+<text x="499.9" y="70.1" font-size="13.0" fill="var(--accent)"><title>hias — 2 apariții</title>hias</text>
+<text x="522.1" y="264.0" font-size="13.0" fill="var(--ink)"><title>віримо — 2 apariții</title>віримо</text>
+<text x="199.7" y="267.6" font-size="13.0" fill="var(--sienna)"><title>together — 2 apariții</title>together</text>
+<text x="135.1" y="145.1" font-size="13.0" fill="var(--ink-soft)"><title>romanian — 2 apariții</title>romanian</text>
+<text x="562.0" y="115.7" font-size="13.0" fill="var(--accent)"><title>many — 2 apariții</title>many</text>
+<text x="192.7" y="89.5" font-size="13.0" fill="var(--ink)"><title>every — 2 apariții</title>every</text>
+<text x="461.7" y="288.6" font-size="13.0" fill="var(--sienna)"><title>friends — 2 apariții</title>friends</text>
+<text x="231.5" y="64.6" font-size="13.0" fill="var(--ink-soft)"><title>support — 2 apariții</title>support</text>
+<text x="600.1" y="181.5" font-size="13.0" fill="var(--accent)"><title>team — 2 apariții</title>team</text>
+<text x="137.4" y="122.1" font-size="13.0" fill="var(--ink)"><title>believe — 2 apariții</title>believe</text>
+<text x="599.8" y="141.8" font-size="13.0" fill="var(--sienna)"><title>romanians — 2 apariții</title>romanians</text>
+<text x="332.6" y="269.8" font-size="13.0" fill="var(--ink-soft)"><title>big — 2 apariții</title>big</text>
+<text x="151.6" y="247.5" font-size="13.0" fill="var(--accent)"><title>fair — 2 apariții</title>fair</text>
+</svg>
 
     <p class="rez-tit">Organizație × conjuncție</p>
     <p class="rez-sub">Toate lunile la un loc.</p>
@@ -1324,7 +1382,7 @@
 
 
 <footer>
-  <span>Studiu în desfășurare. Cifrele publicate acum vin dintr-un pilot pe 6 organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
+  <span>Studiu în fază de propunere. Cifrele publicate acum vin din pilotul pe 6 organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
   <span>Materialele de lucru — date, codebook, registru metodologic — sunt ținute într-un depozit privat, întrucât includ date personale ale terților.</span>
 </footer>
 
@@ -1334,7 +1392,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=9ff48bda"></script>
+<script src="rezultate.js?v=9eea1f27"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
