@@ -356,11 +356,6 @@
 
   <div class="sec">
     <h3>Primele rezultate, pe corpusul-pilot</h3>
-    <div class="note warn">
-      <strong>Limitele acestor cifre.</strong> Sunt un pilot: 6 organizații — 3 conduse de
-      refugiați (RLO) și 3 organizații comunitare (CLO) — în 5 orașe, doar luna martie din
-      fiecare an. Rezultatele nu sunt nici complete, nici reprezentative.
-    </div>
 
     <div class="figs">
       <div class="fig"><span class="fig-n">2 853</span><span class="fig-l">postări extrase, seria completă</span></div>
@@ -410,29 +405,6 @@
     nu se pot coda. Numitorul e altul în fiecare tab și e scris de fiecare dată.</p>
   </div>
 
-  <div class="sec">
-    <h3>Ce se raportează</h3>
-    <ul class="plain">
-      <li><strong>Hartă de căldură organizație × lună</strong>, 45 × 53 de luni, plus seria agregată.</li>
-      <li><strong>Forma seriei per organizație</strong>: când începe, dacă are vârfuri, unde cad. Fără grile de citire împrumutate — dacă din date iese o tipologie de traiectorii, se construiește din date.</li>
-      <li><strong>Raportul postări relevante / total</strong>, calculat din grupul țintă — cu numitorul declarat: doar refugiați ucraineni numiți, respectiv cu refugiații fără naționalitate incluși. O măsură a cât din comunicarea unei organizații e despre refugiați ucraineni. Pentru cele cu mandat general va fi mic — o proprietate a organizației, nu un defect al măsurii.</li>
-    </ul>
-  </div>
-
-  <div class="sec">
-    <h3>Baza de date, măsurată</h3>
-    <p>Rata de publicare a fost măsurată pe șase organizații înainte de rularea completă, ca să nu rămână o estimare:</p>
-    <div class="figs">
-      <div class="fig"><span class="fig-n">8,4</span><span class="fig-l">postări/lună, mediana</span></div>
-      <div class="fig"><span class="fig-n">10,3</span><span class="fig-l">postări/lună, media</span></div>
-      <div class="fig"><span class="fig-n">3 – 25</span><span class="fig-l">interval între organizații</span></div>
-      <div class="fig"><span class="fig-n">~20 100</span><span class="fig-l">corpus proiectat, la mediană</span></div>
-    </div>
-    <div class="note">
-      <strong>Dispersia contează procedural.</strong>
-      Între 3 și 25 de postări pe lună înseamnă că limita de extragere se dimensionează pe organizația cea mai activă, nu uniform. La o primă probă, o limită uniformă a trunchiat istoricul unei organizații la un sfert din ce avea.
-    </div>
-  </div>
 </section>
 
 <!-- ============ ACTIVITATI ============ -->
@@ -473,20 +445,7 @@
     <p>Fiecare activitate primește unul sau mai multe dintre cele 23 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. O postare fără activitate concretă rămâne fără cod, iar proporția acestor postări se raportează ca atare. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
   </div>
 
-  <div class="sec">
-    <h3>Reziduul</h3>
-    <p>Activitățile de construcție comunitară — sport, ieșiri, socializare fără participarea comunității-gazdă — nu au sector în taxonomia UNHCR. În sistemul care contează pentru finanțare, ele nu se raportează.</p>
-    <p><strong>Categoria de reziduu e a noastră, nu a literaturii.</strong> O introducem pentru că măsurarea a arătat că există și că altfel dispare. Corespondența cu literatura vine după: dintre categoriile de activitate enumerate în studiile despre organizații conduse de refugiați, <em>sport</em> și <em>implicarea tinerilor</em> nu au sector în taxonomia UNHCR și cad aici.</p>
-  </div>
 
-  <div class="sec">
-    <h3>Ce se raportează</h3>
-    <ul class="plain">
-      <li><strong>Sector × an</strong>, ca hartă de căldură, pentru agregat și per organizație.</li>
-      <li><strong>Sector × tip de organizație</strong> — comparația pe care un singur caz nu permitea.</li>
-      <li><strong>Mărimea reziduului</strong>, absolut și ca proporție, per tip de organizație.</li>
-    </ul>
-  </div>
 </section>
 
 <!-- SIM-START -->
@@ -667,7 +626,7 @@
 <!-- ============ RETEA ============ -->
 <section class="panel" role="tabpanel" id="p-ret" aria-labelledby="t-ret">
   <h2>Rețea parteneri</h2>
-  <p>Partea care nu exista în designul testat pe un singur caz. Cu o organizație se pot număra partenerii; cu 45 se poate descrie structura care îi leagă.</p>
+  <p>Cine pe cine numește. Nodurile sunt organizațiile pilotului și actorii pe care îi numesc în postări; muchia se adaugă în luna în care apare mențiunea.</p>
 
   <div class="sec">
     <h3>Rețeaua pilotului, lună de lună</h3>
@@ -696,81 +655,13 @@
   <div class="sec">
     <h3>Din ce se construiește</h3>
     <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu denumirea concretă, in vivo. Numele fac nodurile. Caracteristicile actorilor <strong>nu se codează pe postare</strong>: se strâng în tezaur, ca fapte cu sursă, iar tipologia analitică o propun agenții și o validează autorul. Aceeași rețea se va putea citi pe tipuri de actor fără o a doua codare — dar abia după acea validare.</p>
-    <div class="schem">
-      <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
-        <text x="10" y="16" class="s-ttl">rețea bipartită</text>
-        <text x="400" y="16" class="s-ttl">proiecție pe organizații</text>
-        <g stroke="currentColor" stroke-opacity=".28" stroke-width="1.3" fill="none">
-          <line x1="60" y1="60" x2="200" y2="55"/>
-          <line x1="60" y1="60" x2="200" y2="120"/>
-          <line x1="60" y1="130" x2="200" y2="120"/>
-          <line x1="60" y1="130" x2="200" y2="185"/>
-          <line x1="60" y1="200" x2="200" y2="185"/>
-          <line x1="60" y1="200" x2="200" y2="120"/>
-        </g>
-        <g fill="var(--accent)">
-          <circle cx="60" cy="60" r="9"/><circle cx="60" cy="130" r="9"/><circle cx="60" cy="200" r="9"/>
-        </g>
-        <g fill="var(--sienna)">
-          <rect x="192" y="47" width="16" height="16" rx="2"/>
-          <rect x="192" y="112" width="16" height="16" rx="2"/>
-          <rect x="192" y="177" width="16" height="16" rx="2"/>
-        </g>
-        <text x="40" y="228" class="s-lbl">organizații</text>
-        <text x="176" y="228" class="s-lbl">actori numiți</text>
-        <g stroke="var(--ink-faint)" stroke-width="1.2" fill="none">
-          <line x1="270" y1="130" x2="350" y2="130"/>
-          <polyline points="342,124 350,130 342,136"/>
-        </g>
-        <g stroke="var(--accent)" stroke-width="2.6" stroke-opacity=".5" fill="none">
-          <line x1="470" y1="70" x2="560" y2="140"/>
-          <line x1="470" y1="70" x2="470" y2="190"/>
-          <line x1="470" y1="190" x2="560" y2="140"/>
-        </g>
-        <g fill="var(--accent)">
-          <circle cx="470" cy="70" r="9"/><circle cx="470" cy="190" r="9"/><circle cx="560" cy="140" r="9"/>
-        </g>
-        <text x="430" y="228" class="s-lbl">muchie = actor comun</text>
-      </svg>
-    </div>
   </div>
 
   <div class="sec">
-    <h3>Cele trei rețele</h3>
-    <div class="tw">
-      <table>
-        <thead><tr><th scope="col">Rețea</th><th scope="col">Noduri</th><th scope="col">Ce arată</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>Colaborare</strong></td>
-            <td>organizații × parteneri numiți</td>
-            <td>Bipartită, proiectată pe organizații: două organizații sunt legate dacă numesc același partener. Măsuri de centralitate pe actori — care apar în comunicarea multor organizații și funcționează ca noduri ale rețelei. Pe pilot, doar doi actori sunt numiți de mai multe organizații.</td>
-          </tr>
-          <tr>
-            <td><strong>Finanțare</strong></td>
-            <td>organizații × finanțatori numiți</td>
-            <td>Aceeași construcție, pe sursele de bani. Se raportează și cât de des finanțarea <em>nu</em> e menționată — absența atribuirii e informație în sine, iar dacă nu e raportată separat dispare în categoria reziduală.</td>
-          </tr>
-          <tr>
-            <td><strong>Co-menționare</strong></td>
-            <td>organizații × organizații</td>
-            <td>Două organizații din registru apar în aceeași postare, ori una o tagează pe cealaltă. Singura rețea în care nodurile sunt toate unități observate.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Instituțiile publice — primării și prefecturi — intră aici, ca actori menționați. Nu sunt unități de observație: nu le extragem paginile. Ceea ce înseamnă că datele despre ele vin din ce spun organizațiile, nu din ce comunică ele însele.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Ce nu se poate construi</h3>
-    <div class="note warn">
-      <strong>Nu se poate construi o rețea din reacții și distribuiri.</strong>
-      Platforma expune numărul celor care reacționează, nu identitatea lor. Nu există cale de a construi o rețea de interacțiune între organizații din reacții sau distribuiri, la scara acestui corpus.
-      <br><br>
-      Ce rămâne în loc: dacă o organizație e <em>tagată</em> în textul altei postări, mențiunea se codează și intră în rețeaua de co-menționare. Nu e același lucru cu o rețea de reacții, iar diferența se declară acolo unde apare rezultatul.
-    </div>
-    <p>Al doilea lucru care nu se poate: direcția relației. O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a colaborat efectiv, nici cine a inițiat. Rețelele descriu <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
+    <h3>Ce nu spune graficul</h3>
+    <p>O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a
+    colaborat efectiv, nici cine a inițiat. Muchiile nu au deci direcție: descriu
+    <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
   </div>
 </section>
 
@@ -829,27 +720,6 @@
     </div>
   </div>
 
-  <div class="sec">
-    <h3>Două corecții necesare</h3>
-    <div class="note warn">
-      <strong>Un singur numitor.</strong>
-      Engagement-ul se raportează pe același corpus ca restul analizei. Dacă se raportează și pe totalul postărilor, se spune explicit care cifră e care. Amestecul de numitoare — indicatori calitativi pe postările relevante, engagement pe toate — produce comparații care par valide și nu sunt.
-    </div>
-    <div class="note warn">
-      <strong>Normalizare la audiență.</strong>
-      Paginile din registru diferă cu trei ordine de mărime ca număr de urmăritori. Reacțiile brute nu se compară între organizații. Se raportează media pe postare și valoarea normalizată la urmăritori, iar numărul de zile de la publicare intră ca variabilă de control: postările din 2022 au avut ani de acumulare.
-    </div>
-  </div>
-
-  <div class="sec">
-    <h3>Ce se raportează</h3>
-    <ul class="plain">
-      <li>Total și medie pe postare, per an și per organizație.</li>
-      <li>Valori normalizate la audiență, pentru comparații între organizații.</li>
-      <li>Proporția postărilor atinse de fiecare formă de reacție, nu doar mediile: distribuirea și comentariul sunt evenimente rare, iar media le îneacă în zerouri.</li>
-      <li>Postările fără text — 15,7% din cele extrase în lunile codate — intră în engagement, dar nu în codare. Numitorul se declară de fiecare dată.</li>
-    </ul>
-  </div>
 </section>
 
 
@@ -857,19 +727,103 @@
 <!-- ============ METODOLOGIE ============ -->
 <section class="panel" role="tabpanel" id="p-met" aria-labelledby="t-met">
   <h2>Metodologie</h2>
-  <p>Cum e construit studiul: schema de codare, procesul prin care se aplică, și sursele
-  împreună cu limitele declarate.</p>
+  <p>Cum e construit studiul, în ordinea în care se construiește: de la operaționalizare
+  la măsurare — codebook și codare — apoi la ce garantează cifrele, acordul dintre codori
+  și validarea umană. La urmă, registrul organizațiilor.</p>
 
   <div class="subtabs" role="tablist" aria-label="Metodologie">
-  <button class="subtab on" role="tab" id="st-cod" aria-controls="sp-cod" aria-selected="true">Codebook</button>
+  <button class="subtab on" role="tab" id="st-ms" aria-controls="sp-ms" aria-selected="true">Operaționalizare</button>
+  <button class="subtab" role="tab" id="st-cod" aria-controls="sp-cod" aria-selected="false">Codebook</button>
   <button class="subtab" role="tab" id="st-codare" aria-controls="sp-codare" aria-selected="false">Codare</button>
   <button class="subtab" role="tab" id="st-acord" aria-controls="sp-acord" aria-selected="false">Acord codori AI</button>
   <button class="subtab" role="tab" id="st-valid" aria-controls="sp-valid" aria-selected="false">Validare umană</button>
   <button class="subtab" role="tab" id="st-org" aria-controls="sp-org" aria-selected="false">Organizații</button>
-  <button class="subtab" role="tab" id="st-ms" aria-controls="sp-ms" aria-selected="false">Metodă și surse</button>
   </div>
 
-<div class="subpanel on" role="tabpanel" id="sp-cod" aria-labelledby="st-cod">
+<div class="subpanel on" role="tabpanel" id="sp-ms" aria-labelledby="st-ms">
+  <h2>Operaționalizare</h2>
+  <p>Drumul de la întrebare la indicator: ce se observă, pe ce unitate, cu ce limite. Cum se
+  măsoară apoi — etichetele și definițiile lor, ordinea în care se aplică — e în
+  <strong>Codebook</strong> și <strong>Codare</strong>.</p>
+
+  <div class="pull">
+    <p class="pull-q">Ce dinamici identificăm în răspunsul comunicat public al partenerilor UNHCR la criza refugiaților, din prima zi a invaziei (februarie 2022) până în prezent?</p>
+    <p>Patru dimensiuni: tipurile de activități, actorii implicați, sursele de finanțare, formele de colaborare. Peste ele, întrebarea comparativă: diferă aceste dinamici între tipurile de organizații?</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce măsurăm și ce nu</h3>
+    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția e limita centrală a studiului.</p>
+    <p>Termenul de <em>localizare</em> desemnează deplasarea deciziei, a resurselor și a execuției răspunsului umanitar către actori locali, inclusiv către organizații conduse de persoanele afectate. Literatura care ne interesează arată distanța dintre retorica localizării și practica ei.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Universul și unitatea de analiză</h3>
+    <p><strong>45 de organizații</strong> din registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
+    <p><strong>Unitatea de analiză e postarea publică de Facebook.</strong> O postare poate purta mai multe coduri de activitate: se codează serviciul numit, iar o postare care numește mai multe servicii primește câte un cod pentru fiecare.</p>
+    <div class="note">
+      <strong>Instituțiile publice nu sunt unități de observație.</strong>
+      Primăriile și prefecturile din registru apar în date doar ca actori menționați de organizații — vezi tabul Rețea.
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Reguli de interpretare</h3>
+    <p>Reguli care se aplică la citirea oricărei cifre. Fără ele, aceleași date susțin afirmații false.</p>
+    <div class="tw">
+      <table>
+        <caption>O lună fără postări poate însemna patru lucruri diferite. Nu se agregă la fel.</caption>
+        <thead><tr><th scope="col">Stare</th><th scope="col">Ce înseamnă</th><th scope="col">Cum se tratează</th></tr></thead>
+        <tbody>
+          <tr><td>a postat</td><td>una sau mai multe postări</td><td>se numără</td></tr>
+          <tr><td>zero real</td><td>pagina exista, extragerea a acoperit luna, organizația nu a postat</td><td><strong>valoare măsurată</strong>: intră în medii și în serii</td></tr>
+          <tr><td>neacoperit</td><td>pagina era activă, dar extragerea nu a ajuns acolo</td><td>dată lipsă: se exclude din medii, se marchează distinct</td></tr>
+          <tr><td>în afara universului</td><td>pagina nu exista încă</td><td>nu e zero: unitatea nu e în univers atunci</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Distincția dintre ultimele două nu se prezumă: se stabilește din parametrii extragerii, apoi se confirmă prin data de creare a paginii și prin arhiva web.</p>
+    <p>Data la care apare pagina unei organizații e o observație despre organizație, nu o limitare a datelor. La fel, luna în care o organizație activă nu postează nimic: valoare măsurată, nu dată lipsă.</p>
+    <ul class="plain">
+      <li><strong>Numitorul se declară de fiecare dată.</strong> Din toate postările, din cele relevante, din cele cu text — aceeași cifră cu numitoare diferite spune lucruri diferite.</li>
+      <li><strong>Comparațiile între organizații cer normalizare.</strong> Paginile diferă cu trei ordine de mărime ca audiență.</li>
+      <li><strong>Un tipar nu e o explicație.</strong> Studiul poate arăta că ceva se schimbă; nu poate arăta de ce.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Limitele declarate</h3>
+    <ul class="plain">
+      <li><strong>Comunicarea despre localizare nu e localizare.</strong> Vezi mai sus.</li>
+      <li><strong>Doar Facebook.</strong> Comunitatea ucraineană folosește intens Telegram și Viber, unde nu avem acces comparabil.</li>
+      <li><strong>Prezența vizuală nu se codează.</strong> Inspecția fiecărei imagini nu e fezabilă la volumul proiectat. Indicatorul de simbolism ucrainean a fost întâi retras — măsurarea a arătat că prindea limba de lucru a organizației și obiceiul de hashtag, nu un act al postării — apoi reintrodus, restrâns la acte expresive din text: sloganuri, steagul folosit expresiv, povești legate de rezistența la agresiunea armată. Steagul din logo și steagul ca marcaj de limbă rămân excluse explicit.</li>
+      <li><strong>Engagement măsurat la momentul extragerii</strong>, nu la un interval fix după publicare. Se controlează prin numărul de zile de la publicare.</li>
+      <li><strong>Absența are patru forme.</strong> O lună fără postări poate însemna că organizația nu a postat (valoare măsurată), că extragerea nu a ajuns acolo (dată lipsă), sau că pagina nu exista încă (în afara universului). Se clasifică explicit, nu se raportează la comun ca „acoperire incompletă". Dintre cele patru organizații conduse de refugiați, una nu are pagină identificată și nu intră în corpus.</li>
+      <li><strong>Codarea manuală din studiul original nu e etalon.</strong> Instrumentul s-a schimbat de atunci: ea ancorează proveniența schemei, nu validitatea cifrelor. Trei câmpuri nici nu au corespondent acolo — simbolismul ucrainean, tipul postării și sprijinul pentru Ucraina sunt construcții ale acestui studiu. Referința cantitativă e calibrarea oarbă sub instrucțiunea curentă, descrisă în subtabul <strong>Validare umană</strong>.</li>
+    </ul>
+  </div>
+  <div class="sec">
+    <h3>Ce se depune public</h3>
+    <ul class="plain">
+      <li><strong>Setul de date</strong>, la nivel de postare, cu codurile atribuite și modul de decizie al fiecărei codări: acord al codorilor, majoritate cu al treilea codor, nerezolvat.</li>
+      <li><strong>Codebook-ul complet</strong>: schema de codare, definițiile operaționale, regulile de decizie și exemplele.</li>
+      <li><strong>Registrul metodologic</strong>: o intrare per rulare, cu modelele folosite și data accesului, versiunea codebook-ului, consumul, rezultatul și abaterile.</li>
+      <li><strong>Tabelele de rezultate</strong> care susțin fiecare figură.</li>
+    </ul>
+    <p>Depunerea se face cu identificator persistent versionat, la momentul submisiei.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce nu se depune</h3>
+    <ul class="plain">
+      <li><strong>Postările brute.</strong> Sunt conținut al terților și includ date personale — nume, imagini, comentarii ale unor persoane identificabile, unele în situație de vulnerabilitate.</li>
+      <li><strong>Datele de contact</strong> din registrul de parteneri.</li>
+      <li><strong>Materialul de lucru intermediar.</strong> Dosarele de lucru devin material suplimentar doar după închiderea setului.</li>
+    </ul>
+  </div>
+
+</div>
+<div class="subpanel" role="tabpanel" id="sp-cod" aria-labelledby="st-cod">
   <h2>Codebook</h2>
   <p>Etichetele pe care le primește o postare, cu definițiile lor. Cum se aplică — în ce ordine, cine decide, ce se verifică — e în tabul <strong>Codare</strong>. Regula generală: se etichetează doar ce spune textul postării; ce nu e spus rămâne neetichetat.</p>
 
@@ -1164,6 +1118,17 @@
       <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
   </div>
+
+  <div class="sec">
+    <h3>Reguli permanente ale codării</h3>
+    <p>Date agenților verbatim la fiecare rulare, fiecare venind dintr-un eșec observat:</p>
+    <ol class="steps">
+      <li><span class="step-n">1</span><span class="step-b"><p>Citate numai din postarea efectiv primită. Niciodată din memoria modelului.</p></span></li>
+      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere, nu o dată.</p></span></li>
+      <li><span class="step-n">3</span><span class="step-b"><p>Absența unui rezultat nu e absența fenomenului. „Nu apare în text" se codează ca informație insuficientă, nu ca negație.</p></span></li>
+      <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
+    </ol>
+  </div>
 </div>
 <div class="subpanel" role="tabpanel" id="sp-acord" aria-labelledby="st-acord">
 <!-- METACORD-START -->
@@ -1353,138 +1318,6 @@
   </table></div>
 </div>
 
-<div class="subpanel" role="tabpanel" id="sp-ms" aria-labelledby="st-ms">
-  <h2>Metodă și surse</h2>
-
-  <div class="pull">
-    <p class="pull-q">Ce dinamici identificăm în răspunsul comunicat public al partenerilor UNHCR la criza refugiaților, din prima zi a invaziei (februarie 2022) până în prezent?</p>
-    <p>Patru dimensiuni: tipurile de activități, actorii implicați, sursele de finanțare, formele de colaborare. Peste ele, întrebarea comparativă: diferă aceste dinamici între tipurile de organizații?</p>
-  </div>
-
-  <div class="sec">
-    <h3>Ce măsurăm și ce nu</h3>
-    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția e limita centrală a studiului.</p>
-    <p>Termenul de <em>localizare</em> desemnează deplasarea deciziei, a resurselor și a execuției răspunsului umanitar către actori locali, inclusiv către organizații conduse de persoanele afectate. Literatura care ne interesează arată distanța dintre retorica localizării și practica ei.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Universul și unitatea de analiză</h3>
-    <p><strong>45 de organizații</strong> din registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
-    <p><strong>Unitatea de analiză e postarea publică de Facebook.</strong> O postare poate purta mai multe coduri de activitate: se codează serviciul numit, iar o postare care numește mai multe servicii primește câte un cod pentru fiecare.</p>
-    <div class="note">
-      <strong>Instituțiile publice nu sunt unități de observație.</strong>
-      Primăriile și prefecturile din registru apar în date doar ca actori menționați de organizații — vezi tabul Rețea.
-    </div>
-  </div>
-
-  <div class="sec">
-    <h3>Procedura</h3>
-    <p>Regula care ține tot: <strong>agenții propun, autorul dispune.</strong> Agenții de limbaj codează; ce înseamnă o dovadă și ce cod primește un caz rămân decizii ale autorului.</p>
-    <ol class="steps">
-      <li><span class="step-n">E1</span><span class="step-b"><h4>Extragere</h4><p>Toate postările publice ale celor 45 de pagini, o singură rulare pentru tot intervalul, ca engagement-ul să fie măsurat la același moment.</p></span></li>
-      <li><span class="step-n">E2</span><span class="step-b"><h4>Codare dublă</h4><p>Doi agenți independenți, aceleași intrări, fără să vadă ieșirea celuilalt. Acordul lor e măsura de calitate raportabilă în absența unui etalon.</p></span></li>
-      <li><span class="step-n">E3</span><span class="step-b"><h4>Tezaurul de actori</h4><p>Entitățile numite în postări își primesc caracteristicile din surse, nu din memoria codorului: două căutări independente per entitate, trierea lor de către cod, validarea de autor. Entitatea care nu se regăsește în tezaur rămâne necunoscută — absența nu se completează.</p></span></li>
-      <li><span class="step-n">E4</span><span class="step-b"><h4>Acordul între codori</h4><p>Regula de decizie o aplică codul, niciodată un agent. Postările pe care ambii agenți le codează identic trec; restul merg la rezoluție cu al treilea codor.</p></span></li>
-      <li><span class="step-n">E5</span><span class="step-b"><h4>Calibrare umană și rezoluție</h4><p>Autorul codează orb un eșantion stratificat — dezacordurile agenților, clasele rare, un strat aleator din concordante — iar praguri de acord per câmp decid intrarea în rulare. În rulare, dezacordurile le rezolvă un al treilea codor independent, cu majoritate; ce rămâne împărțit se raportează ca nerezolvat. Deriva se urmărește prin postări-santinelă cu referință umană, reintroduse în fiecare lot.</p></span></li>
-      <li><span class="step-n">E6</span><span class="step-b"><h4>Analiză și raportare</h4><p>Serii temporale, hărți de căldură, analiză de rețea. Raport de proces separat de raport de rezultat.</p></span></li>
-    </ol>
-  </div>
-
-  <div class="sec">
-    <h3>Calibrarea pe codare manuală</h3>
-    <p>Designul a fost testat pe un corpus codat manual în prealabil, de un codor uman, în MAXQDA: <strong>315 postări ale unei singure organizații</strong>. Agenții au codat aceleași postări, orbi la codarea manuală, iar acordul s-a măsurat cod cu cod.</p>
-    <div class="tw">
-      <table>
-        <caption>Acord între cei doi agenți independenți, 272 de postări comparabile. Nu presupune că cineva are dreptate. Câmpurile poartă numele de la momentul calibrării; schema a fost revizuită de atunci — categoria de beneficiari și destinatarul sunt azi un singur câmp, grupul țintă, iar ultimele două rânduri au fost înlocuite de schema de caracteristici a actorilor.</caption>
-        <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col">Măsură</th></tr></thead>
-        <tbody>
-          <tr><td>Categoria de beneficiari</td><td class="num">98,9%</td><td>κ = 0,98</td></tr>
-          <tr><td>Sursa de finanțare</td><td class="num">96,3%</td><td>Jaccard 0,97</td></tr>
-          <tr><td>Destinatarul activității</td><td class="num">96,0%</td><td>κ = 0,94</td></tr>
-          <tr><td>Implicarea refugiaților</td><td class="num">90,8%</td><td>κ = 0,69</td></tr>
-          <tr><td>Sectorul de activitate</td><td class="num">89,7%</td><td>Jaccard 0,93</td></tr>
-          <tr><td>Parteneriatul menționat</td><td class="num">74,6%</td><td>Jaccard 0,75</td></tr>
-          <tr><td>Referirea la instituții internaționale</td><td class="num">69,9%</td><td>Jaccard 0,70</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note warn">
-      <strong>Codarea manuală nu e etalon.</strong>
-      Acolo unde agentul diferă de ea, verdictul se dă la calibrare și are patru valori: agentul a greșit, omul a greșit, ambele variante sunt acceptabile, sau codebook-ul e neclar. Un design cu doar primele două valori ar măsura conformitatea agentului cu erorile referinței și ar raporta-o ca acuratețe.
-    </div>
-    <p>Cele două câmpuri cu acord scăzut — parteneriat și referire la instituții internaționale — au indicat unde codebook-ul avea nevoie de reguli mai stricte, nu unde agenții erau mai slabi. Ambele cereau distincții pe care textul postării adesea nu le susține: dacă „cu susținerea X" înseamnă parteneriat sau finanțare, și dacă o organizație e numită ca actor sau ca finanțator. Regulile au fost strânse în două trepte, iar la un pilot pe șase organizații acordul pe cele două câmpuri a urcat cu 9, respectiv 14 puncte. Apoi întrebarea „parteneriat sau finanțare?" a fost dizolvată de tot: partener e oricine primește un rol în text, iar finanțator e eticheta suplimentară pentru cine dă bani — nu mai e o alegere între câmpuri, deci nici o sursă de dezacord.</p>
-    <p>Al doilea câmp slab s-a închis altfel. Diagnosticul a arătat că aproape toate dezacordurile despre instituțiile internaționale nu erau despre instituții, ci despre <em>cum se numește absența</em>: pe un câmp gol în peste patru cincimi din postări, un codor scria „necunoscut" și celălalt „nu". Câmpul a fost retras și înlocuit cu caracteristicile de mai sus, unde „nimic menționat" e o listă goală, iar cele două formulări ale absenței nu mai pot apărea pe același câmp.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Reguli de interpretare</h3>
-    <p>Reguli care se aplică la citirea oricărei cifre. Fără ele, aceleași date susțin afirmații false.</p>
-    <div class="tw">
-      <table>
-        <caption>O lună fără postări poate însemna patru lucruri diferite. Nu se agregă la fel.</caption>
-        <thead><tr><th scope="col">Stare</th><th scope="col">Ce înseamnă</th><th scope="col">Cum se tratează</th></tr></thead>
-        <tbody>
-          <tr><td>a postat</td><td>una sau mai multe postări</td><td>se numără</td></tr>
-          <tr><td>zero real</td><td>pagina exista, extragerea a acoperit luna, organizația nu a postat</td><td><strong>valoare măsurată</strong>: intră în medii și în serii</td></tr>
-          <tr><td>neacoperit</td><td>pagina era activă, dar extragerea nu a ajuns acolo</td><td>dată lipsă: se exclude din medii, se marchează distinct</td></tr>
-          <tr><td>în afara universului</td><td>pagina nu exista încă</td><td>nu e zero: unitatea nu e în univers atunci</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Distincția dintre ultimele două nu se prezumă: se stabilește din parametrii extragerii, apoi se confirmă prin data de creare a paginii și prin arhiva web.</p>
-    <p>Data la care apare pagina unei organizații e o observație despre organizație, nu o limitare a datelor. La fel, luna în care o organizație activă nu postează nimic: valoare măsurată, nu dată lipsă.</p>
-    <ul class="plain">
-      <li><strong>Numitorul se declară de fiecare dată.</strong> Din toate postările, din cele relevante, din cele cu text — aceeași cifră cu numitoare diferite spune lucruri diferite.</li>
-      <li><strong>Comparațiile între organizații cer normalizare.</strong> Paginile diferă cu trei ordine de mărime ca audiență.</li>
-      <li><strong>Un tipar nu e o explicație.</strong> Studiul poate arăta că ceva se schimbă; nu poate arăta de ce.</li>
-    </ul>
-  </div>
-
-  <div class="sec">
-    <h3>Limitele declarate</h3>
-    <ul class="plain">
-      <li><strong>Comunicarea despre localizare nu e localizare.</strong> Vezi mai sus.</li>
-      <li><strong>Doar Facebook.</strong> Comunitatea ucraineană folosește intens Telegram și Viber, unde nu avem acces comparabil.</li>
-      <li><strong>Prezența vizuală nu se codează.</strong> Inspecția fiecărei imagini nu e fezabilă la volumul proiectat. Indicatorul de simbolism ucrainean a fost întâi retras — măsurarea a arătat că prindea limba de lucru a organizației și obiceiul de hashtag, nu un act al postării — apoi reintrodus, restrâns la acte expresive din text: sloganuri, steagul folosit expresiv, povești legate de rezistența la agresiunea armată. Steagul din logo și steagul ca marcaj de limbă rămân excluse explicit.</li>
-      <li><strong>Engagement măsurat la momentul extragerii</strong>, nu la un interval fix după publicare. Se controlează prin numărul de zile de la publicare.</li>
-      <li><strong>Absența are patru forme.</strong> O lună fără postări poate însemna că organizația nu a postat (valoare măsurată), că extragerea nu a ajuns acolo (dată lipsă), sau că pagina nu exista încă (în afara universului). Se clasifică explicit, nu se raportează la comun ca „acoperire incompletă". Dintre cele patru organizații conduse de refugiați, una nu are pagină identificată și nu intră în corpus.</li>
-      <li><strong>Două câmpuri nu au corespondent în codarea manuală.</strong> Caracteristicile actorilor și simbolismul ucrainean sunt construcții ale acestui studiu, fără referință în corpusul codat manual; pentru ele există doar acord între agenți, nu și comparație cu un codor uman.</li>
-    </ul>
-  </div>
-  <h3 style="margin-top:1rem">Surse și depunere</h3>
-
-
-  <div class="sec">
-    <h3>Ce se depune public</h3>
-    <ul class="plain">
-      <li><strong>Setul de date</strong>, la nivel de postare, cu codurile atribuite și modul de decizie al fiecărei codări: acord al codorilor, majoritate cu al treilea codor, nerezolvat.</li>
-      <li><strong>Codebook-ul complet</strong>: schema de codare, definițiile operaționale, regulile de decizie și exemplele.</li>
-      <li><strong>Registrul metodologic</strong>: o intrare per rulare, cu modelele folosite și data accesului, versiunea codebook-ului, consumul, rezultatul și abaterile.</li>
-      <li><strong>Tabelele de rezultate</strong> care susțin fiecare figură.</li>
-    </ul>
-    <p>Depunerea se face cu identificator persistent versionat, la momentul submisiei.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Ce nu se depune</h3>
-    <ul class="plain">
-      <li><strong>Postările brute.</strong> Sunt conținut al terților și includ date personale — nume, imagini, comentarii ale unor persoane identificabile, unele în situație de vulnerabilitate.</li>
-      <li><strong>Datele de contact</strong> din registrul de parteneri.</li>
-      <li><strong>Materialul de lucru intermediar.</strong> Dosarele de lucru devin material suplimentar doar după închiderea setului.</li>
-    </ul>
-  </div>
-
-  <div class="sec">
-    <h3>Reguli permanente ale codării</h3>
-    <p>Date agenților verbatim la fiecare rulare, fiecare venind dintr-un eșec observat:</p>
-    <ol class="steps">
-      <li><span class="step-n">1</span><span class="step-b"><p>Citate numai din postarea efectiv primită. Niciodată din memoria modelului.</p></span></li>
-      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere, nu o dată.</p></span></li>
-      <li><span class="step-n">3</span><span class="step-b"><p>Absența unui rezultat nu e absența fenomenului. „Nu apare în text" se codează ca informație insuficientă, nu ca negație.</p></span></li>
-      <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
-    </ol>
-  </div>
-</div>
 </section>
 
 
