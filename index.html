@@ -325,6 +325,7 @@
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
   <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simbolism</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
+  <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="false">Finanțatori</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
   <button class="tab" role="tab" id="t-org" aria-controls="p-org" aria-selected="false">Organizații</button>
@@ -711,9 +712,7 @@
     <p class="rez-tit">Activități × lună</p>
     <p class="rez-sub">Cele cinci ferestre de martie, 2022–2026. Butoanele taie harta pe
     oraș; numitorul de pe capul fiecărei coloane se schimbă odată cu ele.</p>
-    <div class="ser-ctl">
-      <div class="ser-ctl-row"><span class="flt-lbl">oraș</span><button class="chip" data-act-filtru="Toate" aria-pressed="true">Toate</button><button class="chip" data-act-filtru="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-act-filtru="București" aria-pressed="false">București</button><button class="chip" data-act-filtru="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-act-filtru="Galați" aria-pressed="false">Galați</button><button class="chip" data-act-filtru="Suceava" aria-pressed="false">Suceava</button></div>
-    </div>
+    <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="act_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
     <div class="tw" data-heat-dinamic="act_luna"></div>
 
     <p class="rez-tit">Organizație × tip de activitate</p>
@@ -866,10 +865,25 @@
   material, și măsurat separat de el.</p>
 
   <div class="sec">
+    <h3>Rezultatele pilotului</h3>
+
+    <p class="rez-tit">Simbolism × lună</p>
+    <p class="rez-sub">Unitatea e postarea: numărăm postări care au / nu au act simbolic, nu
+    instanțe de simbolism. Butoanele taie harta pe oraș.</p>
+    <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="sim_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
+    <div class="tw" data-heat-dinamic="sim_luna"></div>
+
+    <p class="rez-tit">Organizație × simbolism</p>
+    <p class="rez-sub">Toate lunile la un loc. <strong>25 din 173</strong>
+    postări trecute de filtru conțin un act simbolic.</p>
+    <div class="tw" data-heat="org_sim"></div>
+  </div>
+
+  <div class="sec">
     <h3>Cât de des apare, per organizație</h3>
     <div class="sim-bars"><span class="lab">Association Malva</span><span class="track"><span class="bar" style="width:45.0%"></span></span><span class="val">45.0%  <i>(9/20)</i></span><span class="lab">Novapolis</span><span class="track"><span class="bar" style="width:33.3%"></span></span><span class="val">33.3%  <i>(4/12)</i></span><span class="lab">MIC Brașov</span><span class="track"><span class="bar" style="width:14.3%"></span></span><span class="val">14.3%  <i>(1/7)</i></span><span class="lab">CNRR</span><span class="track"><span class="bar" style="width:11.1%"></span></span><span class="val">11.1%  <i>(3/27)</i></span><span class="lab">Help Ukrainians</span><span class="track"><span class="bar" style="width:8.0%"></span></span><span class="val">8.0%  <i>(7/87)</i></span><span class="lab">EDNAE</span><span class="track"><span class="bar" style="width:5.0%"></span></span><span class="val">5.0%  <i>(1/20)</i></span></div>
-    <p class="rez-sub"><strong>25 din 173</strong> de postări trecute de
-    filtru conțin un act simbolic. Numitorul e corpusul codat sub v5, nu exportul complet.</p>
+    <p class="rez-sub">Aceleași cifre ca pe harta de mai sus, ca proporție din postările
+    fiecărei organizații. Numitorul e corpusul codat sub v5, nu exportul complet.</p>
 
     <div class="note">
       <strong>Ce se numără și ce nu.</strong> Se codează <code>da</code> pentru sloganuri
@@ -901,6 +915,31 @@
 <section class="panel" role="tabpanel" id="p-ag" aria-labelledby="t-ag">
   <h2>Agenția refugiaților</h2>
   <p>Miza teoretică a studiului, de aceea în tab propriu și nu între ceilalți indicatori.</p>
+<!-- AGREZ-START -->
+  <div class="sec">
+    <h3>Rezultatele pilotului</h3>
+
+    <p class="rez-tit">Implicarea refugiaților × lună</p>
+    <p class="rez-sub">Cum apar refugiații în postare: cu rol activ (protagoniști) sau ca
+    beneficiari, direcți ori indirecți. Butoanele taie harta pe oraș.</p>
+    <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="ag_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
+    <div class="tw" data-heat-dinamic="ag_luna"></div>
+
+    <p class="rez-tit">Organizație × categoria de implicare</p>
+    <p class="rez-sub">Toate lunile la un loc.</p>
+    <div class="tw" data-heat="org_ag"></div>
+
+    <div class="note">
+      <strong>Ce se citește aici.</strong> Unitatea celulei e <em>postarea</em>, iar
+      categoriile nu se exclud: aceeași postare poate avea refugiați și ca protagoniști, și ca
+      beneficiari. Rândul „protagoniști" cuprinde prezumția organizațională: la organizațiile
+      conduse de refugiați, toate postările trecute de filtru numără automat (calea „registru",
+      127 din 127); restul vin din text —
+      persoane cu statut de refugiat afirmat de postare. Calea „tezaur" (persoane validate de
+      autor) nu e încă activă.
+    </div>
+  </div>
+<!-- AGREZ-END -->
 
   <div class="sec">
     <h3>Primele rezultate, pe corpusul-pilot</h3>
@@ -978,6 +1017,43 @@
     </div>
   </div>
 </section>
+
+<!-- FIN-START -->
+<section class="panel" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
+  <h2>Finanțatori</h2>
+  <p>Cine e numit ca sursă de bani în postările organizațiilor — doar mențiuni explicite de
+  finanțare, legate direct de denumirea actorului.</p>
+
+  <div class="sec">
+    <h3>Rezultatele pilotului</h3>
+
+    <p class="rez-tit">Finanțatori × lună</p>
+    <p class="rez-sub">Denumirile, doar unde finanțatorul poate fi identificat în text.
+    Butoanele taie harta pe oraș.</p>
+    <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="fin_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
+    <div class="tw" data-heat-dinamic="fin_luna"></div>
+
+    <p class="rez-tit">Organizație × finanțator</p>
+    <p class="rez-sub">Toate lunile la un loc.</p>
+    <div class="tw" data-heat="org_fin"></div>
+
+    <div class="note">
+      <strong>Ce se numără și ce nu.</strong> Un actor intră aici doar la mențiuni explicite
+      de bani în relație directă cu denumirea lui; finanțatorul numit apare și la parteneri,
+      fiindcă finanțarea e un rol. Donatorul care nu poate fi identificat rămâne codabil pe
+      categorie — „persoană privată anonimă", „firmă anonimă" — și primește rând propriu când
+      apare în date; în pilot nu apare.
+    </div>
+
+    <div class="note warn">
+      <strong>Date subțiri.</strong> În pilot sunt doar 5 mențiuni de
+      finanțatori, de la 4 actori distincți — pe ferestrele de martie,
+      organizațiile își numesc rar sursele de bani. Hărțile de aici arată structura de
+      raportare pregătită pentru corpusul complet, nu un rezultat.
+    </div>
+  </div>
+</section>
+<!-- FIN-END -->
 
 <!-- ============ RETEA ============ -->
 <section class="panel" role="tabpanel" id="p-ret" aria-labelledby="t-ret">
@@ -1358,7 +1434,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=b5d54b8d"></script>
+<script src="rezultate.js?v=0210e21e"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -1893,26 +1969,40 @@
     if (h && window.deseneazaHarta) g.appendChild(window.deseneazaHarta(h));
   });
 
-  var gazda = document.querySelector('[data-heat-dinamic]');
-  if (!gazda) return;
-  var baza = gazda.getAttribute('data-heat-dinamic');
-  var chips = document.querySelectorAll('[data-act-filtru]');
-
-  function arata(filtru) {
-    gazda.setAttribute('data-heat', baza + '|' + filtru);
-    gazda.innerHTML = '';
-    if (window.deseneazaHarta) {
-      var h = MATRICI[baza + '|' + filtru];
-      if (h) gazda.appendChild(window.deseneazaHarta(h));
+  // fiecare harta lunara are propriul rand de butoane pe oras (data-flt-for)
+  Array.prototype.forEach.call(document.querySelectorAll('[data-heat-dinamic]'), function (gazda) {
+    var baza = gazda.getAttribute('data-heat-dinamic');
+    var chips = document.querySelectorAll('[data-flt-for="' + baza + '"] .chip');
+    function arata(filtru) {
+      gazda.setAttribute('data-heat', baza + '|' + filtru);
+      gazda.innerHTML = '';
+      if (window.deseneazaHarta) {
+        var h = MATRICI[baza + '|' + filtru];
+        if (h) gazda.appendChild(window.deseneazaHarta(h));
+      }
+      Array.prototype.forEach.call(chips, function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-flt') === filtru));
+      });
     }
     Array.prototype.forEach.call(chips, function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-act-filtru') === filtru));
+      b.addEventListener('click', function () { arata(b.getAttribute('data-flt')); });
     });
-  }
-  Array.prototype.forEach.call(chips, function (b) {
-    b.addEventListener('click', function () { arata(b.getAttribute('data-act-filtru')); });
+    arata('Toate');
   });
-  arata('Toate');
+
+  // legenda pe taburile ale caror harti le-am desenat noi (o singura data pe tab)
+  var scara = ['0.06', '0.28', '0.5', '0.72', '0.92'];
+  Array.prototype.forEach.call(document.querySelectorAll('.hm'), function (t) {
+    var panel = t.closest('.panel');
+    if (!panel || panel.querySelector('.hm-key')) return;
+    var g = panel.querySelector('[data-heat], [data-heat-dinamic]');
+    var k = document.createElement('p');
+    k.className = 'hm-key';
+    k.innerHTML = 'rar <span class="hm-ramp">' + scara.map(function (v) {
+      return '<i style="--i:' + v + '"></i>';
+    }).join('') + '</span> frecvent — intensitatea e raportată la numitorul coloanei';
+    g.parentNode.insertBefore(k, g.nextSibling);
+  });
 })();
 </script>
 <!-- REZ-JS-END -->
