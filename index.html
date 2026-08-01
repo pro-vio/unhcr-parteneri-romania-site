@@ -292,6 +292,9 @@
   .rez-tit{font-family:var(--sans); font-size:var(--s--1); text-transform:uppercase;
     letter-spacing:.06em; color:var(--ink-faint); font-weight:600; margin:1.3rem 0 .1rem}
   .rez-sub{color:var(--ink-faint); font-size:var(--s--1); margin:0 0 .7rem; max-width:var(--measure)}
+  .stack{background:var(--surface); border:1px solid var(--rule); padding:.9rem 1rem;
+    border-radius:3px; margin:.2rem 0 1rem}
+  .stack svg{display:block; width:100%; height:auto; overflow:visible}
 /* REZ-CSS-END */
 </style>
 </head>
@@ -316,6 +319,7 @@
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
   <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simboluri Ukr</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Roluri refugiați</button>
+  <button class="tab" role="tab" id="t-coe" aria-controls="p-coe" aria-selected="false">Coeziune</button>
   <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="false">Finanțatori</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
@@ -646,6 +650,25 @@
     <div class="ser-ctl" data-serie-ctl></div>
     <div class="ser" data-serie="volum"></div>
 
+    <!-- POST-START -->
+    <p class="rez-tit">Postări relevante pe lună</p>
+    <p class="rez-sub">Postările trecute de filtrul etapei 3 —
+    173 din 231 codabile. Există doar pe lunile codate,
+    fiindcă filtrul cere codare.</p>
+    <div class="ser" data-serie="relevante"></div>
+
+    <p class="rez-tit">Clasele de filtrare, pe lună</p>
+    <p class="rez-sub">Cele trei clase rezultate din filtrare, una peste alta, pe fiecare lună
+    codată. Butoanele de oraș de mai sus taie și acest grafic.</p>
+    <div class="stack" data-stack="clase"></div>
+
+    <div class="note">
+      <strong>Clasele nu se exclud.</strong> O postare poate fi și în „refugiați", și în
+      „suport Ucraina" — atunci numără în amândouă, iar bara e mai înaltă decât numărul de
+      postări din luna aceea. „Alte activități" e clasa care nu se codează mai departe.
+    </div>
+<!-- POST-END -->
+
     <p><strong>Nicio pagină nu urmează traiectoria alteia.</strong> CNRR are vârful exact în
     martie 2022 și scade apoi continuu — singura traiectorie de tip criză din lot.
     Help Ukrainians, cea mai mare pagină din corpus, începe abia în august 2022 și își face vârful
@@ -851,6 +874,47 @@
   </div>
 <!-- AGREZ-END -->
 </section>
+
+<!-- COE-START -->
+<section class="panel" role="tabpanel" id="p-coe" aria-labelledby="t-coe">
+  <h2>Coeziune</h2>
+  <p>Când aceeași postare numește deodată mai multe categorii de oameni — refugiați și
+  comunitatea locală, ori aceeași categorie în roluri diferite. Nu se codează: se calculează
+  din valorile etapei 1.</p>
+
+  <div class="sec">
+    <h3>Rezultatele pilotului</h3>
+
+    <p class="rez-tit">Conjuncții × lună</p>
+    <p class="rez-sub">Fiecare rând e o pereche de categorii prezente în aceeași postare, cu
+    poziția în care apar: beneficiari direcți (ben.) sau protagoniști (protag.). Rândul apare
+    doar dacă perechea există în corpus. Butoanele taie harta pe oraș.</p>
+    <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="coe_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
+    <div class="tw" data-heat-dinamic="coe_luna"></div>
+
+    <p class="rez-tit">Organizație × conjuncție</p>
+    <p class="rez-sub">Toate lunile la un loc.</p>
+    <div class="tw" data-heat="org_coe"></div>
+
+    <div class="note">
+      <strong>Coeziunea cu comunitatea-gazdă</strong> e una dintre perechi:
+      <em>ucraineni (ben.) + comunitatea locală (ben.)</em> — refugiați și localnici ca
+      beneficiari ai aceleiași activități. În pilot apare în <strong>5</strong> postări
+      din 173 trecute de filtru. Definiția vine din codebook, unde
+      coeziunea e dimensiune derivată, cu proveniența declarată: conjuncție de coduri, nu cod
+      propriu.
+    </div>
+
+    <div class="note warn">
+      <strong>Ce nu se vede aici.</strong> Naționalitatea protagoniștilor e cunoscută rar:
+      la majoritatea postărilor, persoanele numite nu au statut afirmat în text, iar prezumția
+      organizațională (organizație condusă de refugiați) dă rolul, nu naționalitatea. Rândurile
+      cu protagoniști sunt deci un minim, nu o măsură completă — se schimbă când intră tezaurul
+      de persoane validat.
+    </div>
+  </div>
+</section>
+<!-- COE-END -->
 
 <!-- FIN-START -->
 <section class="panel" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
@@ -1268,7 +1332,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=62ba4d3a"></script>
+<script src="rezultate.js?v=610da1ab"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -1315,15 +1379,35 @@
     if (!tinte.length) return;
     var L = SERII.luni, N = L.length, NS = 'http://www.w3.org/2000/svg';
     var ORG = SERII.organizatii;
+    var REZ = typeof REZULTATE !== 'undefined' ? REZULTATE : {};
+    if (REZ.relevante) ORG.forEach(function (o) {
+      o.relevante = REZ.relevante[o.nume] || o.volum.map(function () { return null; });
+    });
     var ORASE = [];
     ORG.forEach(function (o) { if (ORASE.indexOf(o.oras) < 0) ORASE.push(o.oras); });
     ORASE.sort();
     var culoare = function (i) { return 'var(--ser-' + (i + 1) + ')'; };
     var selOras = 'toate';
+    var selClasa = 'toate';
+    var ENG = {reactii: 1, share: 1, comentarii: 1};
+    var CLASE = [['toate', 'toate'], ['refugiati', 'refugiați'],
+                 ['suport_ucraina', 'suport Ucraina'], ['alte_activitati', 'alte activități']];
     var desenate = [];
+
+    // seria unui camp: la engagement cu clasa selectata, valorile vin din
+    // REZULTATE.eng_clase (doar lunile codate); altfel, seria bruta
+    function serie(o, camp) {
+      if (selClasa !== 'toate' && ENG[camp] && REZ.eng_clase) {
+        var ec = REZ.eng_clase[o.nume];
+        return (ec && ec[selClasa] && ec[selClasa][camp]) ||
+               o.volum.map(function () { return null; });
+      }
+      return o[camp];
+    }
 
     var CAMP = {
       volum: {t: 'Postări pe lună', u: 'postări'},
+      relevante: {t: 'Postări relevante pe lună', u: 'postări relevante'},
       reactii: {t: 'Reacții pe lună', u: 'reacții'},
       share: {t: 'Distribuiri pe lună', u: 'distribuiri'},
       comentarii: {t: 'Comentarii pe lună', u: 'comentarii'}
@@ -1334,13 +1418,22 @@
       for (var k in a) if (a[k] != null) x.setAttribute(k, a[k]);
       return x;
     }
+    // segmentele au >= 2 puncte (linie); punctele izolate se intorc separat si se
+    // deseneaza ca marcaje — altfel seriile masurate doar pe lunile codate, care sunt
+    // neconsecutive, n-ar avea ce desena
     function segmente(s) {
-      var out = [], cur = [];
+      var out = [], izolate = [], cur = [];
+      function inchide() {
+        if (cur.length > 1) out.push(cur);
+        else if (cur.length === 1) izolate.push(cur[0]);
+        cur = [];
+      }
       s.forEach(function (v, i) {
-        if (v == null) { if (cur.length > 1) out.push(cur); cur = []; }
+        if (v == null) inchide();
         else cur.push([i, v]);
       });
-      if (cur.length > 1) out.push(cur);
+      inchide();
+      out.izolate = izolate;
       return out;
     }
     function tics(max) {
@@ -1356,7 +1449,7 @@
       var w = 940, h = 250, pad = {l: 38, r: 92, t: 12, b: 18};
       var max = 0;
       ORG.forEach(function (o) {
-        o[camp].forEach(function (v) { if (v != null && v > max) max = v; });
+        serie(o, camp).forEach(function (v) { if (v != null && v > max) max = v; });
       });
       var tt = tics(max), top = tt[tt.length - 1];
       var px = function (i) { return pad.l + i * (w - pad.l - pad.r) / (N - 1); };
@@ -1384,11 +1477,16 @@
 
       var grupuri = ORG.map(function (o, k) {
         var g = el('g', {class: 's-pal'});
-        segmente(o[camp]).forEach(function (seg) {
+        var segs = segmente(serie(o, camp));
+        segs.forEach(function (seg) {
           var d = seg.map(function (p, n) {
             return (n ? 'L' : 'M') + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1);
           }).join(' ');
           g.appendChild(el('path', {d: d, class: 's-line', stroke: culoare(k)}));
+        });
+        segs.izolate.forEach(function (p) {
+          g.appendChild(el('circle', {cx: px(p[0]).toFixed(1), cy: py(p[1]).toFixed(1),
+                                      r: 3, fill: culoare(k)}));
         });
         svg.appendChild(g);
         return g;
@@ -1396,9 +1494,9 @@
 
       // eticheta la capatul liniei: identitatea nu sta doar in culoare
       var capete = ORG.map(function (o, k) {
-        var idx = -1;
-        o[camp].forEach(function (v, i) { if (v != null) idx = i; });
-        return {k: k, i: idx, y: idx < 0 ? 0 : py(o[camp][idx]), nume: o.scurt};
+        var s = serie(o, camp), idx = -1;
+        s.forEach(function (v, i) { if (v != null) idx = i; });
+        return {k: k, i: idx, y: idx < 0 ? 0 : py(s[idx]), nume: o.scurt};
       }).filter(function (c) { return c.i >= 0; }).sort(function (a, b) { return a.y - b.y; });
       capete.forEach(function (c, n) {
         if (n && c.y - capete[n - 1].y < 12) c.y = capete[n - 1].y + 12;
@@ -1431,7 +1529,7 @@
         linie.setAttribute('x1', G.px(i)); linie.setAttribute('x2', G.px(i));
         linie.setAttribute('opacity', 1);
         var randuri = ORG.map(function (o, k) {
-          var v = o[G.camp][i];
+          var v = serie(o, G.camp)[i];
           if (v == null) return null;
           if (selOras !== 'toate' && o.oras !== selOras) return null;
           return '<div><i style="background:' + culoare(k) + '"></i>' + o.scurt +
@@ -1452,15 +1550,16 @@
     }
 
     function aplicaOras() {
-      desenate.forEach(function (G) {
-        G.grupuri.forEach(function (g, k) {
+      desenate.forEach(function (D) {
+        D.G.grupuri.forEach(function (g, k) {
           g.classList.toggle('off', selOras !== 'toate' && ORG[k].oras !== selOras);
         });
       });
-      Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl] .chip'),
+      Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl] [data-oras]'),
         function (b) {
           b.setAttribute('aria-pressed', b.getAttribute('data-oras') === selOras ? 'true' : 'false');
         });
+      document.dispatchEvent(new CustomEvent('oras-serii', {detail: selOras}));
     }
 
     // o singura linie de control deasupra graficelor: butoane de oras + legenda
@@ -1496,21 +1595,83 @@
       c.appendChild(n);
     });
 
+    function legenda(camp) {
+      if (camp === 'relevante') {
+        return '<strong>' + CAMP[camp].t + '</strong> — postările trecute de filtrul ' +
+          'etapei 3, pe lunile codate. Restul seriei e gol: filtrul cere codare, iar ' +
+          'codate sunt doar cele cinci luni de martie. Total: ' +
+          (REZ.relevante_total || 0) + ' din ' + (REZ.codabile_total || 0) + ' postări codabile.';
+      }
+      var baza = '<strong>' + CAMP[camp].t + '</strong> — ' + CAMP[camp].u +
+        ', însumate pe lună, pentru fiecare organizație. Total pe toată seria: ' +
+        (camp === 'volum' ? SERII.n_total + ' de postări'
+                          : SERII.sume[camp] + ' ' + CAMP[camp].u) + '.';
+      if (ENG[camp] && selClasa !== 'toate') {
+        var et = CLASE.filter(function (c) { return c[0] === selClasa; })[0][1];
+        baza += ' <em>Acum: doar clasa „' + et + '", pe lunile codate.</em>';
+      }
+      return baza;
+    }
+
+    function redeseneaza() {
+      desenate.forEach(function (D) {
+        if (!ENG[D.camp]) return;
+        D.gazda.innerHTML = '';
+        var cap = document.createElement('p');
+        cap.className = 'ser-cap';
+        cap.innerHTML = legenda(D.camp);
+        D.gazda.appendChild(cap);
+        var G = grafic(D.camp);
+        D.gazda.appendChild(G.svg);
+        crosshair(D.gazda, G);
+        D.G = G;
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('[data-clasa]'), function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-clasa') === selClasa ? 'true' : 'false');
+      });
+      aplicaOras();
+    }
+
     Array.prototype.forEach.call(tinte, function (t) {
       var camp = t.getAttribute('data-serie');
       if (!CAMP[camp]) return;
       var cap = document.createElement('p');
       cap.className = 'ser-cap';
-      cap.innerHTML = '<strong>' + CAMP[camp].t + '</strong> — ' + CAMP[camp].u +
-        ', însumate pe lună, pentru fiecare organizație. Total pe toată seria: ' +
-        (camp === 'volum' ? SERII.n_total + ' de postări'
-                          : SERII.sume[camp] + ' ' + CAMP[camp].u) + '.';
+      cap.innerHTML = legenda(camp);
       t.appendChild(cap);
       var G = grafic(camp);
       t.appendChild(G.svg);
       crosshair(t, G);
-      desenate.push(G);
+      desenate.push({gazda: t, camp: camp, G: G});
     });
+
+    // butoanele de clasa, doar unde exista grafice de engagement
+    Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl]'), function (c) {
+      var panel = c.closest('.panel');
+      if (!panel || !panel.querySelector('[data-serie="reactii"]')) return;
+      if (!REZ.eng_clase) return;
+      var rand = document.createElement('div');
+      rand.className = 'ser-ctl-row';
+      var et = document.createElement('span');
+      et.className = 'flt-lbl'; et.textContent = 'Clasă';
+      rand.appendChild(et);
+      CLASE.forEach(function (cl) {
+        var b = document.createElement('button');
+        b.className = 'chip'; b.type = 'button'; b.textContent = cl[1];
+        b.setAttribute('data-clasa', cl[0]);
+        b.setAttribute('aria-pressed', cl[0] === selClasa ? 'true' : 'false');
+        b.addEventListener('click', function () { selClasa = cl[0]; redeseneaza(); });
+        rand.appendChild(b);
+      });
+      c.insertBefore(rand, c.firstChild.nextSibling);
+      var n = document.createElement('p');
+      n.className = 'flt-note';
+      n.textContent = 'Clasele vin din filtrarea etapei 3 și există doar pe lunile codate: ' +
+        'pe orice clasă în afară de „toate", graficele arată numai cele cinci luni de martie. ' +
+        'Refugiați și suport Ucraina se pot suprapune, deci suma claselor poate depăși totalul.';
+      c.appendChild(n);
+    });
+
     aplicaOras();
   })();
 
@@ -1823,6 +1984,83 @@
     });
     arata('Toate');
   });
+
+  // bare stivuite: clasele de filtrare pe fiecare luna codata, taiate pe oras
+  // de aceleasi butoane ca seriile (evenimentul 'oras-serii')
+  var stacks = document.querySelectorAll('[data-stack="clase"]');
+  if (stacks.length && REZULTATE.clase_luna) {
+    var LUNI = REZULTATE.luni, CLASE = REZULTATE.clase_ordine;
+    var NSVG = 'http://www.w3.org/2000/svg';
+    function svgEl(n, a) {
+      var x = document.createElementNS(NSVG, n);
+      for (var k in a) if (a[k] != null) x.setAttribute(k, a[k]);
+      return x;
+    }
+    function deseneazaStack(gazda, filtru) {
+      var date = REZULTATE.clase_luna[filtru] || REZULTATE.clase_luna['Toate'];
+      var w = 940, h = 230, pad = {l: 38, r: 150, t: 12, b: 30};
+      var max = 0;
+      LUNI.forEach(function (l) {
+        var s = 0;
+        CLASE.forEach(function (c) { s += date[l][c[0]] || 0; });
+        if (s > max) max = s;
+      });
+      var pas = Math.max(1, Math.ceil(max / 4 / 5) * 5);
+      var top = Math.ceil(max / pas) * pas || 1;
+      var bw = (w - pad.l - pad.r) / LUNI.length;
+      var py = function (v) { return h - pad.b - (v / top) * (h - pad.t - pad.b); };
+      var svg = svgEl('svg', {viewBox: '0 0 ' + w + ' ' + h, role: 'img',
+        'aria-label': 'Clasele de filtrare pe lună, ' + filtru});
+      for (var t = 0; t <= top; t += pas) {
+        svg.appendChild(svgEl('line', {x1: pad.l, y1: py(t), x2: w - pad.r, y2: py(t),
+                                       class: 's-grid'}));
+        var lb = svgEl('text', {x: pad.l - 6, y: py(t) + 3, class: 's-ax',
+                                'text-anchor': 'end'});
+        lb.textContent = t; svg.appendChild(lb);
+      }
+      LUNI.forEach(function (l, i) {
+        var jos = 0;
+        CLASE.forEach(function (c, k) {
+          var v = date[l][c[0]] || 0;
+          if (!v) return;
+          var y = py(jos + v), hh = py(jos) - y;
+          var r = svgEl('rect', {x: pad.l + i * bw + bw * 0.18, y: y,
+                                 width: bw * 0.64, height: hh,
+                                 fill: 'var(--ser-' + (k + 1) + ')', rx: 1.5});
+          var ti = svgEl('title');
+          ti.textContent = l + ' · ' + c[1] + ': ' + v;
+          r.appendChild(ti);
+          svg.appendChild(r);
+          if (hh > 13) {
+            var n = svgEl('text', {x: pad.l + i * bw + bw / 2, y: y + hh / 2 + 4,
+                                   class: 's-ax', 'text-anchor': 'middle',
+                                   fill: 'var(--surface)'});
+            n.textContent = v; svg.appendChild(n);
+          }
+          jos += v;
+        });
+        var et = svgEl('text', {x: pad.l + i * bw + bw / 2, y: h - 10, class: 's-ax',
+                                'text-anchor': 'middle'});
+        et.textContent = l; svg.appendChild(et);
+      });
+      CLASE.forEach(function (c, k) {
+        var y = pad.t + 14 + k * 17;
+        svg.appendChild(svgEl('rect', {x: w - pad.r + 12, y: y - 8, width: 9, height: 9,
+                                       rx: 2, fill: 'var(--ser-' + (k + 1) + ')'}));
+        var t2 = svgEl('text', {x: w - pad.r + 26, y: y, class: 's-lab'});
+        t2.textContent = c[1]; svg.appendChild(t2);
+      });
+      gazda.innerHTML = '';
+      gazda.appendChild(svg);
+    }
+    Array.prototype.forEach.call(stacks, function (g) {
+      deseneazaStack(g, 'Toate');
+      document.addEventListener('oras-serii', function (e) {
+        var f = e.detail === 'toate' ? 'Toate' : e.detail;
+        deseneazaStack(g, REZULTATE.clase_luna[f] ? f : 'Toate');
+      });
+    });
+  }
 
   // legenda pe taburile ale caror harti le-am desenat noi (o singura data pe tab)
   var scara = ['0.06', '0.28', '0.5', '0.72', '0.92'];
