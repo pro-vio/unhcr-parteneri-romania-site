@@ -651,15 +651,13 @@
     <div class="ser" data-serie="volum"></div>
 
     <!-- POST-START -->
-    <p class="rez-tit">Postări relevante pe lună</p>
-    <p class="rez-sub">Postările trecute de filtrul etapei 3 —
-    173 din 231 codabile. Există doar pe lunile codate,
-    fiindcă filtrul cere codare.</p>
-    <div class="ser" data-serie="relevante"></div>
-
     <p class="rez-tit">Clasele de filtrare, pe lună</p>
     <p class="rez-sub">Cele trei clase rezultate din filtrare, una peste alta, pe fiecare lună
-    codată. Butoanele de oraș de mai sus taie și acest grafic.</p>
+    codată. Butoanele de aici taie doar acest grafic —
+    173 din 231 de postări codabile trec de filtru.</p>
+    <div class="ser-ctl">
+      <div class="ser-ctl-row" data-stack-ctl><span class="flt-lbl">oraș</span><button class="chip" data-stack-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-stack-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-stack-flt="București" aria-pressed="false">București</button><button class="chip" data-stack-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-stack-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-stack-flt="Suceava" aria-pressed="false">Suceava</button></div>
+    </div>
     <div class="stack" data-stack="clase"></div>
 
     <div class="note">
@@ -900,9 +898,9 @@
     <h3>Rezultatele pilotului</h3>
 
     <p class="rez-tit">Conjuncții × lună</p>
-    <p class="rez-sub">Fiecare rând e o pereche de categorii prezente în aceeași postare, cu
-    poziția în care apar: beneficiari direcți (ben.) sau protagoniști (protag.). Rândul apare
-    doar dacă perechea există în corpus. Butoanele taie harta pe oraș.</p>
+    <p class="rez-sub">Fiecare rând e o pereche de categorii de oameni prezente în aceeași
+    postare, cu rolul în care apar — ca beneficiari direcți ai activității sau ca protagoniști
+    ai ei. Rândul apare doar dacă perechea există în corpus. Butoanele taie harta pe oraș.</p>
     <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="coe_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
     <div class="tw" data-heat-dinamic="coe_luna"></div>
 
@@ -912,8 +910,8 @@
 
     <div class="note">
       <strong>Coeziunea cu comunitatea-gazdă</strong> e una dintre perechi:
-      <em>ucraineni (ben.) + comunitatea locală (ben.)</em> — refugiați și localnici ca
-      beneficiari ai aceleiași activități. În pilot apare în <strong>5</strong> postări
+      <em>ucraineni ca beneficiari și comunitatea locală ca beneficiari</em> — refugiați și
+      localnici deopotrivă la aceeași activitate. În pilot apare în <strong>5</strong> postări
       din 173 trecute de filtru. Definiția vine din codebook, unde
       coeziunea e dimensiune derivată, cu proveniența declarată: conjuncție de coduri, nu cod
       propriu.
@@ -1352,7 +1350,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=610da1ab"></script>
+<script src="rezultate.js?v=9ff48bda"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -1400,9 +1398,6 @@
     var L = SERII.luni, N = L.length, NS = 'http://www.w3.org/2000/svg';
     var ORG = SERII.organizatii;
     var REZ = typeof REZULTATE !== 'undefined' ? REZULTATE : {};
-    if (REZ.relevante) ORG.forEach(function (o) {
-      o.relevante = REZ.relevante[o.nume] || o.volum.map(function () { return null; });
-    });
     var ORASE = [];
     ORG.forEach(function (o) { if (ORASE.indexOf(o.oras) < 0) ORASE.push(o.oras); });
     ORASE.sort();
@@ -1410,24 +1405,27 @@
     var selOras = 'toate';
     var selClasa = 'toate';
     var ENG = {reactii: 1, share: 1, comentarii: 1};
+    var CLASABIL = {volum: 1, reactii: 1, share: 1, comentarii: 1};
     var CLASE = [['toate', 'toate'], ['refugiati', 'refugiați'],
                  ['suport_ucraina', 'suport Ucraina'], ['alte_activitati', 'alte activități']];
     var desenate = [];
+    var GOL = [];
 
-    // seria unui camp: la engagement cu clasa selectata, valorile vin din
-    // REZULTATE.eng_clase (doar lunile codate); altfel, seria bruta
+    // seria unui camp: cu o clasa selectata, valorile vin din setul filtrat al etapei 3
+    // (vol_clase / eng_clase) si exista doar pe lunile codate; altfel, seria bruta
     function serie(o, camp) {
-      if (selClasa !== 'toate' && ENG[camp] && REZ.eng_clase) {
-        var ec = REZ.eng_clase[o.nume];
-        return (ec && ec[selClasa] && ec[selClasa][camp]) ||
-               o.volum.map(function () { return null; });
+      if (selClasa === 'toate' || !CLASABIL[camp]) return o[camp];
+      if (!GOL.length) GOL = o.volum.map(function () { return null; });
+      if (camp === 'volum') {
+        var vc = REZ.vol_clase && REZ.vol_clase[o.nume];
+        return (vc && vc[selClasa]) || GOL;
       }
-      return o[camp];
+      var ec = REZ.eng_clase && REZ.eng_clase[o.nume];
+      return (ec && ec[selClasa] && ec[selClasa][camp]) || GOL;
     }
 
     var CAMP = {
       volum: {t: 'Postări pe lună', u: 'postări'},
-      relevante: {t: 'Postări relevante pe lună', u: 'postări relevante'},
       reactii: {t: 'Reacții pe lună', u: 'reacții'},
       share: {t: 'Distribuiri pe lună', u: 'distribuiri'},
       comentarii: {t: 'Comentarii pe lună', u: 'comentarii'}
@@ -1616,26 +1614,25 @@
     });
 
     function legenda(camp) {
-      if (camp === 'relevante') {
-        return '<strong>' + CAMP[camp].t + '</strong> — postările trecute de filtrul ' +
-          'etapei 3, pe lunile codate. Restul seriei e gol: filtrul cere codare, iar ' +
-          'codate sunt doar cele cinci luni de martie. Total: ' +
-          (REZ.relevante_total || 0) + ' din ' + (REZ.codabile_total || 0) + ' postări codabile.';
+      var cap = '<strong>' + CAMP[camp].t + '</strong> — ' + CAMP[camp].u +
+        ', însumate pe lună, pentru fiecare organizație. ';
+      if (CLASABIL[camp] && selClasa !== 'toate') {
+        var et = CLASE.filter(function (c) { return c[0] === selClasa; })[0][1];
+        var s = 0;
+        ORG.forEach(function (o) {
+          serie(o, camp).forEach(function (v) { if (v != null) s += v; });
+        });
+        return cap + 'Acum: doar clasa „' + et + '", care există numai pe lunile codate — ' +
+          s + ' ' + (camp === 'volum' ? 'postări' : CAMP[camp].u) + ' în cele cinci luni.';
       }
-      var baza = '<strong>' + CAMP[camp].t + '</strong> — ' + CAMP[camp].u +
-        ', însumate pe lună, pentru fiecare organizație. Total pe toată seria: ' +
+      return cap + 'Total pe toată seria: ' +
         (camp === 'volum' ? SERII.n_total + ' de postări'
                           : SERII.sume[camp] + ' ' + CAMP[camp].u) + '.';
-      if (ENG[camp] && selClasa !== 'toate') {
-        var et = CLASE.filter(function (c) { return c[0] === selClasa; })[0][1];
-        baza += ' <em>Acum: doar clasa „' + et + '", pe lunile codate.</em>';
-      }
-      return baza;
     }
 
     function redeseneaza() {
       desenate.forEach(function (D) {
-        if (!ENG[D.camp]) return;
+        if (!CLASABIL[D.camp]) return;
         D.gazda.innerHTML = '';
         var cap = document.createElement('p');
         cap.className = 'ser-cap';
@@ -1668,8 +1665,8 @@
     // butoanele de clasa, doar unde exista grafice de engagement
     Array.prototype.forEach.call(document.querySelectorAll('[data-serie-ctl]'), function (c) {
       var panel = c.closest('.panel');
-      if (!panel || !panel.querySelector('[data-serie="reactii"]')) return;
-      if (!REZ.eng_clase) return;
+      if (!panel || !panel.querySelector('[data-serie]')) return;
+      if (!REZ.eng_clase || !REZ.vol_clase) return;
       var rand = document.createElement('div');
       rand.className = 'ser-ctl-row';
       var et = document.createElement('span');
@@ -2075,9 +2072,17 @@
     }
     Array.prototype.forEach.call(stacks, function (g) {
       deseneazaStack(g, 'Toate');
-      document.addEventListener('oras-serii', function (e) {
-        var f = e.detail === 'toate' ? 'Toate' : e.detail;
-        deseneazaStack(g, REZULTATE.clase_luna[f] ? f : 'Toate');
+      var panel = g.closest('.panel');
+      var chips = panel ? panel.querySelectorAll('[data-stack-ctl] .chip') : [];
+      Array.prototype.forEach.call(chips, function (b) {
+        b.addEventListener('click', function () {
+          var f = b.getAttribute('data-stack-flt');
+          deseneazaStack(g, REZULTATE.clase_luna[f] ? f : 'Toate');
+          Array.prototype.forEach.call(chips, function (x) {
+            x.setAttribute('aria-pressed',
+              String(x.getAttribute('data-stack-flt') === f));
+          });
+        });
       });
     });
   }
