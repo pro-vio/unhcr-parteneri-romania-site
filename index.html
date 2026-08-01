@@ -863,6 +863,8 @@
   <div class="subtabs" role="tablist" aria-label="Metodologie">
   <button class="subtab on" role="tab" id="st-cod" aria-controls="sp-cod" aria-selected="true">Codebook</button>
   <button class="subtab" role="tab" id="st-codare" aria-controls="sp-codare" aria-selected="false">Codare</button>
+  <button class="subtab" role="tab" id="st-acord" aria-controls="sp-acord" aria-selected="false">Acord codori AI</button>
+  <button class="subtab" role="tab" id="st-valid" aria-controls="sp-valid" aria-selected="false">Validare umană</button>
   <button class="subtab" role="tab" id="st-org" aria-controls="sp-org" aria-selected="false">Organizații</button>
   <button class="subtab" role="tab" id="st-ms" aria-controls="sp-ms" aria-selected="false">Metodă și surse</button>
   </div>
@@ -1162,6 +1164,172 @@
       <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
   </div>
+</div>
+<div class="subpanel" role="tabpanel" id="sp-acord" aria-labelledby="st-acord">
+<!-- METACORD-START -->
+  <h2>Acord codori AI</h2>
+  <p>Fiecare postare e codată de doi agenți independenți, care nu văd ieșirea celuilalt.
+  Acordul lor e prima măsură de calitate; dezacordurile le tranșează un al treilea codor,
+  prin majoritate. Cifrele sunt măsurate pe pilot, sub instrucțiunea v5.</p>
+
+  <div class="sec">
+    <h3>Acordul pe filtru</h3>
+    <p>Filtrul — cine e prezent în activitate și dacă postarea privește sprijinul pentru
+    Ucraina — se măsoară separat și primul: un dezacord aici mută postarea dintr-o clasă în
+    alta și se propagă în tot ce urmează. 231 postări codabile; 24 au avut cel puțin
+    un dezacord.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col" class="num">Dezacorduri</th></tr></thead>
+        <tbody>
+          <tr><td>protagoniști</td><td class="num">94,4%</td><td class="num">13</td></tr>
+          <tr><td>beneficiari direcți</td><td class="num">96,1%</td><td class="num">9</td></tr>
+          <tr><td>beneficiari indirecți</td><td class="num">98,7%</td><td class="num">3</td></tr>
+          <tr><td>sprijinul pentru Ucraina</td><td class="num">100,0%</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Acordul pe codarea integrală</h3>
+    <p>Cele 173 postări trecute de filtru; 50 au avut cel puțin un dezacord.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Câmp</th><th scope="col" class="num">Acord</th><th scope="col" class="num">Dezacorduri</th></tr></thead>
+        <tbody>
+          <tr><td>tipul postării</td><td class="num">81,5%</td><td class="num">32</td></tr>
+          <tr><td>tipul de activitate</td><td class="num">94,8%</td><td class="num">9</td></tr>
+          <tr><td>simbolismul ucrainean</td><td class="num">99,4%</td><td class="num">1</td></tr>
+          <tr><td>parteneri — cine e numit</td><td class="num">94,2%</td><td class="num">10</td></tr>
+          <tr><td>finanțatori — cine e numit</td><td class="num">99,4%</td><td class="num">1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>Cifra mică de la tipul postării nu e un defect de schemă.</strong> Dezacordul
+      e aproape exclusiv o etichetă in vivo în plus peste nucleul comun — câmpul permite
+      etichete noi, notate cum apar, iar ele se consolidează la tipologie, după rulare.
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Rezoluția</h3>
+    <p>Acordul se numără pe câmpuri; decizia se ia pe valori. La dezacord, al treilea codor
+    intră orb, cu același codebook, și decide majoritatea 2-din-3; trei ieșiri diferite lasă
+    valoarea nerezolvată, iar analizele afectate rulează cu ambele completări extreme.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Set</th><th scope="col" class="num">Decizii</th><th scope="col" class="num">Acord direct</th><th scope="col" class="num">Majoritate 2-din-3</th><th scope="col" class="num">Nerezolvate</th></tr></thead>
+        <tbody>
+          <tr><td>filtru</td><td class="num">924</td><td class="num">899 (97,3%)</td><td class="num">25 (2,7%)</td><td class="num">0</td></tr>
+          <tr><td>codare integrală</td><td class="num">865</td><td class="num">812 (93,9%)</td><td class="num">53 (6,1%)</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Pragurile sub care se citesc cifrele</h3>
+    <p>Acordul procentual e capătul îngăduitor al scalei de fiabilitate și nu se raportează
+    singur (Lombard, Snyder-Duch &amp; Bracken, 2002). Setul publicat primește, per câmp, și
+    un coeficient corectat pentru șansă — Krippendorff α — citit pe benzile autorului.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Prag</th><th scope="col">Valoare</th><th scope="col">Ce înseamnă</th></tr></thead>
+        <tbody>
+          <tr><td>acord procentual</td><td class="num">,90 / ,80 / ,70</td><td>benzile convenționale: aproape întotdeauna acceptabil / acceptabil în majoritatea situațiilor / doar exploratoriu (Lombard et al., 2002)</td></tr>
+          <tr><td>Krippendorff α</td><td class="num">≥ ,800 / ,667</td><td>de încredere / minimul sub care datele se aruncă; minimul crește cu costul unei concluzii greșite (Krippendorff, 2004)</td></tr>
+          <tr><td>fenomene rare</td><td>acord brut + distribuție</td><td>pe o clasă pozitivă cu câteva cazuri, coeficientul spune mai mult despre raritate decât despre codori — se raportează amândouă, niciodată coeficientul singur</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Alarmele rulării complete</h3>
+    <p>La scalare, acordul nu se mai verifică de om per postare; îl supraveghează trei
+    alarme care opresc procesul.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Alarma</th><th scope="col">Cum funcționează</th><th scope="col">Pragul</th></tr></thead>
+        <tbody>
+          <tr><td>santinele</td><td>în fiecare lot se strecoară ~10% postări din setul calibrat, cu referința umană; agenții nu știu care sunt</td><td>acord sub valoarea din calibrare − 5 pp → stop și diagnostic</td></tr>
+          <tr><td>per organizație</td><td>pilotul a văzut 6 organizații; pentru fiecare organizație nouă se urmărește acordul A–B</td><td>sub 85% pe orice câmp → omul codează 10 postări ale organizației</td></tr>
+          <tr><td>rata de relevanță</td><td>proporția postărilor care trec filtrul, per organizație</td><td>abatere bruscă față de pilot → verificare înainte de a continua</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!-- METACORD-END -->
+</div>
+<div class="subpanel" role="tabpanel" id="sp-valid" aria-labelledby="st-valid">
+<!-- METAVALID-START -->
+  <h2>Validare umană</h2>
+  <p>Pe codurile principale, omul intră o singură dată: la calibrare, după pilot și
+  înaintea rulării pe toate organizațiile. Rularea completă se rezolvă apoi fără verdict
+  uman per postare, sub alarmele din subtabul <strong>Acord codori AI</strong>. Validarea
+  de la final rămâne doar pe brațul tezaurelor: identificarea organizațiilor, statutul
+  persoanelor, tipologia actorilor.</p>
+
+  <div class="sec">
+    <h3>Calibrarea: omul ca al treilea codor</h3>
+    <p>Un codor uman codează orb un eșantion din pilot, sub aceeași instrucțiune înghețată
+    pe care o primesc agenții. Nu vede codările lor și nu știe din ce strat vine fiecare
+    postare. Eșantionul nu e aleator — fiecare strat răspunde la o întrebare proprie:</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Strat</th><th scope="col">La ce răspunde</th></tr></thead>
+        <tbody>
+          <tr><td>postările cu dezacord A–B</td><td>codarea umană le tranșează prin codare oarbă, nu prin alegere între A și B; pe pilot: 24 postări la filtru, 50 la codarea integrală</td></tr>
+          <tr><td>clasele rare</td><td>simbolismul, finanțatorii numiți — prea rare ca să apară destul într-un eșantion aleator; acordul se măsoară pe pozitive, unde chiar poate pica</td></tr>
+          <tr><td>aleator din concordante</td><td>singurul lucru pe care acordul dintre agenți nu-l măsoară: cât de des greșesc amândoi la fel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Lotul se construiește din seturile rezolvate v5 și se reconstruiește dacă se
+    recodează ceva în amonte: straturile se definesc pe dezacordurile măsurate sub
+    instrumentul curent.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Pragurile de trecere, per câmp</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Prag</th><th scope="col">Formula</th><th scope="col">Ce garantează</th></tr></thead>
+        <tbody>
+          <tr><td>interschimbabilitate</td><td>acord A–B ≥ acord om–agent</td><td>agentul nu e mai departe de om decât e omul de alt agent</td></tr>
+          <tr><td>plafon de eroare</td><td>omul confirmă ≥ 95% din consensurile A=B</td><td>„acceptă automat la acord" are eroare cunoscută, sub 5% — cifra care ține locul validării finale</td></tr>
+          <tr><td>recall pe rare</td><td>agenții prind ≥ 80% din pozitivele omului</td><td>fenomenele rare nu se pierd în acordul pe negative</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Un câmp care pică primește o singură revizie de codebook, recodare și remăsurare.
+    A doua picare nu mai declanșează revizie — câmpul intră în rulare cu eroarea lui
+    declarată. Regula previne potrivirea instrucțiunii pe eșantionul de validare.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Validarea tezaurelor</h3>
+    <p>Omul nu verifică tot: validează stratul prioritar și rândurile pe care acordul între
+    extractori le trimite oricum la el; restul intră pe garanția pragului de ≥ 95% intrări
+    confirmate, cu indeterminarea raportată. Fișele de mai jos sunt produse de pilot și se
+    regenerează la orice rulare din amonte.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Fișa</th><th scope="col" class="num">Rânduri</th><th scope="col">Ce se decide</th></tr></thead>
+        <tbody>
+          <tr><td>statutul persoanelor-protagoniste</td><td class="num">41</td><td>cine dintre persoanele numite are statut de refugiat, cu sursă</td></tr>
+          <tr><td>identificările de organizație</td><td class="num">51</td><td>dacă entitatea găsită prin căutare e cea numită în postare</td></tr>
+          <tr><td>tipologia actorilor</td><td class="num">71</td><td>gruparea categoriilor in vivo propuse de agenți</td></tr>
+          <tr><td>aliasurile de persoană</td><td class="num">9</td><td>unirea formelor pe care nicio regulă nu le deduce — transliterări, diminutive</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>După validare, filtrarea se re-rulează determinist — cost zero — cu statutele
+    validate pe calea de tezaur, și se raportează ce postări s-au mutat între clase.</p>
+  </div>
+<!-- METAVALID-END -->
 </div>
 <div class="subpanel" role="tabpanel" id="sp-org" aria-labelledby="st-org">
   <h2>Organizații</h2>
