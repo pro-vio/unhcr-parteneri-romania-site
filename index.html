@@ -292,15 +292,6 @@
   .rez-tit{font-family:var(--sans); font-size:var(--s--1); text-transform:uppercase;
     letter-spacing:.06em; color:var(--ink-faint); font-weight:600; margin:1.3rem 0 .1rem}
   .rez-sub{color:var(--ink-faint); font-size:var(--s--1); margin:0 0 .7rem; max-width:var(--measure)}
-  .sim-bars{display:grid; grid-template-columns:minmax(7rem,auto) 1fr auto; gap:.3rem .6rem;
-    align-items:center; margin:.4rem 0 .2rem}
-  .sim-bars .lab{font-size:var(--s--1); color:var(--ink-soft); text-align:right}
-  .sim-bars .track{background:var(--surface-2); border-radius:2px; height:1.05rem}
-  .sim-bars .bar{height:100%; border-radius:2px 4px 4px 2px; min-width:2px;
-    background:var(--ser-4); display:block}
-  .sim-bars .val{font-size:var(--s--1); font-variant-numeric:tabular-nums; color:var(--ink);
-    white-space:nowrap}
-  .sim-bars .val i{color:var(--ink-faint); font-style:normal}
 /* REZ-CSS-END */
 </style>
 </head>
@@ -323,8 +314,8 @@
   <button class="tab" role="tab" id="t-codare" aria-controls="p-codare" aria-selected="false">Codare</button>
   <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Postări</button>
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
-  <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simbolism</button>
-  <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Agenția refugiaților</button>
+  <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simboluri Ukr</button>
+  <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Roluri refugiați</button>
   <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="false">Finanțatori</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
@@ -757,33 +748,29 @@
 
 <!-- SIM-START -->
 <section class="panel" role="tabpanel" id="p-sim" aria-labelledby="t-sim">
-  <h2>Simbolism</h2>
+  <h2>Simboluri Ukr</h2>
   <p>Actul expresiv de identificare cu cauza națională ucraineană — altceva decât sprijinul
   material, și măsurat separat de el.</p>
 
   <div class="sec">
     <h3>Rezultatele pilotului</h3>
 
-    <p class="rez-tit">Simbolism × lună</p>
+    <p class="rez-tit">Simboluri Ukr × lună</p>
     <p class="rez-sub">Unitatea e postarea: numărăm postări care au / nu au act simbolic, nu
     instanțe de simbolism. Butoanele taie harta pe oraș.</p>
     <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="sim_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
     <div class="tw" data-heat-dinamic="sim_luna"></div>
 
-    <p class="rez-tit">Organizație × simbolism</p>
+    <p class="rez-tit">Organizație × simboluri Ukr</p>
     <p class="rez-sub">Toate lunile la un loc. <strong>25 din 173</strong>
     postări trecute de filtru conțin un act simbolic.</p>
     <div class="tw" data-heat="org_sim"></div>
   </div>
 
   <div class="sec">
-    <h3>Cât de des apare, per organizație</h3>
-    <div class="sim-bars"><span class="lab">Association Malva</span><span class="track"><span class="bar" style="width:45.0%"></span></span><span class="val">45.0%  <i>(9/20)</i></span><span class="lab">Novapolis</span><span class="track"><span class="bar" style="width:33.3%"></span></span><span class="val">33.3%  <i>(4/12)</i></span><span class="lab">MIC Brașov</span><span class="track"><span class="bar" style="width:14.3%"></span></span><span class="val">14.3%  <i>(1/7)</i></span><span class="lab">CNRR</span><span class="track"><span class="bar" style="width:11.1%"></span></span><span class="val">11.1%  <i>(3/27)</i></span><span class="lab">Help Ukrainians</span><span class="track"><span class="bar" style="width:8.0%"></span></span><span class="val">8.0%  <i>(7/87)</i></span><span class="lab">EDNAE</span><span class="track"><span class="bar" style="width:5.0%"></span></span><span class="val">5.0%  <i>(1/20)</i></span></div>
-    <p class="rez-sub">Aceleași cifre ca pe harta de mai sus, ca proporție din postările
-    fiecărei organizații. Numitorul e corpusul codat sub v5, nu exportul complet.</p>
-
+    <h3>Ce se numără și ce nu</h3>
     <div class="note">
-      <strong>Ce se numără și ce nu.</strong> Se codează <code>da</code> pentru sloganuri
+      Se codează <code>da</code> pentru sloganuri
       („Слава Україні!"), steagul sau culorile folosite expresiv, versuri din imn, povești de pe
       front sau de reziliență legate de rezistența la agresiunea armată. NU se codează steagul
       din logo sau din numele paginii, steagul ca marcaj de limbă (🇷🇴/🇬🇧/🇺🇦) și nici simpla
@@ -791,11 +778,12 @@
       <code>nu</code>.
     </div>
 
-    <p><strong>Distribuția nu e uniformă și nu urmează mărimea.</strong> Cele două extreme sunt
-    organizații de dimensiuni foarte diferite, iar organizațiile conduse de refugiați nu sunt
-    toate în capul listei — deci simbolismul nu e o simplă funcție a identității organizației.
-    Pe un pilot de șase cazuri, asta e o observație de urmărit la corpusul complet, nu un
-    rezultat.</p>
+    <p><strong>Distribuția nu e uniformă și nu urmează mărimea.</strong> Ca proporție din
+    postările proprii, extremele sunt Association Malva (45.0%) și EDNAE
+    (5.0%) — organizații de dimensiuni foarte diferite, iar organizațiile conduse
+    de refugiați nu sunt toate în frunte — deci simbolismul nu e o simplă funcție a identității
+    organizației. Pe un pilot de șase cazuri, asta e o observație de urmărit la corpusul
+    complet, nu un rezultat.</p>
   </div>
 
   <div class="note warn">
@@ -810,19 +798,19 @@
 
 <!-- ============ AGENTIA ============ -->
 <section class="panel" role="tabpanel" id="p-ag" aria-labelledby="t-ag">
-  <h2>Agenția refugiaților</h2>
+  <h2>Roluri refugiați</h2>
   <p>Miza teoretică a studiului, de aceea în tab propriu și nu între ceilalți indicatori.</p>
 <!-- AGREZ-START -->
   <div class="sec">
     <h3>Rezultatele pilotului</h3>
 
-    <p class="rez-tit">Implicarea refugiaților × lună</p>
+    <p class="rez-tit">Roluri refugiați × lună</p>
     <p class="rez-sub">Cum apar refugiații în postare: cu rol activ (protagoniști) sau ca
     beneficiari, direcți ori indirecți. Butoanele taie harta pe oraș.</p>
     <div class="ser-ctl"><div class="ser-ctl-row" data-flt-for="ag_luna"><span class="flt-lbl">oraș</span><button class="chip" data-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-flt="București" aria-pressed="false">București</button><button class="chip" data-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-flt="Suceava" aria-pressed="false">Suceava</button></div></div>
     <div class="tw" data-heat-dinamic="ag_luna"></div>
 
-    <p class="rez-tit">Organizație × categoria de implicare</p>
+    <p class="rez-tit">Organizație × rolul refugiaților</p>
     <p class="rez-sub">Toate lunile la un loc.</p>
     <div class="tw" data-heat="org_ag"></div>
 
@@ -1280,7 +1268,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=0210e21e"></script>
+<script src="rezultate.js?v=62ba4d3a"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
