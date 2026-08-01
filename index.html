@@ -78,6 +78,20 @@
   .tab:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
   .panel{display:none; flex-direction:column; gap:1.6rem}
   .panel.on{display:flex}
+  .subtabs{display:flex; flex-wrap:wrap; gap:.4rem; margin:-.6rem 0 .4rem}
+  .subtab{
+    appearance:none; border:1px solid var(--rule); background:transparent;
+    color:var(--ink-soft); font-family:var(--sans); font-size:.85rem;
+    padding:.3rem .7rem; cursor:pointer; border-radius:999px; line-height:1.3;
+  }
+  .subtab:hover{color:var(--ink)}
+  .subtab[aria-selected="true"]{
+    background:var(--accent); border-color:var(--accent); color:var(--paper); font-weight:600;
+  }
+  .subtab:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .subpanel{display:none; flex-direction:column; gap:1.6rem}
+  .subpanel.on{display:flex}
+  .subpanel > h2{font-size:var(--s-1); margin:0}
 
   /* blocks */
   h2{font-family:var(--serif); font-size:var(--s3); font-weight:600; margin:0;
@@ -313,9 +327,7 @@
 </header>
 
 <div class="tabs" role="tablist" aria-label="Secțiuni">
-  <button class="tab" role="tab" id="t-cod" aria-controls="p-cod" aria-selected="true">Codebook</button>
-  <button class="tab" role="tab" id="t-codare" aria-controls="p-codare" aria-selected="false">Codare</button>
-  <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="false">Postări</button>
+  <button class="tab" role="tab" id="t-vol" aria-controls="p-vol" aria-selected="true">Postări</button>
   <button class="tab" role="tab" id="t-act" aria-controls="p-act" aria-selected="false">Activități</button>
   <button class="tab" role="tab" id="t-sim" aria-controls="p-sim" aria-selected="false">Simboluri Ukr</button>
   <button class="tab" role="tab" id="t-ag" aria-controls="p-ag" aria-selected="false">Roluri refugiați</button>
@@ -323,312 +335,15 @@
   <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="false">Finanțatori</button>
   <button class="tab" role="tab" id="t-ret" aria-controls="p-ret" aria-selected="false">Rețea parteneri</button>
   <button class="tab" role="tab" id="t-eng" aria-controls="p-eng" aria-selected="false">Engagement</button>
-  <button class="tab" role="tab" id="t-org" aria-controls="p-org" aria-selected="false">Organizații</button>
-  <button class="tab" role="tab" id="t-ms" aria-controls="p-ms" aria-selected="false">Metodă și surse</button>
+  <button class="tab" role="tab" id="t-met" aria-controls="p-met" aria-selected="false">Metodologie</button>
 </div>
 
-<!-- ============ CODEBOOK ============ -->
-<section class="panel on" role="tabpanel" id="p-cod" aria-labelledby="t-cod">
-  <h2>Codebook</h2>
-  <p>Etichetele pe care le primește o postare, cu definițiile lor. Cum se aplică — în ce ordine, cine decide, ce se verifică — e în tabul <strong>Codare</strong>. Regula generală: se etichetează doar ce spune textul postării; ce nu e spus rămâne neetichetat.</p>
 
-  <div class="sec">
-    <h3>Ce se etichetează la fiecare postare</h3>
-    <div class="tw">
-      <table>
-        <thead><tr><th scope="col">Set</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Grupul țintă</strong></td><td>Cine e prezent în activitate și în ce calitate. Persoanele care <em>fac</em> activitatea se rețin pe nume; cei cărora li se adresează, ca <em>categorie</em> — chiar dacă textul dă un nume. Beneficiarul indirect se urmărește doar pentru refugiați: cursul pentru profesorii care lucrează cu copii refugiați îi are pe copii ca beneficiari indirecți.</td><td>protagoniști · beneficiari direcți · beneficiari indirecți, fiecare cu naționalitatea atunci când textul o dă: ucraineni · români · refugiați din alte țări · refugiați, fără naționalitate numită</td></tr>
-          <tr><td><strong>Sprijinul pentru Ucraina</strong></td><td>Activitate sau apel îndreptat material spre Ucraina ori spre ucrainenii aflați acolo: colecte, transporturi, echipamente. Altceva decât simbolismul — acesta e ajutor, acela e identificare.</td><td>da · nu</td></tr>
-          <tr><td><strong>Tipul postării</strong></td><td>Ce face postarea, ca act de comunicare: cere resurse, relatează ce s-a făcut, anunță ce urmează, sau livrează ea însăși serviciul (o postare de informare <em>este</em> informarea). Ce nu încape se scrie așa cum e și se grupează după prima rulare.</td><td>mobilizare de resurse · raport · anunț · livrare · alte etichete, notate ca atare</td></tr>
-          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod, iar proporția acestor postări se raportează.</td><td>zero, unul sau mai multe dintre cele 23 de coduri de mai jos</td></tr>
-          <tr><td><strong>Simbolismul ucrainean</strong></td><td>Dacă postarea conține un act expresiv de identificare cu cauza națională: sloganuri (Slava Ukraini!), steagul folosit expresiv, povești de pe front sau de reziliență legate de rezistența la agresiunea rusă — exemple, nu listă închisă. Steagul din logo sau ca marcaj de limbă nu se numără.</td><td>da · nu</td></tr>
-          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em>, așa cum apare în text; ce fel de actor e se stabilește separat, în tezaur. Tag-urile fără o frază de colaborare nu se numără.</td><td>numele actorilor, sau nimeni</td></tr>
-          <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune explicit, lângă numele actorului. Finanțatorul apare și la parteneri: a da bani e un rol.</td><td>numele actorilor · donator anonim · nimeni</td></tr>
-          <tr><td><strong>Engagement</strong></td><td>Reacțiile publicului la postare. Nu se etichetează — se preiau din extragere.</td><td>reacții, distribuiri, comentarii — numere</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 
-  <div class="sec">
-    <h3>Codurile de activitate</h3>
-    <div class="tw">
-      <table>
-        <caption>23 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Ultimul nu are sector acolo — despre el, în tabul Activități.</caption>
-        <thead><tr><th scope="col">Sector UNHCR</th><th scope="col">Cod</th><th scope="col">Ce înseamnă</th></tr></thead>
-        <tbody>
-          <tr><td>Educație</td><td><code>edu_formal</code></td><td>Sprijin ca un copil să intre sau să rămână în școală.</td></tr>
-          <tr><td>Educație</td><td><code>edu_nonformal</code></td><td>Ateliere, cursuri, activități de învățare în afara școlii. Orice formulare cu sens educativ e suficientă; la dubiu între educativ și recreativ câștigă educația.</td></tr>
-          <tr><td>Educație</td><td><code>edu_personal</code></td><td>Formarea profesioniștilor: profesori, asistenți sociali, juriști, personal medical, voluntari în curs de profesionalizare.</td></tr>
-          <tr><td>Mijloace de trai</td><td><code>liv_tvet</code></td><td>Formare tehnică și profesională.</td></tr>
-          <tr><td>Mijloace de trai</td><td><code>liv_antreprenoriat</code></td><td>Microfinanțare, antreprenoriat, incluziune financiară.</td></tr>
-          <tr><td>Mijloace de trai</td><td><code>liv_limba</code></td><td>Cursuri de limbă pentru adulți.</td></tr>
-          <tr><td>Mijloace de trai</td><td><code>liv_ocupare</code></td><td>Sprijin ca să găsești de lucru: CV, interviu, mediere, echivalarea studiilor.</td></tr>
-          <tr><td>Mijloace de trai</td><td><code>liv_protectie_sociala</code></td><td>Sprijin pentru accesul la beneficii și servicii sociale.</td></tr>
-          <tr><td>Sănătate</td><td><code>san_acces</code></td><td>Acces la servicii medicale, inclusiv fizioterapie și sănătate fizică.</td></tr>
-          <tr><td>Sănătate</td><td><code>san_mhpss</code></td><td>Consiliere psihologică sau sprijin psihosocial specializat. Doar când textul numește un profesionist, o metodă terapeutică sau o ședință de consiliere.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_juridic</code></td><td>Asistență sau reprezentare juridică pentru o persoană.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_informare</code></td><td>Informare despre drepturi, proceduri și servicii; înregistrare, îndrumare, consiliere nepsihologică; siguranța generală și cea online.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_copii</code></td><td>Identificarea, îndrumarea sau protecția copiilor în situație de risc. Doar când riscul sau protecția e numită.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_gbv</code></td><td>Prevenirea și răspunsul la violența de gen: consiliere, sprijin pentru victime, sesiuni de prevenire. Doar când tema e numită.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_trafic</code></td><td>Prevenirea traficului de persoane: linie telefonică, identificare, informare pe temă. Doar când tema e numită.</td></tr>
-          <tr><td>Protecție</td><td><code>prot_psea</code></td><td>Prevenirea exploatării și abuzului sexual. Doar când tema e numită.</td></tr>
-          <tr><td>Nevoi de bază</td><td><code>baz_hrana</code></td><td>Mâncare, sau bani ori tichete pentru mâncare.</td></tr>
-          <tr><td>Nevoi de bază</td><td><code>baz_locuire</code></td><td>Cazare, chirie, amenajarea locuinței.</td></tr>
-          <tr><td>Nevoi de bază</td><td><code>baz_nfi</code></td><td>Haine, produse de igienă și alte bunuri de primă necesitate.</td></tr>
-          <tr><td>Nevoi de bază</td><td><code>baz_cash</code></td><td>Bani sau tichete pentru nevoi generale, fără destinație fixă.</td></tr>
-          <tr><td>Nevoi de bază</td><td><code>baz_wash</code></td><td>Apă, sanitație, igienă.</td></tr>
-          <tr><td>Logistică</td><td><code>log_transport</code></td><td>Transport de persoane sau bunuri, depozitare, distribuție.</td></tr>
-          <tr><td>fără sector</td><td><code>com_recreativ</code></td><td>Petreceri, ieșiri, sport, socializare — joaca pură, fără nicio formulare educativă.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note">
-      <strong>Fiecare cod spune un singur lucru.</strong>
-      Un cod nu combină niciodată două proprietăți — de pildă activitatea cu cine participă la ea, sau serviciul cu felul în care e comunicat. Combinațiile se obțin la analiză, numărând codurile care apar împreună: un atelier despre traficul de persoane primește codul de formare <em>și</em> codul tematic, fiecare cu fragmentul lui din text.
-    </div>
-  </div>
 
-  <div class="sec">
-    <h3>Corespondența pe activități</h3>
-    <p>Codurile noastre nu sunt o taxonomie proprie: fiecare e ancorat fie în sectorul din planul regional al UNHCR, fie în categoriile de activitate ale literaturii despre organizațiile conduse de refugiați (Pincock, Betts &amp; Easton-Calabria, 2021), fie în categoriile folosite de teza pe care o replicăm. Tabelul arată exact ce de unde vine — și unde nu există corespondent.</p>
-    <div class="tw">
-      <table>
-        <thead><tr><th scope="col">Cod</th><th scope="col">Sector UNHCR</th><th scope="col">Pincock et al. (2021)</th><th scope="col">Categoria din teză</th></tr></thead>
-        <tbody>
-          <tr><td><code>edu_formal</code></td><td>Educație</td><td>education</td><td>—</td></tr>
-          <tr><td><code>edu_nonformal</code></td><td>Educație</td><td>activități pentru tineri (parțial)</td><td>activități pentru copii și ateliere creative</td></tr>
-          <tr><td><code>edu_personal</code></td><td>Educație</td><td>—</td><td>educație și formare profesională</td></tr>
-          <tr><td><code>liv_tvet</code></td><td>Mijloace de trai</td><td>formare profesională</td><td>—</td></tr>
-          <tr><td><code>liv_antreprenoriat</code></td><td>Mijloace de trai</td><td>microfinanțare</td><td>—</td></tr>
-          <tr><td><code>liv_limba</code></td><td>Mijloace de trai</td><td>—</td><td>educație și formare profesională</td></tr>
-          <tr><td><code>liv_ocupare</code></td><td>Mijloace de trai</td><td>—</td><td>educație și formare profesională</td></tr>
-          <tr><td><code>liv_protectie_sociala</code></td><td>Mijloace de trai</td><td>—</td><td>asistență socială și umanitară</td></tr>
-          <tr><td><code>san_acces</code></td><td>Sănătate</td><td>sănătate</td><td>—</td></tr>
-          <tr><td><code>san_mhpss</code></td><td>Sănătate</td><td>sprijin psihosocial</td><td>consiliere psihologică</td></tr>
-          <tr><td><code>prot_juridic</code></td><td>Protecție</td><td>reprezentare juridică</td><td>—</td></tr>
-          <tr><td><code>prot_informare</code></td><td>Protecție</td><td>—</td><td>informare și drepturi</td></tr>
-          <tr><td><code>prot_copii</code></td><td>Protecție — copii</td><td>—</td><td>activități pentru copii (partea de risc)</td></tr>
-          <tr><td><code>prot_gbv</code></td><td>Protecție — violență de gen</td><td>—</td><td>prevenție (formal)</td></tr>
-          <tr><td><code>prot_trafic</code></td><td>Protecție — trafic</td><td>—</td><td>prevenție (formal)</td></tr>
-          <tr><td><code>prot_psea</code></td><td>Protecție — exploatare și abuz</td><td>—</td><td>prevenție (formal)</td></tr>
-          <tr><td><code>baz_hrana</code></td><td>Nevoi de bază — hrană</td><td>—</td><td>asistență socială și umanitară</td></tr>
-          <tr><td><code>baz_locuire</code></td><td>Nevoi de bază — locuire</td><td>—</td><td>asistență socială și umanitară</td></tr>
-          <tr><td><code>baz_nfi</code></td><td>Nevoi de bază — bunuri</td><td>—</td><td>asistență socială și umanitară</td></tr>
-          <tr><td><code>baz_cash</code></td><td>Nevoi de bază — bani</td><td>—</td><td>asistență socială și umanitară</td></tr>
-          <tr><td><code>baz_wash</code></td><td>Nevoi de bază — apă și igienă</td><td>—</td><td>—</td></tr>
-          <tr><td><code>log_transport</code></td><td>Logistică</td><td>—</td><td>—</td></tr>
-          <tr><td><code>com_recreativ</code></td><td>fără sector — reziduul</td><td>sport; activități pentru tineri</td><td>evenimente sociale și culturale</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note">
-      <strong>Ce nu se vede în tabel.</strong>
-      Coeziunea socială — evenimentul la care participă și comunitatea locală — are indicator la UNHCR, dar nu are cod la noi: se obține din grupul țintă, când localnicii apar alături de refugiați. Mobilizarea de resurse are categorie în teză, dar nu e sector la UNHCR și nu e activitate: e felul postării. Sportul și activitățile pentru tineri, categorii la Pincock, cad în reziduu — partea de activitate pe care taxonomia de finanțare nu o vede.
-    </div>
-  </div>
-</section>
-
-<!-- ============ CODARE ============ -->
-<section class="panel" role="tabpanel" id="p-codare" aria-labelledby="t-codare">
-  <h2>Codare</h2>
-  <p>Codebook-ul nu se aplică dintr-o singură trecere. Întâi se etichetează <strong>cine e prezent</strong> în activitatea comunicată; abia acele postări care privesc refugiații sau sprijinul pentru Ucraina primesc restul etichetelor. Diagrama de mai jos arată drumul complet al unei postări, de la corpus la rezultate.</p>
-
-  <div class="sec">
-    <h3>Fluxul, în șase etape</h3>
-    <div class="flux">
-      <svg viewBox="0 0 680 1370" role="img" aria-labelledby="flux-t flux-d">
-  <title id="flux-t">Fluxul codării, în șase etape</title>
-  <desc id="flux-d">Corpusul intră în codarea de filtru; acordul dintre codori se rezolvă
-  înaintea filtrării; filtrarea împarte postările în trei clase, dintre care „alte
-  activități" se oprește; ce trece primește codarea integrală, acordul pe codare și
-  prelucrările. În paralel curg două benzi de tezaur, fiecare cu acordul extractorilor și
-  validarea de autor.</desc>
-  <defs><marker id="fx-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--dg-line)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-
-  <rect class="bx" x="260" y="40" width="240" height="72" rx="4"/>
-  <text class="tt" x="380" y="64" text-anchor="middle">Corpusul de codat</text>
-  <text class="td" x="380" y="82" text-anchor="middle">din prima zi a invaziei</text>
-  <text class="td" x="380" y="98" text-anchor="middle">până la data extragerii</text>
-  <line class="arr" x1="380" y1="112" x2="380" y2="136" marker-end="url(#fx-arw)"/>
-
-  <rect class="etapa" x="210" y="140" width="440" height="164" rx="6"/>
-  <text class="tt" x="226" y="164">Etapa 1 — codarea de filtru</text>
-  <rect class="bx" x="226" y="176" width="250" height="92" rx="4"/>
-  <text class="tn" x="351" y="197" text-anchor="middle">grup țintă</text>
-  <text class="td" x="351" y="215" text-anchor="middle">cine e prezent: protagoniști,</text>
-  <text class="td" x="351" y="231" text-anchor="middle">beneficiari direcți / indirecți</text>
-  <text class="td" x="351" y="247" text-anchor="middle">naționalitatea, când e numită</text>
-  <rect class="bx" x="492" y="176" width="142" height="92" rx="4"/>
-  <text class="tn" x="563" y="218" text-anchor="middle">sprijin pentru</text>
-  <text class="tn" x="563" y="234" text-anchor="middle">Ucraina</text>
-  <text class="td" x="320" y="290">la organizațiile conduse de refugiați: protagoniști automat</text>
-
-  <g class="side"><rect x="40" y="176" width="150" height="92" rx="4"/>
-  <text class="tn" x="115" y="199" text-anchor="middle">T1a — tezaurul</text>
-  <text class="tn" x="115" y="215" text-anchor="middle">de persoane</text>
-  <text class="td" x="115" y="233" text-anchor="middle">statut de refugiat,</text>
-  <text class="td" x="115" y="249" text-anchor="middle">cu sursă</text></g>
-  <line class="arr" x1="222" y1="199" x2="194" y2="199" marker-end="url(#fx-arw)"/>
-  <g class="stat"><rect x="40" y="280" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="298" text-anchor="middle">T1b — acordul</text>
-  <text class="tn" x="115" y="314" text-anchor="middle">extractorilor</text></g>
-  <line class="arr" x1="115" y1="268" x2="115" y2="276" marker-end="url(#fx-arw)"/>
-  <g class="om"><rect x="40" y="336" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="354" text-anchor="middle">T1c — validarea</text>
-  <text class="tn" x="115" y="370" text-anchor="middle">de autor</text></g>
-  <line class="arr" x1="115" y1="324" x2="115" y2="332" marker-end="url(#fx-arw)"/>
-
-  <line class="arr" x1="380" y1="304" x2="380" y2="328" marker-end="url(#fx-arw)"/>
-
-  <g class="stat"><rect x="260" y="332" width="240" height="72" rx="4"/>
-  <text class="tt" x="380" y="354" text-anchor="middle">Etapa 2 — acordul pe filtru</text>
-  <text class="td" x="380" y="372" text-anchor="middle">A = B → intră; A ≠ B → codorul C</text>
-  <text class="td" x="380" y="388" text-anchor="middle">majoritate 2 din 3</text></g>
-  <line class="arr" x1="380" y1="404" x2="380" y2="428" marker-end="url(#fx-arw)"/>
-
-  <g class="ai"><rect x="260" y="432" width="240" height="108" rx="4"/>
-  <text class="tt" x="380" y="454" text-anchor="middle">Etapa 3 — filtrarea</text>
-  <text class="td" x="380" y="472" text-anchor="middle">protagoniști sau beneficiari</text>
-  <text class="td" x="380" y="488" text-anchor="middle">refugiați → trece</text>
-  <text class="td" x="380" y="504" text-anchor="middle">sprijin pentru Ucraina → trece</text>
-  <text class="td" x="380" y="520" text-anchor="middle">altfel → iese</text></g>
-
-  <line class="arr" x1="380" y1="540" x2="380" y2="556"/>
-  <line class="arr" x1="299" y1="556" x2="582" y2="556"/>
-  <line class="arr" x1="299" y1="556" x2="299" y2="576" marker-end="url(#fx-arw)"/>
-  <line class="arr" x1="431" y1="556" x2="431" y2="576" marker-end="url(#fx-arw)"/>
-  <line class="arr" x1="582" y1="556" x2="582" y2="576" marker-end="url(#fx-arw)"/>
-
-  <rect class="bx" x="240" y="580" width="118" height="76" rx="4"/>
-  <text class="tn" x="299" y="602" text-anchor="middle">Refugiați</text>
-  <text class="td" x="299" y="620" text-anchor="middle">număr postări</text>
-  <text class="td" x="299" y="636" text-anchor="middle">engagement</text>
-
-  <rect class="bx" x="372" y="580" width="118" height="76" rx="4"/>
-  <text class="tn" x="431" y="602" text-anchor="middle">Suport Ucraina</text>
-  <text class="td" x="431" y="620" text-anchor="middle">număr postări</text>
-  <text class="td" x="431" y="636" text-anchor="middle">engagement</text>
-
-  <g class="side"><rect x="504" y="580" width="156" height="108" rx="4"/>
-  <text class="tn" x="582" y="602" text-anchor="middle">Alte activități</text>
-  <text class="td" x="582" y="620" text-anchor="middle">număr postări</text>
-  <text class="td" x="582" y="636" text-anchor="middle">engagement</text>
-  <text class="td" x="582" y="652" text-anchor="middle">stop — nu se codează</text>
-  <text class="td" x="582" y="668" text-anchor="middle">mai departe</text></g>
-
-  <line class="arr" x1="299" y1="656" x2="299" y2="708" marker-end="url(#fx-arw)"/>
-  <line class="arr" x1="431" y1="656" x2="431" y2="708" marker-end="url(#fx-arw)"/>
-
-  <rect class="etapa" x="210" y="712" width="440" height="150" rx="6"/>
-  <text class="tt" x="226" y="736">Etapa 4 — codarea integrală</text>
-  <rect class="bx" x="226" y="748" width="132" height="44" rx="4"/>
-  <text class="tn" x="292" y="775" text-anchor="middle">tipul postării</text>
-  <rect class="bx" x="370" y="748" width="132" height="44" rx="4"/>
-  <text class="tn" x="436" y="775" text-anchor="middle">activitatea</text>
-  <rect class="bx" x="514" y="748" width="120" height="44" rx="4"/>
-  <text class="tn" x="574" y="775" text-anchor="middle">simbolism</text>
-  <rect class="bx" x="226" y="804" width="132" height="44" rx="4"/>
-  <text class="tn" x="292" y="831" text-anchor="middle">parteneri</text>
-  <rect class="bx" x="370" y="804" width="132" height="44" rx="4"/>
-  <text class="tn" x="436" y="831" text-anchor="middle">finanțatori</text>
-
-  <g class="side"><rect x="40" y="788" width="150" height="92" rx="4"/>
-  <text class="tn" x="115" y="811" text-anchor="middle">T2a — tezaurul</text>
-  <text class="tn" x="115" y="827" text-anchor="middle">de organizații</text>
-  <text class="td" x="115" y="845" text-anchor="middle">fapte cu sursă,</text>
-  <text class="td" x="115" y="861" text-anchor="middle">categorii in vivo</text></g>
-  <line class="arr" x1="222" y1="826" x2="194" y2="826" marker-end="url(#fx-arw)"/>
-  <g class="stat"><rect x="40" y="892" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="910" text-anchor="middle">T2b — acordul</text>
-  <text class="tn" x="115" y="926" text-anchor="middle">extractorilor</text></g>
-  <line class="arr" x1="115" y1="880" x2="115" y2="888" marker-end="url(#fx-arw)"/>
-  <g class="om"><rect x="40" y="948" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="966" text-anchor="middle">T2c — validarea</text>
-  <text class="tn" x="115" y="982" text-anchor="middle">de autor</text></g>
-  <line class="arr" x1="115" y1="936" x2="115" y2="944" marker-end="url(#fx-arw)"/>
-
-  <line class="arr" x1="380" y1="862" x2="380" y2="886" marker-end="url(#fx-arw)"/>
-
-  <g class="stat"><rect x="260" y="890" width="240" height="72" rx="4"/>
-  <text class="tt" x="380" y="912" text-anchor="middle">Etapa 5 — acordul pe codare</text>
-  <text class="td" x="380" y="930" text-anchor="middle">aceeași regulă, pe cele</text>
-  <text class="td" x="380" y="946" text-anchor="middle">cinci seturi</text></g>
-
-  <text class="tt" x="201" y="1030">Etapa 6 — rezultate</text>
-
-  <rect class="bx" x="201" y="1058" width="156" height="76" rx="4"/>
-  <text class="tn" x="279" y="1080" text-anchor="middle">rețeaua de</text>
-  <text class="tn" x="279" y="1096" text-anchor="middle">parteneriate</text>
-  <text class="td" x="279" y="1114" text-anchor="middle">nume (E5) ×</text>
-  <text class="td" x="279" y="1130" text-anchor="middle">tipologia validată</text>
-
-  <rect class="bx" x="201" y="1146" width="156" height="76" rx="4"/>
-  <text class="tn" x="279" y="1168" text-anchor="middle">coeziunea</text>
-  <text class="td" x="279" y="1186" text-anchor="middle">din etapa 2:</text>
-  <text class="td" x="279" y="1202" text-anchor="middle">comunitatea locală</text>
-  <text class="td" x="279" y="1218" text-anchor="middle">∧ refugiați</text>
-
-  <rect class="bx" x="201" y="1234" width="156" height="76" rx="4"/>
-  <text class="tn" x="279" y="1256" text-anchor="middle">implicarea</text>
-  <text class="tn" x="279" y="1272" text-anchor="middle">refugiaților</text>
-  <text class="td" x="279" y="1290" text-anchor="middle">tezaur validat ∧</text>
-  <text class="td" x="279" y="1306" text-anchor="middle">grup țintă (E2)</text>
-
-  <rect class="etapa-n" x="373" y="1046" width="287" height="276" rx="6"/>
-  <text class="td" x="389" y="1068">strict din etapa 5 — setul rezolvat</text>
-  <rect class="bx" x="389" y="1080" width="200" height="76" rx="4"/>
-  <text class="tn" x="489" y="1102" text-anchor="middle">harta de căldură</text>
-  <text class="tn" x="489" y="1118" text-anchor="middle">a activităților</text>
-  <text class="td" x="489" y="1136" text-anchor="middle">din tipul de activitate</text>
-  <rect class="bx" x="389" y="1168" width="200" height="60" rx="4"/>
-  <text class="tn" x="489" y="1190" text-anchor="middle">simbolismul ucrainean</text>
-  <text class="td" x="489" y="1208" text-anchor="middle">din setul lui</text>
-  <rect class="bx" x="389" y="1240" width="200" height="60" rx="4"/>
-  <text class="tn" x="489" y="1262" text-anchor="middle">alte prelucrări</text>
-  <text class="td" x="489" y="1280" text-anchor="middle">listă deschisă</text>
-
-  <path class="arr" d="M380 962 V1004 H489 V1042" marker-end="url(#fx-arw)"/>
-  <path class="arr" d="M115 992 V1096 H197" marker-end="url(#fx-arw)"/>
-  <path class="arr" d="M260 390 H24 V1184 H197" marker-end="url(#fx-arw)"/>
-  <path class="arr" d="M40 358 H16 V1272 H197" marker-end="url(#fx-arw)"/>
-</svg>
-    </div>
-    <p class="legenda">
-      <span><i style="background:var(--accent-soft); border:1px solid var(--accent)"></i>codare, făcută de agenți</span>
-      <span><i style="background:#ede8f6; border:1px solid #7a62a8"></i>acord și rezoluție statistică</span>
-      <span><i style="background:#e7f1e8; border:1px solid var(--ok)"></i>validare umană</span>
-      <span><i style="background:#f7efdc; border:1px solid var(--sienna)"></i>tezaure și ieșire</span>
-    </p>
-    <p class="note-mic">Pe orizontală stau lucrurile care se petrec în paralel; pe verticală, ce urmează după ce. O casetă e un set de etichete, niciodată două. Chenarul întrerupt marchează o etapă.</p>
-  </div>
-
-  <div class="sec">
-    <h3>De ce filtrul se etichetează primul</h3>
-    <p>Pagina unei organizații conține și postări care nu privesc refugiații: aniversări, angajări, campanii pe alte teme. Dacă le-am eticheta pe toate integral, am plăti pentru muncă inutilă și am amesteca numitorii. Filtrul le desparte în trei clase și oprește ultima — dar o <em>numără</em>: proporția de postări care nu privesc refugiații e ea însăși un rezultat despre fiecare organizație.</p>
-    <p>Acordul între codori se rezolvă <strong>înainte</strong> de filtrare, nu după: o postare trimisă greșit în clasa care se oprește nu mai e văzută de nimeni în aval, deci decizia de rutare se ia pe valori deja tranșate. Primele două clase se pot suprapune — o postare poate fi și pentru refugiați, și sprijin pentru Ucraina — iar intersecția lor se raportează ca atare.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Ce știe codorul și de unde</h3>
-    <p>Codorul se ține de textul postării: fiecare etichetă are un fragment-suport copiat exact, iar ce nu e spus nu se completează din memorie. Singura excepție sunt <strong>tezaurele</strong> — două liste de fapte cu sursă, construite separat: cine dintre persoanele numite are statut de refugiat și ce se știe despre organizațiile menționate. Fiecare tezaur se construiește prin căutare dublă, cele două căutări se compară între ele, iar autorul validează rezultatul.</p>
-    <p>La actori, codorii scriu <strong>doar numele</strong>, așa cum apare în text. Ce fel de actor e fiecare — primărie, ONG, universitate, firmă — se stabilește o singură dată, în tezaur, unde categoriile se strâng așa cum le dă realitatea, iar gruparea lor în tipuri se face la sfârșit: agenții propun, autorul validează.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Patru reguli de citire</h3>
-    <ul class="plain">
-      <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare. Combinațiile nu au etichetă proprie — se numără la analiză.</li>
-      <li><strong>Ce nu e spus rămâne necunoscut.</strong> Necunoscut nu înseamnă inexistent: o postare care nu-și numește finanțatorul nu e o postare fără finanțator.</li>
-      <li><strong>Anonim nu înseamnă absent.</strong> „Cineva ne-a adus 5.000 de lei" se înregistrează ca donator anonim. Mulțumirile generale, fără un act concret, nu.</li>
-      <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
-    </ul>
-  </div>
-</section>
 
 <!-- ============ VOLUM ============ -->
-<section class="panel" role="tabpanel" id="p-vol" aria-labelledby="t-vol">
+<section class="panel on" role="tabpanel" id="p-vol" aria-labelledby="t-vol">
   <h2>Postări</h2>
   <p>Primul strat, care nu cere codare: cât comunică fiecare organizație și cum se schimbă ritmul în timp. Situează tot ce urmează.</p>
 
@@ -1159,8 +874,318 @@
   </div>
 </section>
 
-<!-- ============ ORGANIZATII ============ -->
-<section class="panel" role="tabpanel" id="p-org" aria-labelledby="t-org">
+
+
+<!-- ============ METODOLOGIE ============ -->
+<section class="panel" role="tabpanel" id="p-met" aria-labelledby="t-met">
+  <h2>Metodologie</h2>
+  <p>Cum e construit studiul: schema de codare, procesul prin care se aplică, și sursele
+  împreună cu limitele declarate.</p>
+
+  <div class="subtabs" role="tablist" aria-label="Metodologie">
+  <button class="subtab on" role="tab" id="st-cod" aria-controls="sp-cod" aria-selected="true">Codebook</button>
+  <button class="subtab" role="tab" id="st-codare" aria-controls="sp-codare" aria-selected="false">Codare</button>
+  <button class="subtab" role="tab" id="st-org" aria-controls="sp-org" aria-selected="false">Organizații</button>
+  <button class="subtab" role="tab" id="st-ms" aria-controls="sp-ms" aria-selected="false">Metodă și surse</button>
+  </div>
+
+<div class="subpanel on" role="tabpanel" id="sp-cod" aria-labelledby="st-cod">
+  <h2>Codebook</h2>
+  <p>Etichetele pe care le primește o postare, cu definițiile lor. Cum se aplică — în ce ordine, cine decide, ce se verifică — e în tabul <strong>Codare</strong>. Regula generală: se etichetează doar ce spune textul postării; ce nu e spus rămâne neetichetat.</p>
+
+  <div class="sec">
+    <h3>Ce se etichetează la fiecare postare</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Set</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Grupul țintă</strong></td><td>Cine e prezent în activitate și în ce calitate. Persoanele care <em>fac</em> activitatea se rețin pe nume; cei cărora li se adresează, ca <em>categorie</em> — chiar dacă textul dă un nume. Beneficiarul indirect se urmărește doar pentru refugiați: cursul pentru profesorii care lucrează cu copii refugiați îi are pe copii ca beneficiari indirecți.</td><td>protagoniști · beneficiari direcți · beneficiari indirecți, fiecare cu naționalitatea atunci când textul o dă: ucraineni · români · refugiați din alte țări · refugiați, fără naționalitate numită</td></tr>
+          <tr><td><strong>Sprijinul pentru Ucraina</strong></td><td>Activitate sau apel îndreptat material spre Ucraina ori spre ucrainenii aflați acolo: colecte, transporturi, echipamente. Altceva decât simbolismul — acesta e ajutor, acela e identificare.</td><td>da · nu</td></tr>
+          <tr><td><strong>Tipul postării</strong></td><td>Ce face postarea, ca act de comunicare: cere resurse, relatează ce s-a făcut, anunță ce urmează, sau livrează ea însăși serviciul (o postare de informare <em>este</em> informarea). Ce nu încape se scrie așa cum e și se grupează după prima rulare.</td><td>mobilizare de resurse · raport · anunț · livrare · alte etichete, notate ca atare</td></tr>
+          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. O postare fără activitate concretă — mulțumiri, aniversări, poziții publice — rămâne fără cod, iar proporția acestor postări se raportează.</td><td>zero, unul sau mai multe dintre cele 23 de coduri de mai jos</td></tr>
+          <tr><td><strong>Simbolismul ucrainean</strong></td><td>Dacă postarea conține un act expresiv de identificare cu cauza națională: sloganuri (Slava Ukraini!), steagul folosit expresiv, povești de pe front sau de reziliență legate de rezistența la agresiunea rusă — exemple, nu listă închisă. Steagul din logo sau ca marcaj de limbă nu se numără.</td><td>da · nu</td></tr>
+          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em>, așa cum apare în text; ce fel de actor e se stabilește separat, în tezaur. Tag-urile fără o frază de colaborare nu se numără.</td><td>numele actorilor, sau nimeni</td></tr>
+          <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune explicit, lângă numele actorului. Finanțatorul apare și la parteneri: a da bani e un rol.</td><td>numele actorilor · donator anonim · nimeni</td></tr>
+          <tr><td><strong>Engagement</strong></td><td>Reacțiile publicului la postare. Nu se etichetează — se preiau din extragere.</td><td>reacții, distribuiri, comentarii — numere</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Codurile de activitate</h3>
+    <div class="tw">
+      <table>
+        <caption>23 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Ultimul nu are sector acolo — despre el, în tabul Activități.</caption>
+        <thead><tr><th scope="col">Sector UNHCR</th><th scope="col">Cod</th><th scope="col">Ce înseamnă</th></tr></thead>
+        <tbody>
+          <tr><td>Educație</td><td><code>edu_formal</code></td><td>Sprijin ca un copil să intre sau să rămână în școală.</td></tr>
+          <tr><td>Educație</td><td><code>edu_nonformal</code></td><td>Ateliere, cursuri, activități de învățare în afara școlii. Orice formulare cu sens educativ e suficientă; la dubiu între educativ și recreativ câștigă educația.</td></tr>
+          <tr><td>Educație</td><td><code>edu_personal</code></td><td>Formarea profesioniștilor: profesori, asistenți sociali, juriști, personal medical, voluntari în curs de profesionalizare.</td></tr>
+          <tr><td>Mijloace de trai</td><td><code>liv_tvet</code></td><td>Formare tehnică și profesională.</td></tr>
+          <tr><td>Mijloace de trai</td><td><code>liv_antreprenoriat</code></td><td>Microfinanțare, antreprenoriat, incluziune financiară.</td></tr>
+          <tr><td>Mijloace de trai</td><td><code>liv_limba</code></td><td>Cursuri de limbă pentru adulți.</td></tr>
+          <tr><td>Mijloace de trai</td><td><code>liv_ocupare</code></td><td>Sprijin ca să găsești de lucru: CV, interviu, mediere, echivalarea studiilor.</td></tr>
+          <tr><td>Mijloace de trai</td><td><code>liv_protectie_sociala</code></td><td>Sprijin pentru accesul la beneficii și servicii sociale.</td></tr>
+          <tr><td>Sănătate</td><td><code>san_acces</code></td><td>Acces la servicii medicale, inclusiv fizioterapie și sănătate fizică.</td></tr>
+          <tr><td>Sănătate</td><td><code>san_mhpss</code></td><td>Consiliere psihologică sau sprijin psihosocial specializat. Doar când textul numește un profesionist, o metodă terapeutică sau o ședință de consiliere.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_juridic</code></td><td>Asistență sau reprezentare juridică pentru o persoană.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_informare</code></td><td>Informare despre drepturi, proceduri și servicii; înregistrare, îndrumare, consiliere nepsihologică; siguranța generală și cea online.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_copii</code></td><td>Identificarea, îndrumarea sau protecția copiilor în situație de risc. Doar când riscul sau protecția e numită.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_gbv</code></td><td>Prevenirea și răspunsul la violența de gen: consiliere, sprijin pentru victime, sesiuni de prevenire. Doar când tema e numită.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_trafic</code></td><td>Prevenirea traficului de persoane: linie telefonică, identificare, informare pe temă. Doar când tema e numită.</td></tr>
+          <tr><td>Protecție</td><td><code>prot_psea</code></td><td>Prevenirea exploatării și abuzului sexual. Doar când tema e numită.</td></tr>
+          <tr><td>Nevoi de bază</td><td><code>baz_hrana</code></td><td>Mâncare, sau bani ori tichete pentru mâncare.</td></tr>
+          <tr><td>Nevoi de bază</td><td><code>baz_locuire</code></td><td>Cazare, chirie, amenajarea locuinței.</td></tr>
+          <tr><td>Nevoi de bază</td><td><code>baz_nfi</code></td><td>Haine, produse de igienă și alte bunuri de primă necesitate.</td></tr>
+          <tr><td>Nevoi de bază</td><td><code>baz_cash</code></td><td>Bani sau tichete pentru nevoi generale, fără destinație fixă.</td></tr>
+          <tr><td>Nevoi de bază</td><td><code>baz_wash</code></td><td>Apă, sanitație, igienă.</td></tr>
+          <tr><td>Logistică</td><td><code>log_transport</code></td><td>Transport de persoane sau bunuri, depozitare, distribuție.</td></tr>
+          <tr><td>fără sector</td><td><code>com_recreativ</code></td><td>Petreceri, ieșiri, sport, socializare — joaca pură, fără nicio formulare educativă.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>Fiecare cod spune un singur lucru.</strong>
+      Un cod nu combină niciodată două proprietăți — de pildă activitatea cu cine participă la ea, sau serviciul cu felul în care e comunicat. Combinațiile se obțin la analiză, numărând codurile care apar împreună: un atelier despre traficul de persoane primește codul de formare <em>și</em> codul tematic, fiecare cu fragmentul lui din text.
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Corespondența pe activități</h3>
+    <p>Codurile noastre nu sunt o taxonomie proprie: fiecare e ancorat fie în sectorul din planul regional al UNHCR, fie în categoriile de activitate ale literaturii despre organizațiile conduse de refugiați (Pincock, Betts &amp; Easton-Calabria, 2021), fie în categoriile folosite de teza pe care o replicăm. Tabelul arată exact ce de unde vine — și unde nu există corespondent.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Cod</th><th scope="col">Sector UNHCR</th><th scope="col">Pincock et al. (2021)</th><th scope="col">Categoria din teză</th></tr></thead>
+        <tbody>
+          <tr><td><code>edu_formal</code></td><td>Educație</td><td>education</td><td>—</td></tr>
+          <tr><td><code>edu_nonformal</code></td><td>Educație</td><td>activități pentru tineri (parțial)</td><td>activități pentru copii și ateliere creative</td></tr>
+          <tr><td><code>edu_personal</code></td><td>Educație</td><td>—</td><td>educație și formare profesională</td></tr>
+          <tr><td><code>liv_tvet</code></td><td>Mijloace de trai</td><td>formare profesională</td><td>—</td></tr>
+          <tr><td><code>liv_antreprenoriat</code></td><td>Mijloace de trai</td><td>microfinanțare</td><td>—</td></tr>
+          <tr><td><code>liv_limba</code></td><td>Mijloace de trai</td><td>—</td><td>educație și formare profesională</td></tr>
+          <tr><td><code>liv_ocupare</code></td><td>Mijloace de trai</td><td>—</td><td>educație și formare profesională</td></tr>
+          <tr><td><code>liv_protectie_sociala</code></td><td>Mijloace de trai</td><td>—</td><td>asistență socială și umanitară</td></tr>
+          <tr><td><code>san_acces</code></td><td>Sănătate</td><td>sănătate</td><td>—</td></tr>
+          <tr><td><code>san_mhpss</code></td><td>Sănătate</td><td>sprijin psihosocial</td><td>consiliere psihologică</td></tr>
+          <tr><td><code>prot_juridic</code></td><td>Protecție</td><td>reprezentare juridică</td><td>—</td></tr>
+          <tr><td><code>prot_informare</code></td><td>Protecție</td><td>—</td><td>informare și drepturi</td></tr>
+          <tr><td><code>prot_copii</code></td><td>Protecție — copii</td><td>—</td><td>activități pentru copii (partea de risc)</td></tr>
+          <tr><td><code>prot_gbv</code></td><td>Protecție — violență de gen</td><td>—</td><td>prevenție (formal)</td></tr>
+          <tr><td><code>prot_trafic</code></td><td>Protecție — trafic</td><td>—</td><td>prevenție (formal)</td></tr>
+          <tr><td><code>prot_psea</code></td><td>Protecție — exploatare și abuz</td><td>—</td><td>prevenție (formal)</td></tr>
+          <tr><td><code>baz_hrana</code></td><td>Nevoi de bază — hrană</td><td>—</td><td>asistență socială și umanitară</td></tr>
+          <tr><td><code>baz_locuire</code></td><td>Nevoi de bază — locuire</td><td>—</td><td>asistență socială și umanitară</td></tr>
+          <tr><td><code>baz_nfi</code></td><td>Nevoi de bază — bunuri</td><td>—</td><td>asistență socială și umanitară</td></tr>
+          <tr><td><code>baz_cash</code></td><td>Nevoi de bază — bani</td><td>—</td><td>asistență socială și umanitară</td></tr>
+          <tr><td><code>baz_wash</code></td><td>Nevoi de bază — apă și igienă</td><td>—</td><td>—</td></tr>
+          <tr><td><code>log_transport</code></td><td>Logistică</td><td>—</td><td>—</td></tr>
+          <tr><td><code>com_recreativ</code></td><td>fără sector — reziduul</td><td>sport; activități pentru tineri</td><td>evenimente sociale și culturale</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>Ce nu se vede în tabel.</strong>
+      Coeziunea socială — evenimentul la care participă și comunitatea locală — are indicator la UNHCR, dar nu are cod la noi: se obține din grupul țintă, când localnicii apar alături de refugiați. Mobilizarea de resurse are categorie în teză, dar nu e sector la UNHCR și nu e activitate: e felul postării. Sportul și activitățile pentru tineri, categorii la Pincock, cad în reziduu — partea de activitate pe care taxonomia de finanțare nu o vede.
+    </div>
+  </div>
+</div>
+<div class="subpanel" role="tabpanel" id="sp-codare" aria-labelledby="st-codare">
+  <h2>Codare</h2>
+  <p>Codebook-ul nu se aplică dintr-o singură trecere. Întâi se etichetează <strong>cine e prezent</strong> în activitatea comunicată; abia acele postări care privesc refugiații sau sprijinul pentru Ucraina primesc restul etichetelor. Diagrama de mai jos arată drumul complet al unei postări, de la corpus la rezultate.</p>
+
+  <div class="sec">
+    <h3>Fluxul, în șase etape</h3>
+    <div class="flux">
+      <svg viewBox="0 0 680 1370" role="img" aria-labelledby="flux-t flux-d">
+  <title id="flux-t">Fluxul codării, în șase etape</title>
+  <desc id="flux-d">Corpusul intră în codarea de filtru; acordul dintre codori se rezolvă
+  înaintea filtrării; filtrarea împarte postările în trei clase, dintre care „alte
+  activități" se oprește; ce trece primește codarea integrală, acordul pe codare și
+  prelucrările. În paralel curg două benzi de tezaur, fiecare cu acordul extractorilor și
+  validarea de autor.</desc>
+  <defs><marker id="fx-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--dg-line)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+  <rect class="bx" x="260" y="40" width="240" height="72" rx="4"/>
+  <text class="tt" x="380" y="64" text-anchor="middle">Corpusul de codat</text>
+  <text class="td" x="380" y="82" text-anchor="middle">din prima zi a invaziei</text>
+  <text class="td" x="380" y="98" text-anchor="middle">până la data extragerii</text>
+  <line class="arr" x1="380" y1="112" x2="380" y2="136" marker-end="url(#fx-arw)"/>
+
+  <rect class="etapa" x="210" y="140" width="440" height="164" rx="6"/>
+  <text class="tt" x="226" y="164">Etapa 1 — codarea de filtru</text>
+  <rect class="bx" x="226" y="176" width="250" height="92" rx="4"/>
+  <text class="tn" x="351" y="197" text-anchor="middle">grup țintă</text>
+  <text class="td" x="351" y="215" text-anchor="middle">cine e prezent: protagoniști,</text>
+  <text class="td" x="351" y="231" text-anchor="middle">beneficiari direcți / indirecți</text>
+  <text class="td" x="351" y="247" text-anchor="middle">naționalitatea, când e numită</text>
+  <rect class="bx" x="492" y="176" width="142" height="92" rx="4"/>
+  <text class="tn" x="563" y="218" text-anchor="middle">sprijin pentru</text>
+  <text class="tn" x="563" y="234" text-anchor="middle">Ucraina</text>
+  <text class="td" x="320" y="290">la organizațiile conduse de refugiați: protagoniști automat</text>
+
+  <g class="side"><rect x="40" y="176" width="150" height="92" rx="4"/>
+  <text class="tn" x="115" y="199" text-anchor="middle">T1a — tezaurul</text>
+  <text class="tn" x="115" y="215" text-anchor="middle">de persoane</text>
+  <text class="td" x="115" y="233" text-anchor="middle">statut de refugiat,</text>
+  <text class="td" x="115" y="249" text-anchor="middle">cu sursă</text></g>
+  <line class="arr" x1="222" y1="199" x2="194" y2="199" marker-end="url(#fx-arw)"/>
+  <g class="stat"><rect x="40" y="280" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="298" text-anchor="middle">T1b — acordul</text>
+  <text class="tn" x="115" y="314" text-anchor="middle">extractorilor</text></g>
+  <line class="arr" x1="115" y1="268" x2="115" y2="276" marker-end="url(#fx-arw)"/>
+  <g class="om"><rect x="40" y="336" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="354" text-anchor="middle">T1c — validarea</text>
+  <text class="tn" x="115" y="370" text-anchor="middle">de autor</text></g>
+  <line class="arr" x1="115" y1="324" x2="115" y2="332" marker-end="url(#fx-arw)"/>
+
+  <line class="arr" x1="380" y1="304" x2="380" y2="328" marker-end="url(#fx-arw)"/>
+
+  <g class="stat"><rect x="260" y="332" width="240" height="72" rx="4"/>
+  <text class="tt" x="380" y="354" text-anchor="middle">Etapa 2 — acordul pe filtru</text>
+  <text class="td" x="380" y="372" text-anchor="middle">A = B → intră; A ≠ B → codorul C</text>
+  <text class="td" x="380" y="388" text-anchor="middle">majoritate 2 din 3</text></g>
+  <line class="arr" x1="380" y1="404" x2="380" y2="428" marker-end="url(#fx-arw)"/>
+
+  <g class="ai"><rect x="260" y="432" width="240" height="108" rx="4"/>
+  <text class="tt" x="380" y="454" text-anchor="middle">Etapa 3 — filtrarea</text>
+  <text class="td" x="380" y="472" text-anchor="middle">protagoniști sau beneficiari</text>
+  <text class="td" x="380" y="488" text-anchor="middle">refugiați → trece</text>
+  <text class="td" x="380" y="504" text-anchor="middle">sprijin pentru Ucraina → trece</text>
+  <text class="td" x="380" y="520" text-anchor="middle">altfel → iese</text></g>
+
+  <line class="arr" x1="380" y1="540" x2="380" y2="556"/>
+  <line class="arr" x1="299" y1="556" x2="582" y2="556"/>
+  <line class="arr" x1="299" y1="556" x2="299" y2="576" marker-end="url(#fx-arw)"/>
+  <line class="arr" x1="431" y1="556" x2="431" y2="576" marker-end="url(#fx-arw)"/>
+  <line class="arr" x1="582" y1="556" x2="582" y2="576" marker-end="url(#fx-arw)"/>
+
+  <rect class="bx" x="240" y="580" width="118" height="76" rx="4"/>
+  <text class="tn" x="299" y="602" text-anchor="middle">Refugiați</text>
+  <text class="td" x="299" y="620" text-anchor="middle">număr postări</text>
+  <text class="td" x="299" y="636" text-anchor="middle">engagement</text>
+
+  <rect class="bx" x="372" y="580" width="118" height="76" rx="4"/>
+  <text class="tn" x="431" y="602" text-anchor="middle">Suport Ucraina</text>
+  <text class="td" x="431" y="620" text-anchor="middle">număr postări</text>
+  <text class="td" x="431" y="636" text-anchor="middle">engagement</text>
+
+  <g class="side"><rect x="504" y="580" width="156" height="108" rx="4"/>
+  <text class="tn" x="582" y="602" text-anchor="middle">Alte activități</text>
+  <text class="td" x="582" y="620" text-anchor="middle">număr postări</text>
+  <text class="td" x="582" y="636" text-anchor="middle">engagement</text>
+  <text class="td" x="582" y="652" text-anchor="middle">stop — nu se codează</text>
+  <text class="td" x="582" y="668" text-anchor="middle">mai departe</text></g>
+
+  <line class="arr" x1="299" y1="656" x2="299" y2="708" marker-end="url(#fx-arw)"/>
+  <line class="arr" x1="431" y1="656" x2="431" y2="708" marker-end="url(#fx-arw)"/>
+
+  <rect class="etapa" x="210" y="712" width="440" height="150" rx="6"/>
+  <text class="tt" x="226" y="736">Etapa 4 — codarea integrală</text>
+  <rect class="bx" x="226" y="748" width="132" height="44" rx="4"/>
+  <text class="tn" x="292" y="775" text-anchor="middle">tipul postării</text>
+  <rect class="bx" x="370" y="748" width="132" height="44" rx="4"/>
+  <text class="tn" x="436" y="775" text-anchor="middle">activitatea</text>
+  <rect class="bx" x="514" y="748" width="120" height="44" rx="4"/>
+  <text class="tn" x="574" y="775" text-anchor="middle">simbolism</text>
+  <rect class="bx" x="226" y="804" width="132" height="44" rx="4"/>
+  <text class="tn" x="292" y="831" text-anchor="middle">parteneri</text>
+  <rect class="bx" x="370" y="804" width="132" height="44" rx="4"/>
+  <text class="tn" x="436" y="831" text-anchor="middle">finanțatori</text>
+
+  <g class="side"><rect x="40" y="788" width="150" height="92" rx="4"/>
+  <text class="tn" x="115" y="811" text-anchor="middle">T2a — tezaurul</text>
+  <text class="tn" x="115" y="827" text-anchor="middle">de organizații</text>
+  <text class="td" x="115" y="845" text-anchor="middle">fapte cu sursă,</text>
+  <text class="td" x="115" y="861" text-anchor="middle">categorii in vivo</text></g>
+  <line class="arr" x1="222" y1="826" x2="194" y2="826" marker-end="url(#fx-arw)"/>
+  <g class="stat"><rect x="40" y="892" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="910" text-anchor="middle">T2b — acordul</text>
+  <text class="tn" x="115" y="926" text-anchor="middle">extractorilor</text></g>
+  <line class="arr" x1="115" y1="880" x2="115" y2="888" marker-end="url(#fx-arw)"/>
+  <g class="om"><rect x="40" y="948" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="966" text-anchor="middle">T2c — validarea</text>
+  <text class="tn" x="115" y="982" text-anchor="middle">de autor</text></g>
+  <line class="arr" x1="115" y1="936" x2="115" y2="944" marker-end="url(#fx-arw)"/>
+
+  <line class="arr" x1="380" y1="862" x2="380" y2="886" marker-end="url(#fx-arw)"/>
+
+  <g class="stat"><rect x="260" y="890" width="240" height="72" rx="4"/>
+  <text class="tt" x="380" y="912" text-anchor="middle">Etapa 5 — acordul pe codare</text>
+  <text class="td" x="380" y="930" text-anchor="middle">aceeași regulă, pe cele</text>
+  <text class="td" x="380" y="946" text-anchor="middle">cinci seturi</text></g>
+
+  <text class="tt" x="201" y="1030">Etapa 6 — rezultate</text>
+
+  <rect class="bx" x="201" y="1058" width="156" height="76" rx="4"/>
+  <text class="tn" x="279" y="1080" text-anchor="middle">rețeaua de</text>
+  <text class="tn" x="279" y="1096" text-anchor="middle">parteneriate</text>
+  <text class="td" x="279" y="1114" text-anchor="middle">nume (E5) ×</text>
+  <text class="td" x="279" y="1130" text-anchor="middle">tipologia validată</text>
+
+  <rect class="bx" x="201" y="1146" width="156" height="76" rx="4"/>
+  <text class="tn" x="279" y="1168" text-anchor="middle">coeziunea</text>
+  <text class="td" x="279" y="1186" text-anchor="middle">din etapa 2:</text>
+  <text class="td" x="279" y="1202" text-anchor="middle">comunitatea locală</text>
+  <text class="td" x="279" y="1218" text-anchor="middle">∧ refugiați</text>
+
+  <rect class="bx" x="201" y="1234" width="156" height="76" rx="4"/>
+  <text class="tn" x="279" y="1256" text-anchor="middle">implicarea</text>
+  <text class="tn" x="279" y="1272" text-anchor="middle">refugiaților</text>
+  <text class="td" x="279" y="1290" text-anchor="middle">tezaur validat ∧</text>
+  <text class="td" x="279" y="1306" text-anchor="middle">grup țintă (E2)</text>
+
+  <rect class="etapa-n" x="373" y="1046" width="287" height="276" rx="6"/>
+  <text class="td" x="389" y="1068">strict din etapa 5 — setul rezolvat</text>
+  <rect class="bx" x="389" y="1080" width="200" height="76" rx="4"/>
+  <text class="tn" x="489" y="1102" text-anchor="middle">harta de căldură</text>
+  <text class="tn" x="489" y="1118" text-anchor="middle">a activităților</text>
+  <text class="td" x="489" y="1136" text-anchor="middle">din tipul de activitate</text>
+  <rect class="bx" x="389" y="1168" width="200" height="60" rx="4"/>
+  <text class="tn" x="489" y="1190" text-anchor="middle">simbolismul ucrainean</text>
+  <text class="td" x="489" y="1208" text-anchor="middle">din setul lui</text>
+  <rect class="bx" x="389" y="1240" width="200" height="60" rx="4"/>
+  <text class="tn" x="489" y="1262" text-anchor="middle">alte prelucrări</text>
+  <text class="td" x="489" y="1280" text-anchor="middle">listă deschisă</text>
+
+  <path class="arr" d="M380 962 V1004 H489 V1042" marker-end="url(#fx-arw)"/>
+  <path class="arr" d="M115 992 V1096 H197" marker-end="url(#fx-arw)"/>
+  <path class="arr" d="M260 390 H24 V1184 H197" marker-end="url(#fx-arw)"/>
+  <path class="arr" d="M40 358 H16 V1272 H197" marker-end="url(#fx-arw)"/>
+</svg>
+    </div>
+    <p class="legenda">
+      <span><i style="background:var(--accent-soft); border:1px solid var(--accent)"></i>codare, făcută de agenți</span>
+      <span><i style="background:#ede8f6; border:1px solid #7a62a8"></i>acord și rezoluție statistică</span>
+      <span><i style="background:#e7f1e8; border:1px solid var(--ok)"></i>validare umană</span>
+      <span><i style="background:#f7efdc; border:1px solid var(--sienna)"></i>tezaure și ieșire</span>
+    </p>
+    <p class="note-mic">Pe orizontală stau lucrurile care se petrec în paralel; pe verticală, ce urmează după ce. O casetă e un set de etichete, niciodată două. Chenarul întrerupt marchează o etapă.</p>
+  </div>
+
+  <div class="sec">
+    <h3>De ce filtrul se etichetează primul</h3>
+    <p>Pagina unei organizații conține și postări care nu privesc refugiații: aniversări, angajări, campanii pe alte teme. Dacă le-am eticheta pe toate integral, am plăti pentru muncă inutilă și am amesteca numitorii. Filtrul le desparte în trei clase și oprește ultima — dar o <em>numără</em>: proporția de postări care nu privesc refugiații e ea însăși un rezultat despre fiecare organizație.</p>
+    <p>Acordul între codori se rezolvă <strong>înainte</strong> de filtrare, nu după: o postare trimisă greșit în clasa care se oprește nu mai e văzută de nimeni în aval, deci decizia de rutare se ia pe valori deja tranșate. Primele două clase se pot suprapune — o postare poate fi și pentru refugiați, și sprijin pentru Ucraina — iar intersecția lor se raportează ca atare.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce știe codorul și de unde</h3>
+    <p>Codorul se ține de textul postării: fiecare etichetă are un fragment-suport copiat exact, iar ce nu e spus nu se completează din memorie. Singura excepție sunt <strong>tezaurele</strong> — două liste de fapte cu sursă, construite separat: cine dintre persoanele numite are statut de refugiat și ce se știe despre organizațiile menționate. Fiecare tezaur se construiește prin căutare dublă, cele două căutări se compară între ele, iar autorul validează rezultatul.</p>
+    <p>La actori, codorii scriu <strong>doar numele</strong>, așa cum apare în text. Ce fel de actor e fiecare — primărie, ONG, universitate, firmă — se stabilește o singură dată, în tezaur, unde categoriile se strâng așa cum le dă realitatea, iar gruparea lor în tipuri se face la sfârșit: agenții propun, autorul validează.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Patru reguli de citire</h3>
+    <ul class="plain">
+      <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare. Combinațiile nu au etichetă proprie — se numără la analiză.</li>
+      <li><strong>Ce nu e spus rămâne necunoscut.</strong> Necunoscut nu înseamnă inexistent: o postare care nu-și numește finanțatorul nu e o postare fără finanțator.</li>
+      <li><strong>Anonim nu înseamnă absent.</strong> „Cineva ne-a adus 5.000 de lei" se înregistrează ca donator anonim. Mulțumirile generale, fără un act concret, nu.</li>
+      <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
+    </ul>
+  </div>
+</div>
+<div class="subpanel" role="tabpanel" id="sp-org" aria-labelledby="st-org">
   <h2>Organizații</h2>
   <p>Cele 45 de organizații din registrul de parteneri, cu tipul atribuit de UNHCR și județul de activitate. Profilurile individuale — activități, parteneri, finanțatori, serie de volum — se completează după rulare.</p>
 
@@ -1176,10 +1201,9 @@
     <thead><tr><th scope="col">Organizație</th><th scope="col">Tip</th><th scope="col">Județ</th></tr></thead>
     <tbody id="org-body"></tbody>
   </table></div>
-</section>
+</div>
 
-<!-- ============ METODOLOGIE ============ -->
-<section class="panel" role="tabpanel" id="p-ms" aria-labelledby="t-ms">
+<div class="subpanel" role="tabpanel" id="sp-ms" aria-labelledby="st-ms">
   <h2>Metodă și surse</h2>
 
   <div class="pull">
@@ -1337,7 +1361,11 @@
       <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
     </ol>
   </div>
+</div>
 </section>
+
+
+
 
 <footer>
   <span>Studiu în desfășurare. Cifrele publicate acum vin dintr-un pilot pe 6 organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
@@ -1379,11 +1407,60 @@
     });
   });
 
-  var h = location.hash.replace('#', '');
-  if (h && document.getElementById('t-' + h)) show('t-' + h);
+  // tabelul registrului: numele si judetul raman ca in registru, tipul se traduce
+  (function () {
+    var body = document.getElementById('org-body');
+    if (!body || !window.__ORGS__) return;
+    var TIP = {
+      'National NGO': 'ONG național', 'International NGO': 'ONG internațional',
+      'UN agency': 'agenție ONU', 'Refugee-led Organization': 'condusă de refugiați'
+    };
+    window.__ORGS__.forEach(function (o) {
+      var tr = document.createElement('tr');
+      [o.nume, TIP[o.tip] || o.tip, o.judet].forEach(function (v, i) {
+        var c = document.createElement(i ? 'td' : 'th');
+        if (!i) c.scope = 'row';
+        c.textContent = v;
+        tr.appendChild(c);
+      });
+      body.appendChild(tr);
+    });
+  })();
+
+  // subtaburile din Metodologie: acelasi mecanism, un nivel mai jos
+  var subtabs = Array.prototype.slice.call(document.querySelectorAll('.subtab'));
+  var subpanels = Array.prototype.slice.call(document.querySelectorAll('.subpanel'));
+  function arataSub(id) {
+    subtabs.forEach(function (t) {
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    subpanels.forEach(function (p) {
+      p.classList.toggle('on', p.getAttribute('aria-labelledby') === id);
+    });
+  }
+  subtabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { arataSub(t.id); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = subtabs[(i + d + subtabs.length) % subtabs.length];
+      n.focus(); arataSub(n.id);
+    });
+  });
+
+  // legaturile vechi (#cod, #codare, #org, #ms) duc acum in Metodologie, la subtabul lor
+  var SUB = {cod: 1, codare: 1, org: 1, ms: 1};
+  function dinHash(x) {
+    if (!x) return;
+    if (SUB[x] && document.getElementById('st-' + x)) { show('t-met'); arataSub('st-' + x); }
+    else if (document.getElementById('t-' + x)) show('t-' + x);
+  }
+  dinHash(location.hash.replace('#', ''));
   window.addEventListener('hashchange', function () {
-    var x = location.hash.replace('#', '');
-    if (x && document.getElementById('t-' + x)) show('t-' + x);
+    dinHash(location.hash.replace('#', ''));
   });
 
 
