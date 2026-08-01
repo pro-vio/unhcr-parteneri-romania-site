@@ -973,6 +973,7 @@
   </div>
 </div>
 <div class="subpanel" role="tabpanel" id="sp-codare" aria-labelledby="st-codare">
+<!-- CODARE-START -->
   <h2>Codare</h2>
   <p>Codebook-ul nu se aplică dintr-o singură trecere. Întâi se etichetează <strong>cine e prezent</strong> în activitatea comunicată; abia acele postări care privesc refugiații sau sprijinul pentru Ucraina primesc restul etichetelor. Diagrama de mai jos arată drumul complet al unei postări, de la corpus la rezultate.</p>
 
@@ -984,8 +985,8 @@
   <desc id="flux-d">Corpusul intră în codarea de filtru; acordul dintre codori se rezolvă
   înaintea filtrării; filtrarea împarte postările în trei clase, dintre care „alte
   activități" se oprește; ce trece primește codarea integrală, acordul pe codare și
-  prelucrările. În paralel curg două benzi de tezaur, fiecare cu acordul extractorilor și
-  validarea de autor.</desc>
+  prelucrările. În paralel curg două fluxuri de tezaur, care doar identifică: gruparea
+  cheilor, propunerile de unire și validarea autorului.</desc>
   <defs><marker id="fx-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--dg-line)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 
   <rect class="bx" x="260" y="40" width="240" height="72" rx="4"/>
@@ -1007,19 +1008,15 @@
   <text class="td" x="320" y="290">la organizațiile conduse de refugiați: protagoniști automat</text>
 
   <g class="side"><rect x="40" y="176" width="150" height="92" rx="4"/>
-  <text class="tn" x="115" y="199" text-anchor="middle">T1a — tezaurul</text>
-  <text class="tn" x="115" y="215" text-anchor="middle">de persoane</text>
-  <text class="td" x="115" y="233" text-anchor="middle">statut de refugiat,</text>
-  <text class="td" x="115" y="249" text-anchor="middle">cu sursă</text></g>
+  <text class="tn" x="115" y="199" text-anchor="middle">T1a — curățarea</text>
+  <text class="tn" x="115" y="215" text-anchor="middle">cheilor de persoană</text>
+  <text class="td" x="115" y="233" text-anchor="middle">transliterare și</text>
+  <text class="td" x="115" y="249" text-anchor="middle">normalizare</text></g>
   <line class="arr" x1="222" y1="199" x2="194" y2="199" marker-end="url(#fx-arw)"/>
-  <g class="stat"><rect x="40" y="280" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="298" text-anchor="middle">T1b — acordul</text>
-  <text class="tn" x="115" y="314" text-anchor="middle">extractorilor</text></g>
+  <g class="om"><rect x="40" y="280" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="298" text-anchor="middle">T1c — aliasurile</text>
+  <text class="tn" x="115" y="314" text-anchor="middle">declarate de autor</text></g>
   <line class="arr" x1="115" y1="268" x2="115" y2="276" marker-end="url(#fx-arw)"/>
-  <g class="om"><rect x="40" y="336" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="354" text-anchor="middle">T1c — validarea</text>
-  <text class="tn" x="115" y="370" text-anchor="middle">de autor</text></g>
-  <line class="arr" x1="115" y1="324" x2="115" y2="332" marker-end="url(#fx-arw)"/>
 
   <line class="arr" x1="380" y1="304" x2="380" y2="328" marker-end="url(#fx-arw)"/>
 
@@ -1076,18 +1073,18 @@
   <text class="tn" x="436" y="831" text-anchor="middle">finanțatori</text>
 
   <g class="side"><rect x="40" y="788" width="150" height="92" rx="4"/>
-  <text class="tn" x="115" y="811" text-anchor="middle">T2a — tezaurul</text>
-  <text class="tn" x="115" y="827" text-anchor="middle">de organizații</text>
-  <text class="td" x="115" y="845" text-anchor="middle">fapte cu sursă,</text>
-  <text class="td" x="115" y="861" text-anchor="middle">categorii in vivo</text></g>
+  <text class="tn" x="115" y="811" text-anchor="middle">T2a — gruparea</text>
+  <text class="tn" x="115" y="827" text-anchor="middle">cheilor de entitate</text>
+  <text class="td" x="115" y="845" text-anchor="middle">transliterare și</text>
+  <text class="td" x="115" y="861" text-anchor="middle">normalizare</text></g>
   <line class="arr" x1="222" y1="826" x2="194" y2="826" marker-end="url(#fx-arw)"/>
-  <g class="stat"><rect x="40" y="892" width="150" height="44" rx="4"/>
-  <text class="tn" x="115" y="910" text-anchor="middle">T2b — acordul</text>
-  <text class="tn" x="115" y="926" text-anchor="middle">extractorilor</text></g>
+  <g><rect class="bx" x="40" y="892" width="150" height="44" rx="4"/>
+  <text class="tn" x="115" y="910" text-anchor="middle">T2b — propuneri</text>
+  <text class="tn" x="115" y="926" text-anchor="middle">de unire</text></g>
   <line class="arr" x1="115" y1="880" x2="115" y2="888" marker-end="url(#fx-arw)"/>
   <g class="om"><rect x="40" y="948" width="150" height="44" rx="4"/>
   <text class="tn" x="115" y="966" text-anchor="middle">T2c — validarea</text>
-  <text class="tn" x="115" y="982" text-anchor="middle">de autor</text></g>
+  <text class="tn" x="115" y="982" text-anchor="middle">unirilor</text></g>
   <line class="arr" x1="115" y1="936" x2="115" y2="944" marker-end="url(#fx-arw)"/>
 
   <line class="arr" x1="380" y1="862" x2="380" y2="886" marker-end="url(#fx-arw)"/>
@@ -1102,8 +1099,8 @@
   <rect class="bx" x="201" y="1058" width="156" height="76" rx="4"/>
   <text class="tn" x="279" y="1080" text-anchor="middle">rețeaua de</text>
   <text class="tn" x="279" y="1096" text-anchor="middle">parteneriate</text>
-  <text class="td" x="279" y="1114" text-anchor="middle">nume (E5) ×</text>
-  <text class="td" x="279" y="1130" text-anchor="middle">tipologia validată</text>
+  <text class="td" x="279" y="1114" text-anchor="middle">nume (E5), pe</text>
+  <text class="td" x="279" y="1130" text-anchor="middle">identitățile unificate</text>
 
   <rect class="bx" x="201" y="1146" width="156" height="76" rx="4"/>
   <text class="tn" x="279" y="1168" text-anchor="middle">coeziunea</text>
@@ -1114,8 +1111,8 @@
   <rect class="bx" x="201" y="1234" width="156" height="76" rx="4"/>
   <text class="tn" x="279" y="1256" text-anchor="middle">implicarea</text>
   <text class="tn" x="279" y="1272" text-anchor="middle">refugiaților</text>
-  <text class="td" x="279" y="1290" text-anchor="middle">tezaur validat ∧</text>
-  <text class="td" x="279" y="1306" text-anchor="middle">grup țintă (E2)</text>
+  <text class="td" x="279" y="1290" text-anchor="middle">protagoniști refugiați</text>
+  <text class="td" x="279" y="1306" text-anchor="middle">din etapa 2</text>
 
   <rect class="etapa-n" x="373" y="1046" width="287" height="276" rx="6"/>
   <text class="td" x="389" y="1068">strict din etapa 5 — setul rezolvat</text>
@@ -1148,13 +1145,14 @@
   <div class="sec">
     <h3>De ce filtrul se etichetează primul</h3>
     <p>Pagina unei organizații conține și postări care nu privesc refugiații: aniversări, angajări, campanii pe alte teme. Dacă le-am eticheta pe toate integral, am plăti pentru muncă inutilă și am amesteca numitorii. Filtrul le desparte în trei clase și oprește ultima — dar o <em>numără</em>: proporția de postări care nu privesc refugiații e ea însăși un rezultat despre fiecare organizație.</p>
-    <p>Acordul între codori se rezolvă <strong>înainte</strong> de filtrare: o postare trimisă greșit în clasa care se oprește nu mai e văzută de nimeni în aval, deci decizia de rutare se ia pe valori deja tranșate. Primele două clase se pot suprapune — o postare poate fi și pentru refugiați, și sprijin pentru Ucraina — iar intersecția lor se raportează ca atare.</p>
+    <p>Acordul între codori se rezolvă <strong>înainte</strong> de filtrare, nu după: o postare trimisă greșit în clasa care se oprește nu mai e văzută de nimeni în aval, deci decizia de rutare se ia pe valori deja tranșate. Primele două clase se pot suprapune — o postare poate fi și pentru refugiați, și sprijin pentru Ucraina — iar intersecția lor se raportează ca atare.</p>
   </div>
 
   <div class="sec">
     <h3>Ce știe codorul și de unde</h3>
-    <p>Codorul se ține de textul postării: fiecare etichetă are un fragment-suport copiat exact, iar ce nu e spus nu se completează din memorie. Singura excepție sunt <strong>tezaurele</strong> — două liste de fapte cu sursă, construite separat: cine dintre persoanele numite are statut de refugiat și ce se știe despre organizațiile menționate. Fiecare tezaur se construiește prin căutare dublă, cele două căutări se compară între ele, iar autorul validează rezultatul.</p>
-    <p>La actori, codorii scriu <strong>doar numele</strong>, așa cum apare în text. Ce fel de actor e fiecare — primărie, ONG, universitate, firmă — se stabilește o singură dată, în tezaur, unde categoriile se strâng așa cum le dă realitatea, iar gruparea lor în tipuri se face la sfârșit: agenții propun, autorul validează.</p>
+    <p>Codorul se ține de textul postării: fiecare etichetă are un fragment-suport copiat exact, iar ce nu e spus rămâne necompletat. <strong>Tezaurele nu adaugă fapte</strong> — ele spun doar cine cu cine e aceeași entitate. „UNICEF", „ЮНІСЕФ" și „Unicef România" sunt trei feluri de a scrie un singur actor, iar fără o listă care le unește, aceeași organizație s-ar număra de trei ori.</p>
+    <p>Unirea se face în trei pași. Numele scrise in vivo se grupează întâi în cod, prin transliterare și normalizare. Ce rămâne — abrevieri, denumiri prescurtate, grafii care nu se deduc una din alta — primește propuneri de la un agent care nu caută nicăieri, ci propune din ce știe. Autorul le validează, una câte una, și tot el declară aliasurile de persoană și pseudonimele minorilor.</p>
+    <p>Ce fel de actor e fiecare — primărie, ONG, universitate, firmă — nu se stabilește în rulare. E informație de entitate, nu de postare: tipul unei organizații nu se schimbă de la o postare la alta, deci se poate atribui oricând pe lista finală, dacă analiza o cere. Statutul de refugiat al protagoniștilor rămâne, în schimb, informație de postare, și se citește din ce spune textul.</p>
   </div>
 
   <div class="sec">
@@ -1166,17 +1164,7 @@
       <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
   </div>
-
-  <div class="sec">
-    <h3>Reguli permanente ale codării</h3>
-    <p>Date agenților verbatim la fiecare rulare, fiecare venind dintr-un eșec observat:</p>
-    <ol class="steps">
-      <li><span class="step-n">1</span><span class="step-b"><p>Citate numai din postarea efectiv primită. Niciodată din memoria modelului.</p></span></li>
-      <li><span class="step-n">2</span><span class="step-b"><p>Câmp fără ancoră rămâne necodat. O valoare fără fragment-suport e o presupunere, nu o dată.</p></span></li>
-      <li><span class="step-n">3</span><span class="step-b"><p>Absența unui rezultat nu e absența fenomenului. „Nu apare în text" se codează ca informație insuficientă, nu ca negație.</p></span></li>
-      <li><span class="step-n">4</span><span class="step-b"><p>Fiecare valoare are un citat-suport din postare.</p></span></li>
-    </ol>
-  </div>
+<!-- CODARE-END -->
 </div>
 <div class="subpanel" role="tabpanel" id="sp-acord" aria-labelledby="st-acord">
 <!-- METACORD-START -->
