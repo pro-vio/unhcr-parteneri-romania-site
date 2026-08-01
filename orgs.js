@@ -31,6 +31,7 @@ window.__ORGS__ = [
 },
 {
 "nume": "Migrant Integration Centre Brasov",
+"pilot": true,
 "tip": "National NGO",
 "judet": "Brasov"
 },
@@ -61,6 +62,7 @@ window.__ORGS__ = [
 },
 {
 "nume": "CNRR",
+"pilot": true,
 "tip": "National NGO",
 "judet": "Bucharest"
 },
@@ -76,6 +78,7 @@ window.__ORGS__ = [
 },
 {
 "nume": "Association Malva",
+"pilot": true,
 "tip": "Refugee-led Organization",
 "judet": "Bucharest"
 },
@@ -126,11 +129,13 @@ window.__ORGS__ = [
 },
 {
 "nume": "Novapolis",
+"pilot": true,
 "tip": "National NGO",
 "judet": "Constanta"
 },
 {
 "nume": "Help Ukrainians",
+"pilot": true,
 "tip": "Refugee-led Organization",
 "judet": "Galati"
 },
@@ -176,6 +181,7 @@ window.__ORGS__ = [
 },
 {
 "nume": "EDNAE",
+"pilot": true,
 "tip": "Refugee-led Organization",
 "judet": "Suceava"
 },

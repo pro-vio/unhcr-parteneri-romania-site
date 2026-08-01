@@ -60,6 +60,9 @@
   .credit{color:var(--ink-soft); max-width:var(--measure); font-size:var(--s--1);
           margin:.9rem 0 0}
   .credit + .credit{margin-top:.45rem}
+  .pil{font-family:var(--mono); font-size:.68em; letter-spacing:.08em; text-transform:uppercase;
+       color:var(--accent); border:1px solid currentColor; border-radius:3px;
+       padding:0 .35em; margin-left:.5em; white-space:nowrap; vertical-align:.1em}
 
   /* tabs */
   .tabs{
@@ -1162,7 +1165,7 @@
 </div>
 <div class="subpanel" role="tabpanel" id="sp-org" aria-labelledby="st-org">
   <h2>Organizații</h2>
-  <p>Cele 45 de organizații din registrul de parteneri, cu tipul atribuit de UNHCR și județul de activitate. Profilurile individuale — activități, parteneri, finanțatori, serie de volum — se completează după rulare.</p>
+  <p>Cele 45 de organizații din registrul de parteneri, cu tipul atribuit de UNHCR și județul de activitate. Acesta e corpusul la care se scalează pilotul: cele șase organizații deja codate sunt marcate în tabel. Profilurile individuale — activități, parteneri, finanțatori, serie de volum — se completează după rularea completă.</p>
 
   <div class="figs">
     <div class="fig"><span class="fig-n">30</span><span class="fig-l">ONG național</span></div>
@@ -1194,7 +1197,7 @@
 
   <div class="sec">
     <h3>Universul și unitatea de analiză</h3>
-    <p><strong>45 de organizații</strong> din registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie.</p>
+    <p><strong>45 de organizații</strong> din registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
     <p><strong>Unitatea de analiză e postarea publică de Facebook.</strong> O postare poate purta mai multe coduri de activitate: se codează serviciul numit, iar o postare care numește mai multe servicii primește câte un cod pentru fiecare.</p>
     <div class="note">
       <strong>Instituțiile publice nu sunt unități de observație.</strong>
@@ -1396,6 +1399,12 @@
         var c = document.createElement(i ? 'td' : 'th');
         if (!i) c.scope = 'row';
         c.textContent = v;
+        if (!i && o.pilot) {
+          var b = document.createElement('span');
+          b.className = 'pil';
+          b.textContent = 'pilot';
+          c.appendChild(b);
+        }
         tr.appendChild(c);
       });
       body.appendChild(tr);
