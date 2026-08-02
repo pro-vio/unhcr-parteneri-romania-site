@@ -376,10 +376,12 @@
 
     <!-- POST-START -->
     <p class="rez-tit">Clasele de filtrare, pe lună</p>
-    <p class="rez-sub">Cele trei clase rezultate din filtrare, una peste alta, pe fiecare lună
-    codată. Graficele din acest tab numără toate postările organizațiilor; în celelalte taburi
-    intră doar cele care trec de filtrul de relevanță — 173 din
-    231 de postări codabile. Butoanele filtrează doar graficul acesta.</p>
+    <p class="rez-sub">Clasele rezultate din filtrare, una peste alta, pe fiecare lună
+    codată. Graficele din acest tab numără toate postările organizațiilor, iar clasele vin
+    din rularea de acum: 142 postări trec filtrul, din 231
+    codabile. Tabul „Roluri refugiați" se citește pe același set. Celelalte taburi așteaptă
+    codarea integrală și poartă deocamdată cifrele rulării dinainte, măsurate pe
+    173 de postări trecute de filtru atunci. Butoanele filtrează doar graficul acesta.</p>
     <div class="ser-ctl">
       <div class="ser-ctl-row" data-stack-ctl><span class="flt-lbl">oraș</span><button class="chip" data-stack-flt="Toate" aria-pressed="true">Toate</button><button class="chip" data-stack-flt="Brașov" aria-pressed="false">Brașov</button><button class="chip" data-stack-flt="București" aria-pressed="false">București</button><button class="chip" data-stack-flt="Constanța" aria-pressed="false">Constanța</button><button class="chip" data-stack-flt="Galați" aria-pressed="false">Galați</button><button class="chip" data-stack-flt="Suceava" aria-pressed="false">Suceava</button></div>
     </div>
@@ -515,12 +517,11 @@
 
     <div class="note">
       <strong>Unitatea celulei.</strong> E <em>postarea</em>, iar
-      categoriile nu se exclud: aceeași postare poate avea refugiați și ca protagoniști, și ca
-      beneficiari. Rândul „protagoniști" cuprinde prezumția organizațională: la organizațiile
-      conduse de refugiați, toate postările trecute de filtru numără automat (calea „registru",
-      127 din 127); restul vin din text —
-      persoane cu statut de refugiat afirmat de postare. Calea „tezaur" (persoane validate de
-      autor) nu e încă activă.
+      categoriile se pot suprapune: aceeași postare poate avea refugiați și ca protagoniști,
+      și ca beneficiari. Fiecare statut își poartă proveniența, iar rândul „protagoniști" se
+      desface pe ea: din cele 45 de postări cu protagoniști refugiați, 43 din registru, 2 din prezumție. Calea „registru" e prezumția organizațională — la
+      organizațiile conduse de refugiați, postările numără automat; calea „text" e statutul
+      afirmat de postare. Calea „tezaur", cu persoane validate de autor, intră după validare.
     </div>
 
     <div class="note warn">
@@ -1454,7 +1455,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=0c84549d"></script>
+<script src="rezultate.js?v=10276081"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
