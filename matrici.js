@@ -1,4 +1,4 @@
-// generat de _lucru/site_matrici.py din calibrare/pilot/matrici_pilot.json
+// generat de _lucru/site_matrici.py din calibrare/pilot/etapa6_matrici_v5_4.json
 var MATRICI = {
  "cod_an": {
   "titlu": "Coduri de activitate, pe an",
@@ -21,19 +21,14 @@ var MATRICI = {
     "sub": "prot_informare"
    },
    {
-    "k": "com_mobilizare",
-    "lbl": "mobilizare*",
-    "sub": "com_mobilizare"
-   },
-   {
     "k": "edu_personal",
     "lbl": "formare profesioniști",
     "sub": "edu_personal"
    },
    {
-    "k": "san_mhpss",
-    "lbl": "consiliere psihologică",
-    "sub": "san_mhpss"
+    "k": "baz_hrana",
+    "lbl": "hrană",
+    "sub": "baz_hrana"
    },
    {
     "k": "liv_limba",
@@ -41,14 +36,9 @@ var MATRICI = {
     "sub": "liv_limba"
    },
    {
-    "k": "prot_coeziune",
-    "lbl": "evenimente cu gazda",
-    "sub": "prot_coeziune"
-   },
-   {
-    "k": "baz_hrana",
-    "lbl": "hrană",
-    "sub": "baz_hrana"
+    "k": "san_mhpss",
+    "lbl": "consiliere psihologică",
+    "sub": "san_mhpss"
    },
    {
     "k": "liv_antreprenoriat",
@@ -76,14 +66,9 @@ var MATRICI = {
     "sub": "baz_nfi"
    },
    {
-    "k": "prot_copii",
-    "lbl": "protecția copiilor",
-    "sub": "prot_copii"
-   },
-   {
-    "k": "liv_tvet",
-    "lbl": "calificare profesională",
-    "sub": "liv_tvet"
+    "k": "baz_cash",
+    "lbl": "bani și tichete",
+    "sub": "baz_cash"
    },
    {
     "k": "prot_trafic",
@@ -91,9 +76,14 @@ var MATRICI = {
     "sub": "prot_trafic"
    },
    {
-    "k": "baz_cash",
-    "lbl": "bani și tichete",
-    "sub": "baz_cash"
+    "k": "liv_tvet",
+    "lbl": "calificare profesională",
+    "sub": "liv_tvet"
+   },
+   {
+    "k": "prot_copii",
+    "lbl": "protecția copiilor",
+    "sub": "prot_copii"
    }
   ],
   "coloane": [
@@ -128,13 +118,13 @@ var MATRICI = {
     "v": 0
    },
    "edu_nonformal|2023": {
-    "v": 19
+    "v": 20
    },
    "edu_nonformal|2024": {
-    "v": 17
+    "v": 15
    },
    "edu_nonformal|2025": {
-    "v": 13
+    "v": 12
    },
    "edu_nonformal|2026": {
     "v": 9
@@ -143,7 +133,7 @@ var MATRICI = {
     "v": 0
    },
    "com_recreativ|2023": {
-    "v": 17
+    "v": 19
    },
    "com_recreativ|2024": {
     "v": 10
@@ -152,67 +142,52 @@ var MATRICI = {
     "v": 15
    },
    "com_recreativ|2026": {
-    "v": 5
+    "v": 6
    },
    "prot_informare|2022": {
     "v": 25
    },
    "prot_informare|2023": {
-    "v": 2
+    "v": 3
    },
    "prot_informare|2024": {
     "v": 1
    },
    "prot_informare|2025": {
-    "v": 1
+    "v": 2
    },
    "prot_informare|2026": {
     "v": 1
    },
-   "com_mobilizare|2022": {
-    "v": 7
-   },
-   "com_mobilizare|2023": {
-    "v": 1
-   },
-   "com_mobilizare|2024": {
-    "v": 1
-   },
-   "com_mobilizare|2025": {
-    "v": 0
-   },
-   "com_mobilizare|2026": {
-    "v": 9
-   },
    "edu_personal|2022": {
-    "v": 2
-   },
-   "edu_personal|2023": {
     "v": 3
    },
-   "edu_personal|2024": {
+   "edu_personal|2023": {
     "v": 2
    },
+   "edu_personal|2024": {
+    "v": 1
+   },
    "edu_personal|2025": {
-    "v": 5
+    "v": 3
    },
    "edu_personal|2026": {
     "v": 5
    },
-   "san_mhpss|2022": {
+   "baz_hrana|2022": {
+    "v": 1
+   },
+   "baz_hrana|2023": {
     "v": 0
    },
-   "san_mhpss|2023": {
+   "baz_hrana|2024": {
+    "v": 1
+   },
+   "baz_hrana|2025": {
+    "v": 0
+   },
+   "baz_hrana|2026": {
     "v": 5
-   },
-   "san_mhpss|2024": {
-    "v": 1
-   },
-   "san_mhpss|2025": {
-    "v": 0
-   },
-   "san_mhpss|2026": {
-    "v": 1
    },
    "liv_limba|2022": {
     "v": 0
@@ -229,34 +204,19 @@ var MATRICI = {
    "liv_limba|2026": {
     "v": 2
    },
-   "prot_coeziune|2022": {
+   "san_mhpss|2022": {
     "v": 0
    },
-   "prot_coeziune|2023": {
-    "v": 4
+   "san_mhpss|2023": {
+    "v": 5
    },
-   "prot_coeziune|2024": {
+   "san_mhpss|2024": {
     "v": 1
    },
-   "prot_coeziune|2025": {
+   "san_mhpss|2025": {
     "v": 0
    },
-   "prot_coeziune|2026": {
-    "v": 1
-   },
-   "baz_hrana|2022": {
-    "v": 0
-   },
-   "baz_hrana|2023": {
-    "v": 1
-   },
-   "baz_hrana|2024": {
-    "v": 1
-   },
-   "baz_hrana|2025": {
-    "v": 0
-   },
-   "baz_hrana|2026": {
+   "san_mhpss|2026": {
     "v": 1
    },
    "liv_antreprenoriat|2022": {
@@ -284,13 +244,13 @@ var MATRICI = {
     "v": 0
    },
    "san_acces|2025": {
-    "v": 1
+    "v": 2
    },
    "san_acces|2026": {
     "v": 0
    },
    "prot_juridic|2022": {
-    "v": 2
+    "v": 3
    },
    "prot_juridic|2023": {
     "v": 0
@@ -320,10 +280,10 @@ var MATRICI = {
     "v": 0
    },
    "baz_nfi|2022": {
-    "v": 0
+    "v": 1
    },
    "baz_nfi|2023": {
-    "v": 1
+    "v": 0
    },
    "baz_nfi|2024": {
     "v": 0
@@ -334,34 +294,19 @@ var MATRICI = {
    "baz_nfi|2026": {
     "v": 0
    },
-   "prot_copii|2022": {
-    "v": 0
-   },
-   "prot_copii|2023": {
-    "v": 0
-   },
-   "prot_copii|2024": {
+   "baz_cash|2022": {
     "v": 1
    },
-   "prot_copii|2025": {
+   "baz_cash|2023": {
     "v": 0
    },
-   "prot_copii|2026": {
+   "baz_cash|2024": {
     "v": 0
    },
-   "liv_tvet|2022": {
+   "baz_cash|2025": {
     "v": 0
    },
-   "liv_tvet|2023": {
-    "v": 0
-   },
-   "liv_tvet|2024": {
-    "v": 1
-   },
-   "liv_tvet|2025": {
-    "v": 0
-   },
-   "liv_tvet|2026": {
+   "baz_cash|2026": {
     "v": 0
    },
    "prot_trafic|2022": {
@@ -379,19 +324,34 @@ var MATRICI = {
    "prot_trafic|2026": {
     "v": 0
    },
-   "baz_cash|2022": {
+   "liv_tvet|2022": {
+    "v": 0
+   },
+   "liv_tvet|2023": {
+    "v": 0
+   },
+   "liv_tvet|2024": {
     "v": 1
    },
-   "baz_cash|2023": {
+   "liv_tvet|2025": {
     "v": 0
    },
-   "baz_cash|2024": {
+   "liv_tvet|2026": {
     "v": 0
    },
-   "baz_cash|2025": {
+   "prot_copii|2022": {
     "v": 0
    },
-   "baz_cash|2026": {
+   "prot_copii|2023": {
+    "v": 0
+   },
+   "prot_copii|2024": {
+    "v": 1
+   },
+   "prot_copii|2025": {
+    "v": 0
+   },
+   "prot_copii|2026": {
     "v": 0
    }
   }
@@ -417,19 +377,14 @@ var MATRICI = {
     "sub": "prot_informare"
    },
    {
-    "k": "com_mobilizare",
-    "lbl": "mobilizare*",
-    "sub": "com_mobilizare"
-   },
-   {
     "k": "edu_personal",
     "lbl": "formare profesioniști",
     "sub": "edu_personal"
    },
    {
-    "k": "san_mhpss",
-    "lbl": "consiliere psihologică",
-    "sub": "san_mhpss"
+    "k": "baz_hrana",
+    "lbl": "hrană",
+    "sub": "baz_hrana"
    },
    {
     "k": "liv_limba",
@@ -437,14 +392,9 @@ var MATRICI = {
     "sub": "liv_limba"
    },
    {
-    "k": "prot_coeziune",
-    "lbl": "evenimente cu gazda",
-    "sub": "prot_coeziune"
-   },
-   {
-    "k": "baz_hrana",
-    "lbl": "hrană",
-    "sub": "baz_hrana"
+    "k": "san_mhpss",
+    "lbl": "consiliere psihologică",
+    "sub": "san_mhpss"
    },
    {
     "k": "liv_antreprenoriat",
@@ -472,14 +422,9 @@ var MATRICI = {
     "sub": "baz_nfi"
    },
    {
-    "k": "prot_copii",
-    "lbl": "protecția copiilor",
-    "sub": "prot_copii"
-   },
-   {
-    "k": "liv_tvet",
-    "lbl": "calificare profesională",
-    "sub": "liv_tvet"
+    "k": "baz_cash",
+    "lbl": "bani și tichete",
+    "sub": "baz_cash"
    },
    {
     "k": "prot_trafic",
@@ -487,9 +432,14 @@ var MATRICI = {
     "sub": "prot_trafic"
    },
    {
-    "k": "baz_cash",
-    "lbl": "bani și tichete",
-    "sub": "baz_cash"
+    "k": "liv_tvet",
+    "lbl": "calificare profesională",
+    "sub": "liv_tvet"
+   },
+   {
+    "k": "prot_copii",
+    "lbl": "protecția copiilor",
+    "sub": "prot_copii"
    }
   ],
   "coloane": [
@@ -526,7 +476,7 @@ var MATRICI = {
   ],
   "celule": {
    "edu_nonformal|Help Ukrainians": {
-    "v": 42
+    "v": 39
    },
    "edu_nonformal|CNRR": {
     "v": 3
@@ -535,7 +485,7 @@ var MATRICI = {
     "v": 3
    },
    "edu_nonformal|Association Malva": {
-    "v": 9
+    "v": 10
    },
    "edu_nonformal|EDNAE": {
     "v": 0
@@ -544,10 +494,10 @@ var MATRICI = {
     "v": 1
    },
    "com_recreativ|Help Ukrainians": {
-    "v": 26
+    "v": 29
    },
    "com_recreativ|CNRR": {
-    "v": 3
+    "v": 2
    },
    "com_recreativ|Novapolis": {
     "v": 1
@@ -559,16 +509,16 @@ var MATRICI = {
     "v": 6
    },
    "com_recreativ|MIC Brasov": {
-    "v": 6
+    "v": 7
    },
    "prot_informare|Help Ukrainians": {
     "v": 0
    },
    "prot_informare|CNRR": {
-    "v": 21
+    "v": 22
    },
    "prot_informare|Novapolis": {
-    "v": 4
+    "v": 5
    },
    "prot_informare|Association Malva": {
     "v": 0
@@ -579,24 +529,6 @@ var MATRICI = {
    "prot_informare|MIC Brasov": {
     "v": 4
    },
-   "com_mobilizare|Help Ukrainians": {
-    "v": 2
-   },
-   "com_mobilizare|CNRR": {
-    "v": 6
-   },
-   "com_mobilizare|Novapolis": {
-    "v": 2
-   },
-   "com_mobilizare|Association Malva": {
-    "v": 1
-   },
-   "com_mobilizare|EDNAE": {
-    "v": 6
-   },
-   "com_mobilizare|MIC Brasov": {
-    "v": 1
-   },
    "edu_personal|Help Ukrainians": {
     "v": 1
    },
@@ -604,33 +536,33 @@ var MATRICI = {
     "v": 4
    },
    "edu_personal|Novapolis": {
-    "v": 8
+    "v": 7
    },
    "edu_personal|Association Malva": {
-    "v": 1
+    "v": 0
    },
    "edu_personal|EDNAE": {
-    "v": 3
+    "v": 2
    },
    "edu_personal|MIC Brasov": {
     "v": 0
    },
-   "san_mhpss|Help Ukrainians": {
-    "v": 4
-   },
-   "san_mhpss|CNRR": {
+   "baz_hrana|Help Ukrainians": {
     "v": 2
    },
-   "san_mhpss|Novapolis": {
+   "baz_hrana|CNRR": {
     "v": 0
    },
-   "san_mhpss|Association Malva": {
+   "baz_hrana|Novapolis": {
     "v": 0
    },
-   "san_mhpss|EDNAE": {
+   "baz_hrana|Association Malva": {
     "v": 0
    },
-   "san_mhpss|MIC Brasov": {
+   "baz_hrana|EDNAE": {
+    "v": 4
+   },
+   "baz_hrana|MIC Brasov": {
     "v": 1
    },
    "liv_limba|Help Ukrainians": {
@@ -651,41 +583,23 @@ var MATRICI = {
    "liv_limba|MIC Brasov": {
     "v": 1
    },
-   "prot_coeziune|Help Ukrainians": {
+   "san_mhpss|Help Ukrainians": {
+    "v": 4
+   },
+   "san_mhpss|CNRR": {
     "v": 2
    },
-   "prot_coeziune|CNRR": {
+   "san_mhpss|Novapolis": {
     "v": 0
    },
-   "prot_coeziune|Novapolis": {
+   "san_mhpss|Association Malva": {
+    "v": 0
+   },
+   "san_mhpss|EDNAE": {
+    "v": 0
+   },
+   "san_mhpss|MIC Brasov": {
     "v": 1
-   },
-   "prot_coeziune|Association Malva": {
-    "v": 2
-   },
-   "prot_coeziune|EDNAE": {
-    "v": 0
-   },
-   "prot_coeziune|MIC Brasov": {
-    "v": 1
-   },
-   "baz_hrana|Help Ukrainians": {
-    "v": 2
-   },
-   "baz_hrana|CNRR": {
-    "v": 0
-   },
-   "baz_hrana|Novapolis": {
-    "v": 0
-   },
-   "baz_hrana|Association Malva": {
-    "v": 1
-   },
-   "baz_hrana|EDNAE": {
-    "v": 0
-   },
-   "baz_hrana|MIC Brasov": {
-    "v": 0
    },
    "liv_antreprenoriat|Help Ukrainians": {
     "v": 0
@@ -706,7 +620,7 @@ var MATRICI = {
     "v": 0
    },
    "san_acces|Help Ukrainians": {
-    "v": 2
+    "v": 3
    },
    "san_acces|CNRR": {
     "v": 0
@@ -727,7 +641,7 @@ var MATRICI = {
     "v": 0
    },
    "prot_juridic|CNRR": {
-    "v": 2
+    "v": 3
    },
    "prot_juridic|Novapolis": {
     "v": 0
@@ -769,30 +683,48 @@ var MATRICI = {
     "v": 0
    },
    "baz_nfi|Association Malva": {
-    "v": 1
+    "v": 0
    },
    "baz_nfi|EDNAE": {
     "v": 0
    },
    "baz_nfi|MIC Brasov": {
-    "v": 0
-   },
-   "prot_copii|Help Ukrainians": {
-    "v": 0
-   },
-   "prot_copii|CNRR": {
     "v": 1
    },
-   "prot_copii|Novapolis": {
+   "baz_cash|Help Ukrainians": {
     "v": 0
    },
-   "prot_copii|Association Malva": {
+   "baz_cash|CNRR": {
     "v": 0
    },
-   "prot_copii|EDNAE": {
+   "baz_cash|Novapolis": {
     "v": 0
    },
-   "prot_copii|MIC Brasov": {
+   "baz_cash|Association Malva": {
+    "v": 0
+   },
+   "baz_cash|EDNAE": {
+    "v": 0
+   },
+   "baz_cash|MIC Brasov": {
+    "v": 1
+   },
+   "prot_trafic|Help Ukrainians": {
+    "v": 0
+   },
+   "prot_trafic|CNRR": {
+    "v": 0
+   },
+   "prot_trafic|Novapolis": {
+    "v": 1
+   },
+   "prot_trafic|Association Malva": {
+    "v": 0
+   },
+   "prot_trafic|EDNAE": {
+    "v": 0
+   },
+   "prot_trafic|MIC Brasov": {
     "v": 0
    },
    "liv_tvet|Help Ukrainians": {
@@ -813,41 +745,23 @@ var MATRICI = {
    "liv_tvet|MIC Brasov": {
     "v": 0
    },
-   "prot_trafic|Help Ukrainians": {
+   "prot_copii|Help Ukrainians": {
     "v": 0
    },
-   "prot_trafic|CNRR": {
-    "v": 0
-   },
-   "prot_trafic|Novapolis": {
+   "prot_copii|CNRR": {
     "v": 1
    },
-   "prot_trafic|Association Malva": {
+   "prot_copii|Novapolis": {
     "v": 0
    },
-   "prot_trafic|EDNAE": {
+   "prot_copii|Association Malva": {
     "v": 0
    },
-   "prot_trafic|MIC Brasov": {
+   "prot_copii|EDNAE": {
     "v": 0
    },
-   "baz_cash|Help Ukrainians": {
+   "prot_copii|MIC Brasov": {
     "v": 0
-   },
-   "baz_cash|CNRR": {
-    "v": 0
-   },
-   "baz_cash|Novapolis": {
-    "v": 0
-   },
-   "baz_cash|Association Malva": {
-    "v": 0
-   },
-   "baz_cash|EDNAE": {
-    "v": 0
-   },
-   "baz_cash|MIC Brasov": {
-    "v": 1
    }
   }
  },
@@ -923,31 +837,31 @@ var MATRICI = {
     "v": 18
    },
    "fara_cod|2023": {
-    "v": 16
+    "v": 19
    },
    "fara_cod|2024": {
-    "v": 8
+    "v": 11
    },
    "fara_cod|2025": {
-    "v": 7
+    "v": 9
    },
    "fara_cod|2026": {
-    "v": 10
+    "v": 15
    },
    "fara_cod|Help Ukrainians": {
-    "v": 13
-   },
-   "fara_cod|CNRR": {
     "v": 16
    },
+   "fara_cod|CNRR": {
+    "v": 18
+   },
    "fara_cod|Novapolis": {
-    "v": 20
+    "v": 21
    },
    "fara_cod|Association Malva": {
-    "v": 1
+    "v": 5
    },
    "fara_cod|EDNAE": {
-    "v": 5
+    "v": 8
    },
    "fara_cod|MIC Brasov": {
     "v": 4
