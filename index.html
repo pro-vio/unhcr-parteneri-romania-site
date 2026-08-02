@@ -878,39 +878,42 @@
 <div class="subpanel" role="tabpanel" id="sp-cod" aria-labelledby="st-cod">
 <!-- CODEBOOK-START -->
   <h2>Codebook</h2>
-  <p>Etichetele pe care le primește o postare, cu definițiile lor. Cum se aplică — în ce ordine, cine decide, ce se verifică — e în subtabul <strong>Diagramă proces</strong>. Regula generală: se etichetează doar ce spune textul postării; ce nu e spus rămâne neetichetat.</p>
+  <p>Codarea pune <strong>coduri</strong> pe text, iar codurile vin în <strong>seturi</strong>: un set stă pe o singură axă și își are lista lui de coduri. Tabelele de mai jos sunt inventarul — ce seturi există, ce coduri conțin, peste ce se pun. Ordinea în care se aplică e în subtabul <strong>Diagramă proces</strong>.</p>
 
   <div class="sec">
-    <h3>Ce se etichetează la fiecare postare</h3>
-    <p>Codarea are două treceri. La prima trec toate postările lotului și primesc șapte
-      etichete; a doua trecere e doar pentru postările care au trecut filtrul, și adaugă
-      patru.</p>
+    <h3>Seturile de coduri</h3>
+    <p>Codarea se face în două etape. La <strong>codarea de filtru</strong> trec toate
+      postările lotului; <strong>codarea integrală</strong> e doar pentru cele care au trecut
+      filtrul.</p>
+    <p>Unele seturi se pun pe postarea întreagă, altele peste formularea din text care numește
+      persoane — „femei din Ucraina”, „beneficiarii noștri”, „muncitorii nepalezi” —, iar
+      formularea e ancora <strong>mențiunii</strong>. Numele intră în mențiune atunci când
+      textul îl dă. Statutul de refugiat se calculează după codare, din proveniență și din
+      statutul codat.</p>
 
-    <h4>Prima trecere — toate postările</h4>
+    <h4>Codarea de filtru — toate postările lotului</h4>
     <div class="tw">
       <table>
-        <thead><tr><th scope="col">Set</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
+        <thead><tr><th scope="col">Set</th><th scope="col">Coduri</th><th scope="col">Instrucțiune</th></tr></thead>
         <tbody>
-          <tr><td><strong>Protagoniștii</strong></td><td>Cine <em>face</em> activitatea: organizatori, voluntari, formatori, artiști. Se rețin pe nume, așa cum apare în text. Simpla participare rămâne în afară, iar cine face activitatea fără să fie numit se deduce după aceea, din tipul organizației.</td><td rowspan="3">Listă de intrări. Fiecare intrare primește proveniența și marcajele de mai jos.</td></tr>
-          <tr><td><strong>Beneficiarii direcți</strong></td><td>Cui i se adresează activitatea, ca <em>categorie</em> de oameni — chiar dacă textul dă un nume: „Olena, sosită în martie" intră ca familie ucraineană, nu ca persoană.</td></tr>
-          <tr><td><strong>Beneficiarii indirecți</strong></td><td>Beneficiarul final, când textul îl numește: cursul pentru profesorii care lucrează cu copii ucraineni îi are pe copii aici. Codorul scrie ce spune textul despre ei, la fel ca la ceilalți; dacă sunt refugiați se calculează după aceea.</td></tr>
-          <tr><td><strong>Proveniența</strong></td><td>De unde vin oamenii dintr-o intrare, așa cum o dă textul. Se scrie la fiecare intrare din cele trei seturi de mai sus.</td><td><strong>țara</strong>, cum apare în text — „Ucraina", „Siria", „Nepal"; <strong>localitatea</strong>, când textul dă un oraș sau un județ în locul țării — „din județul Tulcea"; <strong>nemenționat</strong>, când textul numește oamenii fără să spună de unde sunt. Se scrie ce dă textul: rezolvarea la țară o face un pas de după codare, iar un nume de loc care există în două țări rămâne nerezolvat.</td></tr>
-          <tr><td><strong>Marcajele</strong></td><td>Ce afirmă textul explicit despre oamenii dintr-o intrare. Tot la fiecare intrare, alături de proveniență.</td><td><strong>refugiat</strong> — textul spune despre acei oameni că sunt refugiați, solicitanți de azil sau beneficiari de protecție; <strong>venit pentru muncă</strong> — textul arată venirea în România ca să lucreze: aviz de angajare, recrutare din străinătate. Lista poate fi goală. Venirea pentru muncă cere chiar venirea: refugiatul angajat după ce a ajuns aici a venit pe altă cale.</td></tr>
-          <tr><td><strong>Sprijinul pentru Ucraina</strong></td><td>Activitate sau apel îndreptat material spre Ucraina ori spre ucrainenii aflați acolo: colecte, transporturi, echipamente. Altceva decât simbolismul — acesta e ajutor, acela e identificare.</td><td><strong>da</strong> — postarea arată o colectă, un transport, un echipament trimis sau un apel de fonduri pentru Ucraina; <strong>nu</strong> — orice altceva. Fiecare postare primește una dintre cele două.</td></tr>
-          <tr><td><strong>Tipul de activitate</strong></td><td>Ce face concret organizația în postare. Se etichetează la prima trecere, fiindcă pasul care hotărăște relevanța are nevoie de el.</td><td>Zero, unul sau mai multe dintre cele 23 de coduri de mai jos. Zero e o valoare: postarea care numește doar o urare, o aniversare sau o poziție publică rămâne fără cod, iar proporția acestor postări se raportează.</td></tr>
+          <tr><td><strong>rol</strong></td><td>protagonist · beneficiar direct · beneficiar indirect</td><td>Se codează peste textul care numește persoane. Un cod per mențiune: aceiași oameni în două roluri dau două mențiuni. Rolul se citește din ce arată textul că fac sau că primesc oamenii.</td></tr>
+          <tr><td><strong>proveniență</strong></td><td>țara, cum apare în text · localitatea, cum apare în text · nemenționat</td><td>Se codează peste textul care numește persoane. Un cod per mențiune, scris in vivo: rezolvarea la țară o face un pas de după codare. Setul poartă numai proveniență.</td></tr>
+          <tr><td><strong>statut codat</strong></td><td>refugiat afirmat · lucrător extracomunitar afirmat</td><td>Se codează peste textul care numește persoane. Zero, una sau amândouă, fiecare cu ancora ei: ce afirmă textul explicit despre acei oameni, dincolo de locul din care vin.</td></tr>
+          <tr><td><strong>suport Ucraina</strong></td><td>da · nu</td><td>Se codează pe postarea întreagă. Un cod: sprijin material îndreptat spre Ucraina ori spre ucrainenii aflați acolo.</td></tr>
+          <tr><td><strong>tip de activitate</strong></td><td>cele 23 de coduri din tabelul de mai jos</td><td>Se codează peste textul care numește o activitate. Zero, una sau mai multe: se codează serviciul numit în postare.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h4>A doua trecere — postările care au trecut filtrul</h4>
+    <h4>Codarea integrală — postările care au trecut filtrul</h4>
     <div class="tw">
       <table>
-        <thead><tr><th scope="col">Set</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
+        <thead><tr><th scope="col">Set</th><th scope="col">Coduri</th><th scope="col">Instrucțiune</th></tr></thead>
         <tbody>
-          <tr><td><strong>Tipul postării</strong></td><td>Ce face postarea, ca act de comunicare: cere resurse, relatează ce s-a făcut, anunță ce urmează, sau livrează ea însăși serviciul (o postare de informare <em>este</em> informarea).</td><td><strong>mobilizare de resurse</strong> — postarea cere bani, bunuri sau voluntari; <strong>raport</strong> — spune ce s-a făcut; <strong>anunț</strong> — spune ce urmează; <strong>livrare</strong> — postarea <em>este</em> serviciul. O postare poate purta mai multe deodată. Ce iese din cele patru se scrie cu cuvintele codorului și se grupează după prima rulare.</td></tr>
-          <tr><td><strong>Simbolismul ucrainean</strong></td><td>Dacă postarea conține un act expresiv de identificare cu cauza națională: sloganuri (Slava Ukraini!), steagul folosit expresiv, povești de pe front sau de reziliență legate de rezistența la agresiunea rusă — exemple, listă deschisă.</td><td><strong>da</strong> — postarea conține un asemenea act; <strong>nu</strong> — restul. Steagul din logo și cel pus ca marcaj de limbă rămân în afară: ele spun în ce limbă e scrisă postarea.</td></tr>
-          <tr><td><strong>Partenerii</strong></td><td>Cine primește un rol în activitate, direct („împreună cu…") sau implicit (subvenția prin lege). Se reține <em>numele</em>, așa cum apare în text; ce fel de actor e se stabilește separat, în tezaur. Tag-urile fără o frază de colaborare rămân în afară.</td><td>Numele actorilor, scrise cum apar în text. Lista goală înseamnă că postarea vorbește doar despre organizația ei — o observație despre postare, la fel ca oricare alta.</td></tr>
-          <tr><td><strong>Finanțatorii</strong></td><td>Cine plătește, atunci când postarea o spune explicit, lângă numele actorului. Finanțatorul apare și la parteneri: a da bani e un rol.</td><td>Numele actorilor, la fel ca la parteneri. <strong>Donator anonim</strong> acolo unde postarea spune că cineva a dat bani fără să spună cine — „cineva ne-a adus 5000 de lei"; toate intrările anonime se strâng într-o singură entitate, fiindcă întrebarea la care răspund e cât din sprijin vine din susținere difuză. Lista goală înseamnă că postarea vorbește despre activitate fără să spună cine o plătește.</td></tr>
+          <tr><td><strong>tip de postare</strong></td><td>mobilizare de resurse · raport · anunț · livrare · in vivo, pentru ce nu încape</td><td>Se codează pe postarea întreagă. Zero, una sau mai multe: ce face postarea ca act de comunicare.</td></tr>
+          <tr><td><strong>simbolism ucrainean</strong></td><td>da · nu</td><td>Se codează pe postarea întreagă. Un cod: act expresiv de identificare cu cauza națională ucraineană, cu ancoră la <em>da</em>.</td></tr>
+          <tr><td><strong>parteneri</strong></td><td>numele actorilor, cum apar în text</td><td>Se codează peste textul care dă unui actor un <strong>rol în activitate</strong>: colaborare afirmată, co-organizare, găzduire, implementare comună, ori rol instituțional purtat de o formulă recurentă. Tag-ul sau @mențiunea fără frază de colaborare rămâne în afară, la fel organizația care publică postarea. Zero, unul sau mai mulți, in vivo: se reține numele; felul actorului se stabilește în tezaur.</td></tr>
+          <tr><td><strong>finanțatori</strong></td><td>numele actorilor, cum apar în text · donator anonim</td><td>Se codează peste textul care afirmă <strong>bani în relație directă cu numele actorului</strong>. Finanțatorul numit se codează și la parteneri: a da bani e un rol. „Cineva ne-a adus 5000 de lei” dă un donator anonim; o mulțumire generală, fără act și fără actor, lasă setul gol.</td></tr>
         </tbody>
       </table>
     </div>
@@ -918,16 +921,37 @@
     <h4>Din extragere, la toate postările</h4>
     <div class="tw">
       <table>
-        <thead><tr><th scope="col">Set</th><th scope="col">Ce înseamnă</th><th scope="col">Valori</th></tr></thead>
+        <thead><tr><th scope="col">Set</th><th scope="col">Coduri</th><th scope="col">Instrucțiune</th></tr></thead>
         <tbody>
-          <tr><td><strong>Engagement</strong></td><td>Reacțiile publicului la postare. Se preiau din extragere, la fel pentru toate postările lotului.</td><td>Reacții, distribuiri, comentarii — numere luate din extragere, la data ei. O postare veche a avut mai multe zile la dispoziție decât una recentă, deci comparația între postări se face ținând cont de câte zile a avut fiecare.</td></tr>
+          <tr><td><strong>engagement</strong></td><td>reacții · distribuiri · comentarii</td><td>Numerele vin din extragere, la data ei, la fel pentru toate postările lotului.</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <div class="sec">
-    <h3>Codurile de activitate</h3>
+    <h3>Clasa pusă la filtrare</h3>
+    <p>Între cele două etape de codare, un pas determinist pune pe fiecare postare clasa ei,
+      câte una pentru fiecare cale de intrare. Clasa se calculează din codurile deja puse,
+      niciun codor nu o scrie, și rămâne pe postare până la analiză, ca orice cifră să se
+      poată citi pe clasă. O postare poate purta mai multe: cele care intră pe text se
+      suprapun, iar intersecția lor se raportează.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Clasa</th><th scope="col">Cod</th><th scope="col">Când o primește postarea</th></tr></thead>
+        <tbody>
+          <tr><td><strong>activități pentru refugiați</strong></td><td><code>refugiati</code></td><td>postarea numește refugiați ca protagoniști ori ca beneficiari</td></tr>
+          <tr><td><strong>lucrători extracomunitari</strong></td><td><code>lucratori_extracomunitari</code></td><td>postarea numește lucrători veniți din afara Uniunii Europene; temă adiacentă, cu clasă proprie, ca miezul să se poată citi și fără ea</td></tr>
+          <tr><td><strong>beneficiari fără identificare în text</strong></td><td><code>beneficiari_fara_identificare</code></td><td>postarea numește beneficiari fără să spună cine sunt, la o organizație din rețea; clasa stă pe o prezumție, de aceea e ținută separat</td></tr>
+          <tr><td><strong>suport pentru Ucraina</strong></td><td><code>suport_ucraina</code></td><td>postarea arată sprijin material îndreptat spre Ucraina ori spre ucrainenii aflați acolo</td></tr>
+          <tr><td><strong>alte activități</strong></td><td><code>alte_activitati</code></td><td>restul postărilor lotului; se numără și se opresc aici</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Codurile setului „tip de activitate”</h3>
     <div class="tw">
       <table>
         <caption>23 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. Ultimul nu are sector acolo — despre el, în tabul Activități.</caption>
@@ -961,13 +985,13 @@
     </div>
     <div class="note">
       <strong>Fiecare cod spune un singur lucru.</strong>
-      Un cod nu combină niciodată două proprietăți — de pildă activitatea cu cine participă la ea, sau serviciul cu felul în care e comunicat. Combinațiile se obțin la analiză, numărând codurile care apar împreună: un atelier despre traficul de persoane primește codul de formare <em>și</em> codul tematic, fiecare cu fragmentul lui din text.
+      Un cod poartă o singură proprietate: activitatea stă separat de cine participă la ea, iar serviciul, separat de felul în care e comunicat. Combinațiile se obțin la analiză, numărând codurile care apar împreună: un atelier despre traficul de persoane primește codul de formare <em>și</em> codul tematic, fiecare cu fragmentul lui din text.
     </div>
   </div>
 
   <div class="sec">
     <h3>Corespondența pe activități</h3>
-    <p>Codurile noastre nu sunt o taxonomie proprie: fiecare e ancorat fie în sectorul din planul regional al UNHCR, fie în categoriile de activitate ale literaturii despre organizațiile conduse de refugiați (Pincock, Betts &amp; Easton-Calabria, 2021), fie în categoriile folosite de teza pe care o replicăm. Tabelul arată exact ce de unde vine — și unde nu există corespondent.</p>
+    <p>Fiecare cod e ancorat fie în sectorul din planul regional al UNHCR, fie în categoriile de activitate ale literaturii despre organizațiile conduse de refugiați (Pincock, Betts &amp; Easton-Calabria, 2021), fie în categoriile folosite de teza pe care o replicăm. Tabelul arată ce de unde vine, și unde lipsește corespondentul.</p>
     <div class="tw">
       <table>
         <thead><tr><th scope="col">Cod</th><th scope="col">Sector UNHCR</th><th scope="col">Pincock et al. (2021)</th><th scope="col">Categoria din teză</th></tr></thead>
@@ -1000,7 +1024,7 @@
     </div>
     <div class="note">
       <strong>Ce nu se vede în tabel.</strong>
-      Coeziunea socială — evenimentul la care participă și comunitatea locală — are indicator la UNHCR, dar nu are cod la noi: se obține din grupul țintă, când localnicii apar alături de refugiați. Mobilizarea de resurse are categorie în teză, dar nu e sector la UNHCR și nu e activitate: e felul postării. Sportul și activitățile pentru tineri, categorii la Pincock, cad în reziduu — partea de activitate pe care taxonomia de finanțare nu o vede.
+      Coeziunea socială — evenimentul la care participă și comunitatea locală — are indicator la UNHCR, iar la noi se obține din mențiunile de oameni ale postării, când localnicii apar alături de refugiați. Mobilizarea de resurse are categorie în teză, iar la noi e felul postării. Sportul și activitățile pentru tineri, categorii la Pincock, cad în reziduu — partea de activitate pe care taxonomia de finanțare nu o vede.
     </div>
   </div>
 <!-- CODEBOOK-END -->
@@ -1008,196 +1032,180 @@
 <div class="subpanel" role="tabpanel" id="sp-codare" aria-labelledby="st-codare">
 <!-- CODARE-START -->
   <h2>Diagramă proces</h2>
-  <p>Codebook-ul nu se aplică dintr-o singură trecere. Întâi se etichetează <strong>cine e prezent</strong> în activitatea comunicată; abia acele postări care privesc refugiații sau sprijinul pentru Ucraina primesc restul etichetelor. Diagrama de mai jos arată drumul complet al unei postări, de la corpus la rezultate.</p>
+  <p>Codarea se face în două etape. La <strong>codarea de filtru</strong> se codează cine e prezent în activitatea comunicată; abia postările care privesc refugiații sau sprijinul pentru Ucraina ajung la <strong>codarea integrală</strong>, care adaugă restul codurilor. Diagrama de mai jos arată drumul complet al unei postări, de la corpus la rezultate.</p>
 
   <div class="sec">
     <h3>Fluxul complet, de la corpus la rezultate</h3>
     <div class="flux">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1088" width="100%" role="img" aria-label="Diagrama de proces a codării">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1124" width="100%" role="img" aria-label="Diagrama de proces a codării">
 <defs><marker id="v" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-faint)"/></marker></defs>
 <style>text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)} .t{font-size:7.4px} .m{font-size:6.4px;fill:var(--ink-2)}</style>
-<rect x="164.0" y="13.0" width="352.0" height="181.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
+<rect x="164.0" y="13.0" width="352.0" height="165.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
 <text class="m" x="168.0" y="22.0">înaintea rulării — calibrarea umană</text>
-<rect x="164.0" y="267.0" width="352.0" height="123.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
-<text class="m" x="168.0" y="276.0">etapa 1 — codarea de filtru</text>
-<rect x="164.0" y="707.0" width="352.0" height="41.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
-<text class="m" x="168.0" y="716.0">etapa 4 — codarea integrală</text>
-<path d="M 340.0 58.0 L 340.0 89.0 L 340.0 89.0 L 340.0 94.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 116.0 L 340.0 151.0 L 340.0 151.0 L 340.0 156.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 188.0 L 340.0 213.0 L 340.0 213.0 L 340.0 218.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 250.0 L 340.0 275.0 L 224.7 275.0 L 224.7 280.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 224.7 322.0 L 224.7 337.0 L 383.2 337.0 L 383.2 342.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 312.0 L 340.0 337.0 L 383.2 337.0 L 383.2 342.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 455.3 322.0 L 455.3 337.0 L 383.2 337.0 L 383.2 342.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 383.2 384.0 L 383.2 337.0 L 469.8 337.0 L 469.8 342.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 383.2 384.0 L 383.2 467.0 L 340.0 467.0 L 340.0 472.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 504.0 L 340.0 529.0 L 340.0 529.0 L 340.0 534.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 566.0 L 340.0 591.0 L 340.0 591.0 L 340.0 596.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 628.0 L 340.0 653.0 L 210.2 653.0 L 210.2 658.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 628.0 L 340.0 653.0 L 296.8 653.0 L 296.8 658.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 628.0 L 340.0 653.0 L 383.2 653.0 L 383.2 658.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 340.0 628.0 L 340.0 653.0 L 469.8 653.0 L 469.8 658.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 210.2 690.0 L 210.2 715.0 L 210.2 715.0 L 210.2 720.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 296.8 680.0 L 296.8 715.0 L 210.2 715.0 L 210.2 720.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 383.2 690.0 L 383.2 715.0 L 210.2 715.0 L 210.2 720.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 469.8 690.0 L 469.8 715.0 L 210.2 715.0 L 210.2 720.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 210.2 742.0 L 210.2 777.0 L 340.0 777.0 L 340.0 782.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 170.0 301.0 L 159.0 301.0 L 159.0 301.0 L 158.0 301.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 83.0 322.0 L 83.0 337.0 L 83.0 337.0 L 83.0 342.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 83.0 394.0 L 83.0 405.0 L 83.0 405.0 L 83.0 410.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 343.0 731.0 L 250.5 731.0 L 250.5 665.7 L 158.0 665.7" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 83.0 680.0 L 83.0 715.0 L 83.0 715.0 L 83.0 720.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 83.0 752.0 L 83.0 777.0 L 83.0 777.0 L 83.0 782.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 83.0 824.0 L 83.0 839.0 L 83.0 839.0 L 83.0 844.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
-<path d="M 289.0 566.0 L 289.0 912.0 L 52.9 912.0 L 52.9 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 340.0 566.0 L 340.0 908.0 L 148.6 908.0 L 148.6 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 391.0 566.0 L 391.0 904.0 L 244.3 904.0 L 244.3 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 510.0 612.0 L 516.0 612.0 L 516.0 669.2 L 522.0 669.2" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 340.0 628.0 L 340.0 916.0 L 340.0 916.0 L 340.0 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 306.0 814.0 L 306.0 924.0 L 435.7 924.0 L 435.7 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 374.0 814.0 L 374.0 920.0 L 531.4 920.0 L 531.4 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 83.0 452.0 L 83.0 920.0 L 244.3 920.0 L 244.3 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
-<path d="M 83.0 886.0 L 83.0 924.0 L 531.4 924.0 L 531.4 932.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<rect x="164.0" y="243.0" width="352.0" height="103.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
+<text class="m" x="168.0" y="252.0">etapa 1 — codarea de filtru</text>
+<rect x="164.0" y="731.0" width="352.0" height="41.0" rx="3" fill="none" stroke="var(--ink-faint)" stroke-width="0.7" stroke-dasharray="3 2"/>
+<text class="m" x="168.0" y="740.0">etapa 4 — codarea integrală</text>
+<path d="M 340.0 58.0 L 340.0 81.0 L 340.0 81.0 L 340.0 86.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 108.0 L 340.0 135.0 L 340.0 135.0 L 340.0 140.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 172.0 L 340.0 189.0 L 340.0 189.0 L 340.0 194.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 226.0 L 340.0 251.0 L 224.7 251.0 L 224.7 256.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 224.7 278.0 L 224.7 251.0 L 340.0 251.0 L 340.0 256.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 278.0 L 340.0 251.0 L 455.3 251.0 L 455.3 256.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 278.0 L 340.0 443.0 L 340.0 443.0 L 340.0 448.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 480.0 L 340.0 517.0 L 340.0 517.0 L 340.0 522.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 554.0 L 340.0 591.0 L 340.0 591.0 L 340.0 596.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 210.2 766.0 L 210.2 813.0 L 340.0 813.0 L 340.0 818.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 170.0 267.0 L 159.0 267.0 L 159.0 277.0 L 158.0 277.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 83.0 298.0 L 83.0 313.0 L 83.0 313.0 L 83.0 318.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 83.0 370.0 L 83.0 381.0 L 83.0 381.0 L 83.0 386.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 343.0 755.0 L 250.5 755.0 L 250.5 677.7 L 158.0 677.7" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 83.0 692.0 L 83.0 739.0 L 83.0 739.0 L 83.0 744.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 83.0 776.0 L 83.0 813.0 L 83.0 813.0 L 83.0 818.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 83.0 860.0 L 83.0 875.0 L 83.0 875.0 L 83.0 880.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 510.0 534.8 L 512.0 534.8 L 512.0 948.0 L 52.9 948.0 L 52.9 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 510.0 538.0 L 514.5 538.0 L 514.5 944.0 L 148.6 944.0 L 148.6 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 510.0 541.2 L 517.0 541.2 L 517.0 940.0 L 244.3 940.0 L 244.3 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 510.0 612.0 L 517.0 612.0 L 517.0 952.0 L 340.0 952.0 L 340.0 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 306.0 850.0 L 306.0 960.0 L 435.7 960.0 L 435.7 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 374.0 850.0 L 374.0 956.0 L 531.4 956.0 L 531.4 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 8.0 407.0 L 4.0 407.0 L 4.0 956.0 L 244.3 956.0 L 244.3 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 8.0 901.0 L 4.0 901.0 L 4.0 960.0 L 531.4 960.0 L 531.4 968.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
+<path d="M 340.0 628.0 L 340.0 665.0 L 210.2 665.0 L 210.2 670.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 210.2 702.0 L 210.2 739.0 L 210.2 739.0 L 210.2 744.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 628.0 L 340.0 665.0 L 296.8 665.0 L 296.8 670.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 296.8 702.0 L 296.8 739.0 L 210.2 739.0 L 210.2 744.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 628.0 L 340.0 665.0 L 383.2 665.0 L 383.2 670.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 383.2 702.0 L 383.2 739.0 L 210.2 739.0 L 210.2 744.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 340.0 628.0 L 340.0 665.0 L 469.8 665.0 L 469.8 670.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 469.8 702.0 L 469.8 739.0 L 210.2 739.0 L 210.2 744.0" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" />
+<path d="M 510.0 612.0 L 516.0 612.0 L 516.0 681.2 L 522.0 681.2" fill="none" stroke="var(--ink-faint)" stroke-width="0.9" marker-end="url(#v)" stroke-dasharray="2 2"/>
 <rect x="170.0" y="26.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
 <text class="t" x="340.0" y="40.0" text-anchor="middle">C0 — codarea de dezvoltare</text>
 <text class="m" x="340.0" y="50.0" text-anchor="middle">om + agenți, 60 de postări din lunile necodate</text>
-<rect x="170.0" y="94.0" width="340.0" height="22.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="108.0" text-anchor="middle">v5.3 — codebook amendat o dată și înghețat</text>
-<rect x="170.0" y="156.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="170.0" text-anchor="middle">C1 — calibrarea</text>
-<text class="m" x="340.0" y="180.0" text-anchor="middle">om orb, agenții recodează; dă pragurile și santinelele</text>
-<rect x="170.0" y="218.0" width="340.0" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="232.0" text-anchor="middle">corpusul de codat</text>
-<text class="m" x="340.0" y="242.0" text-anchor="middle">din prima zi a invaziei până la data exportului</text>
-<rect x="170.0" y="280.0" width="109.3" height="42.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="224.7" y="294.0" text-anchor="middle">protagonisti</text>
-<text class="m" x="224.7" y="304.0" text-anchor="middle">cine face activitatea ·</text>
-<text class="m" x="224.7" y="314.0" text-anchor="middle">persoana</text>
-<rect x="285.3" y="280.0" width="109.3" height="32.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="294.0" text-anchor="middle">beneficiari_directi</text>
-<text class="m" x="340.0" y="304.0" text-anchor="middle">cui i se face · categoria</text>
-<rect x="400.7" y="280.0" width="109.3" height="42.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="455.3" y="294.0" text-anchor="middle">beneficiari_indirecti</text>
-<text class="m" x="455.3" y="304.0" text-anchor="middle">beneficiarul final, când e</text>
-<text class="m" x="455.3" y="314.0" text-anchor="middle">numit</text>
-<rect x="170.0" y="342.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="210.2" y="356.0" text-anchor="middle">suport_ucraina</text>
-<rect x="256.5" y="342.0" width="80.5" height="32.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="296.8" y="356.0" text-anchor="middle">tip_activitate — 23</text>
-<text class="m" x="296.8" y="366.0" text-anchor="middle">de coduri</text>
-<rect x="343.0" y="342.0" width="80.5" height="42.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="383.2" y="356.0" text-anchor="middle">provenienta</text>
-<text class="m" x="383.2" y="366.0" text-anchor="middle">țara · locul ·</text>
-<text class="m" x="383.2" y="376.0" text-anchor="middle">nemenționat</text>
-<rect x="429.5" y="342.0" width="80.5" height="42.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="469.8" y="356.0" text-anchor="middle">marcaje</text>
-<text class="m" x="469.8" y="366.0" text-anchor="middle">refugiat_afirmat ·</text>
-<text class="m" x="469.8" y="376.0" text-anchor="middle">venit_pentru_munca</text>
-<rect x="170.0" y="472.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="486.0" text-anchor="middle">filtrul de convergență între codorii AI (etapa 2)</text>
-<text class="m" x="340.0" y="496.0" text-anchor="middle">pe cele șapte seturi · A=B intră · A≠B → al treilea codor, 2 din 3</text>
-<rect x="170.0" y="534.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-filtru-bg)" stroke="var(--dg-filtru)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="548.0" text-anchor="middle">atribuirea deterministă (etapa 2b)</text>
-<text class="m" x="340.0" y="558.0" text-anchor="middle">statutul, protagonismul, locul, clasa beneficiarilor fără identificare</text>
+<rect x="170.0" y="86.0" width="340.0" height="22.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="100.0" text-anchor="middle">v5.4 — codebook amendat o dată și înghețat</text>
+<rect x="170.0" y="140.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="154.0" text-anchor="middle">C1 — calibrarea</text>
+<text class="m" x="340.0" y="164.0" text-anchor="middle">om orb, agenții recodează; dă pragurile și santinelele</text>
+<rect x="170.0" y="194.0" width="340.0" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="208.0" text-anchor="middle">corpusul de codat</text>
+<text class="m" x="340.0" y="218.0" text-anchor="middle">din prima zi a invaziei până la data exportului</text>
+<rect x="170.0" y="256.0" width="109.3" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="224.7" y="270.0" text-anchor="middle">rol</text>
+<rect x="285.3" y="256.0" width="109.3" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="270.0" text-anchor="middle">proveniență</text>
+<rect x="400.7" y="256.0" width="109.3" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="455.3" y="270.0" text-anchor="middle">statut codat</text>
+<rect x="170.0" y="318.0" width="167.0" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="253.5" y="332.0" text-anchor="middle">suport Ucraina</text>
+<rect x="343.0" y="318.0" width="167.0" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="426.5" y="332.0" text-anchor="middle">tip de activitate</text>
+<rect x="170.0" y="448.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="462.0" text-anchor="middle">filtrul de convergență între codorii AI (etapa 2)</text>
+<text class="m" x="340.0" y="472.0" text-anchor="middle">pe seturile etapei · A=B intră · A≠B → al treilea codor, 2 din 3</text>
+<rect x="170.0" y="522.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-filtru-bg)" stroke="var(--dg-filtru)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="536.0" text-anchor="middle">atribuirea deterministă (etapa 2b)</text>
+<text class="m" x="340.0" y="546.0" text-anchor="middle">statutul, protagonismul, locul, clasa beneficiarilor fără identificare</text>
 <rect x="170.0" y="596.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-filtru-bg)" stroke="var(--dg-filtru)" stroke-width="0.8"/>
 <text class="t" x="340.0" y="610.0" text-anchor="middle">filtrul de relevanță (etapa 3)</text>
 <text class="m" x="340.0" y="620.0" text-anchor="middle">pe valorile atribuite</text>
-<rect x="170.0" y="658.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="210.2" y="672.0" text-anchor="middle">activități pentru</text>
-<text class="m" x="210.2" y="682.0" text-anchor="middle">refugiați</text>
-<rect x="256.5" y="658.0" width="80.5" height="22.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="296.8" y="672.0" text-anchor="middle">sprijin spre Ucraina</text>
-<rect x="343.0" y="658.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="383.2" y="672.0" text-anchor="middle">lucrători</text>
-<text class="m" x="383.2" y="682.0" text-anchor="middle">extracomunitari</text>
-<rect x="429.5" y="658.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="t" x="469.8" y="672.0" text-anchor="middle">beneficiari fără</text>
-<text class="m" x="469.8" y="682.0" text-anchor="middle">identificare</text>
-<rect x="170.0" y="720.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="210.2" y="734.0" text-anchor="middle">tip_postare</text>
-<rect x="256.5" y="720.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="296.8" y="734.0" text-anchor="middle">simbolism_ukr</text>
-<rect x="343.0" y="720.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="383.2" y="734.0" text-anchor="middle">parteneri</text>
-<rect x="429.5" y="720.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="t" x="469.8" y="734.0" text-anchor="middle">finantatori</text>
-<rect x="170.0" y="782.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="796.0" text-anchor="middle">filtrul de convergență între codorii AI (etapa 5)</text>
-<text class="m" x="340.0" y="806.0" text-anchor="middle">pe cele patru seturi · aceeași regulă</text>
-<rect x="8.0" y="280.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="294.0" text-anchor="middle">T1a — cheia normalizată</text>
-<text class="m" x="83.0" y="304.0" text-anchor="middle">transliterare, normalizare, plierea</text>
-<text class="m" x="83.0" y="314.0" text-anchor="middle">grafemelor</text>
-<rect x="8.0" y="342.0" width="150.0" height="52.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="356.0" text-anchor="middle">T1b — regula de dezambiguare</text>
-<text class="m" x="83.0" y="366.0" text-anchor="middle">forma scurtă merge la cea completă</text>
-<text class="m" x="83.0" y="376.0" text-anchor="middle">doar dacă</text>
-<text class="m" x="83.0" y="386.0" text-anchor="middle">nimeni altcineva nu poartă prenumele</text>
-<rect x="8.0" y="410.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="424.0" text-anchor="middle">T1c — deciziile de autor</text>
-<text class="m" x="83.0" y="434.0" text-anchor="middle">uniri confirmate · pseudonime</text>
-<text class="m" x="83.0" y="444.0" text-anchor="middle">declarate</text>
-<rect x="8.0" y="658.0" width="150.0" height="22.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="672.0" text-anchor="middle">T2a — cheia normalizată</text>
-<rect x="8.0" y="720.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="734.0" text-anchor="middle">T2b — registrul de actori</text>
-<text class="m" x="83.0" y="744.0" text-anchor="middle">fapte de pe disc</text>
-<rect x="8.0" y="782.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="796.0" text-anchor="middle">T2c — regula de dezambiguare</text>
-<text class="m" x="83.0" y="806.0" text-anchor="middle">conjuncția cu orașul · o denumire</text>
-<text class="m" x="83.0" y="816.0" text-anchor="middle">cuprinsă în alta</text>
-<rect x="8.0" y="844.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
-<text class="t" x="83.0" y="858.0" text-anchor="middle">T2d — dezambiguarea finală</text>
-<text class="m" x="83.0" y="868.0" text-anchor="middle">coordonatorul, pe ce n-au unit</text>
-<text class="m" x="83.0" y="878.0" text-anchor="middle">regulile</text>
-<rect x="8.0" y="932.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="52.9" y="946.0" text-anchor="middle">heatmap tipuri de</text>
-<text class="m" x="52.9" y="956.0" text-anchor="middle">activități</text>
-<text class="m" x="52.9" y="966.0" text-anchor="middle">din tip_activitate</text>
-<rect x="103.7" y="932.0" width="89.7" height="52.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="148.6" y="946.0" text-anchor="middle">coeziune</text>
-<text class="m" x="148.6" y="956.0" text-anchor="middle">din</text>
-<text class="m" x="148.6" y="966.0" text-anchor="middle">beneficiari_directi, în</text>
-<text class="m" x="148.6" y="976.0" text-anchor="middle">aceeași postare</text>
-<rect x="199.4" y="932.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="244.3" y="946.0" text-anchor="middle">implicare ref</text>
-<text class="m" x="244.3" y="956.0" text-anchor="middle">din protagonisti, cu</text>
-<text class="m" x="244.3" y="966.0" text-anchor="middle">statut de refugiat</text>
-<rect x="295.1" y="932.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="340.0" y="946.0" text-anchor="middle">distribuția pe clase</text>
-<text class="m" x="340.0" y="956.0" text-anchor="middle">număr de postări și</text>
-<text class="m" x="340.0" y="966.0" text-anchor="middle">răspunsul publicului</text>
-<rect x="390.9" y="932.0" width="89.7" height="32.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="435.7" y="946.0" text-anchor="middle">simbolism UKR</text>
-<text class="m" x="435.7" y="956.0" text-anchor="middle">din simbolism_ukr</text>
-<rect x="486.6" y="932.0" width="89.7" height="52.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="531.4" y="946.0" text-anchor="middle">analiză de rețea</text>
-<text class="m" x="531.4" y="956.0" text-anchor="middle">parteneriate</text>
-<text class="m" x="531.4" y="966.0" text-anchor="middle">din parteneri, pe</text>
-<text class="m" x="531.4" y="976.0" text-anchor="middle">identitățile unificate</text>
-<rect x="582.3" y="932.0" width="89.7" height="32.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="t" x="627.1" y="946.0" text-anchor="middle">alte prelucrări — listă</text>
-<text class="m" x="627.1" y="956.0" text-anchor="middle">deschisă</text>
-<rect x="522.0" y="658.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
-<text class="t" x="597.0" y="672.0" text-anchor="middle">alte activități</text>
-<text class="m" x="597.0" y="682.0" text-anchor="middle">stop — nu se codează mai departe</text>
-<text class="m" x="8" y="1040.0">pe orizontală: procese paralele · pe verticală: cascada · linie întreruptă: alimentează un tezaur sau un rezultat</text>
-<rect x="8" y="1048.0" width="7" height="7" rx="1.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
-<text class="m" x="19" y="1054.0">corpusuri și clase</text>
-<rect x="93.4" y="1048.0" width="7" height="7" rx="1.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
-<text class="m" x="104.4" y="1054.0">derivate — se calculează, nu se codează</text>
-<rect x="248.1" y="1048.0" width="7" height="7" rx="1.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
-<text class="m" x="259.1" y="1054.0">codarea — seturi de coduri</text>
-<rect x="359.9" y="1048.0" width="7" height="7" rx="1.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
-<text class="m" x="370.9" y="1054.0">acorduri statistice între codori</text>
-<rect x="491.5" y="1048.0" width="7" height="7" rx="1.5" fill="var(--dg-filtru-bg)" stroke="var(--dg-filtru)" stroke-width="0.8"/>
-<text class="m" x="502.5" y="1054.0">filtrări deterministe</text>
-<rect x="586.8" y="1048.0" width="7" height="7" rx="1.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
-<text class="m" x="597.8" y="1054.0">intervenția umană</text>
-<rect x="8" y="1060.0" width="7" height="7" rx="1.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="m" x="19" y="1066.0">tezaure</text>
-<rect x="57.099999999999994" y="1060.0" width="7" height="7" rx="1.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
-<text class="m" x="68.1" y="1066.0">stop — se oprește aici</text>
+<rect x="170.0" y="744.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="210.2" y="758.0" text-anchor="middle">tip de postare</text>
+<rect x="256.5" y="744.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="296.8" y="758.0" text-anchor="middle">simbolism ucrainean</text>
+<rect x="343.0" y="744.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="383.2" y="758.0" text-anchor="middle">parteneri</text>
+<rect x="429.5" y="744.0" width="80.5" height="22.0" rx="2.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="t" x="469.8" y="758.0" text-anchor="middle">finanțatori</text>
+<rect x="170.0" y="818.0" width="340.0" height="32.0" rx="2.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="832.0" text-anchor="middle">filtrul de convergență între codorii AI (etapa 5)</text>
+<text class="m" x="340.0" y="842.0" text-anchor="middle">pe cele patru seturi · aceeași regulă</text>
+<rect x="8.0" y="256.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="270.0" text-anchor="middle">T1a — cheia normalizată</text>
+<text class="m" x="83.0" y="280.0" text-anchor="middle">transliterare, normalizare, plierea</text>
+<text class="m" x="83.0" y="290.0" text-anchor="middle">grafemelor</text>
+<rect x="8.0" y="318.0" width="150.0" height="52.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="332.0" text-anchor="middle">T1b — regula de dezambiguare</text>
+<text class="m" x="83.0" y="342.0" text-anchor="middle">forma scurtă merge la cea completă</text>
+<text class="m" x="83.0" y="352.0" text-anchor="middle">doar dacă</text>
+<text class="m" x="83.0" y="362.0" text-anchor="middle">nimeni altcineva nu poartă prenumele</text>
+<rect x="8.0" y="386.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="400.0" text-anchor="middle">T1c — deciziile de autor</text>
+<text class="m" x="83.0" y="410.0" text-anchor="middle">uniri confirmate · pseudonime</text>
+<text class="m" x="83.0" y="420.0" text-anchor="middle">declarate</text>
+<rect x="8.0" y="670.0" width="150.0" height="22.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="684.0" text-anchor="middle">T2a — cheia normalizată</text>
+<rect x="8.0" y="744.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="758.0" text-anchor="middle">T2b — registrul de actori</text>
+<text class="m" x="83.0" y="768.0" text-anchor="middle">fapte de pe disc</text>
+<rect x="8.0" y="818.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="832.0" text-anchor="middle">T2c — regula de dezambiguare</text>
+<text class="m" x="83.0" y="842.0" text-anchor="middle">conjuncția cu orașul · o denumire</text>
+<text class="m" x="83.0" y="852.0" text-anchor="middle">cuprinsă în alta</text>
+<rect x="8.0" y="880.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
+<text class="t" x="83.0" y="894.0" text-anchor="middle">T2d — dezambiguarea finală</text>
+<text class="m" x="83.0" y="904.0" text-anchor="middle">coordonatorul, pe ce n-au unit</text>
+<text class="m" x="83.0" y="914.0" text-anchor="middle">regulile</text>
+<rect x="8.0" y="968.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="52.9" y="982.0" text-anchor="middle">heatmap tipuri de</text>
+<text class="m" x="52.9" y="992.0" text-anchor="middle">activități</text>
+<text class="m" x="52.9" y="1002.0" text-anchor="middle">din tip_activitate</text>
+<rect x="103.7" y="968.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="148.6" y="982.0" text-anchor="middle">coeziune</text>
+<text class="m" x="148.6" y="992.0" text-anchor="middle">din mențiunile</text>
+<text class="m" x="148.6" y="1002.0" text-anchor="middle">aceleiași postări</text>
+<rect x="199.4" y="968.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="244.3" y="982.0" text-anchor="middle">implicare ref</text>
+<text class="m" x="244.3" y="992.0" text-anchor="middle">din mențiunile cu rol</text>
+<text class="m" x="244.3" y="1002.0" text-anchor="middle">de protagonist</text>
+<rect x="295.1" y="968.0" width="89.7" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="340.0" y="982.0" text-anchor="middle">distribuția pe clase</text>
+<text class="m" x="340.0" y="992.0" text-anchor="middle">număr de postări și</text>
+<text class="m" x="340.0" y="1002.0" text-anchor="middle">răspunsul publicului</text>
+<rect x="390.9" y="968.0" width="89.7" height="32.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="435.7" y="982.0" text-anchor="middle">simbolism UKR</text>
+<text class="m" x="435.7" y="992.0" text-anchor="middle">din simbolism_ukr</text>
+<rect x="486.6" y="968.0" width="89.7" height="52.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="531.4" y="982.0" text-anchor="middle">analiză de rețea</text>
+<text class="m" x="531.4" y="992.0" text-anchor="middle">parteneriate</text>
+<text class="m" x="531.4" y="1002.0" text-anchor="middle">din parteneri, pe</text>
+<text class="m" x="531.4" y="1012.0" text-anchor="middle">identitățile unificate</text>
+<rect x="582.3" y="968.0" width="89.7" height="32.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="t" x="627.1" y="982.0" text-anchor="middle">alte prelucrări — listă</text>
+<text class="m" x="627.1" y="992.0" text-anchor="middle">deschisă</text>
+<rect x="170.0" y="670.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="210.2" y="684.0" text-anchor="middle">activități pentru</text>
+<text class="m" x="210.2" y="694.0" text-anchor="middle">refugiați</text>
+<rect x="256.5" y="670.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="296.8" y="684.0" text-anchor="middle">lucrători</text>
+<text class="m" x="296.8" y="694.0" text-anchor="middle">extracomunitari</text>
+<rect x="343.0" y="670.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="383.2" y="684.0" text-anchor="middle">beneficiari fără</text>
+<text class="m" x="383.2" y="694.0" text-anchor="middle">identificare în text</text>
+<rect x="429.5" y="670.0" width="80.5" height="32.0" rx="2.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="t" x="469.8" y="684.0" text-anchor="middle">suport pentru</text>
+<text class="m" x="469.8" y="694.0" text-anchor="middle">Ucraina</text>
+<rect x="522.0" y="670.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
+<text class="t" x="597.0" y="684.0" text-anchor="middle">alte activități</text>
+<text class="m" x="597.0" y="694.0" text-anchor="middle">se numără și se opresc aici</text>
+<text class="m" x="8" y="1076.0">pe orizontală: procese paralele · pe verticală: cascada · linie întreruptă: alimentează un tezaur sau un rezultat</text>
+<rect x="8" y="1084.0" width="7" height="7" rx="1.5" fill="var(--surface)" stroke="var(--ink-faint)" stroke-width="0.8"/>
+<text class="m" x="19" y="1090.0">corpusuri și clase</text>
+<rect x="93.4" y="1084.0" width="7" height="7" rx="1.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
+<text class="m" x="104.4" y="1090.0">derivate — se calculează, nu se codează</text>
+<rect x="248.1" y="1084.0" width="7" height="7" rx="1.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="0.8"/>
+<text class="m" x="259.1" y="1090.0">codarea — seturi de coduri</text>
+<rect x="359.9" y="1084.0" width="7" height="7" rx="1.5" fill="var(--dg-stat-bg)" stroke="var(--dg-stat)" stroke-width="0.8"/>
+<text class="m" x="370.9" y="1090.0">acorduri statistice între codori</text>
+<rect x="491.5" y="1084.0" width="7" height="7" rx="1.5" fill="var(--dg-filtru-bg)" stroke="var(--dg-filtru)" stroke-width="0.8"/>
+<text class="m" x="502.5" y="1090.0">filtrări deterministe</text>
+<rect x="586.8" y="1084.0" width="7" height="7" rx="1.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
+<text class="m" x="597.8" y="1090.0">intervenția umană</text>
+<rect x="8" y="1096.0" width="7" height="7" rx="1.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<text class="m" x="19" y="1102.0">tezaure</text>
+<rect x="57.099999999999994" y="1096.0" width="7" height="7" rx="1.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
+<text class="m" x="68.1" y="1102.0">stop — se oprește aici</text>
 </svg>
     </div>
     <p class="legenda">
@@ -1207,7 +1215,7 @@
       <span><i style="background:#f7efdc; border:1px solid var(--sienna)"></i>tezaurele</span>
       <span><i style="background:var(--surface); border:1px solid var(--rule)"></i>date și rezultate</span>
     </p>
-    <p class="note-mic">Pe verticală se citește ce urmează după ce; pe orizontală, ce se petrece în paralel. O casetă e un set de etichete, niciodată două. Chenarul mare grupează casetele unei etape. Linia punctată arată de unde se alimentează un rezultat, fără să fie un pas al cascadei.</p>
+    <p class="note-mic">Pe verticală se citește ce urmează după ce; pe orizontală, ce se petrece în paralel. O casetă e un set de coduri, niciodată două. Chenarul mare grupează casetele unei etape. Linia punctată arată de unde se alimentează un rezultat, fără să fie un pas al cascadei.</p>
   </div>
 
   <div class="sec">
@@ -1218,14 +1226,14 @@
   </div>
 
   <div class="sec">
-    <h3>De ce filtrul se etichetează primul</h3>
-    <p>Pagina unei organizații conține și postări care nu privesc refugiații: aniversări, angajări, campanii pe alte teme. Dacă le-am eticheta pe toate integral, am plăti pentru muncă inutilă și am amesteca numitorii. Filtrul le desparte în cinci clase, câte una pentru fiecare cale de intrare, și oprește ultima — dar o <em>numără</em>: proporția de postări care nu privesc refugiații e ea însăși un rezultat despre fiecare organizație.</p>
+    <h3>De ce filtrul se codează primul</h3>
+    <p>Pagina unei organizații conține și postări care nu privesc refugiații: aniversări, angajări, campanii pe alte teme. Dacă le-am coda pe toate integral, am plăti pentru muncă inutilă și am amesteca numitorii. Filtrul le desparte în cinci clase, câte una pentru fiecare cale de intrare, și oprește ultima — dar o <em>numără</em>: proporția de postări care nu privesc refugiații e ea însăși un rezultat despre fiecare organizație.</p>
     <p>Acordul între codori se rezolvă <strong>înainte</strong> de filtrare, nu după: o postare trimisă greșit în clasa care se oprește nu mai e văzută de nimeni în aval, deci decizia de rutare se ia pe valori deja tranșate. Clasele care intră pe text se pot suprapune — o postare poate fi și pentru refugiați, și sprijin pentru Ucraina — iar intersecția lor se raportează ca atare.</p>
   </div>
 
   <div class="sec">
     <h3>Ce știe codorul și de unde</h3>
-    <p>Codorul se ține de textul postării: fiecare etichetă are un fragment-suport copiat exact, iar ce nu e spus rămâne necompletat. <strong>Tezaurele nu adaugă fapte</strong> — ele spun doar cine cu cine e aceeași entitate. „UNICEF", „ЮНІСЕФ" și „Unicef România" sunt trei feluri de a scrie un singur actor, iar fără o listă care le unește, aceeași organizație s-ar număra de trei ori.</p>
+    <p>Codorul se ține de textul postării: fiecare cod are ancora lui, un fragment copiat exact, iar ce nu e spus rămâne necompletat. <strong>Tezaurele nu adaugă fapte</strong> — ele spun doar cine cu cine e aceeași entitate. „UNICEF", „ЮНІСЕФ" și „Unicef România" sunt trei feluri de a scrie un singur actor, iar fără o listă care le unește, aceeași organizație s-ar număra de trei ori.</p>
     <p>Unirea se face în trei pași. Numele scrise in vivo se grupează întâi în cod, prin transliterare și normalizare. Ce rămâne — abrevieri, denumiri prescurtate, grafii care nu se deduc una din alta — primește propuneri de la un agent care nu caută nicăieri, ci propune din ce știe. Autorul le validează, una câte una, și tot el declară aliasurile de persoană și pseudonimele minorilor.</p>
     <p>Ce fel de actor e fiecare — primărie, ONG, universitate, firmă — nu se stabilește în rulare. E informație de entitate, nu de postare: tipul unei organizații nu se schimbă de la o postare la alta, deci se poate atribui oricând pe lista finală, dacă analiza o cere. Statutul de refugiat al protagoniștilor rămâne, în schimb, informație de postare, și se citește din ce spune textul.</p>
   </div>
@@ -1237,10 +1245,10 @@
 
       <li><strong>Lista goală și „nemenționat" spun lucruri diferite.</strong> Lista goală înseamnă că postarea vorbește despre altceva decât despre oameni — o ședință de proiect, un comunicat. „Nemenționat" înseamnă că îi numește fără să spună cine sunt: „beneficiarii noștri", „familii din comunitate". Regula ține la orice set cu listă, de la oameni la parteneri.</li>
 
-      <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare. Combinațiile nu au etichetă proprie — se numără la analiză.</li>
+      <li><strong>O postare poate avea mai multe activități.</strong> „Distribuim mâncare și apă și oferim informații" primește două coduri: hrană și informare. Combinațiile se numără la analiză, din codurile care apar împreună.</li>
       <li><strong>Ce nu e spus rămâne necunoscut.</strong> Necunoscut nu înseamnă inexistent: o postare care nu-și numește finanțatorul nu e o postare fără finanțator.</li>
       <li><strong>Anonim nu înseamnă absent.</strong> „Cineva ne-a adus 5.000 de lei" se înregistrează ca donator anonim. Mulțumirile generale, fără un act concret, nu.</li>
-      <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci primește ambele etichete. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
+      <li><strong>Partener și finanțator nu se exclud.</strong> Cine dă bani are un rol, deci se codează la amândouă. Cine sprijină fără bani pomeniți rămâne doar partener.</li>
     </ul>
   </div>
 <!-- CODARE-END -->
