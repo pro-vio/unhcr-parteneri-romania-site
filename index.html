@@ -264,15 +264,18 @@
         --dg-side:var(--sienna); --dg-side-bg:#f7efdc;
         --dg-filtru:#b06a2c; --dg-filtru-bg:#fbeedd;
         --dg-der:#3f7f86; --dg-der-bg:#e3f0f1;
+        --dg-stop:#b3372e; --dg-stop-bg:#fbe6e3;
         overflow-x:auto; margin:.6rem 0}
   @media (prefers-color-scheme:dark){.flux{--dg-stat:#a79bd1; --dg-stat-bg:#2b2542;
         --dg-om-bg:#223227; --dg-side-bg:#37301f;
         --dg-filtru:#d59a52; --dg-filtru-bg:#3a2c1c;
-        --dg-der:#79b0b8; --dg-der-bg:#1e2f31}}
+        --dg-der:#79b0b8; --dg-der-bg:#1e2f31;
+        --dg-stop:#e08a80; --dg-stop-bg:#3a201d}}
   :root[data-theme="dark"] .flux{--dg-stat:#a79bd1; --dg-stat-bg:#2b2542;
         --dg-om-bg:#223227; --dg-side-bg:#37301f;
         --dg-filtru:#d59a52; --dg-filtru-bg:#3a2c1c;
-        --dg-der:#79b0b8; --dg-der-bg:#1e2f31}
+        --dg-der:#79b0b8; --dg-der-bg:#1e2f31;
+        --dg-stop:#e08a80; --dg-stop-bg:#3a201d}
   /* Diagrama e mai lata decat coloana. Stransa la latimea ei, literele ajung sub 9px,
      deci i se da o latime minima si se deruleaza in propriul container. */
   .flux svg{display:block; min-width:72rem; width:100%; height:auto}
@@ -1123,7 +1126,7 @@
 <text class="t" x="597.0" y="604.0" text-anchor="middle">implicare ref</text>
 <text class="m" x="597.0" y="614.0" text-anchor="middle">din protagonisti, cu statut de</text>
 <text class="m" x="597.0" y="624.0" text-anchor="middle">refugiat</text>
-<rect x="522.0" y="652.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
+<rect x="522.0" y="652.0" width="150.0" height="32.0" rx="2.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
 <text class="t" x="597.0" y="666.0" text-anchor="middle">alte activități</text>
 <text class="m" x="597.0" y="676.0" text-anchor="middle">stop — nu se codează mai departe</text>
 <rect x="522.0" y="714.0" width="150.0" height="42.0" rx="2.5" fill="var(--dg-der-bg)" stroke="var(--dg-der)" stroke-width="0.8"/>
@@ -1153,7 +1156,9 @@
 <rect x="586.8" y="1010.0" width="7" height="7" rx="1.5" fill="var(--dg-om-bg)" stroke="var(--ok)" stroke-width="0.8"/>
 <text class="m" x="597.8" y="1016.0">intervenția umană</text>
 <rect x="8" y="1022.0" width="7" height="7" rx="1.5" fill="var(--dg-side-bg)" stroke="var(--sienna)" stroke-width="0.8"/>
-<text class="m" x="19" y="1028.0">tezaure și ieșiri</text>
+<text class="m" x="19" y="1028.0">tezaure</text>
+<rect x="57.099999999999994" y="1022.0" width="7" height="7" rx="1.5" fill="var(--dg-stop-bg)" stroke="var(--dg-stop)" stroke-width="0.8"/>
+<text class="m" x="68.1" y="1028.0">stop — se oprește aici</text>
 </svg>
     </div>
     <p class="legenda">
