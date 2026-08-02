@@ -673,7 +673,7 @@
 <!-- ============ RETEA ============ -->
 <section class="panel" role="tabpanel" id="p-ret" aria-labelledby="t-ret">
   <h2>Rețea parteneri</h2>
-  <p>Cine pe cine numește. Nodurile sunt organizațiile pilotului și actorii pe care îi numesc în postări; muchia se adaugă în luna în care apare mențiunea.</p>
+  <p>Partea care nu exista în designul testat pe un singur caz. Cu o organizație se pot număra partenerii; cu întreg universul studiului se poate descrie structura care îi leagă.</p>
 
   <div class="sec">
     <h3>Rețeaua pilotului, lună de lună</h3>
@@ -702,13 +702,81 @@
   <div class="sec">
     <h3>Din ce se construiește</h3>
     <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu denumirea concretă, in vivo. Numele fac nodurile. Caracteristicile actorilor <strong>nu se codează pe postare</strong>: se strâng în tezaur, ca fapte cu sursă, iar tipologia analitică o propun agenții și o validează autorul. Aceeași rețea se va putea citi pe tipuri de actor fără o a doua codare — dar abia după acea validare.</p>
+    <div class="schem">
+      <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
+        <text x="10" y="16" class="s-ttl">rețea bipartită</text>
+        <text x="400" y="16" class="s-ttl">proiecție pe organizații</text>
+        <g stroke="currentColor" stroke-opacity=".28" stroke-width="1.3" fill="none">
+          <line x1="60" y1="60" x2="200" y2="55"/>
+          <line x1="60" y1="60" x2="200" y2="120"/>
+          <line x1="60" y1="130" x2="200" y2="120"/>
+          <line x1="60" y1="130" x2="200" y2="185"/>
+          <line x1="60" y1="200" x2="200" y2="185"/>
+          <line x1="60" y1="200" x2="200" y2="120"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="60" cy="60" r="9"/><circle cx="60" cy="130" r="9"/><circle cx="60" cy="200" r="9"/>
+        </g>
+        <g fill="var(--sienna)">
+          <rect x="192" y="47" width="16" height="16" rx="2"/>
+          <rect x="192" y="112" width="16" height="16" rx="2"/>
+          <rect x="192" y="177" width="16" height="16" rx="2"/>
+        </g>
+        <text x="40" y="228" class="s-lbl">organizații</text>
+        <text x="176" y="228" class="s-lbl">actori numiți</text>
+        <g stroke="var(--ink-faint)" stroke-width="1.2" fill="none">
+          <line x1="270" y1="130" x2="350" y2="130"/>
+          <polyline points="342,124 350,130 342,136"/>
+        </g>
+        <g stroke="var(--accent)" stroke-width="2.6" stroke-opacity=".5" fill="none">
+          <line x1="470" y1="70" x2="560" y2="140"/>
+          <line x1="470" y1="70" x2="470" y2="190"/>
+          <line x1="470" y1="190" x2="560" y2="140"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="470" cy="70" r="9"/><circle cx="470" cy="190" r="9"/><circle cx="560" cy="140" r="9"/>
+        </g>
+        <text x="430" y="228" class="s-lbl">muchie = actor comun</text>
+      </svg>
+    </div>
   </div>
 
   <div class="sec">
-    <h3>Ce nu spune graficul</h3>
-    <p>O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a
-    colaborat efectiv, nici cine a inițiat. Muchiile nu au deci direcție: descriu
-    <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
+    <h3>Cele trei rețele</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Rețea</th><th scope="col">Noduri</th><th scope="col">Ce arată</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Colaborare</strong></td>
+            <td>organizații × parteneri numiți</td>
+            <td>Bipartită, proiectată pe organizații: două organizații sunt legate dacă numesc același partener. Măsuri de centralitate pe actori — care apar în comunicarea multor organizații și funcționează ca noduri ale rețelei. Pe pilot, doar doi actori sunt numiți de mai multe organizații.</td>
+          </tr>
+          <tr>
+            <td><strong>Finanțare</strong></td>
+            <td>organizații × finanțatori numiți</td>
+            <td>Aceeași construcție, pe sursele de bani. Se raportează și cât de des finanțarea <em>nu</em> e menționată — absența atribuirii e informație în sine, iar dacă nu e raportată separat dispare în categoria reziduală.</td>
+          </tr>
+          <tr>
+            <td><strong>Co-menționare</strong></td>
+            <td>organizații × organizații</td>
+            <td>Două organizații din registru apar în aceeași postare, ori una o tagează pe cealaltă. Singura rețea în care nodurile sunt toate unități observate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Instituțiile publice — primării și prefecturi — intră aici, ca actori menționați. Nu sunt unități de observație: nu le extragem paginile. Ceea ce înseamnă că datele despre ele vin din ce spun organizațiile, nu din ce comunică ele însele.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce nu se poate construi</h3>
+    <div class="note warn">
+      <strong>Nu se poate construi o rețea din reacții și distribuiri.</strong>
+      Platforma expune numărul celor care reacționează, nu identitatea lor. Nu există cale de a construi o rețea de interacțiune între organizații din reacții sau distribuiri, la scara acestui corpus.
+      <br><br>
+      Ce rămâne în loc: dacă o organizație e <em>tagată</em> în textul altei postări, mențiunea se codează și intră în rețeaua de co-menționare. Nu e același lucru cu o rețea de reacții, iar diferența se declară acolo unde apare rezultatul.
+    </div>
+    <p>Al doilea lucru care nu se poate: direcția relației. O mențiune de parteneriat spune că organizația a numit un actor, nu că actorul a colaborat efectiv, nici cine a inițiat. Rețelele descriu <strong>ce se comunică despre colaborare</strong>, la fel ca restul studiului.</p>
   </div>
 </section>
 
