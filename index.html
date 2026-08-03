@@ -875,14 +875,14 @@
   <strong>Diagramă proces</strong>.</p>
 
   <div class="pull">
-    <p class="pull-q">Ce dinamici identificăm în răspunsul comunicat public al partenerilor UNHCR la criza refugiaților, din prima zi a invaziei (februarie 2022) până la data extragerii?</p>
-    <p>Peste ea, trei întrebări care cer explicație, nu doar descriere, și care se citesc fiecare din mai multe seturi de coduri:</p>
+    <p class="pull-q">Ce dinamici identificăm în răspunsul partenerilor UNHCR la criza refugiaților, din prima zi a invaziei (februarie 2022) până la data extragerii?</p>
+    <p><strong>Dimensiunile descriptive ale răspunsului</strong> sunt: activitățile, beneficiarii direcți, finanțatorii, rețeaua de parteneri, simbolismul ucrainean și răspunsul publicului. Fiecare stă pe un singur set de coduri, ca o diferență găsită să se poată atribui unui lucru anume.</p>
+    <p>Pe baza acestor rezultate, oferim răspunsuri mai complexe:</p>
     <ul class="pull-l">
       <li>diferă aceste dinamici <strong>între tipurile de organizații</strong> — cele conduse de refugiați față de cele comunitare?</li>
-      <li>diferă <strong>de la un an al răspunsului la altul</strong>, primul față de al doilea, al treilea și următorii? Anii se numără de la prima zi a invaziei, nu calendaristic.</li>
+      <li>diferă răspunsul <strong>de la un an la altul</strong>? Anii se numără de la prima zi a invaziei, nu calendaristic.</li>
       <li><strong>cum se realizează coeziunea</strong> între refugiați și comunitatea gazdă?</li>
     </ul>
-    <p>Dimensiunile pe care se citesc stau fiecare pe un singur set de coduri, ca o diferență găsită să se poată atribui unui lucru anume: activitățile, beneficiarii direcți, finanțatorii, rețeaua de parteneri, simbolismul ucrainean și răspunsul publicului.</p>
   </div>
 
   <div class="note">
@@ -2267,9 +2267,14 @@
     var g = grad(hit.id, pas);
     var cine = hit.tip === 'org' ? CLASA[hit.id] + ' · ' + RETEA.orase[hit.id]
       : 'numit de: ' + orgsLui(hit.id, pas).map(function (o) { return o + ' (' + CLASA[o] + ')'; }).join(', ');
+    var loc = (RETEA.orase_partener || {})[hit.id] || [];
+    var forme = (RETEA.forme || {})[hit.id] || [];
+    var subsol = '';
+    if (hit.tip !== 'org' && loc.length) subsol += '<span>' + loc.join(' · ') + '</span>';
+    if (forme.length > 1) subsol += '<span>scris și: ' + forme.slice(1).join(' · ') + '</span>';
     tip.innerHTML = '<b>' + (hit.tip === 'org' ? hit.id : (RETEA.afisare[hit.id] || hit.id)) +
       '</b><span>' + cine + ' · ' + g + (g === 1 ? ' legătură' : ' legături') +
-      ' · din ' + LUNI[hit.luna] + '</span>';
+      ' · din ' + LUNI[hit.luna] + '</span>' + subsol;
     tip.style.display = 'block';
     tip.style.left = Math.min(mx + 14, W - 280) + 'px';
     tip.style.top = (my + 12) + 'px';
