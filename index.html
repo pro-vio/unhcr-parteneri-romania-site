@@ -703,13 +703,14 @@
     <div class="rp-leg" id="rp-leg"></div>
 
     <p class="hm-key">Pilot: 6 organizații, ferestrele de martie 2022–2026 — nici complet, nici
-    reprezentativ. Numele apar in vivo, cum le scrie postarea. Partenerii numiți de mai multe
-    organizații sunt etichetați permanent; restul, la hover.</p>
+    reprezentativ. Un nod e o organizație, nu o grafie: formele scrise diferit de codori se
+    unesc prin regulile tezaurului, iar eticheta e cea mai îngrijită dintre ele. Partenerii
+    numiți de mai multe organizații sunt etichetați permanent; restul, la hover.</p>
   </div>
 
   <div class="sec">
     <h3>Din ce se construiește</h3>
-    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu denumirea concretă, in vivo. Numele fac nodurile. Caracteristicile actorilor <strong>nu se codează pe postare</strong>: se strâng în tezaur, ca fapte cu sursă, iar tipologia analitică o propun agenții și o validează autorul. Aceeași rețea se va putea citi pe tipuri de actor fără o a doua codare — dar abia după acea validare.</p>
+    <p>Codarea produce, pentru fiecare postare, actorii <em>numiți</em> în text: parteneri și finanțatori, cu denumirea concretă, in vivo. Nodurile sunt organizațiile din spatele numelor: formele scrise diferit se unesc prin regulile tezaurului, iar unde regula nu decide, unirea o declară autorul. Caracteristicile actorilor <strong>nu se codează pe postare</strong>: se strâng în tezaur, ca fapte cu sursă, iar tipologia analitică o propun agenții și o validează autorul. Aceeași rețea se va putea citi pe tipuri de actor fără o a doua codare — dar abia după acea validare.</p>
     <div class="schem">
       <svg viewBox="0 0 660 250" role="img" aria-label="Schemă: rețea bipartită organizație–partener, proiectată pe organizații">
         <text x="10" y="16" class="s-ttl">rețea bipartită</text>
@@ -2174,7 +2175,7 @@
     leg.appendChild(s);
   });
   var sp = document.createElement('span');
-  sp.innerHTML = '<i style="background:var(--ink-faint)"></i>partener (nume, in vivo)';
+  sp.innerHTML = '<i style="background:var(--ink-faint)"></i>partener (organizație unificată)';
   leg.appendChild(sp);
 
   var W = 0, H = 0, DPR = 1, asezat = false;
