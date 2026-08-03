@@ -2268,10 +2268,8 @@
     var cine = hit.tip === 'org' ? CLASA[hit.id] + ' · ' + RETEA.orase[hit.id]
       : 'numit de: ' + orgsLui(hit.id, pas).map(function (o) { return o + ' (' + CLASA[o] + ')'; }).join(', ');
     var loc = (RETEA.orase_partener || {})[hit.id] || [];
-    var forme = (RETEA.forme || {})[hit.id] || [];
-    var subsol = '';
-    if (hit.tip !== 'org' && loc.length) subsol += '<span>' + loc.join(' · ') + '</span>';
-    if (forme.length > 1) subsol += '<span>scris și: ' + forme.slice(1).join(' · ') + '</span>';
+    var subsol = (hit.tip !== 'org' && loc.length)
+      ? '<span>' + loc.join(' · ') + '</span>' : '';
     tip.innerHTML = '<b>' + (hit.tip === 'org' ? hit.id : (RETEA.afisare[hit.id] || hit.id)) +
       '</b><span>' + cine + ' · ' + g + (g === 1 ? ' legătură' : ' legături') +
       ' · din ' + LUNI[hit.luna] + '</span>' + subsol;
