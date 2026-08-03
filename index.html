@@ -336,8 +336,8 @@
     <span>August 2026</span>
   </div>
   <h1>Rețeaua de parteneri UNHCR în România</h1>
-  <p class="lede"><strong>Studiu pilot:</strong> 6 organizații — 3 conduse de refugiați (RLO) și 3 organizații comunitare (CLO) — în 5 orașe, doar luna martie din fiecare an. <strong>Rezultatele nu sunt nici complete, nici reprezentative.</strong></p>
-  <p class="credit"><strong>Cristian Ofițeru</strong> a realizat studiul original — teza de licență pe cazul LOGS Timișoara, cu cele 1.015 codări manuale în MAXQDA care sunt referința acestei replicări; <strong>Viorel Proteasa</strong> a coordonat teza și a proiectat studiul pilot: designul, codebook-ul, pipeline-ul de agenți, analiza și raportarea.</p>
+  <p class="lede"><strong>Studiu pilot:</strong> <!--#n_org_pilot-->6<!--#--> organizații — <!--#n_rlo_pilot-->3<!--#--> conduse de refugiați (RLO) și <!--#n_clo_pilot-->3<!--#--> organizații comunitare (CLO) — în <!--#n_orase_pilot-->5<!--#--> orașe, doar luna martie din fiecare an. <strong>Rezultatele nu sunt nici complete, nici reprezentative.</strong></p>
+  <p class="credit"><strong>Cristian Ofițeru</strong> a realizat studiul original — teza de licență pe cazul LOGS Timișoara, cu cele <!--#n_codari_teza-->1.015<!--#--> codări manuale în MAXQDA care sunt referința acestei replicări; <strong>Viorel Proteasa</strong> a coordonat teza și a proiectat studiul pilot: designul, codebook-ul, pipeline-ul de agenți, analiza și raportarea.</p>
   <p class="credit">Codarea a fost efectuată de agenți <code>claude-opus-5</code>; acordul între codori și rezoluțiile s-au calculat determinist, în cod. Deciziile metodologice aparțin autorilor.</p>
 </header>
 
@@ -366,10 +366,10 @@
     <h3>Primele rezultate, pe corpusul-pilot</h3>
 
     <div class="figs">
-      <div class="fig"><span class="fig-n">2 853</span><span class="fig-l">postări extrase, seria completă</span></div>
-      <div class="fig"><span class="fig-n">57</span><span class="fig-l">luni acoperite (nov. 2021 – iul. 2026)</span></div>
-      <div class="fig"><span class="fig-n">274</span><span class="fig-l">postări în lunile codate</span></div>
-      <div class="fig"><span class="fig-n">231</span><span class="fig-l">postări codabile (43 fără text)</span></div>
+      <div class="fig"><span class="fig-n"><!--#n_extrase-->2 853<!--#--></span><span class="fig-l">postări extrase, seria completă</span></div>
+      <div class="fig"><span class="fig-n"><!--#n_luni_serie-->57<!--#--></span><span class="fig-l">luni acoperite (<!--#luna_prima-->nov. 2021<!--#--> – <!--#luna_ultima-->iul. 2026<!--#-->)</span></div>
+      <div class="fig"><span class="fig-n"><!--#n_lunile_codate-->274<!--#--></span><span class="fig-l">postări în lunile codate</span></div>
+      <div class="fig"><span class="fig-n"><!--#n_codabile-->231<!--#--></span><span class="fig-l">postări codabile (<!--#n_fara_text-->43<!--#--> fără text)</span></div>
     </div>
 
     <div class="ser-ctl" data-serie-ctl></div>
@@ -411,7 +411,7 @@
     </div>
 
     <p>Liniile punctate marchează <strong>cele cinci luni de martie</strong> care formează
-    corpusul codat: 274 de postări extrase, 231 codabile. Cele 43 de diferență nu au niciun text
+    corpusul codat: <!--#n_lunile_codate-->274<!--#--> de postări extrase, <!--#n_codabile-->231<!--#--> codabile. Cele <!--#n_fara_text-->43<!--#--> de diferență nu au niciun text
     — fotografii și clipuri fără descriere. Se extrag și au reacții, deci intră în engagement, dar
     nu se pot coda. Numitorul e altul în fiecare tab și e scris de fiecare dată.</p>
   </div>
@@ -454,7 +454,7 @@
 
     <div class="sec">
     <h3>Cum se clasifică</h3>
-    <p>Fiecare activitate primește unul sau mai multe dintre cele 23 de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. O postare fără activitate concretă rămâne fără cod, iar proporția acestor postări se raportează ca atare. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
+    <p>Fiecare activitate primește unul sau mai multe dintre cele <!--#n_coduri_codebook-->23<!--#--> de coduri, grupate pe sectoarele din planul regional de răspuns al UNHCR. O postare fără activitate concretă rămâne fără cod, iar proporția acestor postări se raportează ca atare. Definițiile, în primul tab, <strong>Codebook</strong>. Folosim taxonomia UNHCR pentru că fiecare organizație e deja auto-clasificată în ea, iar rezultatele devin citibile fără traducere.</p>
   </div>
 
 
@@ -913,7 +913,7 @@
 
   <div class="sec">
     <h3>Universul și unitățile de codare</h3>
-    <p><strong>Universul studiului e format din organizațiile comunitare și din cele conduse de refugiați</strong> aflate în registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Organizațiile internaționale și agențiile ONU rămân în afara universului: prezumțiile pe care le folosim ca să atribuim statutul persoanelor n-au temei la ele. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
+    <p><strong>Universul studiului e format din organizațiile comunitare și din cele conduse de refugiați</strong> aflate în registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Organizațiile internaționale și agențiile ONU rămân în afara universului: prezumțiile pe care le folosim ca să atribuim statutul persoanelor n-au temei la ele. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie <!--#an_pilot_prim-->2022<!--#-->–<!--#an_pilot_ultim-->2026<!--#-->; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
     <p><strong>Codurile se pun pe două unități.</strong> Pe <em>postare</em> se pun tipul de activitate, sprijinul pentru Ucraina, funcția postării, simbolismul, partenerii și finanțatorii. Pe <em>mențiunea de oameni</em> — fiecare formulare din text care numește oameni — se pun rolul, proveniența și statutul codat. Un cod pus pe postare și unul pus pe o mențiune din ea nu se numără la fel, de aceea numitorul se scrie la fiecare figură.</p>
   </div>
 
@@ -1578,10 +1578,10 @@
   <p>Registrul de parteneri al UNHCR pentru România, cu tipul atribuit de UNHCR și județul de activitate. Studiul acoperă organizațiile comunitare — cele cu eticheta „ONG național" în registru — și pe cele conduse de refugiați. Celelalte rămân în tabel, ca să se vadă din ce registru vine selecția, și rămân în afara studiului: prezumțiile pe care le folosim ca să atribuim statutul persoanelor n-au temei la o agenție ONU sau la o organizație internațională. Cele șase organizații deja codate sunt marcate în tabel; profilurile individuale — activități, parteneri, finanțatori, serie de volum — se completează după rularea completă.</p>
 
   <div class="figs">
-    <div class="fig"><span class="fig-n">30</span><span class="fig-l">ONG național</span></div>
-    <div class="fig"><span class="fig-n">6</span><span class="fig-l">ONG internațional</span></div>
-    <div class="fig"><span class="fig-n">5</span><span class="fig-l">agenție ONU</span></div>
-    <div class="fig"><span class="fig-n">4</span><span class="fig-l">condusă de refugiați</span></div>
+    <div class="fig"><span class="fig-n"><!--#n_ong_national-->30<!--#--></span><span class="fig-l">ONG național</span></div>
+    <div class="fig"><span class="fig-n"><!--#n_ong_international-->6<!--#--></span><span class="fig-l">ONG internațional</span></div>
+    <div class="fig"><span class="fig-n"><!--#n_agentie_onu-->5<!--#--></span><span class="fig-l">agenție ONU</span></div>
+    <div class="fig"><span class="fig-n"><!--#n_condusa_refugiati-->4<!--#--></span><span class="fig-l">condusă de refugiați</span></div>
   </div>
 
   <div class="tw" id="org-table"><table>
@@ -1597,7 +1597,7 @@
 
 
 <footer>
-  <span>Studiu în fază de propunere. Cifrele publicate acum vin din pilotul pe 6 organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
+  <span>Studiu în fază de propunere. Cifrele publicate acum vin din pilotul pe <!--#n_org_pilot-->6<!--#--> organizații și o singură lună din fiecare an — nu sunt nici complete, nici reprezentative.</span>
   <span>Materialele de lucru — date, codebook, registru metodologic — sunt ținute într-un depozit privat, întrucât includ date personale ale terților.</span>
 </footer>
 
