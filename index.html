@@ -528,10 +528,11 @@
       <strong>Indicatorul e incomplet, și asta e asumat.</strong> În codebook, rolul de
       protagonist are două proveniențe: grupul țintă din etapa 1 și tezaurul de persoane
       validat de autor — o persoană numită într-o postare capătă statut de refugiat din surse
-      exterioare postării, nu din text. A doua proveniență nu e activă: tezaurul de persoane
-      n-a fost încă validat. Cifrele de aici vin doar din prima cale, deci
-      <strong>subestimează</strong> protagonismul refugiat: o persoană care e refugiată, dar
-      pe care postarea n-o declară așa, nu se vede.
+      exterioare postării, nu din text. Tezaurul de persoane e validat, deci calea e activă;
+      pe pilot nu adaugă nimic, fiindcă o singură persoană are statutul afirmat în text și
+      n-are ce se propaga către celelalte mențiuni ale ei. Cifrele
+      <strong>subestimează</strong> deci protagonismul refugiat: o persoană care e refugiată,
+      dar pe care nicio postare n-o declară așa, nu se vede.
       <br><br>
       Pentru pilot, limitarea e acceptată deliberat. Aici se testează procesul: codebook,
       codare AI cu acord între codori, derivare, raportare. Cifrele se refac după validarea
@@ -558,8 +559,14 @@
 <section class="panel" role="tabpanel" id="p-coe" aria-labelledby="t-coe">
   <h2>Coeziune</h2>
   <p>Sunt numărate postările care numesc deodată refugiați și comunitatea locală, cu unul
-  dintre următoarele roluri: protagoniști sau beneficiari direcți. Prezumția este că astfel
-  de activități conduc spre coeziunea între refugiați și comunitatea gazdă.</p>
+  dintre următoarele roluri: protagoniști sau beneficiari direcți, și care numesc o
+  activitate. <strong>Prezumția</strong> este că astfel de activități conduc spre coeziunea
+  între refugiați și comunitatea gazdă; ce se măsoară e co-prezența, iar coeziunea e citirea
+  ei.</p>
+  <p>Cifrele sunt ale pilotului, cu 6 organizații. Cele care intră la rularea
+  completă sunt în majoritate organizații comunitare — exact tipul la care refugiații și
+  comunitatea locală apar împreună la aceeași activitate. Statistica de aici se schimbă
+  atunci.</p>
 
   <div class="sec">
     <h3>Rezultatele pilotului</h3>
@@ -622,7 +629,7 @@
       localnici deopotrivă la aceeași activitate. În pilot apare în <strong>1</strong>
       postare din 231 codabile.
       <br><br>
-      Categoriile de oameni intră în perechi de câte ori urmează: ucraineni (12), refugiați din alte țări (7), refugiați fără țara numită (25), comunitatea locală (44). Toate cele patru apar în perechi.
+      Categoriile de oameni intră în perechi de câte ori urmează: ucraineni (12), refugiați din alte țări (7), refugiați fără țara numită (24), comunitatea locală (41). Toate cele patru apar în perechi.
     </div>
 
     <div class="note warn">
@@ -793,8 +800,9 @@
     2 853 de postări extrase. Cele trei câmpuri se extrag pentru fiecare postare: în
     exporturile noastre minimul e 1 și valoarea 0 lipsește cu totul, iar aceleași coloane din
     exporturile studiului de caz din care pornim conțin 0 explicit, în aceeași proporție.
-    Celula goală înseamnă deci zero, iar procentele de mai jos măsoară
-    <em>tăcerea publicului</em>.</p>
+    Celula goală înseamnă deci zero, iar procentele de mai jos numără postările fără nicio
+    reacție înregistrată. Le citim ca <em>tăcere a publicului</em> — citirea e a noastră,
+    numărul e al exportului.</p>
 
     <div class="figs">
       <div class="fig"><span class="fig-n">97,4%</span><span class="fig-l">postări cu cel puțin o reacție</span></div>
@@ -859,9 +867,10 @@
 
 <div class="subpanel on" role="tabpanel" id="sp-ms" aria-labelledby="st-ms">
   <h2>Operaționalizare</h2>
-  <p>Drumul de la întrebare la indicator: ce se observă, pe ce unitate, cu ce limite. Cum se
-  măsoară apoi — seturile de coduri și definițiile lor, ordinea în care se aplică — e în
-  <strong>Codebook</strong> și <strong>Diagramă proces</strong>.</p>
+  <p>Drumul de la întrebare la cifră, în ordinea în care se coboară: ce există în lume, ce
+  observăm din el, cu ce concept citim observația, unde se produce fiecare valoare. Seturile
+  de coduri și ordinea în care se aplică sunt în <strong>Codebook</strong> și
+  <strong>Diagramă proces</strong>.</p>
 
   <div class="pull">
     <p class="pull-q">Ce dinamici identificăm în răspunsul comunicat public al partenerilor UNHCR la criza refugiaților, din prima zi a invaziei (februarie 2022) până la data extragerii?</p>
@@ -869,23 +878,71 @@
   </div>
 
   <div class="sec">
-    <h3>Obiectul măsurării</h3>
-    <p><strong>Măsurăm comunicarea publică despre activități, nu activitățile.</strong> O postare în care refugiații apar ca organizatori e dovadă de reprezentare în comunicare, nu de control asupra deciziei sau bugetului. Distincția e limita centrală a studiului.</p>
-    <p>Termenul de <em>localizare</em> desemnează deplasarea deciziei, a resurselor și a execuției răspunsului umanitar către actori locali, inclusiv către organizații conduse de persoanele afectate. Literatura care ne interesează arată distanța dintre retorica localizării și practica ei.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Universul și unitatea de analiză</h3>
-    <p><strong>Universul studiului e format din organizațiile comunitare și din cele conduse de refugiați</strong> aflate în registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Organizațiile internaționale și agențiile ONU rămân în afara universului: prezumțiile pe care le folosim ca să atribuim statutul persoanelor n-au temei la ele. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
-    <p><strong>Unitatea de analiză e postarea publică de Facebook.</strong> O postare poate purta mai multe coduri de activitate: se codează serviciul numit, iar o postare care numește mai multe servicii primește câte un cod pentru fiecare. În interiorul postării, o a doua unitate primește coduri — <strong>mențiunea de oameni</strong>, adică fiecare formulare din text care numește oameni. Pe ea se pun rolul, proveniența și statutul codat. Un cod pus pe postare și unul pus pe o mențiune din ea se numără altfel, iar numitorul se declară de fiecare dată.</p>
+    <h3>Ce există și ce observăm din el</h3>
+    <p>Organizația are o activitate. O parte din activitate ajunge în postări. Noi extragem postările până la o limită pe care o alegem noi. Sunt trei lucruri diferite, iar fiecare cifră de pe site aparține ultimului.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Ce</th><th scope="col">Obiect sau observație</th><th scope="col">Ce nu spune</th></tr></thead>
+        <tbody>
+          <tr><td><strong>organizația</strong></td><td>obiect: există în afara datelor noastre, cu tipul din registrul UNHCR</td><td>nimic despre ce face în afara comunicării publice</td></tr>
+          <tr><td><strong>activitatea</strong></td><td>obiect: se petrece indiferent dacă e comunicată</td><td>o activitate necomunicată nu apare nicăieri în date</td></tr>
+          <tr><td><strong>postarea</strong></td><td>observație despre activitate, făcută de organizație</td><td>ce alege organizația să comunice, nu ce face</td></tr>
+          <tr><td><strong>extragerea</strong></td><td>observația noastră despre postări, cu o limită de timp aleasă de noi</td><td>înainte de limită studiul nu spune nimic — nici că organizația a fost activă, nici că n-a fost</td></tr>
+          <tr><td><strong>mențiunea de oameni</strong></td><td>observație în interiorul postării: formularea care numește oameni</td><td>oamenii pe care postarea nu-i numește rămân în afara datelor</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="note">
-      <strong>Instituțiile publice nu sunt unități de observație.</strong>
-      Primăriile și prefecturile din registru apar în date doar ca actori menționați de organizații — vezi tabul Rețea.
+      <strong>Ce rămâne în afara inventarului.</strong>
+      Instituțiile publice nu sunt unități de observație: primăriile și prefecturile apar doar ca actori numiți de organizații, în tabul <strong>Rețea</strong>. Nici persoanele nu sunt unități: apar prin mențiunile din postări, iar identitatea lor se unifică în tezaur, fără să devină obiect al studiului.
     </div>
   </div>
 
   <div class="sec">
-    <h3>Reguli de interpretare</h3>
+    <h3>Universul și unitățile de codare</h3>
+    <p><strong>Universul studiului e format din organizațiile comunitare și din cele conduse de refugiați</strong> aflate în registrul de parteneri UNHCR pentru România. Tipologia — organizație condusă de refugiați, ONG național, ONG internațional, agenție ONU — e cea atribuită de UNHCR în registrul propriu; nu construim una proprie. Organizațiile internaționale și agențiile ONU rămân în afara universului: prezumțiile pe care le folosim ca să atribuim statutul persoanelor n-au temei la ele. Pilotul acoperă șase dintre ele — trei conduse de refugiați și trei organizații comunitare, în cinci orașe, lunile martie 2022–2026; restul corpusului intră la rularea completă. Lista, cu organizațiile pilotului marcate, e în subtabul <strong>Organizații</strong>.</p>
+    <p><strong>Codurile se pun pe două unități.</strong> Pe <em>postare</em> se pun tipul de activitate, sprijinul pentru Ucraina, funcția postării, simbolismul, partenerii și finanțatorii. Pe <em>mențiunea de oameni</em> — fiecare formulare din text care numește oameni — se pun rolul, proveniența și statutul codat. Un cod pus pe postare și unul pus pe o mențiune din ea nu se numără la fel, de aceea numitorul se scrie la fiecare figură.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ce concept citește fiecare observație</h3>
+    <p>Un indicator fără concept declarat nu poate fi greșit, doar diferit — și atunci iese din discuția de metodă. Mai jos, conceptul din spatele fiecărei măsuri și de unde vine definiția lui.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Măsura</th><th scope="col">Conceptul</th><th scope="col">De unde vine definiția</th></tr></thead>
+        <tbody>
+          <tr><td>rolul oamenilor în postare</td><td><strong>agentivitate</strong>: cine e arătat făcând și cine primind</td><td>agenda de localizare — cazul în care persoanele afectate devin agenți ai propriului răspuns, nu doar beneficiari</td></tr>
+          <tr><td>statutul de refugiat</td><td>categorie <strong>juridică</strong>, nu naționalitate: refugiat, solicitant de azil, beneficiar de protecție</td><td>sensul UNHCR și categoriile legii azilului; se calculează după codare, nu se codează</td></tr>
+          <tr><td>tipul de activitate</td><td><strong>conținutul serviciului comunicat</strong></td><td>sectoarele planului regional de răspuns al UNHCR, plus categoriile literaturii despre organizațiile conduse de refugiați</td></tr>
+          <tr><td>co-prezența a două categorii de oameni</td><td>prezumție de <strong>coeziune</strong> între refugiați și comunitatea gazdă</td><td>indicatorul de coeziune socială al UNHCR; la noi rămâne prezumție, fiindcă măsura e co-prezența</td></tr>
+          <tr><td>simbolismul ucrainean</td><td><strong>identificare expresivă</strong> cu cauza națională</td><td>construcție a acestui studiu, cu regula de decizie scrisă în tabul ei</td></tr>
+          <tr><td>reacții, distribuiri, comentarii</td><td><strong>răspunsul publicului</strong> la postare</td><td>câmpuri ale exportului; citirea lor ca tăcere sau ca răspuns e a noastră</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Unde se produce fiecare valoare</h3>
+    <p>Ultima treaptă a operaționalizării e locul concret care produce cifra. Trei feluri, cu calități diferite:</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Felul valorii</th><th scope="col">Unde se produce</th><th scope="col">Cum se verifică</th></tr></thead>
+        <tbody>
+          <tr><td>codată pe text</td><td>un set de coduri din codebook, aplicat de doi codori independenți</td><td>acordul între codori, pe fiecare set</td></tr>
+          <tr><td>calculată</td><td>o etapă deterministă de după codare: statutul, clasa postării, conjuncțiile</td><td>e cod publicat; moștenește calitatea câmpurilor din care derivă</td></tr>
+          <tr><td>preluată</td><td>exportul: engagement, data publicării</td><td>se declară data extragerii, fiindcă cifrele se acumulează în timp</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>Absența se codează, nu se lasă goală.</strong>
+      Când textul nu spune, codorul scrie <em>nemenționat</em>. Câmpul gol ar amesteca trei stări care nu se mai pot despărți după fapt: textul tace, codorul n-a ajuns acolo, instrumentul n-avea câmpul. <em>Nemenționat</em> numește una singură, și e o observație — postarea a fost citită, iar informația lipsește din ea. Așa, cât de des tace sursa devine el însuși un rezultat.
+    </div>
+  </div>
+
+  <div class="sec">
+<h3>Reguli de interpretare</h3>
     <p>Reguli care se aplică la citirea oricărei cifre. Fără ele, aceleași date susțin afirmații false.</p>
     <div class="tw">
       <table>
@@ -1537,7 +1594,7 @@
 <script src="matrici.js"></script>
 <script src="serii.js"></script>
 <script src="retea.js"></script>
-<script src="rezultate.js?v=49d7bf32"></script>
+<script src="rezultate.js?v=5bd1e724"></script>
 <script>
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
