@@ -324,6 +324,66 @@
     border:1px solid var(--rule); border-radius:3px; padding:.4rem}
   .nor text{font-family:var(--sans); font-weight:600; dominant-baseline:alphabetic}
 /* REZ-CSS-END */
+  /* MOBIL-START */
+  /* Ce s-a măsurat pe 375×812, înainte: antetul împingea taburile la 644px de sus, iar bara
+     lor se rupea în cinci rânduri, 161px — primul ecran era numai titlu. Țintele de atins cu
+     degetul aveau 29–36px. Tabelele largi derulau lateral, dar nimic nu arăta că se poate. */
+
+  /* afereastra de derulare a tabelelor și a figurilor: umbră la margine cât timp mai e de
+     derulat, care dispare la capăt. Fără JS — `background-attachment: local` face treaba. */
+  .tw, .flux{
+    background-image:
+      linear-gradient(to right, var(--surface) 30%, rgba(0,0,0,0)),
+      linear-gradient(to left,  var(--surface) 30%, rgba(0,0,0,0)),
+      linear-gradient(to right, rgba(0,0,0,.13), rgba(0,0,0,0)),
+      linear-gradient(to left,  rgba(0,0,0,.13), rgba(0,0,0,0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 26px 100%, 26px 100%, 11px 100%, 11px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  /* 44px e pragul de la care degetul nimerește din prima. Se aplică și după lățime, nu doar
+     după felul cursorului: un ecran îngust se atinge cu degetul chiar dacă browserul spune
+     altceva. */
+  @media (pointer:coarse), (max-width:40rem){
+    .tab, .subtab, .chip, .rp-ctl button, .rp-luni button, .ser-ctl button{
+      min-height:44px; display:inline-flex; align-items:center; justify-content:center;
+    }
+    .tab{padding:.5rem 1rem}
+    .subtab{padding:.4rem 1rem}
+    .chip{padding:.4rem .85rem}
+    .rp-ctl button, .ser-ctl button{padding:.4rem 1rem}
+    .rp-luni button{padding:.4rem .75rem}
+  }
+
+  @media (max-width:40rem){
+    /* antetul: același text, mai puțin spațiu, ca taburile să intre în primul ecran */
+    .wrap{padding-left:1rem; padding-right:1rem}
+    .mast{padding-bottom:1rem}
+    .mast h1{font-size:1.65rem; line-height:1.15; margin:.35rem 0 .6rem}
+    .eyebrow{gap:.3rem .8rem; font-size:.7rem}
+    .credit{font-size:.78rem; margin:.6rem 0 0}
+
+    /* bara de taburi: o fâșie care derulează, nu cinci rânduri. Rămâne lipită sus. */
+    .tabs{flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden;
+          scrollbar-width:none; -webkit-overflow-scrolling:touch;
+          padding-top:.5rem; margin-bottom:1.2rem}
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{flex:0 0 auto; white-space:nowrap}
+
+    .subtabs{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
+    .subtabs::-webkit-scrollbar{display:none}
+    .subtab{flex:0 0 auto; white-space:nowrap}
+
+    /* rețeaua: mai scundă, ca butoanele și legenda să încapă sub ea fără derulare lungă */
+    .rp-stage canvas{height:400px}
+
+    /* figurile mari rămân lizibile prin derulare, nu prin micșorare */
+    .hm{font-size:.82rem}
+  }
+  /* MOBIL-END */
+
 </style>
 </head>
 <body>
@@ -1622,6 +1682,12 @@
     panels.forEach(function (p) {
       p.classList.toggle('on', p.getAttribute('aria-labelledby') === id);
     });
+    // pe ecran ingust bara de taburi e o fasie care deruleaza: tabul ales se aduce in ea,
+    // altfel dupa o alegere din URL ramane in afara vederii
+    var ales = document.getElementById(id);
+    if (ales && ales.scrollIntoView) {
+      ales.scrollIntoView({block: 'nearest', inline: 'nearest'});
+    }
     if (history.replaceState) history.replaceState(null, '', '#' + id.slice(2));
   }
 
